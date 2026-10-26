@@ -1,9 +1,18 @@
-// Aoen: spawn all mod units on proving-grounds so textures are visible in-game.
+/**
+ * Aoen — JavaScript is the primary logic layer (full Mindustry API).
+ * HJSON defines static content/sprites; scripts override bullets, abilities, combat.
+ */
+require("lib");
+require("bullets");
+require("abilities");
+require("enhance");
+
 const AOEN_UNITS = [
   "aoen-crab", "aoen-crab-t2", "aoen-ceramtyr-daimyo", "aoen-quake-bulwark", "aoen-storm-sovereign", "aoen-eclipse-tyrant",
   "aoen-snake", "aoen-snake-t2", "aoen-cinder-millipede", "aoen-payload-serpent", "aoen-singularity-eel", "aoen-ouroboros-prime",
   "aoen-boomeranger", "aoen-boomeranger-t2", "aoen-foundry-orbiter", "aoen-aegis-walker", "aoen-nexus-prime", "aoen-apotheosis-core",
-  "aoen-naval", "aoen-naval-t2", "aoen-iron-reef", "aoen-needle-skiff", "aoen-leviathan-crown", "aoen-mare-imperator"
+  "aoen-naval", "aoen-naval-t2", "aoen-iron-reef", "aoen-needle-skiff", "aoen-leviathan-crown", "aoen-mare-imperator",
+  "aoen-bahamut"
 ];
 
 function isProving() {
@@ -42,3 +51,20 @@ function spawnGallery() {
 Events.on(WorldLoadEvent, e => {
   Timer.schedule(() => spawnGallery(), 1.5);
 });
+
+// Chat command: /aoen-buff — re-run enhance (debug)
+Events.on(PlayerChatEvent, e => {
+  try {
+    const msg = e.message;
+    if (msg === "/aoen-buff" || msg === "aoen-buff") {
+      require("enhance").run();
+      if (e.player != null) {
+        e.player.sendMessage("[accent][Aoen][] JS enhance re-applied.");
+      }
+    }
+  } catch (err) {
+    Log.err(err);
+  }
+});
+
+Log.info("[Aoen] JS API layer loaded (bullets + abilities + enhance)");
