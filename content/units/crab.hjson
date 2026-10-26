@@ -136,14 +136,14 @@ requirements: {
   block: aoen-ground-fabricator
   time: 720
   requirements: [
-    silicon/12
-    lead/10
+    aoen-nocturne-plate/12
+    aoen-void-shard/10
   ]
 }
 
 research: {
   parent: aoen-ground-fabricator
   requirements: [
-    copper/40
+    aoen-nocturne-ore/40
   ]
 }

@@ -6,7 +6,7 @@ consumes: {
   items: [
     aoen-tide-coral/3
     aoen-ember-slag/1
-    sand/1
+    aoen-void-shard/1
   ]
 }
 health: 640
@@ -16,14 +16,12 @@ itemCapacity: 28
 outputItem: aoen-tide-composite/1
 craftEffect: smeltsmoke
 requirements: [
-  metaglass/100
-  silicon/80
-  aoen-tide-coral/45
+  aoen-tide-coral/145
+  aoen-nocturne-plate/80
 ]
 research: {
   parent: aoen-nocturne-smelter
   requirements: [
-    metaglass/60
-    aoen-tide-coral/40
+    aoen-tide-coral/100
   ]
 }

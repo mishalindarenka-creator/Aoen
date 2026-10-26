@@ -15,10 +15,10 @@ ammoPerShot: 2
 maxAmmo: 35
 shake: 2.5
 requirements: [
-  thorium/160
+  aoen-pale-mythril/160
   aoen-ceramite/140
-  plastanium/80
-  graphite/100
+  aoen-tide-composite/80
+  aoen-ember-slag/100
 ]
 ammoTypes: {
   aoen-ceramite: {
@@ -37,7 +37,7 @@ ammoTypes: {
     frontColor: e8a070
     backColor: 884422
   }
-  thorium: {
+  aoen-pale-mythril: {
     type: ArtilleryBulletType
     damage: 90
     splashDamage: 70
@@ -49,20 +49,7 @@ ammoTypes: {
     collidesTiles: false
     hitEffect: explosion
   }
-  blast-compound: {
-    type: ArtilleryBulletType
-    damage: 80
-    splashDamage: 120
-    splashDamageRadius: 48
-    speed: 2.0
-    lifetime: 135
-    width: 16
-    height: 16
-    collidesTiles: false
-    hitEffect: explosion
-    status: blasted
-  }
-  pyratite: {
+  aoen-ember-slag: {
     type: ArtilleryBulletType
     damage: 70
     splashDamage: 60
@@ -81,6 +68,6 @@ research: {
   parent: aoen-tyrant-rail
   requirements: [
     aoen-ceramite/60
-    thorium/50
+    aoen-pale-mythril/50
   ]
 }

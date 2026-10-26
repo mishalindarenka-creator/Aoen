@@ -3,20 +3,19 @@ category: power
 size: 1
 consumes: {
   items: [
-    coal/1
+    aoen-ember-slag/1
   ]
 }
 health: 220
 powerProduction: 2.4
 itemDuration: 90
 requirements: [
-  copper/30
-  lead/25
-  aoen-void-shard/15
+  aoen-nocturne-ore/30
+  aoen-void-shard/40
 ]
 research: {
-  parent: combustion-generator
+  parent: aoen-dark-drill
   requirements: [
-    copper/60
+    aoen-nocturne-ore/60
   ]
 }

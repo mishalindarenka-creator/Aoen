@@ -142,7 +142,7 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t6
   requirements: [
-    phase-fabric/70
-    thorium/100
+    aoen-aether-dust/70
+    aoen-pale-mythril/100
   ]
 }

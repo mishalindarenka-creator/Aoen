@@ -15,9 +15,9 @@ ammoPerShot: 2
 maxAmmo: 40
 shake: 3
 requirements: [
-  thorium/220
-  plastanium/140
-  surge-alloy/90
+  aoen-pale-mythril/220
+  aoen-tide-composite/140
+  aoen-abyssal-alloy/90
   aoen-ceramite/120
   aoen-aether-dust/70
 ]
@@ -37,7 +37,7 @@ ammoTypes: {
     status: aoen-bleeding
     statusDuration: 90
   }
-  thorium: {
+  aoen-pale-mythril: {
     type: PointBulletType
     damage: 260
     speed: 0.01
@@ -48,7 +48,7 @@ ammoTypes: {
     splashDamage: 25
     splashDamageRadius: 14
   }
-  surge-alloy: {
+  aoen-abyssal-alloy: {
     type: PointBulletType
     damage: 400
     speed: 0.01
@@ -79,7 +79,7 @@ ammoTypes: {
 research: {
   parent: aoen-eclipse-beam
   requirements: [
-    surge-alloy/40
+    aoen-abyssal-alloy/40
     aoen-ceramite/50
   ]
 }

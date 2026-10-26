@@ -4,13 +4,12 @@ speed: 0.12
 displayedSpeed: 18
 health: 90
 requirements: [
-  copper/1
-  lead/1
-  aoen-void-shard/1
+  aoen-nocturne-ore/1
+  aoen-void-shard/2
 ]
 research: {
-  parent: conveyor
+  parent: core-nucleus
   requirements: [
-    copper/50
+    aoen-nocturne-ore/50
   ]
 }

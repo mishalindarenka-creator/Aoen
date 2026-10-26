@@ -10,13 +10,13 @@ drillTime: 260
 liquidBoostIntensity: 1.8
 hardnessDrillMultiplier: 40
 requirements: [
-  copper/50
-  graphite/30
+  aoen-nocturne-ore/50
+  aoen-ember-slag/30
   aoen-void-shard/25
 ]
 research: {
-  parent: pneumatic-drill
+  parent: aoen-dark-conveyor
   requirements: [
-    graphite/40
+    aoen-ember-slag/40
   ]
 }

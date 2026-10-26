@@ -21,8 +21,8 @@ shoot: {
   spread: 6
 }
 requirements: [
-  metaglass/120
-  titanium/90
+  aoen-tide-coral/120
+  aoen-abyssal-quartz/90
   aoen-tide-composite/55
   aoen-abyssal-alloy/30
 ]
@@ -99,7 +99,7 @@ ammoTypes: {
 research: {
   parent: aoen-nocturne-bolt
   requirements: [
-    titanium/60
+    aoen-abyssal-quartz/60
     aoen-tide-composite/40
   ]
 }

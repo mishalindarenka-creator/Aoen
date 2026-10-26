@@ -4,13 +4,12 @@ range: 6
 transportTime: 2
 health: 110
 requirements: [
-  lead/8
-  graphite/6
-  aoen-void-shard/4
+  aoen-void-shard/12
+  aoen-ember-slag/6
 ]
 research: {
   parent: aoen-dark-conveyor
   requirements: [
-    graphite/40
+    aoen-ember-slag/40
   ]
 }

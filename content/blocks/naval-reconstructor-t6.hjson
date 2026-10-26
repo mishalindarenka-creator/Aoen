@@ -4,26 +4,26 @@ size: 9
 consumes: {
   power: 24
   items: [
-    silicon/200
-    metaglass/160
-    thorium/100
-    surge-alloy/70
+    aoen-nocturne-plate/200
+    aoen-tide-coral/160
+    aoen-pale-mythril/100
+    aoen-abyssal-alloy/70
   ]
 }
 floating: true
 researchCostMultiplier: 0.95
 requirements: [
-  copper/1300
-  lead/1000
-  metaglass/700
-  thorium/380
-  phase-fabric/180
-  surge-alloy/200
+  aoen-nocturne-ore/1300
+  aoen-void-shard/1000
+  aoen-tide-coral/700
+  aoen-pale-mythril/380
+  aoen-aether-dust/180
+  aoen-abyssal-alloy/200
 ]
 research: {
   parent: aoen-naval-reconstructor-t5
   requirements: [
-    surge-alloy/90
-    thorium/120
+    aoen-abyssal-alloy/90
+    aoen-pale-mythril/120
   ]
 }

@@ -215,7 +215,7 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t5
   requirements: [
-    surge-alloy/40
-    phase-fabric/30
+    aoen-abyssal-alloy/40
+    aoen-aether-dust/30
   ]
 }

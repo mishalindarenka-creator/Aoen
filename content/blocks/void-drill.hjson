@@ -10,15 +10,15 @@ drillTime: 140
 liquidBoostIntensity: 2.2
 hardnessDrillMultiplier: 55
 requirements: [
-  titanium/120
-  thorium/80
+  aoen-abyssal-quartz/120
+  aoen-pale-mythril/80
   aoen-ceramite/60
-  silicon/100
+  aoen-nocturne-plate/100
 ]
 research: {
   parent: aoen-dark-drill
   requirements: [
-    thorium/50
+    aoen-pale-mythril/50
     aoen-ceramite/30
   ]
 }

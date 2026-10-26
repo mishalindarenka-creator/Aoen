@@ -16,15 +16,14 @@ outputItem: aoen-abyssal-alloy/1
 craftEffect: smeltsmoke
 updateEffect: smeltsmoke
 requirements: [
-  titanium/120
-  silicon/90
+  aoen-abyssal-quartz/120
+  aoen-nocturne-plate/130
   aoen-pale-mythril/60
-  aoen-nocturne-plate/40
 ]
 research: {
   parent: aoen-abyssal-foundry
   requirements: [
     aoen-pale-mythril/50
-    silicon/60
+    aoen-nocturne-plate/60
   ]
 }

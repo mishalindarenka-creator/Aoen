@@ -7,7 +7,7 @@ requirements: [
   aoen-ceramite/6
 ]
 research: {
-  parent: titanium-wall
+  parent: aoen-ceramite-forge
   requirements: [
     aoen-ceramite/20
   ]

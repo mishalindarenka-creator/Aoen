@@ -19,13 +19,13 @@ shoot: {
   spread: 4
 }
 requirements: [
-  titanium/120
-  silicon/100
+  aoen-abyssal-quartz/120
+  aoen-nocturne-plate/100
   aoen-void-shard/80
-  graphite/90
+  aoen-ember-slag/90
 ]
 ammoTypes: {
-  silicon: {
+  aoen-nocturne-plate: {
     type: BasicBulletType
     damage: 14
     speed: 5.0
@@ -36,7 +36,7 @@ ammoTypes: {
     frontColor: ddeeff
     backColor: 556677
   }
-  graphite: {
+  aoen-ember-slag: {
     type: BasicBulletType
     damage: 18
     speed: 4.6
@@ -60,7 +60,7 @@ ammoTypes: {
     frontColor: ccbbff
     backColor: 443366
   }
-  metaglass: {
+  aoen-tide-coral: {
     type: BasicBulletType
     damage: 12
     splashDamage: 16
@@ -74,7 +74,7 @@ ammoTypes: {
 research: {
   parent: aoen-void-flak
   requirements: [
-    silicon/50
+    aoen-nocturne-plate/50
     aoen-void-shard/40
   ]
 }

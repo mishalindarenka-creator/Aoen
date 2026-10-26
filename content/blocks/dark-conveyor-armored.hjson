@@ -6,8 +6,8 @@ health: 220
 armor: 4
 requirements: [
   aoen-ceramite/1
-  thorium/1
-  graphite/1
+  aoen-pale-mythril/1
+  aoen-ember-slag/1
 ]
 research: {
   parent: aoen-dark-conveyor

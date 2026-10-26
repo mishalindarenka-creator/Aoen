@@ -129,7 +129,7 @@ requirements: {
 research: {
   parent: aoen-naval-reconstructor-t3
   requirements: [
-    metaglass/50
-    titanium/40
+    aoen-tide-coral/50
+    aoen-abyssal-quartz/40
   ]
 }

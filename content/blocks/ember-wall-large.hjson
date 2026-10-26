@@ -4,8 +4,7 @@ size: 2
 health: 5600
 armor: 10
 requirements: [
-  aoen-ember-slag/40
-  graphite/24
+  aoen-ember-slag/64
 ]
 research: {
   parent: aoen-ember-wall

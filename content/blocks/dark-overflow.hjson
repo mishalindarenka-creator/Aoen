@@ -2,8 +2,7 @@ type: OverflowGate
 category: distribution
 health: 80
 requirements: [
-  lead/2
-  aoen-void-shard/1
+  aoen-void-shard/3
 ]
 research: {
   parent: aoen-dark-router

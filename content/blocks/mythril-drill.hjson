@@ -15,15 +15,14 @@ consumes: {
 }
 health: 720
 requirements: [
-  titanium/100
-  silicon/80
+  aoen-abyssal-quartz/100
+  aoen-nocturne-plate/110
   aoen-pale-mythril/40
-  aoen-nocturne-plate/30
 ]
 research: {
   parent: aoen-void-drill
   requirements: [
-    titanium/70
+    aoen-abyssal-quartz/70
     aoen-pale-mythril/35
   ]
 }

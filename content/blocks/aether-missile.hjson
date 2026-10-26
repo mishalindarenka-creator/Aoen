@@ -19,27 +19,14 @@ shoot: {
   spread: 6
 }
 requirements: [
-  plastanium/120
-  silicon/140
-  thorium/80
+  aoen-tide-composite/120
+  aoen-nocturne-plate/140
+  aoen-pale-mythril/80
   aoen-aether-dust/80
   aoen-ceramite/40
 ]
 ammoTypes: {
-  blast-compound: {
-    type: MissileBulletType
-    damage: 55
-    splashDamage: 45
-    splashDamageRadius: 28
-    speed: 3.4
-    lifetime: 90
-    width: 10
-    height: 12
-    homingPower: 0.14
-    homingRange: 80
-    trailChance: 0.4
-  }
-  pyratite: {
+  aoen-ember-slag: {
     type: MissileBulletType
     damage: 40
     splashDamage: 35
@@ -87,9 +74,9 @@ ammoTypes: {
   }
 }
 research: {
-  parent: aoen-void-flak
+  parent: aoen-wave-scatter
   requirements: [
-    plastanium/40
-    aoen-aether-dust/40
+    aoen-aether-dust/50
+    aoen-tide-composite/40
   ]
 }

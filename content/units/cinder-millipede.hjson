@@ -111,7 +111,6 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t3
   requirements: [
-    graphite/40
-    coal/30
+    aoen-ember-slag/70
   ]
 }

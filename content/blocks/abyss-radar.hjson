@@ -7,14 +7,14 @@ consumes: {
 health: 480
 fogRadius: 42
 requirements: [
-  silicon/90
-  titanium/70
+  aoen-nocturne-plate/90
+  aoen-abyssal-quartz/70
   aoen-abyssal-alloy/35
 ]
 research: {
   parent: aoen-abyssal-foundry
   requirements: [
-    silicon/50
+    aoen-nocturne-plate/50
     aoen-abyssal-quartz/40
   ]
 }

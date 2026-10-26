@@ -19,13 +19,13 @@ shoot: {
   spread: 4
 }
 requirements: [
-  titanium/100
-  graphite/80
+  aoen-abyssal-quartz/100
+  aoen-ember-slag/80
   aoen-void-shard/70
-  metaglass/40
+  aoen-tide-coral/40
 ]
 ammoTypes: {
-  metaglass: {
+  aoen-tide-coral: {
     type: FlakBulletType
     damage: 16
     splashDamage: 28
@@ -51,7 +51,7 @@ ammoTypes: {
     frontColor: bb99ff
     backColor: 442266
   }
-  plastanium: {
+  aoen-tide-composite: {
     type: FlakBulletType
     damage: 20
     splashDamage: 40
@@ -75,7 +75,7 @@ ammoTypes: {
 research: {
   parent: aoen-wave-scatter
   requirements: [
-    titanium/50
+    aoen-abyssal-quartz/50
     aoen-void-shard/40
   ]
 }

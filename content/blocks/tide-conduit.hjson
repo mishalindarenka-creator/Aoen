@@ -5,13 +5,11 @@ health: 90
 liquidCapacity: 16
 liquidPressure: 1.15
 requirements: [
-  metaglass/2
-  aoen-tide-coral/1
+  aoen-tide-coral/3
 ]
 research: {
   parent: aoen-tide-kiln
   requirements: [
-    metaglass/30
-    aoen-tide-coral/20
+    aoen-tide-coral/50
   ]
 }

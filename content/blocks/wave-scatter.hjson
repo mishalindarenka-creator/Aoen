@@ -20,13 +20,13 @@ shoot: {
   spread: 7
 }
 requirements: [
-  copper/140
-  graphite/90
-  metaglass/50
+  aoen-nocturne-ore/140
+  aoen-ember-slag/90
+  aoen-tide-coral/50
   aoen-void-shard/55
 ]
 ammoTypes: {
-  metaglass: {
+  aoen-tide-coral: {
     type: FlakBulletType
     damage: 14
     splashDamage: 26
@@ -38,7 +38,7 @@ ammoTypes: {
     collidesGround: true
     explodeRange: 18
   }
-  silicon: {
+  aoen-nocturne-plate: {
     type: FlakBulletType
     damage: 12
     splashDamage: 20
@@ -66,7 +66,7 @@ ammoTypes: {
     backColor: 226688
     hitEffect: freezing
   }
-  blast-compound: {
+  aoen-ember-slag: {
     type: FlakBulletType
     damage: 18
     splashDamage: 55
@@ -82,7 +82,7 @@ ammoTypes: {
 research: {
   parent: aoen-shard-turret
   requirements: [
-    graphite/60
+    aoen-ember-slag/60
     aoen-void-shard/40
   ]
 }

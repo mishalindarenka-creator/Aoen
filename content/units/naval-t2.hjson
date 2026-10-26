@@ -129,6 +129,6 @@ requirements: {
 research: {
   parent: aoen-naval-reconstructor
   requirements: [
-    copper/50
+    aoen-nocturne-ore/50
   ]
 }

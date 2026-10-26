@@ -187,7 +187,7 @@ requirements: {
 research: {
   parent: aoen-naval-reconstructor-t5
   requirements: [
-    surge-alloy/45
-    thorium/70
+    aoen-abyssal-alloy/45
+    aoen-pale-mythril/70
   ]
 }

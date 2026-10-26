@@ -29,16 +29,14 @@ shootType: {
   incendAmount: 1
 }
 requirements: [
-  surge-alloy/160
-  phase-fabric/120
-  aoen-aether-dust/140
+  aoen-abyssal-alloy/160
+  aoen-aether-dust/260
   aoen-ceramite/100
-  silicon/200
+  aoen-nocturne-plate/200
 ]
 research: {
   parent: aoen-aether-missile
   requirements: [
-    phase-fabric/50
-    aoen-aether-dust/60
+    aoen-aether-dust/110
   ]
 }

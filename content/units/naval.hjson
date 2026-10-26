@@ -116,13 +116,13 @@ requirements: {
   block: aoen-naval-fabricator
   time: 2700
   requirements: [
-    silicon/22
-    metaglass/30
+    aoen-nocturne-plate/22
+    aoen-tide-coral/30
   ]
 }
 research: {
   parent: aoen-naval-fabricator
   requirements: [
-    copper/40
+    aoen-nocturne-ore/40
   ]
 }

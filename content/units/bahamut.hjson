@@ -372,17 +372,17 @@ requirements: {
   block: aoen-ground-fabricator
   time: 4800
   requirements: [
-    silicon/280
-    thorium/180
-    phase-fabric/100
-    surge-alloy/80
+    aoen-nocturne-plate/280
+    aoen-pale-mythril/180
+    aoen-aether-dust/100
+    aoen-abyssal-alloy/80
   ]
 }
 research: {
   parent: aoen-ground-reconstructor-t6
   requirements: [
-    surge-alloy/120
-    phase-fabric/100
-    thorium/160
+    aoen-abyssal-alloy/120
+    aoen-aether-dust/100
+    aoen-pale-mythril/160
   ]
 }

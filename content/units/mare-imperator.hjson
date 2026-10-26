@@ -202,7 +202,7 @@ requirements: {
 research: {
   parent: aoen-naval-reconstructor-t6
   requirements: [
-    surge-alloy/100
-    thorium/120
+    aoen-abyssal-alloy/100
+    aoen-pale-mythril/120
   ]
 }

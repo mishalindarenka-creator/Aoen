@@ -5,8 +5,8 @@ consumes: {
   power: 6
   items: [
     aoen-ceramite/1
-    coal/2
-    titanium/1
+    aoen-ember-slag/2
+    aoen-abyssal-quartz/1
   ]
 }
 health: 900
@@ -16,10 +16,10 @@ itemCapacity: 30
 outputItem: aoen-ceramite/3
 craftEffect: smeltsmoke
 requirements: [
-  titanium/140
+  aoen-abyssal-quartz/140
   aoen-ceramite/80
-  silicon/100
-  graphite/80
+  aoen-nocturne-plate/100
+  aoen-ember-slag/80
 ]
 research: {
   parent: aoen-ceramite-forge

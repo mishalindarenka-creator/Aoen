@@ -1,8 +1,8 @@
 name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — Crabzilla T7, redrawn crabs, expanded world blocks."
-version: "2.1.0"
+description: "[#888888]Aoen[] — Aoen-only materials for all blocks/units/constructors."
+version: "2.1.1"
 minGameVersion: 160.7
 dependencies: []
 hidden: false

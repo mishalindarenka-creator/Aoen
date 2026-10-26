@@ -313,9 +313,8 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t7
   requirements: [
-    surge-alloy/160
-    phase-fabric/120
-    aoen-abyssal-alloy/80
+    aoen-abyssal-alloy/240
+    aoen-aether-dust/120
     aoen-nocturne-plate/100
   ]
 }

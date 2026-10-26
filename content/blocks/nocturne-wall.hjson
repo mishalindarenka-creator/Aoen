@@ -7,7 +7,7 @@ requirements: [
   aoen-nocturne-plate/6
 ]
 research: {
-  parent: titanium-wall
+  parent: aoen-ceramite-wall
   requirements: [
     aoen-nocturne-plate/20
   ]

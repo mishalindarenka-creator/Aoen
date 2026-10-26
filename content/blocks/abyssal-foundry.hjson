@@ -6,7 +6,7 @@ consumes: {
   items: [
     aoen-abyssal-quartz/2
     aoen-pale-mythril/1
-    silicon/1
+    aoen-nocturne-plate/1
   ]
 }
 health: 780
@@ -16,15 +16,13 @@ itemCapacity: 32
 outputItem: aoen-abyssal-alloy/1
 craftEffect: smeltsmoke
 requirements: [
-  titanium/130
-  silicon/110
-  aoen-abyssal-quartz/50
+  aoen-abyssal-quartz/180
+  aoen-nocturne-plate/110
   aoen-pale-mythril/40
 ]
 research: {
   parent: aoen-nocturne-smelter
   requirements: [
-    titanium/90
-    aoen-abyssal-quartz/50
+    aoen-abyssal-quartz/140
   ]
 }

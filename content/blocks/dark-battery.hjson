@@ -6,13 +6,13 @@ consumes: {
 }
 health: 200
 requirements: [
-  lead/30
-  silicon/20
+  aoen-void-shard/30
+  aoen-nocturne-plate/20
   aoen-aether-dust/10
 ]
 research: {
-  parent: battery
+  parent: aoen-dark-generator
   requirements: [
-    silicon/40
+    aoen-nocturne-plate/40
   ]
 }

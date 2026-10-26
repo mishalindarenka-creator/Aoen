@@ -20,12 +20,11 @@ shoot: {
   spread: 3.5
 }
 requirements: [
-  copper/50
-  lead/40
-  aoen-void-shard/25
+  aoen-nocturne-ore/50
+  aoen-void-shard/65
 ]
 ammoTypes: {
-  copper: {
+  aoen-nocturne-ore: {
     type: BasicBulletType
     damage: 22
     speed: 4.4
@@ -37,18 +36,7 @@ ammoTypes: {
     shootEffect: shootSmall
     hitEffect: hitBulletColor
   }
-  lead: {
-    type: BasicBulletType
-    damage: 18
-    speed: 3.8
-    lifetime: 52
-    width: 8
-    height: 10
-    knockback: 0.8
-    frontColor: a8a8c0
-    backColor: 505068
-  }
-  graphite: {
+  aoen-ember-slag: {
     type: BasicBulletType
     damage: 28
     speed: 4.6
@@ -79,9 +67,9 @@ ammoTypes: {
   }
 }
 research: {
-  parent: duo
+  parent: aoen-dark-drill
   requirements: [
-    copper/80
+    aoen-nocturne-ore/80
     aoen-void-shard/30
   ]
 }

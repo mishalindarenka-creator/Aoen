@@ -21,11 +21,9 @@ shoot: {
   spread: 0
 }
 requirements: [
-  thorium/180
-  surge-alloy/90
+  aoen-pale-mythril/230
+  aoen-abyssal-alloy/150
   aoen-nocturne-plate/80
-  aoen-abyssal-alloy/60
-  aoen-pale-mythril/50
 ]
 ammoTypes: {
   aoen-ember-slag: {
@@ -46,17 +44,20 @@ ammoTypes: {
   }
   aoen-abyssal-alloy: {
     type: ArtilleryBulletType
-    damage: 140
-    splashDamage: 220
-    splashDamageRadius: 56
-    speed: 2.4
-    lifetime: 125
-    width: 20
-    height: 20
+    damage: 160
+    splashDamage: 260
+    splashDamageRadius: 60
+    speed: 2.6
+    lifetime: 120
+    width: 22
+    height: 22
     status: shocked
-    statusDuration: 80
-    frontColor: a0e8ff
-    backColor: 204060
+    statusDuration: 110
+    lightning: 4
+    lightningLength: 8
+    lightningDamage: 28
+    frontColor: ffee88
+    backColor: 886600
     hitEffect: massiveExplosion
   }
   aoen-nocturne-plate: {
@@ -84,29 +85,11 @@ ammoTypes: {
       statusDuration: 40
     }
   }
-  surge-alloy: {
-    type: ArtilleryBulletType
-    damage: 160
-    splashDamage: 260
-    splashDamageRadius: 60
-    speed: 2.6
-    lifetime: 120
-    width: 22
-    height: 22
-    status: shocked
-    statusDuration: 110
-    lightning: 4
-    lightningLength: 8
-    lightningDamage: 28
-    frontColor: ffee88
-    backColor: 886600
-    hitEffect: massiveExplosion
-  }
 }
 research: {
   parent: aoen-tide-pulse
   requirements: [
-    thorium/80
+    aoen-pale-mythril/80
     aoen-abyssal-alloy/50
   ]
 }

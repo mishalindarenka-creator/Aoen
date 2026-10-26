@@ -20,8 +20,8 @@ shoot: {
   spread: 4
 }
 requirements: [
-  copper/90
-  graphite/70
+  aoen-nocturne-ore/90
+  aoen-ember-slag/70
   aoen-nocturne-plate/40
 ]
 ammoTypes: {
@@ -52,7 +52,7 @@ ammoTypes: {
     backColor: 442266
     hitEffect: hitLaserBlast
   }
-  graphite: {
+  aoen-ember-slag: {
     type: BasicBulletType
     damage: 30
     speed: 4.4
@@ -62,7 +62,7 @@ ammoTypes: {
     pierce: true
     pierceCap: 2
   }
-  silicon: {
+  aoen-aether-dust: {
     type: MissileBulletType
     damage: 24
     splashDamage: 12
@@ -77,7 +77,7 @@ ammoTypes: {
 research: {
   parent: aoen-shard-turret
   requirements: [
-    graphite/50
+    aoen-ember-slag/50
     aoen-nocturne-plate/30
   ]
 }

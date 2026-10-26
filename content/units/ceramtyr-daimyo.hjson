@@ -218,7 +218,7 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t3
   requirements: [
-    copper/120
-    thorium/40
+    aoen-nocturne-ore/120
+    aoen-pale-mythril/40
   ]
 }

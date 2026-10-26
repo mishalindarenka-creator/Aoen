@@ -12,10 +12,10 @@ itemDuration: 120
 explosionRadius: 8
 explosionDamage: 400
 requirements: [
-  lead/160
-  silicon/140
+  aoen-void-shard/160
+  aoen-nocturne-plate/140
   aoen-aether-dust/80
-  thorium/60
+  aoen-pale-mythril/60
 ]
 research: {
   parent: aoen-dark-generator

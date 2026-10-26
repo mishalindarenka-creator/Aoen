@@ -2,9 +2,8 @@ type: Sorter
 category: distribution
 health: 80
 requirements: [
-  lead/2
-  copper/2
-  aoen-void-shard/1
+  aoen-void-shard/3
+  aoen-nocturne-ore/2
 ]
 research: {
   parent: aoen-dark-router

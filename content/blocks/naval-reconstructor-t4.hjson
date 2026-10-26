@@ -4,23 +4,23 @@ size: 5
 consumes: {
   power: 8
   items: [
-    silicon/80
-    metaglass/70
-    plastanium/30
+    aoen-nocturne-plate/80
+    aoen-tide-coral/70
+    aoen-tide-composite/30
   ]
 }
 floating: true
 researchCostMultiplier: 0.8
 requirements: [
-  copper/450
-  lead/360
-  metaglass/240
-  plastanium/90
+  aoen-nocturne-ore/450
+  aoen-void-shard/360
+  aoen-tide-coral/240
+  aoen-tide-composite/90
 ]
 research: {
   parent: aoen-naval-reconstructor-t3
   requirements: [
-    plastanium/40
-    titanium/80
+    aoen-tide-composite/40
+    aoen-abyssal-quartz/80
   ]
 }

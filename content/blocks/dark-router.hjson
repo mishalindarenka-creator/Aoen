@@ -2,7 +2,7 @@ type: Router
 category: distribution
 health: 90
 requirements: [
-  copper/3
+  aoen-nocturne-ore/3
   aoen-void-shard/1
 ]
 research: {

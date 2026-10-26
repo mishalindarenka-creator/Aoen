@@ -151,7 +151,7 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor-t4
   requirements: [
-    plastanium/40
-    silicon/50
+    aoen-tide-composite/40
+    aoen-nocturne-plate/50
   ]
 }

@@ -20,11 +20,11 @@ shoot: {
   spread: 7
 }
 requirements: [
-  surge-alloy/200
-  phase-fabric/100
+  aoen-abyssal-alloy/200
+  aoen-aether-dust/100
   aoen-ceramite/180
-  thorium/160
-  plastanium/120
+  aoen-pale-mythril/160
+  aoen-tide-composite/120
 ]
 ammoTypes: {
   aoen-ceramite: {
@@ -45,7 +45,7 @@ ammoTypes: {
     backColor: 662211
     hitEffect: hitBulletBig
   }
-  surge-alloy: {
+  aoen-abyssal-alloy: {
     type: BasicBulletType
     damage: 95
     speed: 5.5
@@ -76,7 +76,7 @@ ammoTypes: {
     frontColor: bb99ff
     backColor: 331155
   }
-  phase-fabric: {
+  aoen-aether-dust: {
     type: MissileBulletType
     damage: 55
     splashDamage: 45
@@ -92,7 +92,7 @@ ammoTypes: {
     backColor: 8877aa
     hitEffect: blastExplosion
   }
-  plastanium: {
+  aoen-tide-composite: {
     type: FlakBulletType
     damage: 28
     splashDamage: 55
@@ -108,7 +108,7 @@ ammoTypes: {
     frontColor: 88ddaa
     backColor: 226644
   }
-  thorium: {
+  aoen-pale-mythril: {
     type: LaserBulletType
     damage: 110
     length: 200
@@ -121,7 +121,7 @@ ammoTypes: {
     sideWidth: 0.8
     sideLength: 24
   }
-  silicon: {
+  aoen-nocturne-plate: {
     type: SapBulletType
     damage: 48
     length: 160
@@ -132,7 +132,7 @@ ammoTypes: {
     status: sapped
     statusDuration: 100
   }
-  pyratite: {
+  aoen-ember-slag: {
     type: BasicBulletType
     damage: 40
     splashDamage: 50
@@ -154,7 +154,7 @@ ammoTypes: {
 research: {
   parent: aoen-ceramite-howitzer
   requirements: [
-    surge-alloy/60
+    aoen-abyssal-alloy/60
     aoen-ceramite/80
   ]
 }

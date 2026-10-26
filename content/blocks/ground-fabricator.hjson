@@ -8,15 +8,15 @@ itemCapacity: 10
 researchCostMultiplier: 0.55
 
 requirements: [
-  copper/80
-  lead/110
-  silicon/70
+  aoen-nocturne-ore/80
+  aoen-void-shard/110
+  aoen-nocturne-plate/70
 ]
 
 research: {
-  parent: ground-factory
+  parent: core-nucleus
   requirements: [
-    copper/120
-    silicon/80
+    aoen-nocturne-ore/120
+    aoen-nocturne-plate/80
   ]
 }

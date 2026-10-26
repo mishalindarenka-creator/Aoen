@@ -5,8 +5,8 @@ consumes: {
   power: 5.5
   items: [
     aoen-void-shard/1
-    silicon/2
-    phase-fabric/1
+    aoen-nocturne-plate/2
+    aoen-ceramite/1
   ]
 }
 health: 800
@@ -16,15 +16,15 @@ itemCapacity: 30
 outputItem: aoen-aether-dust/2
 craftEffect: formsmoke
 requirements: [
-  thorium/140
-  silicon/120
+  aoen-pale-mythril/140
+  aoen-nocturne-plate/120
   aoen-ceramite/80
-  plastanium/60
+  aoen-tide-composite/60
 ]
 research: {
   parent: aoen-ceramite-forge
   requirements: [
-    thorium/60
+    aoen-pale-mythril/60
     aoen-ceramite/40
   ]
 }

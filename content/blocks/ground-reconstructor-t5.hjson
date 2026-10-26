@@ -4,25 +4,25 @@ size: 7
 consumes: {
   power: 12
   items: [
-    silicon/140
-    thorium/70
-    phase-fabric/40
-    surge-alloy/25
+    aoen-nocturne-plate/140
+    aoen-pale-mythril/70
+    aoen-aether-dust/40
+    aoen-abyssal-alloy/25
   ]
 }
 researchCostMultiplier: 0.85
 requirements: [
-  copper/700
-  lead/500
-  silicon/420
-  thorium/220
-  phase-fabric/120
-  surge-alloy/80
+  aoen-nocturne-ore/700
+  aoen-void-shard/500
+  aoen-nocturne-plate/420
+  aoen-pale-mythril/220
+  aoen-aether-dust/120
+  aoen-abyssal-alloy/80
 ]
 research: {
   parent: aoen-ground-reconstructor-t4
   requirements: [
-    surge-alloy/40
-    phase-fabric/50
+    aoen-abyssal-alloy/40
+    aoen-aether-dust/50
   ]
 }

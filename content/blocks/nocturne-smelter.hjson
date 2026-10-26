@@ -5,7 +5,7 @@ consumes: {
   power: 2.4
   items: [
     aoen-nocturne-ore/2
-    coal/1
+    aoen-ember-slag/1
   ]
 }
 health: 380
@@ -16,15 +16,14 @@ outputItem: aoen-nocturne-plate/1
 craftEffect: smeltsmoke
 updateEffect: smeltsmoke
 requirements: [
-  copper/70
-  lead/55
-  graphite/45
-  aoen-nocturne-ore/30
+  aoen-nocturne-ore/70
+  aoen-void-shard/55
+  aoen-ember-slag/45
 ]
 research: {
   parent: aoen-void-smelter
   requirements: [
-    copper/80
-    aoen-nocturne-ore/40
+    aoen-nocturne-ore/80
+    aoen-ember-slag/40
   ]
 }

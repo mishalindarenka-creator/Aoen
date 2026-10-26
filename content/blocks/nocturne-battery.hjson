@@ -6,14 +6,12 @@ consumes: {
 }
 health: 520
 requirements: [
-  lead/80
-  silicon/60
-  aoen-nocturne-plate/40
+  aoen-void-shard/80
+  aoen-nocturne-plate/100
 ]
 research: {
   parent: aoen-dark-battery
   requirements: [
-    silicon/50
-    aoen-nocturne-plate/30
+    aoen-nocturne-plate/80
   ]
 }

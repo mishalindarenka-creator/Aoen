@@ -4,7 +4,7 @@ speed: 32
 capacity: 8
 health: 80
 requirements: [
-  copper/2
+  aoen-nocturne-ore/2
   aoen-void-shard/1
 ]
 research: {

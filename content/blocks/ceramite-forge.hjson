@@ -5,8 +5,8 @@ consumes: {
   power: 4.2
   items: [
     aoen-void-shard/2
-    titanium/1
-    graphite/1
+    aoen-abyssal-quartz/1
+    aoen-ember-slag/1
   ]
 }
 health: 720
@@ -16,14 +16,14 @@ itemCapacity: 30
 outputItem: aoen-ceramite/1
 craftEffect: smeltsmoke
 requirements: [
-  titanium/120
-  silicon/100
+  aoen-abyssal-quartz/120
+  aoen-nocturne-plate/100
   aoen-void-shard/60
 ]
 research: {
   parent: aoen-void-smelter
   requirements: [
-    titanium/80
+    aoen-abyssal-quartz/80
     aoen-void-shard/40
   ]
 }

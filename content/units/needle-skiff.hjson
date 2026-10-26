@@ -171,7 +171,7 @@ requirements: {
 research: {
   parent: aoen-naval-reconstructor-t4
   requirements: [
-    plastanium/50
-    thorium/40
+    aoen-tide-composite/50
+    aoen-pale-mythril/40
   ]
 }

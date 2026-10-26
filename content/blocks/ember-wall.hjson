@@ -4,8 +4,7 @@ size: 1
 health: 1400
 armor: 10
 requirements: [
-  aoen-ember-slag/10
-  graphite/6
+  aoen-ember-slag/16
 ]
 research: {
   parent: aoen-ceramite-wall

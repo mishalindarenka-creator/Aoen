@@ -9,15 +9,15 @@ floating: true
 researchCostMultiplier: 0.55
 
 requirements: [
-  copper/130
-  lead/120
-  metaglass/90
+  aoen-nocturne-ore/130
+  aoen-void-shard/120
+  aoen-tide-coral/90
 ]
 
 research: {
-  parent: naval-factory
+  parent: core-nucleus
   requirements: [
-    copper/100
-    metaglass/60
+    aoen-nocturne-ore/100
+    aoen-tide-coral/60
   ]
 }

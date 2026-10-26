@@ -173,7 +173,7 @@ requirements: {
 research: {
   parent: aoen-ground-reconstructor
   requirements: [
-    copper/50
-    silicon/30
+    aoen-nocturne-ore/50
+    aoen-nocturne-plate/30
   ]
 }
