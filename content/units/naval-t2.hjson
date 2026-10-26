@@ -9,7 +9,8 @@ hitSize: 15
 accel: 0.32
 rotateSpeed: 2.5
 faceTarget: false
-targetAir: false
+targetAir: true
+range: 95
 researchCostMultiplier: 0.65
 
 trailLength: 22
@@ -57,10 +58,15 @@ weapons: [
     name: naval-t2-shell
     x: 5
     y: -5
-    reload: 30
+    reload: 28
     rotate: true
     inaccuracy: 2
     shootSound: shootArtillery
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 10, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
       damage: 55
@@ -68,11 +74,36 @@ weapons: [
       lifetime: 65
       width: 12
       height: 14
-      splashDamage: 28
-      splashDamageRadius: 24
+      splashDamage: 32
+      splashDamageRadius: 26
       collidesTiles: true
-      buildingDamageMultiplier: 0.72
+      buildingDamageMultiplier: 0.75
       hitEffect: blastExplosion
+    }
+  }
+  {
+    name: naval-t2-laser
+    x: 0
+    y: 4
+    reload: 20
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laser
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 16
+      length: 70
+      width: 3
+      lifetime: 18
+      colors: [ a8e8f8 4488aa 102030 ]
+      status: shocked
+      statusDuration: 30
     }
   }
 ]

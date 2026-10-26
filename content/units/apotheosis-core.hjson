@@ -5,7 +5,7 @@ health: 88000
 armor: 58
 speed: 0.22
 hitSize: 132
-range: 200
+range: 210
 rotateSpeed: 1.1
 
 abilities: [
@@ -31,61 +31,151 @@ weapons: [
     x: 0
     y: 6
     shootY: 14
-    reload: 18
+    reload: 16
     rotate: true
     mirror: false
     continuous: true
     shootSound: laserbig
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 16, under: false }
+    ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 85
-      length: 160
-      width: 14
-      lifetime: 48
+      damage: 90
+      length: 170
+      width: 15
+      lifetime: 50
       colors: [ ffee88 ffaa44 442200 ]
       status: melting
-      statusDuration: 80
-      buildingDamageMultiplier: 1.1
+      statusDuration: 90
+      buildingDamageMultiplier: 1.15
+      shake: 1.2
     }
   }
   {
     name: apotheosis-core-batteries
-    x: 14
+    x: 16
     y: -2
-    reload: 8
+    reload: 7
     rotate: true
     mirror: true
     shootSound: shootBig
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -1, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 10, under: false }
+    ]
     bullet: {
       type: BasicBulletType
-      damage: 70
-      splashDamage: 35
-      splashDamageRadius: 22
-      speed: 4.2
-      lifetime: 48
+      damage: 75
+      splashDamage: 40
+      splashDamageRadius: 24
+      speed: 4.4
+      lifetime: 50
       width: 13
       height: 15
       pierce: true
-      pierceCap: 4
+      pierceCap: 5
       frontColor: ffee88
       backColor: 886622
       hitEffect: hitLaserBlast
+      lightning: 2
+      lightningLength: 6
+      lightningDamage: 16
     }
   }
   {
     name: apotheosis-core-rail
     x: 0
-    y: -8
-    reload: 48
+    y: -10
+    reload: 44
     rotate: true
     mirror: false
     shootSound: railgun
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 5, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 10, under: false, moves: [{ type: PartMove, progress: reload, y: -4 }] }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 18, under: false }
+    ]
     bullet: {
       type: RailBulletType
-      damage: 320
-      length: 170
-      pierceDamageFactor: 0.35
+      damage: 340
+      length: 180
+      pierceDamageFactor: 0.32
       hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 60
+    }
+  }
+  {
+    name: apotheosis-core-missile
+    x: 22
+    y: -12
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 9, under: false }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 70
+      splashDamage: 45
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 70
+      width: 10
+      height: 14
+      homingPower: 0.16
+      trailChance: 0.45
+      status: burning
+      statusDuration: 80
+    }
+  }
+  {
+    name: apotheosis-core-emp
+    x: 0
+    y: 14
+    reload: 70
+    rotate: false
+    mirror: false
+    shootSound: spark
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 80
+      splashDamage: 120
+      splashDamageRadius: 64
+      speed: 3.2
+      lifetime: 40
+      width: 16
+      height: 16
+      powerDamageScl: 3.0
+      powerSclDecrease: 0.45
+      unitDamageScl: 1.3
+      status: unmoving
+      statusDuration: 55
+      hitPowerEffect: hitEmpSpark
+      frontColor: ffee88
+      backColor: 886622
     }
   }
 ]

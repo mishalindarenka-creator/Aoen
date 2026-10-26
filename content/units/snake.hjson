@@ -8,13 +8,12 @@ hitSize: 11
 rotateSpeed: 2.7
 targetAir: false
 canAttack: true
-range: 28
+range: 36
 omniMovement: false
 drawBody: false
 drawCell: false
 researchCostMultiplier: 0.5
 
-# snake motion — small mag so segments form a line, not a pile
 segments: 6
 segmentScl: 3.2
 segmentMag: 0.55
@@ -31,21 +30,53 @@ weapons: [
     x: 0
     y: 4
     shootY: 6
-    reload: 18
+    reload: 16
     mirror: false
     shootSound: shoot
     shootCone: 40
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
     bullet: {
       type: BasicBulletType
       damage: 28
       speed: 3.4
-      lifetime: 22
+      lifetime: 24
       width: 7
       height: 9
       status: corroded
       statusDuration: 80
       frontColor: c8b8ff
       backColor: 554488
+      collidesAir: false
+    }
+  }
+  {
+    name: snake-spit
+    x: 0
+    y: 1
+    reload: 26
+    mirror: false
+    shootSound: flame
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 14
+      splashDamage: 10
+      splashDamageRadius: 12
+      speed: 2.6
+      lifetime: 30
+      width: 8
+      height: 8
+      status: sapped
+      statusDuration: 50
+      frontColor: aa88ff
+      backColor: 442266
       collidesAir: false
     }
   }

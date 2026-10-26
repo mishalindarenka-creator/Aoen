@@ -61,9 +61,14 @@ weapons: [
     name: cinder-millipede-slag
     x: 0
     y: 0
-    reload: 36
+    reload: 32
     mirror: false
     shootSound: bang
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 10, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
       damage: 35
@@ -79,6 +84,32 @@ weapons: [
       hitEffect: explosion
       frontColor: ff6622
       backColor: 882200
+    }
+  }
+  {
+    name: cinder-millipede-fang
+    x: 0
+    y: 6
+    reload: 14
+    mirror: false
+    shootSound: shoot
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 32
+      length: 36
+      width: 12
+      lifetime: 12
+      fromColor: ff8c28
+      toColor: 882200
+      status: burning
+      statusDuration: 80
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
     }
   }
 ]

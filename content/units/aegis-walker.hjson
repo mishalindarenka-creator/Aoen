@@ -131,23 +131,60 @@ weapons: [
     name: aegis-walker-missile
     x: 10
     y: -4
-    reload: 18
+    reload: 16
     rotate: true
     mirror: true
     shootSound: missile
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
     bullet: {
       type: MissileBulletType
-      damage: 38
-      splashDamage: 22
+      damage: 40
+      splashDamage: 24
       splashDamageRadius: 16
-      speed: 3.4
-      lifetime: 50
+      speed: 3.5
+      lifetime: 52
       width: 8
       height: 10
       homingPower: 0.14
       status: slow
       statusDuration: 40
-      trailChance: 0.25
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aegis-walker-emp
+    x: 0
+    y: -6
+    reload: 55
+    rotate: true
+    mirror: false
+    shootSound: spark
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 28
+      splashDamage: 40
+      splashDamageRadius: 36
+      speed: 3.0
+      lifetime: 40
+      width: 12
+      height: 12
+      powerDamageScl: 2.2
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.15
+      status: shocked
+      statusDuration: 60
+      hitPowerEffect: hitEmpSpark
+      frontColor: 80eec0
+      backColor: 204830
     }
   }
 ]

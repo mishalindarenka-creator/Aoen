@@ -16,10 +16,12 @@ def main() -> None:
     run("build_units_sprites.py")
     run("build_snake_sprites.py")
     run("build_bahamut_sprites.py")
+    run("build_weapon_sprites.py")
     run("ensure_unit_sprites.py")
     run("build_block_sprites.py")
     run("build_world_sprites.py")
     run("build_turret_sprites.py")
+    run("fix_ohno.py")
     run("validate_mod.py")
 
 

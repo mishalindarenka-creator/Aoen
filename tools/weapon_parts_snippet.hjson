@@ -1,0 +1,7 @@
+# Reference RegionPart stack for Aoen guns (copy into weapons):
+# parts: [
+#   { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -1, under: true }
+#   { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 3, under: false, moves: [{ type: PartMove, progress: reload, y: -2 }] }
+#   { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 3, under: false, moves: [{ type: PartMove, progress: reload, y: -2 }] }
+#   { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+# ]

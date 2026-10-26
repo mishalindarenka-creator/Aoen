@@ -292,6 +292,11 @@ def main() -> None:
 
     build_bahamut()
 
+    # --- Jababarium-style multi-part weapons ---
+    from build_weapon_sprites import main as build_weapons
+
+    build_weapons()
+
     # --- Mech ---
     build_from_vanilla("boomeranger", "dagger", 1.35, GOLD, "mech")
     for lab in "abc":

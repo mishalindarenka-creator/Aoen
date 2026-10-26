@@ -175,6 +175,37 @@ weapons: [
       backColor: 3344aa
     }
   }
+  {
+    name: storm-sovereign-missile
+    x: 10
+    y: -8
+    reload: 14
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 50
+      splashDamage: 28
+      splashDamageRadius: 18
+      speed: 3.6
+      lifetime: 60
+      width: 9
+      height: 12
+      homingPower: 0.13
+      trailChance: 0.35
+      status: shocked
+      statusDuration: 40
+      lightning: 1
+      lightningLength: 5
+      lightningDamage: 12
+    }
+  }
 ]
 
 requirements: {

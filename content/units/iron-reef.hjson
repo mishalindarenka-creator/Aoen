@@ -5,33 +5,93 @@ armor: 18
 speed: 0.78
 hitSize: 20
 faceTarget: false
-range: 105
+targetAir: true
+range: 115
 trailLength: 22
+
 weapons: [
   {
     name: iron-reef-battery
     x: 0
     y: 2
     shootY: 6
-    reload: 18
+    reload: 16
     rotate: true
     mirror: false
     shootSound: bang
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 5, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 11, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
       damage: 95
-      splashDamage: 36
-      splashDamageRadius: 26
+      splashDamage: 40
+      splashDamageRadius: 28
       speed: 2
       lifetime: 95
       width: 12
       height: 12
-      buildingDamageMultiplier: 1.2
+      buildingDamageMultiplier: 1.25
       frontColor: a0b4c8
       backColor: 405060
     }
   }
+  {
+    name: iron-reef-flak
+    x: 6
+    y: -2
+    reload: 8
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 14
+      splashDamage: 20
+      splashDamageRadius: 18
+      speed: 4.2
+      lifetime: 42
+      width: 7
+      height: 7
+      collidesGround: true
+    }
+  }
+  {
+    name: iron-reef-missile
+    x: 0
+    y: -6
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 38
+      splashDamage: 22
+      splashDamageRadius: 16
+      speed: 3.2
+      lifetime: 60
+      width: 8
+      height: 10
+      homingPower: 0.12
+      trailChance: 0.3
+    }
+  }
 ]
+
 requirements: {
   block: aoen-naval-reconstructor-t3
   previous: aoen-naval-t2

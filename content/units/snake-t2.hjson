@@ -8,7 +8,7 @@ hitSize: 13
 rotateSpeed: 2.5
 targetAir: false
 canAttack: true
-range: 40
+range: 48
 omniMovement: false
 drawBody: false
 drawCell: false
@@ -39,14 +39,18 @@ weapons: [
     x: 0
     y: 5
     shootY: 7
-    reload: 14
+    reload: 12
     mirror: false
     shootSound: shoot
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
     bullet: {
       type: BasicBulletType
       damage: 42
       speed: 3.6
-      lifetime: 26
+      lifetime: 28
       width: 8
       height: 10
       status: corroded
@@ -60,16 +64,21 @@ weapons: [
     name: snake-t2-spit
     x: 0
     y: 2
-    reload: 28
+    reload: 24
     mirror: false
     shootSound: flame
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
       type: BasicBulletType
       damage: 22
-      splashDamage: 14
+      splashDamage: 16
       splashDamageRadius: 14
       speed: 2.8
-      lifetime: 32
+      lifetime: 34
       width: 9
       height: 9
       status: sapped
@@ -77,6 +86,29 @@ weapons: [
       frontColor: aa88ff
       backColor: 442266
       collidesAir: false
+    }
+  }
+  {
+    name: snake-t2-sap
+    x: 0
+    y: -2
+    reload: 20
+    mirror: false
+    shootSound: spark
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 18
+      length: 50
+      width: 0.6
+      lifetime: 14
+      sapStrength: 0.5
+      color: aa66ff
+      status: sapped
+      statusDuration: 70
     }
   }
 ]

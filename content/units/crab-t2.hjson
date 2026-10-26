@@ -109,6 +109,60 @@ weapons: [
       despawnEffect: none
     }
   }
+  {
+    name: crab-t2-spit
+    x: 0
+    y: 5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 26
+      splashDamage: 12
+      splashDamageRadius: 12
+      speed: 3.2
+      lifetime: 36
+      width: 8
+      height: 9
+      status: corroded
+      statusDuration: 70
+      frontColor: d0c0a0
+      backColor: 554433
+    }
+  }
+  {
+    name: crab-t2-flak
+    x: 5
+    y: -4
+    reload: 11
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 12
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 3.8
+      lifetime: 38
+      width: 6
+      height: 6
+      collidesGround: true
+    }
+  }
 ]
 
 requirements: {

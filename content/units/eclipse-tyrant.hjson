@@ -159,6 +159,63 @@ weapons: [
       statusDuration: 60
     }
   }
+  {
+    name: eclipse-tyrant-missile
+    x: 22
+    y: -10
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 4
+    }
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 9, under: false }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 90
+      splashDamage: 50
+      splashDamageRadius: 24
+      speed: 3.8
+      lifetime: 75
+      width: 11
+      height: 14
+      homingPower: 0.14
+      trailChance: 0.4
+      status: aoen-bleeding
+      statusDuration: 100
+    }
+  }
+  {
+    name: eclipse-tyrant-rail
+    x: 0
+    y: 14
+    reload: 40
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 10, under: false, moves: [{ type: PartMove, progress: reload, y: -4 }] }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 18, under: false }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 280
+      length: 190
+      pierceDamageFactor: 0.3
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
+    }
+  }
 ]
 
 requirements: {
