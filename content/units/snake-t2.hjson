@@ -1,35 +1,31 @@
-type: crawl
+# Aquatic Scourge — toxic water serpent
+type: legs
 outlines: false
 
-health: 1800
-armor: 9
+health: 2100
+armor: 10
 speed: 1.2
-hitSize: 13
-rotateSpeed: 2.5
+hitSize: 14
+rotateSpeed: 2.9
 targetAir: false
-canAttack: true
-range: 48
+range: 52
 omniMovement: false
-drawBody: false
-drawCell: false
 
-segments: 8
-segmentScl: 3.4
-segmentMag: 0.6
-segmentPhase: 5
-segmentRotSpeed: 2.0
-segmentMaxRot: 30
-crushDamage: 3.5
-crawlSlowdown: 0.48
-crawlSlowdownFrac: 0.5
+legCount: 4
+legLength: 6
+legSpeed: 0.3
+hovering: true
+shadowElevation: 0.1
+groundLayer: 58
+drawCell: false
 
 abilities: [
   {
     type: StatusFieldAbility
-    effect: slow
-    duration: 40
-    range: 28
-    reload: 50
+    effect: wet
+    duration: 50
+    range: 32
+    reload: 40
   }
 ]
 
@@ -48,15 +44,15 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 42
+      damage: 44
       speed: 3.6
-      lifetime: 28
+      lifetime: 30
       width: 8
       height: 10
       status: corroded
-      statusDuration: 110
-      frontColor: d0c0ff
-      backColor: 6644aa
+      statusDuration: 120
+      frontColor: 80e8e0
+      backColor: 226666
       collidesAir: false
     }
   }
@@ -64,7 +60,7 @@ weapons: [
     name: snake-t2-spit
     x: 0
     y: 2
-    reload: 24
+    reload: 22
     mirror: false
     shootSound: flame
     parts: [
@@ -74,17 +70,17 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 22
-      splashDamage: 16
-      splashDamageRadius: 14
+      damage: 24
+      splashDamage: 20
+      splashDamageRadius: 16
       speed: 2.8
-      lifetime: 34
+      lifetime: 36
       width: 9
       height: 9
-      status: sapped
-      statusDuration: 70
-      frontColor: aa88ff
-      backColor: 442266
+      status: wet
+      statusDuration: 80
+      frontColor: 66d0c8
+      backColor: 224848
       collidesAir: false
     }
   }
@@ -92,7 +88,7 @@ weapons: [
     name: snake-t2-sap
     x: 0
     y: -2
-    reload: 20
+    reload: 18
     mirror: false
     shootSound: spark
     parts: [
@@ -101,14 +97,14 @@ weapons: [
     ]
     bullet: {
       type: SapBulletType
-      damage: 18
-      length: 50
-      width: 0.6
-      lifetime: 14
-      sapStrength: 0.5
-      color: aa66ff
+      damage: 22
+      length: 55
+      width: 0.65
+      lifetime: 15
+      sapStrength: 0.55
+      color: 44c8b8
       status: sapped
-      statusDuration: 70
+      statusDuration: 80
     }
   }
 ]

@@ -1,37 +1,23 @@
-type: crawl
+# Brimstone serpent — fire wake
+type: legs
 outlines: false
 
-health: 3400
-armor: 12
-speed: 1.0
-hitSize: 15
-rotateSpeed: 2.2
+health: 3800
+armor: 13
+speed: 1.05
+hitSize: 16
+rotateSpeed: 2.6
 targetAir: false
-canAttack: true
-range: 44
+range: 56
 omniMovement: false
-drawBody: false
+
+legCount: 4
+legLength: 6
+legSpeed: 0.28
+hovering: true
+shadowElevation: 0.12
+groundLayer: 58
 drawCell: false
-
-segments: 8
-segmentScl: 3.5
-segmentMag: 0.65
-segmentPhase: 5
-segmentRotSpeed: 1.9
-segmentMaxRot: 30
-crushDamage: 4.2
-crawlSlowdown: 0.45
-crawlSlowdownFrac: 0.5
-
-abilities: [
-  {
-    type: StatusFieldAbility
-    effect: burning
-    duration: 50
-    range: 24
-    reload: 18
-  }
-]
 
 weapons: [
   {
@@ -39,18 +25,22 @@ weapons: [
     x: 0
     y: 5
     shootY: 6
-    reload: 14
+    reload: 12
     mirror: false
     shootSound: flame
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+    ]
     bullet: {
       type: BasicBulletType
-      damage: 40
+      damage: 42
       speed: 3.3
-      lifetime: 30
+      lifetime: 32
       width: 9
       height: 11
       status: burning
-      statusDuration: 140
+      statusDuration: 150
       makeFire: true
       frontColor: ff8c28
       backColor: b44614
@@ -61,7 +51,7 @@ weapons: [
     name: cinder-millipede-slag
     x: 0
     y: 0
-    reload: 32
+    reload: 30
     mirror: false
     shootSound: bang
     parts: [
@@ -71,15 +61,15 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 35
-      splashDamage: 40
-      splashDamageRadius: 22
+      damage: 40
+      splashDamage: 48
+      splashDamageRadius: 24
       speed: 2.0
-      lifetime: 50
+      lifetime: 52
       width: 12
       height: 12
       status: melting
-      statusDuration: 60
+      statusDuration: 70
       collidesTiles: false
       hitEffect: explosion
       frontColor: ff6622
@@ -99,14 +89,14 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 32
-      length: 36
-      width: 12
+      damage: 36
+      length: 40
+      width: 13
       lifetime: 12
       fromColor: ff8c28
       toColor: 882200
       status: burning
-      statusDuration: 80
+      statusDuration: 90
       shootEffect: sparkShoot
       hitEffect: hitBulletColor
       despawnEffect: none

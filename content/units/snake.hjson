@@ -1,54 +1,50 @@
-type: crawl
+# Desert Scourge — sand worm (Calamity-style trail body via JS)
+type: legs
 outlines: false
 
-health: 620
-armor: 4
-speed: 1.15
-hitSize: 11
-rotateSpeed: 2.7
+health: 720
+armor: 5
+speed: 1.35
+hitSize: 12
+rotateSpeed: 3.4
 targetAir: false
-canAttack: true
-range: 36
+range: 40
 omniMovement: false
-drawBody: false
-drawCell: false
 researchCostMultiplier: 0.5
 
-segments: 6
-segmentScl: 3.2
-segmentMag: 0.55
-segmentPhase: 5
-segmentRotSpeed: 2.2
-segmentMaxRot: 28
-crushDamage: 2.4
-crawlSlowdown: 0.5
-crawlSlowdownFrac: 0.5
+legCount: 4
+legLength: 5
+legSpeed: 0.35
+hovering: true
+shadowElevation: 0.08
+groundLayer: 58
+drawCell: false
 
 weapons: [
   {
     name: snake-fang
     x: 0
-    y: 4
+    y: 5
     shootY: 6
-    reload: 16
+    reload: 15
     mirror: false
     shootSound: shoot
-    shootCone: 40
+    shootCone: 50
     parts: [
       { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
       { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
     ]
     bullet: {
       type: BasicBulletType
-      damage: 28
-      speed: 3.4
-      lifetime: 24
+      damage: 30
+      speed: 3.5
+      lifetime: 26
       width: 7
       height: 9
       status: corroded
-      statusDuration: 80
-      frontColor: c8b8ff
-      backColor: 554488
+      statusDuration: 90
+      frontColor: e8d080
+      backColor: 886622
       collidesAir: false
     }
   }
@@ -56,7 +52,7 @@ weapons: [
     name: snake-spit
     x: 0
     y: 1
-    reload: 26
+    reload: 24
     mirror: false
     shootSound: flame
     parts: [
@@ -65,18 +61,18 @@ weapons: [
       { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
     ]
     bullet: {
-      type: BasicBulletType
-      damage: 14
-      splashDamage: 10
-      splashDamageRadius: 12
-      speed: 2.6
-      lifetime: 30
-      width: 8
-      height: 8
-      status: sapped
+      type: ArtilleryBulletType
+      damage: 16
+      splashDamage: 18
+      splashDamageRadius: 16
+      speed: 2.4
+      lifetime: 40
+      width: 9
+      height: 9
+      status: slow
       statusDuration: 50
-      frontColor: aa88ff
-      backColor: 442266
+      frontColor: d4b060
+      backColor: 664411
       collidesAir: false
     }
   }

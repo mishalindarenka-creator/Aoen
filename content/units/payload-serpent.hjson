@@ -1,28 +1,24 @@
-type: crawl
+# Plague / armored mech-serpent
+type: legs
 outlines: false
 
-health: 6200
-armor: 16
-speed: 1.25
+health: 6800
+armor: 18
+speed: 1.15
 hitSize: 17
-rotateSpeed: 2.3
+rotateSpeed: 2.7
 targetAir: false
-canAttack: true
-range: 48
+range: 60
 omniMovement: false
-drawBody: false
-drawCell: false
 itemCapacity: 80
 
-segments: 9
-segmentScl: 3.6
-segmentMag: 0.7
-segmentPhase: 5
-segmentRotSpeed: 2.0
-segmentMaxRot: 32
-crushDamage: 5.0
-crawlSlowdown: 0.42
-crawlSlowdownFrac: 0.48
+legCount: 4
+legLength: 7
+legSpeed: 0.28
+hovering: true
+shadowElevation: 0.12
+groundLayer: 58
+drawCell: false
 
 abilities: [
   {
@@ -40,14 +36,19 @@ weapons: [
     x: 0
     y: 5
     shootY: 6
-    reload: 12
+    reload: 11
     mirror: false
     shootSound: shoot
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
       type: BasicBulletType
-      damage: 40
+      damage: 44
       speed: 4.0
-      lifetime: 28
+      lifetime: 30
       width: 9
       height: 11
       knockback: 4
@@ -60,15 +61,15 @@ weapons: [
     name: payload-serpent-spit-l
     x: -3
     y: 0
-    reload: 16
+    reload: 15
     mirror: false
     baseRotation: 35
     shootSound: shootSnap
     bullet: {
       type: BasicBulletType
-      damage: 20
+      damage: 22
       speed: 3.5
-      lifetime: 30
+      lifetime: 32
       width: 7
       height: 8
       frontColor: 90c8a0
@@ -80,15 +81,15 @@ weapons: [
     name: payload-serpent-spit-r
     x: 3
     y: 0
-    reload: 16
+    reload: 15
     mirror: false
     baseRotation: -35
     shootSound: shootSnap
     bullet: {
       type: BasicBulletType
-      damage: 20
+      damage: 22
       speed: 3.5
-      lifetime: 30
+      lifetime: 32
       width: 7
       height: 8
       frontColor: 90c8a0
@@ -100,18 +101,45 @@ weapons: [
     name: payload-serpent-rear
     x: 0
     y: -6
-    reload: 26
+    reload: 24
     mirror: false
     shootSound: bang
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 45
-      splashDamage: 24
-      splashDamageRadius: 18
+      damage: 48
+      splashDamage: 28
+      splashDamageRadius: 20
       speed: 2.3
       lifetime: 48
       width: 10
       height: 10
+    }
+  }
+  {
+    name: payload-serpent-sap
+    x: 0
+    y: 3
+    reload: 20
+    mirror: false
+    shootSound: spark
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 26
+      length: 64
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.6
+      color: 50dc9a
+      status: sapped
+      statusDuration: 90
     }
   }
 ]

@@ -2,15 +2,7 @@
 const lib = require("lib");
 const bullets = require("bullets");
 const abilities = require("abilities");
-
-const SNAKES = [
-  { id: "aoen-snake", dps: 2.8, r: 1.2 },
-  { id: "aoen-snake-t2", dps: 4.0, r: 1.25 },
-  { id: "aoen-cinder-millipede", dps: 5.2, r: 1.3 },
-  { id: "aoen-payload-serpent", dps: 6.0, r: 1.3 },
-  { id: "aoen-singularity-eel", dps: 7.5, r: 1.35 },
-  { id: "aoen-ouroboros-prime", dps: 16, r: 1.4 }
-];
+const serpent = require("serpent");
 
 var enhanced = false;
 
@@ -25,22 +17,101 @@ function replaceNamedBullet(unitType, weaponNameEnds, bullet) {
 }
 
 function enhanceSnakes() {
-  SNAKES.forEach(s => {
+  // Calamity-style trail worms (NOT crawl)
+  const specs = [
+    {
+      id: "aoen-snake",
+      stem: "snake",
+      segs: 8,
+      spacing: 9,
+      dps: 3.2,
+      hitR: 10,
+      status: StatusEffects.corroded,
+      extras: [serpent.desertBurrow()],
+      fang: true
+    },
+    {
+      id: "aoen-snake-t2",
+      stem: "snake-t2",
+      segs: 10,
+      spacing: 9.5,
+      dps: 4.5,
+      hitR: 11,
+      status: StatusEffects.wet,
+      extras: [serpent.aquaticMiasma(30)],
+      fang: true
+    },
+    {
+      id: "aoen-cinder-millipede",
+      stem: "cinder-millipede",
+      segs: 10,
+      spacing: 10,
+      dps: 5.8,
+      hitR: 12,
+      status: StatusEffects.burning,
+      extras: [serpent.brimstoneTrail()]
+    },
+    {
+      id: "aoen-payload-serpent",
+      stem: "payload-serpent",
+      segs: 11,
+      spacing: 10.5,
+      dps: 6.5,
+      hitR: 13,
+      status: StatusEffects.sapped,
+      extras: []
+    },
+    {
+      id: "aoen-singularity-eel",
+      stem: "singularity-eel",
+      segs: 12,
+      spacing: 11,
+      dps: 8,
+      hitR: 14,
+      status: StatusEffects.shocked,
+      extras: [serpent.stormWeave()],
+      tint: Color.valueOf("aaccff")
+    },
+    {
+      id: "aoen-ouroboros-prime",
+      stem: "ouroboros-prime",
+      segs: 16,
+      spacing: 13,
+      dps: 18,
+      hitR: 18,
+      status: StatusEffects.sapped,
+      extras: [serpent.voidDevour()],
+      tint: Color.valueOf("cc88ff")
+    }
+  ];
+
+  specs.forEach(s => {
     const u = lib.unit(s.id);
     if (u == null) {
-      Log.warn("[Aoen] snake missing: " + s.id);
+      Log.warn("[Aoen] serpent missing: " + s.id);
       return;
     }
     u.canAttack = true;
-    lib.addAbility(u, abilities.serpentCrush(s.dps, s.r));
-    if (s.id === "aoen-snake" || s.id === "aoen-snake-t2") {
+    lib.addAbility(u, serpent.wormBody({
+      stem: s.stem,
+      segs: s.segs,
+      spacing: s.spacing,
+      dps: s.dps,
+      hitR: s.hitR,
+      status: s.status,
+      statusDur: 50,
+      tint: s.tint || null,
+      name: "Worm Segments"
+    }));
+    (s.extras || []).forEach(ab => lib.addAbility(u, ab));
+    if (s.fang) {
       replaceNamedBullet(
         u,
         "fang",
-        bullets.venomFang(s.id === "aoen-snake" ? 28 : 42, s.id === "aoen-snake" ? 14 : 22)
+        bullets.venomFang(s.id === "aoen-snake" ? 30 : 44, s.id === "aoen-snake" ? 14 : 22)
       );
     }
-    Log.info("[Aoen] enhanced snake " + s.id);
+    Log.info("[Aoen] Calamity worm: " + s.id + " (" + s.segs + " segs)");
   });
 }
 
@@ -66,7 +137,7 @@ function enhanceBahamut() {
       }
     }
   });
-  Log.info("[Aoen] enhanced bahamut (JS Catastrophe/Breath/Shackles)");
+  Log.info("[Aoen] enhanced bahamut");
 }
 
 function enhanceBossWeapons() {
