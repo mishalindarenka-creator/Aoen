@@ -1,0 +1,19 @@
+type: Battery
+category: power
+size: 2
+consumes: {
+  powerBuffered: 48000
+}
+health: 520
+requirements: [
+  lead/80
+  silicon/60
+  aoen-nocturne-plate/40
+]
+research: {
+  parent: aoen-dark-battery
+  requirements: [
+    silicon/50
+    aoen-nocturne-plate/30
+  ]
+}

@@ -10,7 +10,7 @@ require("bahamut");
 require("enhance");
 
 const AOEN_UNITS = [
-  "aoen-crab", "aoen-crab-t2", "aoen-ceramtyr-daimyo", "aoen-quake-bulwark", "aoen-storm-sovereign", "aoen-eclipse-tyrant",
+  "aoen-crab", "aoen-crab-t2", "aoen-ceramtyr-daimyo", "aoen-quake-bulwark", "aoen-storm-sovereign", "aoen-eclipse-tyrant", "aoen-crabzilla",
   "aoen-snake", "aoen-snake-t2", "aoen-cinder-millipede", "aoen-payload-serpent", "aoen-singularity-eel", "aoen-ouroboros-prime",
   "aoen-boomeranger", "aoen-boomeranger-t2", "aoen-foundry-orbiter", "aoen-aegis-walker", "aoen-nexus-prime", "aoen-apotheosis-core",
   "aoen-naval", "aoen-naval-t2", "aoen-iron-reef", "aoen-needle-skiff", "aoen-leviathan-crown", "aoen-mare-imperator",

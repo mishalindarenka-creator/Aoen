@@ -61,10 +61,18 @@ def draw_turret(size_tiles: int, palette, style: str = "duo") -> Image.Image:
             d.rectangle([cx + ox - 3, m + 16, cx + ox + 3, cy + 4], fill=mid, outline=hi)
         d.rounded_rectangle([cx - px // 4, cy, cx + px // 4, cy + px // 4], radius=4, fill=dark, outline=hi)
     elif style == "artillery":
-        bw = max(12, px // 5)
-        d.ellipse([cx - bw, cy - bw // 2, cx + bw, cy + bw], fill=dark, outline=hi)
-        d.rounded_rectangle([cx - bw // 3, m + 2, cx + bw // 3, cy + 4], radius=4, fill=mid, outline=hi)
-        d.ellipse([cx - 6, m + 2, cx + 6, m + 14], fill=accent, outline=hi)
+        bw = max(14, px // 4)
+        # heavy base plate
+        d.ellipse([m + 2, m + 2, px - m - 3, px - m - 3], fill=dark, outline=hi)
+        d.ellipse([cx - bw, cy - bw // 2, cx + bw, cy + bw], fill=mid, outline=hi)
+        # dual support rails
+        for ox in (-bw // 2, bw // 2):
+            d.rectangle([cx + ox - 3, m + 6, cx + ox + 3, cy + 2], fill=dark, outline=hi)
+        # main barrel
+        d.rounded_rectangle([cx - bw // 3, m + 2, cx + bw // 3, cy + 6], radius=4, fill=mid, outline=hi)
+        d.rectangle([cx - bw // 3 + 3, m + 4, cx + bw // 3 - 3, cy], fill=accent)
+        d.ellipse([cx - 8, m + 2, cx + 8, m + 16], fill=accent, outline=hi)
+        d.ellipse([cx - 4, cy - 2, cx + 4, cy + 6], fill=hi)
     else:  # fortress
         d.polygon([(cx, m + 2), (px - m - 2, cy), (cx, px - m - 2), (m + 2, cy)], fill=mid, outline=hi)
         d.ellipse([cx - 8, cy - 8, cx + 8, cy + 8], fill=dark, outline=accent)
@@ -111,6 +119,8 @@ def main() -> None:
     TIDE = ((16, 48, 42, 255), (40, 140, 120, 255), (100, 230, 200, 255), (80, 255, 220, 255))
     save("nocturne-bolt", 2, NOCT, "duo")
     save("tide-pulse", 3, TIDE, "scatter")
+    CRAB = ((20, 12, 16, 255), (120, 40, 48, 255), (255, 140, 90, 255), (255, 210, 120, 255))
+    save("crab-howitzer", 4, CRAB, "artillery")
 
 
 if __name__ == "__main__":

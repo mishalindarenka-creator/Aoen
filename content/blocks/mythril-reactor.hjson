@@ -1,0 +1,30 @@
+type: ConsumeGenerator
+category: power
+size: 4
+powerProduction: 42
+itemDuration: 110
+consumes: {
+  items: [
+    aoen-pale-mythril/1
+    blast-compound/1
+  ]
+}
+health: 2800
+armor: 12
+hasItems: true
+itemCapacity: 20
+requirements: [
+  lead/400
+  silicon/300
+  thorium/180
+  surge-alloy/100
+  aoen-pale-mythril/120
+  aoen-abyssal-alloy/80
+]
+research: {
+  parent: aoen-ember-generator
+  requirements: [
+    surge-alloy/60
+    aoen-pale-mythril/80
+  ]
+}

@@ -1,16 +1,13 @@
-"""Rewrite mod.hjson / mod.json as UTF-8 without BOM (Mindustry needs meta.name).
-
-Keeps version in sync with bump_version.py — do not hardcode an older release.
-"""
+"""Rewrite mod.hjson / mod.json as UTF-8 without BOM (Mindustry needs meta.name)."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VER = "2.0.1"
+VER = "2.1.0"
 
 HJSON = f"""name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — ores/materials/turrets/walls, MH naval, serpents, Proto Bahamut."
+description: "[#888888]Aoen[] — Crabzilla T7, redrawn crabs, expanded world blocks."
 version: "{VER}"
 minGameVersion: 160.7
 dependencies: []
@@ -21,7 +18,7 @@ JSON = f"""{{
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — ores/materials/turrets/walls, MH naval, serpents, Proto Bahamut.",
+  "description": "Aoen — Crabzilla T7, redrawn crabs, expanded world blocks.",
   "version": "{VER}",
   "minGameVersion": "160.7",
   "dependencies": [],
@@ -37,8 +34,7 @@ def main() -> None:
         if data.startswith(b"\xef\xbb\xbf"):
             raise SystemExit(f"refusing to write BOM into {name}")
         path.write_bytes(data)
-        head = path.read_bytes()[:16]
-        print(name, "OK", VER, head)
+        print(name, "OK", VER)
 
 
 if __name__ == "__main__":

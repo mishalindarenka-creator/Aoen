@@ -17,6 +17,7 @@ FACTORY_BLOCKS = [
     "ground-reconstructor-t4",
     "ground-reconstructor-t5",
     "ground-reconstructor-t6",
+    "ground-reconstructor-t7",
     "naval-fabricator",
     "naval-reconstructor",
     "naval-reconstructor-t3",
@@ -60,6 +61,18 @@ WORLD_BASE = [
     "tide-wall-large",
     "mythril-drill",
     "ember-generator",
+    "mythril-wall",
+    "mythril-wall-large",
+    "ember-wall",
+    "ember-wall-large",
+    "pale-foundry",
+    "nocturne-battery",
+    "tide-mender",
+    "abyss-radar",
+    "crab-howitzer",
+    "mythril-reactor",
+    "void-unloader",
+    "tide-conduit",
 ]
 
 ITEMS = [

@@ -1,0 +1,30 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 4.5
+  items: [
+    aoen-pale-mythril/2
+    aoen-nocturne-plate/1
+  ]
+}
+health: 720
+craftTime: 70
+hasItems: true
+itemCapacity: 30
+outputItem: aoen-abyssal-alloy/1
+craftEffect: smeltsmoke
+updateEffect: smeltsmoke
+requirements: [
+  titanium/120
+  silicon/90
+  aoen-pale-mythril/60
+  aoen-nocturne-plate/40
+]
+research: {
+  parent: aoen-abyssal-foundry
+  requirements: [
+    aoen-pale-mythril/50
+    silicon/60
+  ]
+}

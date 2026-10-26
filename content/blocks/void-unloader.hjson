@@ -1,0 +1,17 @@
+type: Unloader
+category: distribution
+size: 1
+speed: 12
+health: 120
+requirements: [
+  silicon/30
+  graphite/25
+  aoen-void-shard/15
+]
+research: {
+  parent: aoen-dark-router
+  requirements: [
+    silicon/40
+    aoen-void-shard/20
+  ]
+}

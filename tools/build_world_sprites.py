@@ -61,6 +61,67 @@ def solid(size: int, mid, hi, shape: str = "hex") -> Image.Image:
     return im
 
 
+def paint_detail(size: int, dark, mid, hi, kind: str = "machine") -> Image.Image:
+    """Rich procedural block when vanilla fetch fails."""
+    im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    m = max(2, size // 16)
+    cx, cy = size // 2, size // 2
+    d.rounded_rectangle([m, m, size - 1 - m, size - 1 - m], radius=max(2, size // 12), fill=dark, outline=hi)
+    d.rounded_rectangle([m + 3, m + 3, size - 4 - m, size - 4 - m], radius=2, outline=mid)
+    # panel rivets
+    for x, y in ((m + 6, m + 6), (size - m - 7, m + 6), (m + 6, size - m - 7), (size - m - 7, size - m - 7)):
+        d.rectangle([x, y, x + 2, y + 2], fill=hi)
+    if kind == "machine":
+        d.ellipse([cx - size // 5, cy - size // 5, cx + size // 5, cy + size // 5], fill=mid, outline=hi)
+        d.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=hi)
+        d.rectangle([cx - 2, m + 8, cx + 2, cy - size // 5], fill=hi)
+    elif kind == "mend":
+        d.ellipse([cx - size // 4, cy - size // 4, cx + size // 4, cy + size // 4], outline=hi)
+        d.ellipse([cx - size // 6, cy - size // 6, cx + size // 6, cy + size // 6], fill=mid, outline=hi)
+        # cross heal
+        d.rectangle([cx - 2, cy - size // 8, cx + 2, cy + size // 8], fill=hi)
+        d.rectangle([cx - size // 8, cy - 2, cx + size // 8, cy + 2], fill=hi)
+    elif kind == "radar":
+        d.ellipse([cx - size // 3, cy - size // 3, cx + size // 3, cy + size // 3], outline=hi)
+        d.ellipse([cx - size // 5, cy - size // 5, cx + size // 5, cy + size // 5], outline=mid)
+        d.pieslice([cx - size // 3, cy - size // 3, cx + size // 3, cy + size // 3], -20, 50, fill=(*hi[:3], 180))
+        d.ellipse([cx - 3, cy - 3, cx + 3, cy + 3], fill=hi)
+    elif kind == "conduit":
+        d.rectangle([m + 4, cy - 5, size - m - 5, cy + 5], fill=mid, outline=hi)
+        d.rectangle([m + 6, cy - 2, size - m - 7, cy + 2], fill=hi)
+        d.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=dark, outline=hi)
+    elif kind == "unloader":
+        d.rectangle([m + 6, m + 8, size - m - 7, size - m - 8], fill=mid, outline=hi)
+        d.polygon([(cx, m + 10), (size - m - 10, cy), (cx, size - m - 10), (m + 10, cy)], fill=hi)
+    elif kind == "battery":
+        d.rectangle([m + 8, m + 6, size - m - 9, size - m - 7], fill=mid, outline=hi)
+        for i in range(3):
+            y = m + 12 + i * (size // 5)
+            d.rectangle([m + 12, y, size - m - 13, y + size // 10], fill=hi)
+    elif kind == "reactor":
+        d.ellipse([m + 8, m + 8, size - m - 9, size - m - 9], fill=mid, outline=hi)
+        d.ellipse([cx - size // 6, cy - size // 6, cx + size // 6, cy + size // 6], fill=hi, outline=dark)
+        for ang in range(0, 360, 45):
+            import math
+            rad = math.radians(ang)
+            x2 = cx + int(math.cos(rad) * size // 3)
+            y2 = cy + int(math.sin(rad) * size // 3)
+            d.line([(cx, cy), (x2, y2)], fill=hi, width=2)
+    return im
+
+
+def paint_or_tint(van_rel: str, out_name: str, palette, size: int, kind: str = "machine") -> None:
+    dark, mid, hi = palette
+    src = fetch(van_rel)
+    if src is None:
+        save_block(out_name, paint_detail(size, dark, mid, hi, kind))
+        return
+    if src.width != size or src.height != size:
+        src = src.resize((size, size), Image.Resampling.NEAREST)
+    save_block(out_name, tint(src, dark, mid, hi))
+
+
 def item_icon(name: str, mid, hi) -> None:
     SPR_I.mkdir(parents=True, exist_ok=True)
     base = fetch("items/item-copper.png") or fetch("items/item-coal.png") or fetch("items/item-scrap.png")
@@ -251,11 +312,23 @@ def main() -> None:
     wall("abyssal-wall-large", 2, ABYS)
     wall("tide-wall", 1, TIDE)
     wall("tide-wall-large", 2, TIDE)
+    wall("mythril-wall", 1, MYTH)
+    wall("mythril-wall-large", 2, MYTH)
+    wall("ember-wall", 1, EMBR)
+    wall("ember-wall-large", 2, EMBR)
     turret("nocturne-bolt", 2, NOCT, "duo")
     turret("tide-pulse", 3, TIDE, "scatter")
+    crafter("pale-foundry", 3, MYTH, True)
+    drill("mythril-drill", 3, MYTH)  # refresh
     copy_tint("blocks/power/combustion-generator.png", "dark-generator", GOLD, 32)
     copy_tint("blocks/power/combustion-generator.png", "ember-generator", EMBR, 64)
     copy_tint("blocks/power/battery.png", "dark-battery", AETH, 32)
+    paint_or_tint("blocks/power/battery.png", "nocturne-battery", NOCT, 64, "battery")
+    paint_or_tint("blocks/power/combustion-generator.png", "mythril-reactor", MYTH, 128, "reactor")
+    paint_or_tint("blocks/effect/mend-projector.png", "tide-mender", TIDE, 64, "mend")
+    paint_or_tint("blocks/effect/radar.png", "abyss-radar", ABYS, 64, "radar")
+    paint_or_tint("blocks/liquid/conduit.png", "tide-conduit", TIDE, 32, "conduit")
+    paint_or_tint("blocks/distribution/unloader.png", "void-unloader", VOID, 32, "unloader")
 
     print("world sprites blocks", len(list(SPR_B.glob("*.png"))), "items", len(list(SPR_I.glob("*.png"))))
     # kill any double-prefix leftovers (oh no source)

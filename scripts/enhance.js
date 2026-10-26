@@ -155,6 +155,43 @@ function enhanceNaval() {
   Log.info("[Aoen] naval MH wake abilities");
 }
 
+function enhanceCrabzilla() {
+  const z = lib.unit("aoen-crabzilla");
+  if (z == null) return;
+  try {
+    z.localizedName = "Crabzilla";
+  } catch (e) {}
+  lib.addAbility(z, extend(Ability, {
+    update(unit) {
+      // crushing aura
+      Units.nearbyEnemies(unit.team, unit.x, unit.y, unit.hitSize * 0.55, e => {
+        e.damagePierce(0.35 * Time.delta);
+        if (Mathf.chance(0.04 * Time.delta)) {
+          e.apply(StatusEffects.unmoving, 20);
+        }
+      });
+      if (unit.damaged() && Mathf.chance(0.05 * Time.delta)) {
+        unit.heal(8 * Time.delta);
+      }
+    },
+    draw(unit) {
+      Draw.z(Layer.effect);
+      Draw.color(Color.valueOf("ff6644"));
+      Draw.alpha(0.08 + Mathf.absin(Time.time, 20, 0.06));
+      Lines.stroke(3);
+      Lines.circle(unit.x, unit.y, unit.hitSize * 0.5);
+      Draw.reset();
+    },
+    localized() {
+      return "Kaiju Presence";
+    },
+    copy() {
+      return this;
+    }
+  }));
+  Log.info("[Aoen] Crabzilla kaiju aura");
+}
+
 function enhanceBossWeapons() {
   const storm = lib.unit("aoen-storm-sovereign");
   if (storm != null) {
@@ -205,6 +242,7 @@ function run() {
     enhanceSnakes();
     enhanceNaval();
     enhanceBahamut();
+    enhanceCrabzilla();
     enhanceBossWeapons();
     enhanced = true;
     Log.info("[Aoen] JS enhance complete");

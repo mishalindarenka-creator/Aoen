@@ -1,0 +1,24 @@
+type: MendProjector
+category: effect
+size: 2
+consumes: {
+  power: 2.8
+}
+health: 640
+range: 90
+reload: 90
+healPercent: 14
+phaseRangeBoost: 20
+phaseBoost: 2
+requirements: [
+  titanium/100
+  silicon/80
+  aoen-tide-composite/50
+]
+research: {
+  parent: aoen-tide-pulse
+  requirements: [
+    silicon/60
+    aoen-tide-composite/40
+  ]
+}

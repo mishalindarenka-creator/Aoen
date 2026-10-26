@@ -1,0 +1,15 @@
+type: Wall
+category: defense
+size: 2
+health: 5600
+armor: 10
+requirements: [
+  aoen-ember-slag/40
+  graphite/24
+]
+research: {
+  parent: aoen-ember-wall
+  requirements: [
+    aoen-ember-slag/40
+  ]
+}

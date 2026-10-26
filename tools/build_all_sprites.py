@@ -14,6 +14,7 @@ def run(name: str) -> None:
 
 def main() -> None:
     run("build_units_sprites.py")
+    run("build_crab_sprites.py")  # overwrite crab line + crabzilla with better art
     run("build_snake_sprites.py")
     run("build_bahamut_sprites.py")
     run("build_naval_sprites.py")

@@ -1,0 +1,33 @@
+type: Reconstructor
+category: units
+size: 11
+consumes: {
+  power: 36
+  items: [
+    silicon/320
+    thorium/180
+    phase-fabric/140
+    surge-alloy/110
+    aoen-abyssal-alloy/80
+    aoen-nocturne-plate/90
+  ]
+}
+researchCostMultiplier: 1.05
+requirements: [
+  copper/1800
+  lead/1400
+  silicon/1100
+  thorium/700
+  phase-fabric/400
+  surge-alloy/320
+  aoen-abyssal-alloy/200
+  aoen-pale-mythril/160
+]
+research: {
+  parent: aoen-ground-reconstructor-t6
+  requirements: [
+    surge-alloy/140
+    phase-fabric/160
+    aoen-abyssal-alloy/80
+  ]
+}

@@ -20,6 +20,7 @@ BLOCKS = {
     "ground-reconstructor-t4": ("multiplicative-reconstructor", False),
     "ground-reconstructor-t5": ("exponential-reconstructor", False),
     "ground-reconstructor-t6": ("exponential-reconstructor", False),
+    "ground-reconstructor-t7": ("exponential-reconstructor", False),
     "naval-fabricator": ("naval-factory", True),
     "naval-reconstructor": ("additive-reconstructor", True),
     "naval-reconstructor-t3": ("additive-reconstructor", True),

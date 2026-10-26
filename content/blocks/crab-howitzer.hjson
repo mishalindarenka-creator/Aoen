@@ -1,0 +1,112 @@
+type: ItemTurret
+category: turret
+size: 4
+health: 4200
+armor: 16
+range: 340
+reload: 48
+inaccuracy: 1
+rotateSpeed: 2.2
+recoil: 5
+shootSound: bang
+shootCone: 18
+targetAir: true
+targetGround: true
+ammoPerShot: 3
+maxAmmo: 90
+shake: 3
+shoot: {
+  type: ShootSpread
+  shots: 1
+  spread: 0
+}
+requirements: [
+  thorium/180
+  surge-alloy/90
+  aoen-nocturne-plate/80
+  aoen-abyssal-alloy/60
+  aoen-pale-mythril/50
+]
+ammoTypes: {
+  aoen-ember-slag: {
+    type: ArtilleryBulletType
+    damage: 90
+    splashDamage: 160
+    splashDamageRadius: 48
+    speed: 2.2
+    lifetime: 120
+    width: 18
+    height: 18
+    makeFire: true
+    status: burning
+    statusDuration: 140
+    frontColor: ff8844
+    backColor: 882200
+    hitEffect: explosion
+  }
+  aoen-abyssal-alloy: {
+    type: ArtilleryBulletType
+    damage: 140
+    splashDamage: 220
+    splashDamageRadius: 56
+    speed: 2.4
+    lifetime: 125
+    width: 20
+    height: 20
+    status: shocked
+    statusDuration: 80
+    frontColor: a0e8ff
+    backColor: 204060
+    hitEffect: massiveExplosion
+  }
+  aoen-nocturne-plate: {
+    type: ArtilleryBulletType
+    damage: 110
+    splashDamage: 180
+    splashDamageRadius: 44
+    speed: 2.5
+    lifetime: 118
+    width: 18
+    height: 18
+    status: sapped
+    statusDuration: 90
+    frontColor: c8a8f0
+    backColor: 442266
+    fragBullets: 6
+    fragBullet: {
+      type: BasicBulletType
+      damage: 18
+      speed: 2.8
+      lifetime: 28
+      width: 7
+      height: 7
+      status: sapped
+      statusDuration: 40
+    }
+  }
+  surge-alloy: {
+    type: ArtilleryBulletType
+    damage: 160
+    splashDamage: 260
+    splashDamageRadius: 60
+    speed: 2.6
+    lifetime: 120
+    width: 22
+    height: 22
+    status: shocked
+    statusDuration: 110
+    lightning: 4
+    lightningLength: 8
+    lightningDamage: 28
+    frontColor: ffee88
+    backColor: 886600
+    hitEffect: massiveExplosion
+  }
+}
+research: {
+  parent: aoen-tide-pulse
+  requirements: [
+    thorium/80
+    aoen-abyssal-alloy/50
+  ]
+}

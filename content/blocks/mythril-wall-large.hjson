@@ -1,0 +1,15 @@
+type: Wall
+category: defense
+size: 2
+health: 8800
+armor: 18
+requirements: [
+  aoen-pale-mythril/48
+  aoen-nocturne-plate/16
+]
+research: {
+  parent: aoen-mythril-wall
+  requirements: [
+    aoen-pale-mythril/40
+  ]
+}

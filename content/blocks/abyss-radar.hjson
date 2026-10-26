@@ -1,0 +1,20 @@
+type: Radar
+category: effect
+size: 2
+consumes: {
+  power: 1.6
+}
+health: 480
+fogRadius: 42
+requirements: [
+  silicon/90
+  titanium/70
+  aoen-abyssal-alloy/35
+]
+research: {
+  parent: aoen-abyssal-foundry
+  requirements: [
+    silicon/50
+    aoen-abyssal-quartz/40
+  ]
+}

@@ -1,0 +1,15 @@
+type: Wall
+category: defense
+size: 1
+health: 1400
+armor: 10
+requirements: [
+  aoen-ember-slag/10
+  graphite/6
+]
+research: {
+  parent: aoen-ceramite-wall
+  requirements: [
+    aoen-ember-slag/20
+  ]
+}
