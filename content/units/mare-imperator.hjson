@@ -1,26 +1,37 @@
+# Amatsu-emperor — storm mantle colossus + full jababarium battery
 type: naval
 outlines: false
 
-health: 95000
-armor: 55
-speed: 0.35
+health: 98000
+armor: 56
+speed: 0.38
 hitSize: 150
 faceTarget: false
-range: 240
-rotateSpeed: 0.75
+targetAir: true
+range: 250
+rotateSpeed: 0.8
+trailLength: 40
+trailScl: 2.6
 
 abilities: [
   {
     type: SuppressionFieldAbility
-    range: 90
-    reload: 14
+    range: 96
+    reload: 12
   }
   {
     type: ForceFieldAbility
-    radius: 52
-    regen: 1.6
-    max: 1400
-    cooldown: 260
+    radius: 56
+    regen: 1.8
+    max: 1600
+    cooldown: 240
+  }
+  {
+    type: StatusFieldAbility
+    effect: wet
+    duration: 90
+    range: 64
+    reload: 45
   }
 ]
 
@@ -28,41 +39,70 @@ weapons: [
   {
     name: mare-imperator-main
     x: 0
-    y: 8
-    reload: 28
+    y: 10
+    reload: 24
     rotate: true
     mirror: false
     shootSound: bang
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 18, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 480
-      splashDamage: 150
-      splashDamageRadius: 52
-      speed: 1.8
-      lifetime: 140
+      damage: 500
+      splashDamage: 170
+      splashDamageRadius: 56
+      speed: 1.85
+      lifetime: 145
       width: 24
       height: 24
-      buildingDamageMultiplier: 1.35
+      buildingDamageMultiplier: 1.4
+      status: wet
+      statusDuration: 120
       hitEffect: explosion
-      frontColor: ffd37f
-      backColor: 334466
+      frontColor: c8f0ff
+      backColor: 223355
+      fragBullets: 12
+      fragBullet: {
+        type: BasicBulletType
+        damage: 28
+        splashDamage: 16
+        splashDamageRadius: 14
+        speed: 2.8
+        lifetime: 32
+        width: 8
+        height: 8
+        status: wet
+        statusDuration: 50
+        frontColor: e0f8ff
+        backColor: 335566
+      }
     }
   }
   {
     name: mare-imperator-ciws
-    x: 14
+    x: 16
     y: -4
-    reload: 4
+    reload: 3.5
     rotate: true
     mirror: true
     shootSound: shootSnap
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
       type: FlakBulletType
-      damage: 28
-      splashDamage: 32
-      splashDamageRadius: 24
-      speed: 4.6
-      lifetime: 48
+      damage: 30
+      splashDamage: 36
+      splashDamageRadius: 26
+      speed: 4.8
+      lifetime: 50
       width: 9
       height: 9
       collidesGround: true
@@ -72,41 +112,85 @@ weapons: [
     name: mare-imperator-beam
     x: 0
     y: -8
-    reload: 45
+    reload: 40
     rotate: true
     mirror: false
     continuous: true
     shootSound: laserblast
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 4, y: 8, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 16, under: false }
+    ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 55
-      length: 170
-      width: 9
-      lifetime: 60
-      colors: [ 88ddff 4488aa 102030 ]
+      damage: 62
+      length: 185
+      width: 10
+      lifetime: 65
+      colors: [ e0f8ff 66aadd 102030 ]
       status: shocked
-      statusDuration: 60
+      statusDuration: 70
+      shake: 1.2
     }
   }
   {
     name: mare-imperator-missile
-    x: 10
+    x: 12
     y: 4
-    reload: 16
+    reload: 12
     rotate: true
     mirror: true
-    shots: 2
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
     shootSound: missile
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 9, under: false }
+    ]
     bullet: {
       type: MissileBulletType
-      damage: 70
-      splashDamage: 30
-      splashDamageRadius: 20
-      speed: 3.6
-      lifetime: 70
+      damage: 75
+      splashDamage: 36
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 75
       width: 10
-      height: 12
-      homingPower: 0.18
+      height: 13
+      homingPower: 0.2
+      trailChance: 0.45
+      status: wet
+      statusDuration: 80
+    }
+  }
+  {
+    name: mare-imperator-rail
+    x: 0
+    y: 14
+    reload: 42
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 5, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 12, under: false, moves: [{ type: PartMove, progress: reload, y: -4 }] }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 20, under: false }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 360
+      length: 200
+      pierceDamageFactor: 0.28
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
     }
   }
 ]

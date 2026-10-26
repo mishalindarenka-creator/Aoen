@@ -2,8 +2,8 @@
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — Calamity-style trail serpents, JS weapons, Proto Bahamut, T1-T6.",
-  "version": "1.8.0",
+  "description": "Aoen — MH/jababarium naval, Calamity serpents, JS weapons, Bahamut.",
+  "version": "1.9.0",
   "minGameVersion": "160.7",
   "dependencies": [],
   "hidden": false

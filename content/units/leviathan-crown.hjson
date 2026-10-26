@@ -1,18 +1,30 @@
+# Ceadeus-crown — horned deep leviathan + jababarium broadside
 type: naval
 outlines: false
 
-health: 28000
-armor: 32
-speed: 0.58
-hitSize: 34
+health: 30000
+armor: 34
+speed: 0.62
+hitSize: 36
 faceTarget: false
-range: 155
+targetAir: true
+range: 165
+rotateSpeed: 1.5
+trailLength: 32
+trailScl: 2.2
 
 abilities: [
   {
     type: SuppressionFieldAbility
-    range: 64
-    reload: 22
+    range: 68
+    reload: 20
+  }
+  {
+    type: StatusFieldAbility
+    effect: wet
+    duration: 70
+    range: 48
+    reload: 50
   }
 ]
 
@@ -20,49 +32,66 @@ weapons: [
   {
     name: leviathan-crown-main
     x: 0
-    y: 6
-    reload: 32
+    y: 7
+    reload: 28
     rotate: true
     mirror: false
     shootSound: bang
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -1, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 6, under: false, moves: [{ type: PartMove, progress: reload, y: -4 }] }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 14, under: false }
+    ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 320
-      splashDamage: 70
-      splashDamageRadius: 36
+      damage: 340
+      splashDamage: 85
+      splashDamageRadius: 40
       speed: 2.0
       lifetime: 120
       width: 18
       height: 18
-      buildingDamageMultiplier: 1.2
-      fragBullets: 8
+      buildingDamageMultiplier: 1.25
+      status: wet
+      statusDuration: 90
+      fragBullets: 10
       fragBullet: {
         type: BasicBulletType
-        damage: 18
-        speed: 2.5
-        lifetime: 30
+        damage: 20
+        speed: 2.6
+        lifetime: 28
         width: 7
         height: 7
-        splashDamage: 10
+        splashDamage: 12
         splashDamageRadius: 12
+        status: wet
+        statusDuration: 40
+        frontColor: a8d8ff
+        backColor: 334466
       }
     }
   }
   {
     name: leviathan-crown-flak
-    x: 10
+    x: 11
     y: -2
-    reload: 6
+    reload: 5
     rotate: true
     mirror: true
     shootSound: shootSnap
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 2, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 6, under: false }
+    ]
     bullet: {
       type: FlakBulletType
-      damage: 22
-      splashDamage: 24
-      splashDamageRadius: 20
-      speed: 4.2
-      lifetime: 42
+      damage: 24
+      splashDamage: 26
+      splashDamageRadius: 22
+      speed: 4.3
+      lifetime: 44
       width: 8
       height: 8
       collidesGround: true
@@ -72,44 +101,81 @@ weapons: [
     name: leviathan-crown-beam
     x: 0
     y: -4
-    reload: 55
+    reload: 48
     rotate: true
     mirror: false
     continuous: true
     shootSound: laserblast
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 6, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 6, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 12, under: false }
+    ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 40
-      length: 130
-      width: 7
-      lifetime: 45
-      colors: [ 88aaff 4466aa 102040 ]
+      damage: 48
+      length: 140
+      width: 8
+      lifetime: 48
+      colors: [ 88ddff 4466aa 102040 ]
       status: shocked
-      statusDuration: 40
+      statusDuration: 55
+      shake: 0.8
     }
   }
   {
     name: leviathan-crown-torpedo
-    x: 8
+    x: 9
     y: 2
-    reload: 40
+    reload: 34
     rotate: true
     mirror: true
     shootSound: minebeat
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
       type: MissileBulletType
-      damage: 90
-      splashDamage: 50
-      splashDamageRadius: 28
-      speed: 2.6
+      damage: 95
+      splashDamage: 55
+      splashDamageRadius: 30
+      speed: 2.7
       lifetime: 100
       width: 12
       height: 14
-      homingPower: 0.12
-      homingRange: 90
+      homingPower: 0.13
+      homingRange: 95
       trailChance: 0.5
       status: wet
-      statusDuration: 80
+      statusDuration: 90
+    }
+  }
+  {
+    name: leviathan-crown-rail
+    x: 0
+    y: 10
+    reload: 52
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
+      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 9, under: false, moves: [{ type: PartMove, progress: reload, y: -3 }] }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 16, under: false }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 180
+      length: 150
+      pierceDamageFactor: 0.35
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 50
     }
   }
 ]

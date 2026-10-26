@@ -1,22 +1,23 @@
+# Reef Pup — MH small aquatic + jababarium twin mount
 type: naval
-
 outlines: false
-health: 1000
-armor: 7
-speed: 1.15
-drag: 0.14
-hitSize: 12
-accel: 0.38
-rotateSpeed: 3.1
+
+health: 1100
+armor: 8
+speed: 1.25
+drag: 0.13
+hitSize: 13
+accel: 0.4
+rotateSpeed: 3.4
 faceTarget: false
 targetAir: true
 researchCostMultiplier: 0.5
-range: 70
+range: 78
 
-trailLength: 18
+trailLength: 20
 waveTrailX: 4
 waveTrailY: 0
-trailScl: 1.35
+trailScl: 1.4
 moveSound: shipMove
 moveSoundVolume: 0.42
 
@@ -24,36 +25,38 @@ weapons: [
   {
     name: naval-cannon
     x: 4
-    y: 1.5
-    shootY: 4
-    reload: 12
+    y: 2
+    shootY: 5
+    reload: 11
     rotate: true
-    rotateSpeed: 4
+    rotateSpeed: 5
     ejectEffect: casing1
     shootSound: shootSmall
     parts: [
       { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -1, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 3, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
     ]
     bullet: {
       type: BasicBulletType
-      damage: 28
-      speed: 2.8
-      lifetime: 55
+      damage: 30
+      speed: 3.0
+      lifetime: 52
       width: 7
       height: 9
-      buildingDamageMultiplier: 0.75
-      hitEffect: hitBulletColor
-      frontColor: a8d8e8
+      status: wet
+      statusDuration: 40
+      frontColor: a8e8f8
       backColor: 345868
+      hitEffect: hitBulletColor
     }
   }
   {
     name: naval-torpedo
     x: 0
     y: -4
-    reload: 26
+    reload: 24
     rotate: true
     mirror: false
     shootSound: shootMissileShort
@@ -64,26 +67,26 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 42
-      splashDamage: 14
-      splashDamageRadius: 12
-      speed: 2.6
-      lifetime: 55
+      damage: 44
+      splashDamage: 16
+      splashDamageRadius: 14
+      speed: 2.7
+      lifetime: 58
       width: 8
-      height: 8
-      shrinkY: 0
-      keepVelocity: true
-      hitSize: 6
-      homingPower: 0.08
-      buildingDamageMultiplier: 0.85
-      hitEffect: hitBulletColor
+      height: 9
+      homingPower: 0.1
+      status: wet
+      statusDuration: 60
+      trailChance: 0.35
+      frontColor: 88d0e8
+      backColor: 224455
     }
   }
   {
     name: naval-flak
     x: 5
     y: -2
-    reload: 10
+    reload: 9
     rotate: true
     mirror: true
     shootSound: shootSnap
@@ -95,14 +98,16 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 10
-      splashDamage: 14
+      damage: 11
+      splashDamage: 16
       splashDamageRadius: 16
-      speed: 4.0
+      speed: 4.1
       lifetime: 40
       width: 6
       height: 6
       collidesGround: true
+      status: wet
+      statusDuration: 30
     }
   }
 ]
@@ -115,7 +120,6 @@ requirements: {
     metaglass/30
   ]
 }
-
 research: {
   parent: aoen-naval-fabricator
   requirements: [

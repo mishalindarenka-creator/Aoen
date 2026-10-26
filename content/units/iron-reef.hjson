@@ -1,48 +1,71 @@
+# Hermit-fortress — Shen Gaoren / rock-crab hull + battery grid
 type: naval
 outlines: false
-health: 4200
-armor: 18
-speed: 0.78
-hitSize: 20
+
+health: 4800
+armor: 22
+speed: 0.72
+hitSize: 22
 faceTarget: false
 targetAir: true
-range: 115
+range: 120
 trailLength: 22
+rotateSpeed: 1.8
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 28
+    regen: 0.6
+    max: 280
+    cooldown: 260
+  }
+]
 
 weapons: [
   {
     name: iron-reef-battery
     x: 0
-    y: 2
-    shootY: 6
-    reload: 16
+    y: 3
+    shootY: 7
+    reload: 14
     rotate: true
     mirror: false
     shootSound: bang
     parts: [
       { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 5, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 11, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 5, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 5, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 12, under: false }
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 95
-      splashDamage: 40
-      splashDamageRadius: 28
-      speed: 2
+      damage: 100
+      splashDamage: 48
+      splashDamageRadius: 30
+      speed: 2.0
       lifetime: 95
-      width: 12
-      height: 12
-      buildingDamageMultiplier: 1.25
+      width: 13
+      height: 13
+      buildingDamageMultiplier: 1.3
       frontColor: a0b4c8
       backColor: 405060
+      fragBullets: 3
+      fragBullet: {
+        type: BasicBulletType
+        damage: 12
+        speed: 2.2
+        lifetime: 20
+        width: 6
+        height: 6
+      }
     }
   }
   {
     name: iron-reef-flak
-    x: 6
+    x: 7
     y: -2
-    reload: 8
+    reload: 7
     rotate: true
     mirror: true
     shootSound: shootSnap
@@ -54,9 +77,9 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 14
-      splashDamage: 20
-      splashDamageRadius: 18
+      damage: 16
+      splashDamage: 22
+      splashDamageRadius: 20
       speed: 4.2
       lifetime: 42
       width: 7
@@ -68,10 +91,15 @@ weapons: [
     name: iron-reef-missile
     x: 0
     y: -6
-    reload: 18
+    reload: 16
     rotate: true
     mirror: false
     shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 3
+    }
     parts: [
       { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
       { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
@@ -79,15 +107,17 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 38
-      splashDamage: 22
-      splashDamageRadius: 16
+      damage: 40
+      splashDamage: 24
+      splashDamageRadius: 18
       speed: 3.2
-      lifetime: 60
+      lifetime: 62
       width: 8
       height: 10
       homingPower: 0.12
       trailChance: 0.3
+      status: wet
+      statusDuration: 50
     }
   }
 ]

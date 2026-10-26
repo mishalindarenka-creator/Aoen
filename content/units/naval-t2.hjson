@@ -1,19 +1,20 @@
+# Plesioth-shell hunter — armored mid + pressure guns
 type: naval
-
 outlines: false
-health: 2400
-armor: 13
-speed: 0.98
-drag: 0.16
-hitSize: 15
-accel: 0.32
-rotateSpeed: 2.5
+
+health: 2600
+armor: 14
+speed: 1.05
+drag: 0.15
+hitSize: 16
+accel: 0.34
+rotateSpeed: 2.7
 faceTarget: false
 targetAir: true
-range: 95
+range: 100
 researchCostMultiplier: 0.65
 
-trailLength: 22
+trailLength: 24
 waveTrailX: 5.5
 waveTrailY: -3
 trailScl: 1.85
@@ -22,9 +23,11 @@ moveSoundVolume: 0.52
 
 abilities: [
   {
-    type: SuppressionFieldAbility
-    range: 44
-    reload: 8
+    type: StatusFieldAbility
+    effect: wet
+    duration: 45
+    range: 36
+    reload: 55
   }
 ]
 
@@ -33,59 +36,70 @@ weapons: [
     name: naval-t2-cannon
     x: 5
     y: 3
-    shootY: 4
-    reload: 22
+    shootY: 5
+    reload: 10
     rotate: true
     rotateSpeed: 5
-    inaccuracy: 6
-    ejectEffect: casing1
+    inaccuracy: 3
     shootSound: shootDuo
+    parts: [
+      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -1, under: true }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: -2, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel1, x: 2, y: 3, under: false }
+      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+    ]
     bullet: {
-      type: FlakBulletType
-      damage: 14
-      speed: 4
-      lifetime: 50
-      width: 6
-      height: 8
-      splashDamage: 32
-      splashDamageRadius: 16
-      buildingDamageMultiplier: 0.78
-      hitEffect: flakExplosion
-      shootEffect: shootSmall
+      type: BasicBulletType
+      damage: 28
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.6
+      lifetime: 48
+      width: 8
+      height: 10
+      status: wet
+      statusDuration: 50
+      frontColor: b0e8f8
+      backColor: 306070
+      pierce: true
+      pierceCap: 2
     }
   }
   {
     name: naval-t2-shell
     x: 5
     y: -5
-    reload: 28
+    reload: 26
     rotate: true
     inaccuracy: 2
     shootSound: shootArtillery
     parts: [
       { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false }
+      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 4, under: false, moves: [{ type: PartMove, progress: reload, y: -2 }] }
       { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 10, under: false }
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 55
+      damage: 60
+      splashDamage: 36
+      splashDamageRadius: 28
       speed: 2.2
-      lifetime: 65
+      lifetime: 68
       width: 12
       height: 14
-      splashDamage: 32
-      splashDamageRadius: 26
-      collidesTiles: true
-      buildingDamageMultiplier: 0.75
+      status: wet
+      statusDuration: 70
+      buildingDamageMultiplier: 0.8
       hitEffect: blastExplosion
+      frontColor: 88c8e0
+      backColor: 284858
     }
   }
   {
     name: naval-t2-laser
     x: 0
     y: 4
-    reload: 20
+    reload: 18
     rotate: true
     mirror: false
     continuous: true
@@ -97,13 +111,13 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 16
-      length: 70
-      width: 3
-      lifetime: 18
+      damage: 18
+      length: 78
+      width: 3.5
+      lifetime: 20
       colors: [ a8e8f8 4488aa 102030 ]
-      status: shocked
-      statusDuration: 30
+      status: wet
+      statusDuration: 40
     }
   }
 ]
@@ -112,7 +126,6 @@ requirements: {
   block: aoen-naval-reconstructor
   previous: aoen-naval
 }
-
 research: {
   parent: aoen-naval-reconstructor
   requirements: [

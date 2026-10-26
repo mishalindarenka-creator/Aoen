@@ -339,6 +339,11 @@ def main() -> None:
         [("mare-imperator-main", "art"), ("mare-imperator-ciws", "gun"), ("mare-imperator-beam", "laser"), ("mare-imperator-missile", "gun")],
     )
 
+    # MH aquatic silhouettes overwrite vanilla-tint hulls
+    from build_naval_sprites import main as build_naval
+
+    build_naval()
+
     print("sprites:", len(list(SPR.glob("*.png"))))
     from ensure_unit_sprites import main as ensure
 

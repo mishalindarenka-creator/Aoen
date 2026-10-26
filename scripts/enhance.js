@@ -140,6 +140,41 @@ function enhanceBahamut() {
   Log.info("[Aoen] enhanced bahamut");
 }
 
+function enhanceNaval() {
+  // MH-flavoured water wake / bubble pressure
+  const wakeIds = [
+    "aoen-naval",
+    "aoen-naval-t2",
+    "aoen-iron-reef",
+    "aoen-needle-skiff",
+    "aoen-leviathan-crown",
+    "aoen-mare-imperator"
+  ];
+  wakeIds.forEach(id => {
+    const u = lib.unit(id);
+    if (u == null) return;
+    lib.addAbility(u, extend(Ability, {
+      update(unit) {
+        if (unit.vel.len() > 0.6 && Mathf.chance(0.12 * Time.delta)) {
+          Fx.bubble.at(unit.x + Mathf.range(8), unit.y + Mathf.range(8));
+        }
+        Units.nearbyEnemies(unit.team, unit.x, unit.y, unit.hitSize * 1.1, e => {
+          if (Mathf.chance(0.03 * Time.delta)) {
+            e.apply(StatusEffects.wet, 35);
+          }
+        });
+      },
+      localized() {
+        return "Tide Wake";
+      },
+      copy() {
+        return this;
+      }
+    }));
+  });
+  Log.info("[Aoen] naval MH wake abilities");
+}
+
 function enhanceBossWeapons() {
   const storm = lib.unit("aoen-storm-sovereign");
   if (storm != null) {
@@ -188,6 +223,7 @@ function run() {
   if (enhanced) return;
   try {
     enhanceSnakes();
+    enhanceNaval();
     enhanceBahamut();
     enhanceBossWeapons();
     enhanced = true;
