@@ -184,9 +184,30 @@ weapons: [
     mirror: true
     shootSound: missile
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
     ]
     bullet: {
       type: MissileBulletType

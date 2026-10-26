@@ -13,16 +13,13 @@ def run(name: str) -> None:
 
 
 def main() -> None:
-    run("build_units_sprites.py")
-    run("build_crab_sprites.py")  # overwrite crab line + crabzilla with better art
+    run("fix_inline_parts.py")
+    run("build_hd_sprites.py")  # NH / Exogenesis / Jababarium style remap
     run("build_snake_sprites.py")
     run("build_bahamut_sprites.py")
     run("build_naval_sprites.py")
-    run("build_weapon_sprites.py")
     run("ensure_unit_sprites.py")
     run("build_block_sprites.py")
-    run("build_world_sprites.py")
-    run("build_turret_sprites.py")
     run("fix_ohno.py")
     run("validate_mod.py")
 

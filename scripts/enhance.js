@@ -236,7 +236,7 @@ function enhanceBossWeapons() {
   }
 }
 
-function run() {
+function aoenEnhanceOnce() {
   if (enhanced) return;
   try {
     enhanceSnakes();
@@ -251,17 +251,17 @@ function run() {
   }
 }
 
-function forceRun() {
+function aoenEnhanceForce() {
   enhanced = false;
-  run();
+  aoenEnhanceOnce();
 }
 
 Events.on(ClientLoadEvent, e => {
-  Timer.schedule(run, 0.1);
+  Timer.schedule(aoenEnhanceOnce, 0.1);
 });
 
 Events.on(ServerLoadEvent, e => {
-  Timer.schedule(run, 0.1);
+  Timer.schedule(aoenEnhanceOnce, 0.1);
 });
 
-exports.run = forceRun;
+exports.run = aoenEnhanceForce;

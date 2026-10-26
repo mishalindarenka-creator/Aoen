@@ -45,10 +45,38 @@ weapons: [
     mirror: false
     shootSound: bang
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -2, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 8, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel1, x: 4, y: 8, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 18, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -4
+        y: 8
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 4
+        y: 8
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 18
+        under: false
+      }
     ]
     bullet: {
       type: ArtilleryBulletType
@@ -91,10 +119,38 @@ weapons: [
     mirror: true
     shootSound: shootSnap
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 3, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 3, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -3
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 3
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
     ]
     bullet: {
       type: FlakBulletType
@@ -118,11 +174,46 @@ weapons: [
     continuous: true
     shootSound: laserblast
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 4, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 8, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel1, x: 4, y: 8, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 16, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -4
+        y: 8
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 4
+        y: 8
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 16
+        under: false
+      }
     ]
     bullet: {
       type: ContinuousLaserBulletType
@@ -150,9 +241,30 @@ weapons: [
     }
     shootSound: missile
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -mag, x: 0, y: -2, under: true }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 9, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 9
+        under: false
+      }
     ]
     bullet: {
       type: MissileBulletType
@@ -178,10 +290,45 @@ weapons: [
     mirror: false
     shootSound: railgun
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 5, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 12, under: false, moves: [{ type: PartMove, progress: reload, y: -4 }] }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 20, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 5
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 12
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 20
+        under: false
+      }
     ]
     bullet: {
       type: RailBulletType

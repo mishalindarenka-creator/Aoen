@@ -2,8 +2,8 @@
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — Aoen-only materials for all blocks/units/constructors.",
-  "version": "2.1.1",
+  "description": "Aoen — NH/Exo/Jababarium-style sprites; content parse fixes.",
+  "version": "2.2.0",
   "minGameVersion": "160.7",
   "dependencies": [],
   "hidden": false

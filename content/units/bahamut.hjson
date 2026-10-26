@@ -48,57 +48,488 @@ abilities: [
 
 parts: [
   # —— Wings of Terror (8 membrane panels, mirrored) ——
-  { type: RegionPart, outline: false, suffix: -wing-0, x: -9, y: 8, rotation: 62, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 10 }] }
-  { type: RegionPart, outline: false, suffix: -wing-1, x: -16, y: 6, rotation: 54, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 12 }] }
-  { type: RegionPart, outline: false, suffix: -wing-2, x: -24, y: 2, rotation: 46, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 14 }] }
-  { type: RegionPart, outline: false, suffix: -wing-3, x: -32, y: -2, rotation: 38, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 16 }] }
-  { type: RegionPart, outline: false, suffix: -wing-4, x: -38, y: -8, rotation: 28, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 18 }] }
-  { type: RegionPart, outline: false, suffix: -wing-5, x: -44, y: -14, rotation: 20, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 20 }] }
-  { type: RegionPart, outline: false, suffix: -wing-6, x: -48, y: -20, rotation: 12, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 22 }] }
-  { type: RegionPart, outline: false, suffix: -wing-7, x: -50, y: -26, rotation: 6, under: true, mirror: true, moves: [{ type: PartMove, progress: warmup, rot: 24 }] }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-0
+    x: -9
+    y: 8
+    rotation: 62
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 10
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-1
+    x: -16
+    y: 6
+    rotation: 54
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 12
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-2
+    x: -24
+    y: 2
+    rotation: 46
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 14
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-3
+    x: -32
+    y: -2
+    rotation: 38
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 16
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-4
+    x: -38
+    y: -8
+    rotation: 28
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 18
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-5
+    x: -44
+    y: -14
+    rotation: 20
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 20
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-6
+    x: -48
+    y: -20
+    rotation: 12
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 22
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-7
+    x: -50
+    y: -26
+    rotation: 6
+    under: true
+    mirror: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 24
+      }
+    ]
+  }
 
   # —— Fiery red horns (large + secondary) ——
-  { type: RegionPart, outline: false, suffix: -horn-l, x: -6, y: 20, rotation: -18, under: false }
-  { type: RegionPart, outline: false, suffix: -horn-r, x: 6, y: 20, rotation: 18, under: false }
-  { type: RegionPart, outline: false, suffix: -horn-l2, x: -4, y: 16, rotation: -8, under: false }
-  { type: RegionPart, outline: false, suffix: -horn-r2, x: 4, y: 16, rotation: 8, under: false }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-l
+    x: -6
+    y: 20
+    rotation: -18
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-r
+    x: 6
+    y: 20
+    rotation: 18
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-l2
+    x: -4
+    y: 16
+    rotation: -8
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-r2
+    x: 4
+    y: 16
+    rotation: 8
+    under: false
+  }
 
   # —— Divinity Shackles (Relink drop lore) ——
-  { type: RegionPart, outline: false, suffix: -shackle-divinity, x: 0, y: 4, under: false }
-  { type: RegionPart, outline: false, suffix: -shackle-neck, x: 0, y: 14, under: false }
-  { type: RegionPart, outline: false, suffix: -shackle-chest, x: 0, y: 0, under: false }
-  { type: RegionPart, outline: false, suffix: -shackle-waist, x: 0, y: -12, under: false }
-  { type: RegionPart, outline: false, suffix: -shackle-wrist, x: -14, y: 2, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -shackle-wing, x: -16, y: 4, under: true, mirror: true }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-divinity
+    x: 0
+    y: 4
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-neck
+    x: 0
+    y: 14
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-chest
+    x: 0
+    y: 0
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-waist
+    x: 0
+    y: -12
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-wrist
+    x: -14
+    y: 2
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-wing
+    x: -16
+    y: 4
+    under: true
+    mirror: true
+  }
 
   # —— Chains (binding until the last chain breaks) ——
-  { type: RegionPart, outline: false, suffix: -chain-0, x: -7, y: -2, rotation: 12, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -chain-1, x: -8, y: -8, rotation: 16, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -chain-2, x: -9, y: -14, rotation: 20, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -chain-3, x: -9, y: -20, rotation: 24, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -chain-4, x: -8, y: -26, rotation: 28, under: true, mirror: true }
-  { type: RegionPart, outline: false, suffix: -chain-5, x: 0, y: -16, under: true }
-  { type: RegionPart, outline: false, suffix: -chain-6, x: 0, y: -22, under: true }
-  { type: RegionPart, outline: false, suffix: -chain-7, x: 0, y: -28, under: true }
-  { type: RegionPart, outline: false, suffix: -chain-8, x: 0, y: -34, under: true }
-  { type: RegionPart, outline: false, suffix: -chain-9, x: 0, y: -40, under: true }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-0
+    x: -7
+    y: -2
+    rotation: 12
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-1
+    x: -8
+    y: -8
+    rotation: 16
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-2
+    x: -9
+    y: -14
+    rotation: 20
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-3
+    x: -9
+    y: -20
+    rotation: 24
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-4
+    x: -8
+    y: -26
+    rotation: 28
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-5
+    x: 0
+    y: -16
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-6
+    x: 0
+    y: -22
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-7
+    x: 0
+    y: -28
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-8
+    x: 0
+    y: -34
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-9
+    x: 0
+    y: -40
+    under: true
+  }
 
   # —— Spine ridges ——
-  { type: RegionPart, outline: false, suffix: -spine-0, x: 0, y: 8, under: false }
-  { type: RegionPart, outline: false, suffix: -spine-1, x: 0, y: 0, under: false }
-  { type: RegionPart, outline: false, suffix: -spine-2, x: 0, y: -8, under: false }
-  { type: RegionPart, outline: false, suffix: -spine-3, x: 0, y: -16, under: false }
-  { type: RegionPart, outline: false, suffix: -spine-4, x: 0, y: -24, under: false }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -spine-0
+    x: 0
+    y: 8
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -spine-1
+    x: 0
+    y: 0
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -spine-2
+    x: 0
+    y: -8
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -spine-3
+    x: 0
+    y: -16
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -spine-4
+    x: 0
+    y: -24
+    under: false
+  }
 
   # —— Tail ——
-  { type: RegionPart, outline: false, suffix: -tail-0, x: 0, y: -20, under: true, moves: [{ type: PartMove, progress: warmup, rot: 5 }] }
-  { type: RegionPart, outline: false, suffix: -tail-1, x: 0, y: -28, under: true, moves: [{ type: PartMove, progress: warmup, rot: -7 }] }
-  { type: RegionPart, outline: false, suffix: -tail-2, x: 0, y: -36, under: true, moves: [{ type: PartMove, progress: warmup, rot: 8 }] }
-  { type: RegionPart, outline: false, suffix: -tail-3, x: 0, y: -44, under: true, moves: [{ type: PartMove, progress: warmup, rot: -8 }] }
-  { type: RegionPart, outline: false, suffix: -tail-4, x: 0, y: -52, under: true, moves: [{ type: PartMove, progress: warmup, rot: 6 }] }
-  { type: RegionPart, outline: false, suffix: -tail-5, x: 0, y: -58, under: true, moves: [{ type: PartMove, progress: warmup, rot: -5 }] }
-  { type: RegionPart, outline: false, suffix: -tail-6, x: 0, y: -64, under: true, moves: [{ type: PartMove, progress: warmup, rot: 4 }] }
-  { type: RegionPart, outline: false, suffix: -tail-7, x: 0, y: -70, under: true, moves: [{ type: PartMove, progress: warmup, rot: -3 }] }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-0
+    x: 0
+    y: -20
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 5
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-1
+    x: 0
+    y: -28
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: -7
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-2
+    x: 0
+    y: -36
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 8
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-3
+    x: 0
+    y: -44
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: -8
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-4
+    x: 0
+    y: -52
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 6
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-5
+    x: 0
+    y: -58
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: -5
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-6
+    x: 0
+    y: -64
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: 4
+      }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-7
+    x: 0
+    y: -70
+    under: true
+    moves: [
+      {
+        type: PartMove
+        progress: warmup
+        rot: -3
+      }
+    ]
+  }
 ]
 
 weapons: [
@@ -115,12 +546,68 @@ weapons: [
     shootStatus: unmoving
     shootStatusDuration: 50
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: -2, under: true }
-      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 2, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: -4, y: 5, under: false, moves: [{ type: PartMove, progress: reload, y: -2 }] }
-      { type: RegionPart, outline: false, suffix: -barrel1, x: 0, y: 7, under: false, moves: [{ type: PartMove, progress: reload, y: -3 }] }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 4, y: 5, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 14, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 2
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -4
+        y: 5
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 7
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 4
+        y: 5
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 14
+        under: false
+      }
     ]
     bullet: {
       type: BasicBulletType
@@ -173,9 +660,30 @@ weapons: [
     shotDelay: 4
     inaccuracy: 12
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: 0, y: 6, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 12, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 6
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 12
+        under: false
+      }
     ]
     bullet: {
       type: ArtilleryBulletType
@@ -207,11 +715,46 @@ weapons: [
     continuous: true
     shootSound: laserblast
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 3, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel0, x: -3, y: 7, under: false }
-      { type: RegionPart, outline: false, suffix: -barrel1, x: 3, y: 7, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 14, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -3
+        y: 7
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 3
+        y: 7
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 14
+        under: false
+      }
     ]
     bullet: {
       type: ContinuousLaserBulletType
@@ -243,10 +786,74 @@ weapons: [
     top: true
     shootSound: shootBig
     parts: [
-      { type: RegionPart, outline: false, suffix: -seg1, x: 0, y: 0, moveRot: -14, under: true, moves: [{ type: PartMove, progress: reload, x: 0.6, rot: 28 }] }
-      { type: RegionPart, outline: false, suffix: -seg2, x: 2, y: -1, moveRot: -26, under: true, moves: [{ type: PartMove, progress: reload, x: 1, rot: 38 }] }
-      { type: RegionPart, outline: false, suffix: -seg3, x: 3, y: -2, moveRot: -40, under: true, moves: [{ type: PartMove, progress: reload, x: 1.2, rot: 48 }] }
-      { type: RegionPart, outline: false, suffix: -seg4, x: 4, y: -3, moveRot: -52, under: true, moves: [{ type: PartMove, progress: reload, x: 1.4, rot: 56 }] }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -14
+        under: true
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            x: 0.6
+            rot: 28
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 2
+        y: -1
+        moveRot: -26
+        under: true
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            x: 1
+            rot: 38
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 3
+        y: -2
+        moveRot: -40
+        under: true
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            x: 1.2
+            rot: 48
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 4
+        y: -3
+        moveRot: -52
+        under: true
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            x: 1.4
+            rot: 56
+          }
+        ]
+      }
     ]
     bullet: {
       type: ShrapnelBulletType
@@ -279,8 +886,22 @@ weapons: [
       spread: 10
     }
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
     ]
     bullet: {
       type: BasicBulletType
@@ -311,8 +932,22 @@ weapons: [
     mirror: true
     shootSound: missile
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 7, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
     ]
     bullet: {
       type: MissileBulletType
@@ -342,9 +977,30 @@ weapons: [
     mirror: false
     shootSound: spark
     parts: [
-      { type: RegionPart, outline: false, suffix: -breech, x: 0, y: 0, under: true }
-      { type: RegionPart, outline: false, suffix: -coil, x: 0, y: 2, under: false }
-      { type: RegionPart, outline: false, suffix: -muzzle, x: 0, y: 8, under: false }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 2
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
     ]
     bullet: {
       type: EmpBulletType
