@@ -7,7 +7,7 @@ HJSON = """name: aoen
 displayName: Aoen
 author: Paradew
 description: "[#888888]Aoen[] — JS API layer: custom bullets/abilities, Proto Bahamut, serpents, T1–T6."
-version: "1.7.0"
+version: "1.8.0"
 minGameVersion: 160.7
 dependencies: []
 hidden: false
@@ -18,7 +18,7 @@ JSON = """{
   "displayName": "Aoen",
   "author": "Paradew",
   "description": "Aoen — JS API layer, Proto Bahamut, serpents, T1-T6.",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "minGameVersion": "160.7",
   "dependencies": [],
   "hidden": false
