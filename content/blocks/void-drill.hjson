@@ -1,4 +1,5 @@
 type: Drill
+outlineIcon: false
 category: production
 size: 3
 consumes: {

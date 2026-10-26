@@ -1,0 +1,16 @@
+type: BatteryDiode
+category: power
+size: 1
+health: 140
+outlineIcon: false
+requirements: [
+  aoen-aether-dust/12
+  aoen-nocturne-plate/10
+  aoen-void-shard/8
+]
+research: {
+  parent: aoen-nocturne-battery
+  requirements: [
+    aoen-aether-dust/25
+  ]
+}

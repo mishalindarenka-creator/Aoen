@@ -1,4 +1,5 @@
 type: Router
+outlineIcon: false
 category: distribution
 health: 90
 requirements: [

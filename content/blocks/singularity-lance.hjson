@@ -1,4 +1,5 @@
 type: ContinuousTurret
+outlineIcon: false
 category: turret
 size: 4
 consumes: {

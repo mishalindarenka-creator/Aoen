@@ -1,4 +1,5 @@
 type: MendProjector
+outlineIcon: false
 category: effect
 size: 2
 consumes: {

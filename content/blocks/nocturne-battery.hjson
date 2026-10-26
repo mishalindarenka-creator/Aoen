@@ -1,4 +1,5 @@
 type: Battery
+outlineIcon: false
 category: power
 size: 2
 consumes: {

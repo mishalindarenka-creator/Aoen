@@ -1,0 +1,19 @@
+type: PowerNode
+category: power
+size: 1
+health: 90
+maxNodes: 12
+laserRange: 10
+laserColor: aa88ff
+laserColor2: 442266
+outlineIcon: false
+requirements: [
+  aoen-void-shard/8
+  aoen-nocturne-plate/4
+]
+research: {
+  parent: aoen-dark-generator
+  requirements: [
+    aoen-void-shard/20
+  ]
+}

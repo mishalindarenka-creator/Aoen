@@ -1,4 +1,5 @@
 type: Conveyor
+outlineIcon: false
 category: distribution
 speed: 0.12
 displayedSpeed: 18

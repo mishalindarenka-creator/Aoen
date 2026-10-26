@@ -1,4 +1,5 @@
 type: Conduit
+outlineIcon: false
 category: liquid
 size: 1
 health: 90

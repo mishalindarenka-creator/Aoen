@@ -1,4 +1,5 @@
 type: GenericCrafter
+outlineIcon: false
 category: crafting
 size: 2
 consumes: {

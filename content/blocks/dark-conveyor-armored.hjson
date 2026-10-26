@@ -1,4 +1,5 @@
 type: ArmoredConveyor
+outlineIcon: false
 category: distribution
 speed: 0.14
 displayedSpeed: 20

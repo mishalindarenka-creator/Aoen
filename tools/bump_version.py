@@ -1,11 +1,11 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VER = "2.3.0"
+VER = "2.3.1"
 HJSON = f"""name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — unique AI-generated textures for units/blocks/items."
+description: "сделал Paradew. 70 блоков, электричество, юниты T1–T7, материалы Aoen."
 version: "{VER}"
 minGameVersion: 160.7
 dependencies: []
@@ -15,7 +15,7 @@ JSON = f"""{{
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — unique AI-generated textures for units/blocks/items.",
+  "description": "сделал Paradew. 70 блоков, электричество, юниты T1–T7, материалы Aoen.",
   "version": "{VER}",
   "minGameVersion": "160.7",
   "dependencies": [],

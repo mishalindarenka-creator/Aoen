@@ -1,4 +1,5 @@
 type: UnitFactory
+outlineIcon: false
 category: units
 size: 3
 consumes: {

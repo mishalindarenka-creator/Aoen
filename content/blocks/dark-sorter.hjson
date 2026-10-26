@@ -1,4 +1,5 @@
 type: Sorter
+outlineIcon: false
 category: distribution
 health: 80
 requirements: [

@@ -1,4 +1,5 @@
 type: Radar
+outlineIcon: false
 category: effect
 size: 2
 consumes: {

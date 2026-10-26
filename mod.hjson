@@ -1,8 +1,8 @@
 name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — unique AI-generated textures for units/blocks/items."
-version: "2.3.0"
+description: "сделал Paradew. 70 блоков, электричество, юниты T1–T7, материалы Aoen."
+version: "2.3.1"
 minGameVersion: 160.7
 dependencies: []
 hidden: false

@@ -1,4 +1,5 @@
 type: ItemBridge
+outlineIcon: false
 category: distribution
 range: 6
 transportTime: 2

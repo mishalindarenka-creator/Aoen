@@ -1,4 +1,5 @@
 type: Reconstructor
+outlineIcon: false
 category: units
 size: 9
 consumes: {

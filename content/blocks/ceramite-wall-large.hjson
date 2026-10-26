@@ -1,4 +1,5 @@
 type: Wall
+outlineIcon: false
 category: defense
 size: 2
 health: 4800

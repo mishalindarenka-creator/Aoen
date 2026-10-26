@@ -1,4 +1,5 @@
 type: ItemTurret
+outlineIcon: false
 category: turret
 size: 4
 health: 4200

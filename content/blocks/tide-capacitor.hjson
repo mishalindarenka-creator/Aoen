@@ -1,0 +1,22 @@
+type: Battery
+category: power
+size: 3
+consumes: {
+  powerBuffered: 120000
+}
+health: 920
+armor: 6
+outlineIcon: false
+requirements: [
+  aoen-tide-composite/80
+  aoen-nocturne-plate/60
+  aoen-aether-dust/40
+  aoen-abyssal-alloy/25
+]
+research: {
+  parent: aoen-nocturne-battery
+  requirements: [
+    aoen-tide-composite/50
+    aoen-aether-dust/30
+  ]
+}

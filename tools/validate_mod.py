@@ -73,6 +73,9 @@ WORLD_BASE = [
     "mythril-reactor",
     "void-unloader",
     "tide-conduit",
+    "void-node",
+    "aether-diode",
+    "tide-capacitor",
 ]
 
 ITEMS = [
