@@ -1,0 +1,10 @@
+{
+  "name": "aoen",
+  "displayName": "Aoen",
+  "author": "Paradew",
+  "description": "Aoen — JS API layer, Proto Bahamut, serpents, T1-T6.",
+  "version": "1.6.1",
+  "minGameVersion": "160.7",
+  "dependencies": [],
+  "hidden": false
+}
