@@ -1,24 +1,21 @@
-"""Rewrite mod.hjson / mod.json as UTF-8 without BOM."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VER = "2.2.0"
-
+VER = "2.3.0"
 HJSON = f"""name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — NH/Exo/Jababarium-style sprites; content parse fixes."
+description: "[#888888]Aoen[] — unique AI-generated textures for units/blocks/items."
 version: "{VER}"
 minGameVersion: 160.7
 dependencies: []
 hidden: false
 """
-
 JSON = f"""{{
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — NH/Exo/Jababarium-style sprites; content parse fixes.",
+  "description": "Aoen — unique AI-generated textures for units/blocks/items.",
   "version": "{VER}",
   "minGameVersion": "160.7",
   "dependencies": [],

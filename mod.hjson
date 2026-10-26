@@ -1,8 +1,8 @@
 name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — NH/Exo/Jababarium-style sprites; content parse fixes."
-version: "2.2.0"
+description: "[#888888]Aoen[] — unique AI-generated textures for units/blocks/items."
+version: "2.3.0"
 minGameVersion: 160.7
 dependencies: []
 hidden: false
