@@ -1,0 +1,423 @@
+# aoen-tier: 7
+# aoen-wep-x2
+# Cosmic Devourer — void worm (DoG-inspired)
+type: flying
+outlines: false
+
+health: 180000
+armor: 52
+speed: 1.1
+accel: 0.04
+drag: 0.025
+hitSize: 55.8
+rotateSpeed: 2.4
+flying: true
+lowAltitude: false
+engineOffset: -16
+engineSize: 7
+targetAir: true
+range: 170
+faceTarget: true
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 44
+    regen: 1.2
+    max: 900
+    cooldown: 280
+  }
+]
+
+weapons: [
+{
+    name: ouroboros-apex-maw
+    x: 0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 160
+      length: 125
+      width: 13
+      lifetime: 42
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+{
+    name: ouroboros-apex-bolt
+    x: 0
+    y: 2
+    reload: 16
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LaserBulletType
+      damage: 190
+      length: 110
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+{
+    name: ouroboros-apex-missile
+    x: 6
+    y: -4
+    reload: 12
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 150
+      splashDamage: 90
+      splashDamageRadius: 24
+      speed: 3.6
+      lifetime: 72
+      width: 10
+      height: 13
+      homingPower: 0.15
+      status: sapped
+      statusDuration: 100
+    }
+  }
+{
+    name: ouroboros-apex-emp
+    x: 0
+    y: -8
+    reload: 65
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 110
+      splashDamage: 180
+      splashDamageRadius: 56
+      speed: 2.8
+      lifetime: 45
+      width: 14
+      height: 14
+      powerDamageScl: 2.8
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.35
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+{
+    name: ouroboros-apex-maw
+    x: 7.0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 160
+      length: 125
+      width: 13
+      lifetime: 42
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+{
+    name: ouroboros-apex-bolt
+    x: 3.0
+    y: 2
+    reload: 16
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LaserBulletType
+      damage: 190
+      length: 110
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+{
+    name: ouroboros-apex-missile
+    x: 10.0
+    y: -4
+    reload: 12
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 150
+      splashDamage: 90
+      splashDamageRadius: 24
+      speed: 3.6
+      lifetime: 72
+      width: 10
+      height: 13
+      homingPower: 0.15
+      status: sapped
+      statusDuration: 100
+    }
+  }
+{
+    name: ouroboros-apex-emp
+    x: 5.0
+    y: -8
+    reload: 65
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 110
+      splashDamage: 180
+      splashDamageRadius: 56
+      speed: 2.8
+      lifetime: 45
+      width: 14
+      height: 14
+      powerDamageScl: 2.8
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.35
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t7
+  previous: aoen-singularity-eel
+}
+research: {
+  parent: aoen-ground-reconstructor-t7
+  requirements: [
+    aoen-aether-dust/140
+    aoen-pale-mythril/200
+  ]
+}

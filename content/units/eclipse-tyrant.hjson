@@ -1,12 +1,15 @@
+# aoen-tier: 6
+# aoen-wep-x8
+# aoen-dmg-t6
 type: legs
 outlines: false
 
-health: 90000
+health: 22400
 armor: 60
 speed: 0.18
 drag: 0.24
 rotateSpeed: 0.9
-hitSize: 144
+hitSize: 89.5
 rippleScale: 1.0
 legMinLength: 0.6
 legMaxLength: 1.95
@@ -48,7 +51,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: eclipse-tyrant-claw
     x: 18
     y: 2
@@ -115,7 +118,7 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 160
+      damage: 768
       buildingDamageMultiplier: 0.9
       length: 90
       width: 34
@@ -129,7 +132,7 @@ weapons: [
       despawnEffect: none
     }
   }
-  {
+{
     name: eclipse-tyrant-mortar
     x: 0
     y: 10
@@ -140,7 +143,7 @@ weapons: [
     shootSound: bang
     bullet: {
       type: ArtilleryBulletType
-      damage: 400
+      damage: 768
       splashDamage: 140
       splashDamageRadius: 48
       speed: 1.9
@@ -153,7 +156,7 @@ weapons: [
       backColor: 884422
     }
   }
-  {
+{
     name: eclipse-tyrant-beam
     x: 0
     y: -6
@@ -164,7 +167,7 @@ weapons: [
     shootSound: laserbig
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 70
+      damage: 768
       length: 160
       width: 10
       lifetime: 55
@@ -173,7 +176,7 @@ weapons: [
       statusDuration: 60
     }
   }
-  {
+{
     name: eclipse-tyrant-missile
     x: 22
     y: -10
@@ -214,7 +217,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 90
+      damage: 768
       splashDamage: 50
       splashDamageRadius: 24
       speed: 3.8
@@ -227,7 +230,7 @@ weapons: [
       statusDuration: 100
     }
   }
-  {
+{
     name: eclipse-tyrant-rail
     x: 0
     y: 14
@@ -278,12 +281,569 @@ weapons: [
     ]
     bullet: {
       type: RailBulletType
-      damage: 280
+      damage: 768
       length: 190
       pierceDamageFactor: 0.3
       hitEffect: hitBulletBig
       status: shocked
       statusDuration: 70
+    }
+  }
+{
+    name: eclipse-tyrant-claw
+    x: 21.0
+    y: 2
+    shootY: 16
+    baseRotation: -38
+    rotationLimit: 120
+    reload: 10
+    rotate: true
+    rotateSpeed: 3.5
+    mirror: true
+    alternate: false
+    recoil: 5
+    top: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -16
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -28
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 40 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -42
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 50 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 58 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 768
+      buildingDamageMultiplier: 0.9
+      length: 90
+      width: 34
+      lifetime: 16
+      fromColor: ffd37f
+      toColor: 882222
+      status: aoen-bleeding
+      statusDuration: 200
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: eclipse-tyrant-mortar
+    x: 4.0
+    y: 10
+    shootY: 14
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 768
+      splashDamage: 140
+      splashDamageRadius: 48
+      speed: 1.9
+      lifetime: 110
+      width: 22
+      height: 22
+      buildingDamageMultiplier: 1.3
+      hitEffect: explosion
+      frontColor: ffee88
+      backColor: 884422
+    }
+  }
+{
+    name: eclipse-tyrant-beam
+    x: 5.0
+    y: -6
+    reload: 50
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 768
+      length: 160
+      width: 10
+      lifetime: 55
+      colors: [ ffd37f ff6644 441100 ]
+      status: melting
+      statusDuration: 60
+    }
+  }
+{
+    name: eclipse-tyrant-missile
+    x: 28.0
+    y: -10
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 4
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 768
+      splashDamage: 50
+      splashDamageRadius: 24
+      speed: 3.8
+      lifetime: 75
+      width: 11
+      height: 14
+      homingPower: 0.14
+      trailChance: 0.4
+      status: aoen-bleeding
+      statusDuration: 100
+    }
+  }
+{
+    name: eclipse-tyrant-rail
+    x: 7.0
+    y: 14
+    reload: 40
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 768
+      length: 190
+      pierceDamageFactor: 0.3
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
+    }
+  }
+{
+    name: eclipse-tyrant-claw
+    x: 21.0
+    y: 2
+    shootY: 16
+    baseRotation: -38
+    rotationLimit: 120
+    reload: 10
+    rotate: true
+    rotateSpeed: 3.5
+    mirror: true
+    alternate: false
+    recoil: 5
+    top: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -16
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -28
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 40 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -42
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 50 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 58 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 768
+      buildingDamageMultiplier: 0.9
+      length: 90
+      width: 34
+      lifetime: 16
+      fromColor: ffd37f
+      toColor: 882222
+      status: aoen-bleeding
+      statusDuration: 200
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: eclipse-tyrant-mortar
+    x: 4.0
+    y: 10
+    shootY: 14
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 768
+      splashDamage: 140
+      splashDamageRadius: 48
+      speed: 1.9
+      lifetime: 110
+      width: 22
+      height: 22
+      buildingDamageMultiplier: 1.3
+      hitEffect: explosion
+      frontColor: ffee88
+      backColor: 884422
+    }
+  }
+{
+    name: eclipse-tyrant-beam
+    x: 5.0
+    y: -6
+    reload: 50
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 768
+      length: 160
+      width: 10
+      lifetime: 55
+      colors: [ ffd37f ff6644 441100 ]
+      status: melting
+      statusDuration: 60
+    }
+  }
+{
+    name: eclipse-tyrant-missile
+    x: 28.0
+    y: -10
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 4
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 768
+      splashDamage: 50
+      splashDamageRadius: 24
+      speed: 3.8
+      lifetime: 75
+      width: 11
+      height: 14
+      homingPower: 0.14
+      trailChance: 0.4
+      status: aoen-bleeding
+      statusDuration: 100
+    }
+  }
+{
+    name: eclipse-tyrant-rail
+    x: 7.0
+    y: 14
+    reload: 40
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 768
+      length: 190
+      pierceDamageFactor: 0.3
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
+    }
+  }
+{
+    name: eclipse-tyrant-claw
+    x: 21.0
+    y: 2
+    shootY: 16
+    baseRotation: -38
+    rotationLimit: 120
+    reload: 10
+    rotate: true
+    rotateSpeed: 3.5
+    mirror: true
+    alternate: false
+    recoil: 5
+    top: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -16
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -28
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 40 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -42
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 50 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 58 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 768
+      buildingDamageMultiplier: 0.9
+      length: 90
+      width: 34
+      lifetime: 16
+      fromColor: ffd37f
+      toColor: 882222
+      status: aoen-bleeding
+      statusDuration: 200
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
     }
   }
 ]

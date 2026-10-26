@@ -1,18 +1,21 @@
+# aoen-tier: 3
+# aoen-wep-x4
+# aoen-dmg-t3
 # Brimstone serpent — fire wake
 type: legs
 outlines: false
 
-health: 3800
+health: 2480
 armor: 13
 speed: 1.05
-hitSize: 16
+hitSize: 21.6
 rotateSpeed: 2.6
 targetAir: false
 range: 56
 omniMovement: false
 
 legCount: 4
-legLength: 6
+legLength: 26
 legSpeed: 0.28
 hovering: true
 shadowElevation: 0.12
@@ -20,7 +23,7 @@ groundLayer: 58
 drawCell: false
 
 weapons: [
-  {
+{
     name: cinder-millipede-spit
     x: 0
     y: 5
@@ -48,7 +51,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 42
+      damage: 96
       speed: 3.3
       lifetime: 32
       width: 9
@@ -61,7 +64,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: cinder-millipede-slag
     x: 0
     y: 0
@@ -96,7 +99,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 40
+      damage: 96
       splashDamage: 48
       splashDamageRadius: 24
       speed: 2.0
@@ -111,7 +114,7 @@ weapons: [
       backColor: 882200
     }
   }
-  {
+{
     name: cinder-millipede-fang
     x: 0
     y: 6
@@ -138,7 +141,400 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 36
+      damage: 96
+      length: 40
+      width: 13
+      lifetime: 12
+      fromColor: ff8c28
+      toColor: 882200
+      status: burning
+      statusDuration: 90
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: cinder-millipede-spit
+    x: 6.0
+    y: 5
+    shootY: 6
+    reload: 12
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 3.3
+      lifetime: 32
+      width: 9
+      height: 11
+      status: burning
+      statusDuration: 150
+      makeFire: true
+      frontColor: ff8c28
+      backColor: b44614
+      collidesAir: false
+    }
+  }
+{
+    name: cinder-millipede-slag
+    x: 7.0
+    y: 0
+    reload: 30
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 48
+      splashDamageRadius: 24
+      speed: 2.0
+      lifetime: 52
+      width: 12
+      height: 12
+      status: melting
+      statusDuration: 70
+      collidesTiles: false
+      hitEffect: explosion
+      frontColor: ff6622
+      backColor: 882200
+    }
+  }
+{
+    name: cinder-millipede-fang
+    x: 3.0
+    y: 6
+    reload: 14
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      length: 40
+      width: 13
+      lifetime: 12
+      fromColor: ff8c28
+      toColor: 882200
+      status: burning
+      statusDuration: 90
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: cinder-millipede-spit
+    x: 4.0
+    y: 5
+    shootY: 6
+    reload: 12
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 3.3
+      lifetime: 32
+      width: 9
+      height: 11
+      status: burning
+      statusDuration: 150
+      makeFire: true
+      frontColor: ff8c28
+      backColor: b44614
+      collidesAir: false
+    }
+  }
+{
+    name: cinder-millipede-slag
+    x: 5.0
+    y: 0
+    reload: 30
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 48
+      splashDamageRadius: 24
+      speed: 2.0
+      lifetime: 52
+      width: 12
+      height: 12
+      status: melting
+      statusDuration: 70
+      collidesTiles: false
+      hitEffect: explosion
+      frontColor: ff6622
+      backColor: 882200
+    }
+  }
+{
+    name: cinder-millipede-fang
+    x: 6.0
+    y: 6
+    reload: 14
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      length: 40
+      width: 13
+      lifetime: 12
+      fromColor: ff8c28
+      toColor: 882200
+      status: burning
+      statusDuration: 90
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: cinder-millipede-spit
+    x: 7.0
+    y: 5
+    shootY: 6
+    reload: 12
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 3.3
+      lifetime: 32
+      width: 9
+      height: 11
+      status: burning
+      statusDuration: 150
+      makeFire: true
+      frontColor: ff8c28
+      backColor: b44614
+      collidesAir: false
+    }
+  }
+{
+    name: cinder-millipede-slag
+    x: 3.0
+    y: 0
+    reload: 30
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 48
+      splashDamageRadius: 24
+      speed: 2.0
+      lifetime: 52
+      width: 12
+      height: 12
+      status: melting
+      statusDuration: 70
+      collidesTiles: false
+      hitEffect: explosion
+      frontColor: ff6622
+      backColor: 882200
+    }
+  }
+{
+    name: cinder-millipede-fang
+    x: 4.0
+    y: 6
+    reload: 14
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
       length: 40
       width: 13
       lifetime: 12

@@ -1,0 +1,129 @@
+# aoen-tier: 3
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 2400
+armor: 12
+speed: 1.85
+accel: 0.08
+drag: 0.03
+hitSize: 22
+rotateSpeed: 2.9
+range: 72
+faceTarget: true
+engineOffset: 7.7
+engineSize: 3.8
+researchCostMultiplier: 0.69
+
+weapons: [
+  {
+    name: storm-kite-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 22
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: MissileBulletType
+      damage: 72
+      splashDamage: 25
+      splashDamageRadius: 16
+      speed: 3.25
+      lifetime: 52
+      width: 9
+      height: 11
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: storm-kite-gun-1
+    x: 0.0
+    y: 3.0
+    reload: 22
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: MissileBulletType
+      damage: 72
+      splashDamage: 25
+      splashDamageRadius: 16
+      speed: 3.25
+      lifetime: 52
+      width: 9
+      height: 11
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: storm-kite-gun-2
+    x: -4.0
+    y: 0.0
+    reload: 22
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: MissileBulletType
+      damage: 72
+      splashDamage: 25
+      splashDamageRadius: 16
+      speed: 3.25
+      lifetime: 52
+      width: 9
+      height: 11
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: storm-kite-gun-3
+    x: -0.0
+    y: -5.0
+    reload: 22
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: MissileBulletType
+      damage: 72
+      splashDamage: 25
+      splashDamageRadius: 16
+      speed: 3.25
+      lifetime: 52
+      width: 9
+      height: 11
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor-t3
+  time: 2400
+  requirements: [
+    aoen-nocturne-plate/80
+    aoen-aether-dust/26
+    aoen-void-shard/40
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor-t3
+  requirements: [
+    aoen-aether-dust/20
+  ]
+}

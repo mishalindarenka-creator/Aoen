@@ -1,0 +1,421 @@
+# aoen-tier: 7
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 64000
+armor: 52
+speed: 0.75
+accel: 0.08
+drag: 0.03
+hitSize: 140
+rotateSpeed: 2.1
+range: 210
+faceTarget: true
+engineOffset: 49.0
+engineSize: 6.2
+researchCostMultiplier: 1.01
+
+weapons: [
+  {
+    name: firmament-throne-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-1
+    x: 2.8
+    y: 1.1
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-2
+    x: 2.8
+    y: 2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-3
+    x: 1.9
+    y: 4.6
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-4
+    x: 0.0
+    y: 2.0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-5
+    x: -1.1
+    y: 2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-6
+    x: -2.8
+    y: 2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-7
+    x: -4.6
+    y: 1.9
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-8
+    x: -2.0
+    y: 0.0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-9
+    x: -2.8
+    y: -1.1
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-10
+    x: -2.8
+    y: -2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-11
+    x: -1.9
+    y: -4.6
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-12
+    x: -0.0
+    y: -2.0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-13
+    x: 1.1
+    y: -2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-14
+    x: 2.8
+    y: -2.8
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: firmament-throne-gun-15
+    x: 4.6
+    y: -1.9
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 1150
+      splashDamage: 402
+      splashDamageRadius: 24
+      speed: 3.8499999999999996
+      lifetime: 68
+      width: 13
+      height: 15
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor-t7
+  time: 38400
+  requirements: [
+    aoen-nocturne-plate/1280
+    aoen-aether-dust/426
+    aoen-void-shard/640
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor-t7
+  requirements: [
+    aoen-aether-dust/320
+  ]
+}

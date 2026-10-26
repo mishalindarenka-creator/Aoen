@@ -8,15 +8,15 @@ UNITS = Path(__file__).resolve().parents[1] / "content" / "units"
 
 # hitSize-scaled spider presets (widow→broodmother language)
 PRESETS = {
-    "crab": dict(
-        legCount=6, legGroupSize=3, legLength=14, legSpeed=0.32, legForwardScl=1.4,
-        legBaseOffset=3, legMoveSpace=1.15, legExtension=-7, legPairOffset=3,
+        "crab": dict(
+        legCount=8, legGroupSize=2, legLength=14, legSpeed=0.32, legForwardScl=1.4,
+        legBaseOffset=3, legMoveSpace=1.15, legExtension=-7, legPairOffset=2,
         legLengthScl=1, legMaxLength=1.75, legMinLength=0.75, rippleScale=0.4,
         shadowElevation=0.12, groundLayer=60,
     ),
     "crab-t2": dict(
-        legCount=6, legGroupSize=3, legLength=18, legSpeed=0.28, legForwardScl=1.45,
-        legBaseOffset=4, legMoveSpace=1.2, legExtension=-8, legPairOffset=3,
+        legCount=8, legGroupSize=2, legLength=18, legSpeed=0.28, legForwardScl=1.45,
+        legBaseOffset=4, legMoveSpace=1.2, legExtension=-8, legPairOffset=2,
         legLengthScl=1, legMaxLength=1.75, legMinLength=0.75, rippleScale=0.45,
         shadowElevation=0.16, groundLayer=61,
     ),

@@ -1,10 +1,13 @@
+# aoen-tier: 5
+# aoen-wep-x8
+# aoen-dmg-t5
 type: mech
 outlines: false
 
-health: 26000
+health: 10880
 armor: 34
 speed: 0.36
-hitSize: 30
+hitSize: 57.7
 range: 140
 
 abilities: [
@@ -18,7 +21,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: nexus-prime-core
     x: 0
     y: 4
@@ -62,7 +65,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 240
+      damage: 384
       splashDamage: 55
       splashDamageRadius: 30
       speed: 3.2
@@ -75,13 +78,13 @@ weapons: [
       fragBullets: 6
       fragBullet: {
         type: LightningBulletType
-        damage: 24
+        damage: 384
         lightningLength: 9
         lightningColor: ffee88
       }
     }
   }
-  {
+{
     name: nexus-prime-laser
     x: 10
     y: -2
@@ -134,7 +137,7 @@ weapons: [
     ]
     bullet: {
       type: ContinuousFlameBulletType
-      damage: 36
+      damage: 384
       length: 110
       width: 5
       lifetime: 40
@@ -144,7 +147,7 @@ weapons: [
       pierceCap: 4
     }
   }
-  {
+{
     name: nexus-prime-point
     x: 0
     y: -6
@@ -188,7 +191,7 @@ weapons: [
     ]
     bullet: {
       type: PointLaserBulletType
-      damage: 95
+      damage: 384
       damageInterval: 4
       color: ffd37f
       sprocket: true
@@ -196,7 +199,7 @@ weapons: [
       oscMag: 0.4
     }
   }
-  {
+{
     name: nexus-prime-missile
     x: 12
     y: -8
@@ -232,7 +235,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 55
+      damage: 384
       splashDamage: 30
       splashDamageRadius: 18
       speed: 3.6
@@ -245,7 +248,7 @@ weapons: [
       statusDuration: 60
     }
   }
-  {
+{
     name: nexus-prime-flak
     x: 0
     y: 10
@@ -289,7 +292,7 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 20
+      damage: 384
       splashDamage: 28
       splashDamageRadius: 22
       speed: 4.5
@@ -298,6 +301,633 @@ weapons: [
       height: 8
       collidesGround: true
       explodeRange: 18
+    }
+  }
+{
+    name: nexus-prime-core
+    x: 3.0
+    y: 4
+    shootY: 10
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 55
+      splashDamageRadius: 30
+      speed: 3.2
+      lifetime: 60
+      width: 18
+      height: 18
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      fragBullets: 6
+      fragBullet: {
+        type: LightningBulletType
+        damage: 384
+        lightningLength: 9
+        lightningColor: ffee88
+      }
+    }
+  }
+{
+    name: nexus-prime-laser
+    x: 14.0
+    y: -2
+    reload: 36
+    rotate: true
+    mirror: true
+    continuous: true
+    shootSound: laser
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      damage: 384
+      length: 110
+      width: 5
+      lifetime: 40
+      colors: [ ffee88 ff8844 441100 aa2200 ]
+      status: melting
+      statusDuration: 55
+      pierceCap: 4
+    }
+  }
+{
+    name: nexus-prime-point
+    x: 5.0
+    y: -6
+    reload: 50
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: PointLaserBulletType
+      damage: 384
+      damageInterval: 4
+      color: ffd37f
+      sprocket: true
+      oscScl: 2
+      oscMag: 0.4
+    }
+  }
+{
+    name: nexus-prime-missile
+    x: 18.0
+    y: -8
+    reload: 14
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 384
+      splashDamage: 30
+      splashDamageRadius: 18
+      speed: 3.6
+      lifetime: 65
+      width: 9
+      height: 12
+      homingPower: 0.15
+      trailChance: 0.4
+      status: burning
+      statusDuration: 60
+    }
+  }
+{
+    name: nexus-prime-flak
+    x: 7.0
+    y: 10
+    reload: 8
+    rotate: true
+    mirror: false
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 384
+      splashDamage: 28
+      splashDamageRadius: 22
+      speed: 4.5
+      lifetime: 42
+      width: 8
+      height: 8
+      collidesGround: true
+      explodeRange: 18
+    }
+  }
+{
+    name: nexus-prime-core
+    x: 3.0
+    y: 4
+    shootY: 10
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 55
+      splashDamageRadius: 30
+      speed: 3.2
+      lifetime: 60
+      width: 18
+      height: 18
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      fragBullets: 6
+      fragBullet: {
+        type: LightningBulletType
+        damage: 384
+        lightningLength: 9
+        lightningColor: ffee88
+      }
+    }
+  }
+{
+    name: nexus-prime-laser
+    x: 14.0
+    y: -2
+    reload: 36
+    rotate: true
+    mirror: true
+    continuous: true
+    shootSound: laser
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      damage: 384
+      length: 110
+      width: 5
+      lifetime: 40
+      colors: [ ffee88 ff8844 441100 aa2200 ]
+      status: melting
+      statusDuration: 55
+      pierceCap: 4
+    }
+  }
+{
+    name: nexus-prime-point
+    x: 5.0
+    y: -6
+    reload: 50
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: PointLaserBulletType
+      damage: 384
+      damageInterval: 4
+      color: ffd37f
+      sprocket: true
+      oscScl: 2
+      oscMag: 0.4
+    }
+  }
+{
+    name: nexus-prime-missile
+    x: 18.0
+    y: -8
+    reload: 14
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 384
+      splashDamage: 30
+      splashDamageRadius: 18
+      speed: 3.6
+      lifetime: 65
+      width: 9
+      height: 12
+      homingPower: 0.15
+      trailChance: 0.4
+      status: burning
+      statusDuration: 60
+    }
+  }
+{
+    name: nexus-prime-flak
+    x: 7.0
+    y: 10
+    reload: 8
+    rotate: true
+    mirror: false
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 384
+      splashDamage: 28
+      splashDamageRadius: 22
+      speed: 4.5
+      lifetime: 42
+      width: 8
+      height: 8
+      collidesGround: true
+      explodeRange: 18
+    }
+  }
+{
+    name: nexus-prime-core
+    x: 3.0
+    y: 4
+    shootY: 10
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 55
+      splashDamageRadius: 30
+      speed: 3.2
+      lifetime: 60
+      width: 18
+      height: 18
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      fragBullets: 6
+      fragBullet: {
+        type: LightningBulletType
+        damage: 384
+        lightningLength: 9
+        lightningColor: ffee88
+      }
     }
   }
 ]

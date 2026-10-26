@@ -1,0 +1,83 @@
+# aoen-tier: 2
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 1100
+armor: 7
+speed: 2.1
+accel: 0.08
+drag: 0.03
+hitSize: 14
+rotateSpeed: 3.1
+range: 55
+faceTarget: true
+engineOffset: 4.9
+engineSize: 3.2
+researchCostMultiplier: 0.61
+
+weapons: [
+  {
+    name: gale-wisp-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 36
+      splashDamage: 12
+      splashDamageRadius: 14
+      speed: 3.0999999999999996
+      lifetime: 48
+      width: 8
+      height: 10
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: gale-wisp-gun-1
+    x: -3.0
+    y: 0.0
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 36
+      splashDamage: 12
+      splashDamageRadius: 14
+      speed: 3.0999999999999996
+      lifetime: 48
+      width: 8
+      height: 10
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor
+  time: 1200
+  requirements: [
+    aoen-nocturne-plate/40
+    aoen-aether-dust/13
+    aoen-void-shard/20
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor
+  requirements: [
+    aoen-aether-dust/10
+  ]
+}

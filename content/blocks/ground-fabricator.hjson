@@ -21,3 +21,30 @@ research: {
     aoen-nocturne-plate/80
   ]
 }
+
+plans: [
+  {
+    unit: aoen-crab
+    time: 1200
+    requirements: [
+      aoen-nocturne-plate/20
+      aoen-void-shard/15
+    ]
+  }
+  {
+    unit: aoen-snake
+    time: 1100
+    requirements: [
+      aoen-nocturne-plate/20
+      aoen-void-shard/15
+    ]
+  }
+  {
+    unit: aoen-boomeranger
+    time: 1000
+    requirements: [
+      aoen-nocturne-plate/20
+      aoen-void-shard/15
+    ]
+  }
+]

@@ -1,12 +1,15 @@
+# aoen-tier: 3
+# aoen-wep-x4
+# aoen-dmg-t3
 type: legs
 
 outlines: false
-health: 4800
+health: 2800
 armor: 18
 speed: 0.48
 drag: 0.22
 rotateSpeed: 2
-hitSize: 18
+hitSize: 24.0
 legMinLength: 0.7
 legMaxLength: 1.8
 targetAir: true
@@ -36,7 +39,7 @@ stepSound: walkerStepSmall
 stepSoundVolume: 0.48
 
 weapons: [
-  {
+{
     name: ceramtyr-daimyo-claw
     x: 11
     y: 0
@@ -104,7 +107,7 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 110
+      damage: 96
       buildingDamageMultiplier: 0.65
       length: 72
       width: 22
@@ -118,7 +121,7 @@ weapons: [
       despawnEffect: none
     }
   }
-  {
+{
     name: ceramtyr-daimyo-gun
     x: 6
     y: 6
@@ -177,7 +180,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 36
+      damage: 96
       speed: 4.4
       lifetime: 42
       width: 9
@@ -191,7 +194,7 @@ weapons: [
       fragBullets: 2
       fragBullet: {
         type: BasicBulletType
-        damage: 10
+        damage: 96
         speed: 2.4
         lifetime: 16
         width: 5
@@ -201,7 +204,7 @@ weapons: [
       }
     }
   }
-  {
+{
     name: ceramtyr-daimyo-mortar
     x: 0
     y: -2
@@ -245,7 +248,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 90
+      damage: 96
       splashDamage: 55
       splashDamageRadius: 28
       speed: 2.0
@@ -259,7 +262,7 @@ weapons: [
       backColor: 551010
     }
   }
-  {
+{
     name: ceramtyr-daimyo-fang
     x: 0
     y: 8
@@ -287,7 +290,790 @@ weapons: [
     ]
     bullet: {
       type: SapBulletType
-      damage: 28
+      damage: 96
+      length: 70
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.55
+      color: ff4466
+      status: sapped
+      statusDuration: 80
+    }
+  }
+{
+    name: ceramtyr-daimyo-claw
+    x: 18.0
+    y: 0
+    shootY: 8
+    baseRotation: -35
+    rotationLimit: 120
+    reload: 9
+    rotate: true
+    rotateSpeed: 4
+    mirror: true
+    alternate: false
+    recoil: 2
+    recoilTime: 7
+    top: true
+    shootSound: shootAtrax
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -12
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -26
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 42 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -40
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 55 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 68 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      buildingDamageMultiplier: 0.65
+      length: 72
+      width: 22
+      lifetime: 16
+      fromColor: ff5566
+      toColor: 8a1020
+      status: aoen-bleeding
+      statusDuration: 260
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: ceramtyr-daimyo-gun
+    x: 9.0
+    y: 6
+    shootY: 6
+    reload: 8
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 4.4
+      lifetime: 42
+      width: 9
+      height: 11
+      pierce: true
+      pierceCap: 2
+      status: aoen-bleeding
+      statusDuration: 60
+      frontColor: ff7788
+      backColor: 661122
+      fragBullets: 2
+      fragBullet: {
+        type: BasicBulletType
+        damage: 96
+        speed: 2.4
+        lifetime: 16
+        width: 5
+        height: 6
+        frontColor: ff99aa
+        backColor: 552211
+      }
+    }
+  }
+{
+    name: ceramtyr-daimyo-mortar
+    x: 4.0
+    y: -2
+    shootY: 8
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 55
+      splashDamageRadius: 28
+      speed: 2.0
+      lifetime: 70
+      width: 14
+      height: 14
+      status: aoen-bleeding
+      statusDuration: 100
+      hitEffect: explosion
+      frontColor: ff5566
+      backColor: 551010
+    }
+  }
+{
+    name: ceramtyr-daimyo-fang
+    x: 5.0
+    y: 8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 96
+      length: 70
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.55
+      color: ff4466
+      status: sapped
+      statusDuration: 80
+    }
+  }
+{
+    name: ceramtyr-daimyo-claw
+    x: 17.0
+    y: 0
+    shootY: 8
+    baseRotation: -35
+    rotationLimit: 120
+    reload: 9
+    rotate: true
+    rotateSpeed: 4
+    mirror: true
+    alternate: false
+    recoil: 2
+    recoilTime: 7
+    top: true
+    shootSound: shootAtrax
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -12
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -26
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 42 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -40
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 55 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 68 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      buildingDamageMultiplier: 0.65
+      length: 72
+      width: 22
+      lifetime: 16
+      fromColor: ff5566
+      toColor: 8a1020
+      status: aoen-bleeding
+      statusDuration: 260
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: ceramtyr-daimyo-gun
+    x: 13.0
+    y: 6
+    shootY: 6
+    reload: 8
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 4.4
+      lifetime: 42
+      width: 9
+      height: 11
+      pierce: true
+      pierceCap: 2
+      status: aoen-bleeding
+      statusDuration: 60
+      frontColor: ff7788
+      backColor: 661122
+      fragBullets: 2
+      fragBullet: {
+        type: BasicBulletType
+        damage: 96
+        speed: 2.4
+        lifetime: 16
+        width: 5
+        height: 6
+        frontColor: ff99aa
+        backColor: 552211
+      }
+    }
+  }
+{
+    name: ceramtyr-daimyo-mortar
+    x: 3.0
+    y: -2
+    shootY: 8
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 55
+      splashDamageRadius: 28
+      speed: 2.0
+      lifetime: 70
+      width: 14
+      height: 14
+      status: aoen-bleeding
+      statusDuration: 100
+      hitEffect: explosion
+      frontColor: ff5566
+      backColor: 551010
+    }
+  }
+{
+    name: ceramtyr-daimyo-fang
+    x: 4.0
+    y: 8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 96
+      length: 70
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.55
+      color: ff4466
+      status: sapped
+      statusDuration: 80
+    }
+  }
+{
+    name: ceramtyr-daimyo-claw
+    x: 16.0
+    y: 0
+    shootY: 8
+    baseRotation: -35
+    rotationLimit: 120
+    reload: 9
+    rotate: true
+    rotateSpeed: 4
+    mirror: true
+    alternate: false
+    recoil: 2
+    recoilTime: 7
+    top: true
+    shootSound: shootAtrax
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -12
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 0
+        y: 3
+        moveRot: -26
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 42 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 0
+        y: 6
+        moveRot: -40
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 55 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 0
+        y: 9
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 68 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      buildingDamageMultiplier: 0.65
+      length: 72
+      width: 22
+      lifetime: 16
+      fromColor: ff5566
+      toColor: 8a1020
+      status: aoen-bleeding
+      statusDuration: 260
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: ceramtyr-daimyo-gun
+    x: 12.0
+    y: 6
+    shootY: 6
+    reload: 8
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 96
+      speed: 4.4
+      lifetime: 42
+      width: 9
+      height: 11
+      pierce: true
+      pierceCap: 2
+      status: aoen-bleeding
+      statusDuration: 60
+      frontColor: ff7788
+      backColor: 661122
+      fragBullets: 2
+      fragBullet: {
+        type: BasicBulletType
+        damage: 96
+        speed: 2.4
+        lifetime: 16
+        width: 5
+        height: 6
+        frontColor: ff99aa
+        backColor: 552211
+      }
+    }
+  }
+{
+    name: ceramtyr-daimyo-mortar
+    x: 7.0
+    y: -2
+    shootY: 8
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 96
+      splashDamage: 55
+      splashDamageRadius: 28
+      speed: 2.0
+      lifetime: 70
+      width: 14
+      height: 14
+      status: aoen-bleeding
+      statusDuration: 100
+      hitEffect: explosion
+      frontColor: ff5566
+      backColor: 551010
+    }
+  }
+{
+    name: ceramtyr-daimyo-fang
+    x: 3.0
+    y: 8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 96
       length: 70
       width: 0.7
       lifetime: 16

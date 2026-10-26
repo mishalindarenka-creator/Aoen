@@ -1,30 +1,38 @@
+# aoen-cost-x2
 type: Reconstructor
 outlineIcon: false
 category: units
+constructTime: 1200
 size: 3
 consumes: {
   power: 4.5
   items: [
-    aoen-nocturne-plate/55
-    aoen-ember-slag/55
-    aoen-pale-mythril/25
+    aoen-nocturne-plate/110
+    aoen-ember-slag/110
+    aoen-pale-mythril/50
   ]
 }
 researchCostMultiplier: 0.7
 
 requirements: [
-  aoen-nocturne-ore/260
-  aoen-void-shard/200
-  aoen-nocturne-plate/160
-  aoen-pale-mythril/80
-  aoen-aether-dust/40
+  aoen-nocturne-ore/520
+  aoen-void-shard/400
+  aoen-nocturne-plate/320
+  aoen-pale-mythril/160
+  aoen-aether-dust/80
 ]
 
 research: {
   parent: aoen-ground-reconstructor
   requirements: [
-    aoen-nocturne-ore/220
-    aoen-pale-mythril/60
-    aoen-aether-dust/30
+    aoen-nocturne-ore/440
+    aoen-pale-mythril/120
+    aoen-aether-dust/60
   ]
 }
+
+upgrades: [
+  [aoen-crab-t2, aoen-ceramtyr-daimyo]
+  [aoen-snake-t2, aoen-cinder-millipede]
+  [aoen-boomeranger-t2, aoen-foundry-orbiter]
+]

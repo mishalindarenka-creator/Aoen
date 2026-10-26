@@ -1,0 +1,34 @@
+# aoen-cost-x2
+type: Reconstructor
+outlineIcon: false
+category: units
+size: 11
+consumes: {
+  power: 40
+  items: [
+    aoen-nocturne-plate/840
+    aoen-tide-coral/600
+    aoen-pale-mythril/440
+    aoen-abyssal-alloy/480
+  ]
+}
+floating: true
+researchCostMultiplier: 1.05
+constructTime: 21000
+requirements: [
+  aoen-nocturne-plate/840
+  aoen-tide-coral/600
+  aoen-pale-mythril/440
+  aoen-abyssal-alloy/480
+  aoen-aether-dust/360
+]
+research: {
+  parent: aoen-naval-reconstructor-t6
+  requirements: [
+    aoen-nocturne-plate/840
+  ]
+}
+
+upgrades: [
+  [aoen-mare-imperator, aoen-mare-absolution]
+]

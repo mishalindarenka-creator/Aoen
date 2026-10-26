@@ -1,27 +1,33 @@
+# aoen-cost-x2
 type: Reconstructor
 outlineIcon: false
 category: units
+constructTime: 4000
 size: 5
 consumes: {
   power: 8
   items: [
-    aoen-nocturne-plate/80
-    aoen-tide-coral/70
-    aoen-tide-composite/30
+    aoen-nocturne-plate/160
+    aoen-tide-coral/140
+    aoen-tide-composite/60
   ]
 }
 floating: true
 researchCostMultiplier: 0.8
 requirements: [
-  aoen-nocturne-ore/450
-  aoen-void-shard/360
-  aoen-tide-coral/240
-  aoen-tide-composite/90
+  aoen-nocturne-ore/900
+  aoen-void-shard/720
+  aoen-tide-coral/480
+  aoen-tide-composite/180
 ]
 research: {
   parent: aoen-naval-reconstructor-t3
   requirements: [
-    aoen-tide-composite/40
-    aoen-abyssal-quartz/80
+    aoen-tide-composite/80
+    aoen-abyssal-quartz/160
   ]
 }
+
+upgrades: [
+  [aoen-iron-reef, aoen-needle-skiff]
+]

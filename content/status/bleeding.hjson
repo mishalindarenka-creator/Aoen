@@ -1,7 +1,11 @@
-damage: 0.48
-transitionDamage: 2.5
+damage: 0.35
+transitionDamage: 1.5
 color: b81428
-effect: none
 disarm: false
-speedMultiplier: 0.92
-reloadMultiplier: 1.05
+speedMultiplier: 0.9
+reloadMultiplier: 1.0
+healthMultiplier: 1
+damageMultiplier: 1
+permanent: false
+reactive: false
+show: true

@@ -1,30 +1,36 @@
+# aoen-cost-x2
 type: Reconstructor
 outlineIcon: false
 category: units
+constructTime: 28800
 size: 9
 consumes: {
   power: 24
   items: [
-    aoen-nocturne-plate/200
-    aoen-tide-coral/160
-    aoen-pale-mythril/100
-    aoen-abyssal-alloy/70
+    aoen-nocturne-plate/400
+    aoen-tide-coral/320
+    aoen-pale-mythril/200
+    aoen-abyssal-alloy/140
   ]
 }
 floating: true
 researchCostMultiplier: 0.95
 requirements: [
-  aoen-nocturne-ore/1300
-  aoen-void-shard/1000
-  aoen-tide-coral/700
-  aoen-pale-mythril/380
-  aoen-aether-dust/180
-  aoen-abyssal-alloy/200
+  aoen-nocturne-ore/2600
+  aoen-void-shard/2000
+  aoen-tide-coral/1400
+  aoen-pale-mythril/760
+  aoen-aether-dust/360
+  aoen-abyssal-alloy/400
 ]
 research: {
   parent: aoen-naval-reconstructor-t5
   requirements: [
-    aoen-abyssal-alloy/90
-    aoen-pale-mythril/120
+    aoen-abyssal-alloy/180
+    aoen-pale-mythril/240
   ]
 }
+
+upgrades: [
+  [aoen-leviathan-crown, aoen-mare-imperator]
+]

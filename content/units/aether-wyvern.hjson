@@ -1,0 +1,277 @@
+# aoen-tier: 5
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 12000
+armor: 26
+speed: 1.25
+accel: 0.08
+drag: 0.03
+hitSize: 56
+rotateSpeed: 2.5
+range: 125
+faceTarget: true
+engineOffset: 19.6
+engineSize: 5.0
+researchCostMultiplier: 0.85
+
+weapons: [
+  {
+    name: aether-wyvern-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-1
+    x: 2.4
+    y: 1.8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-2
+    x: 1.2
+    y: 3.8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-3
+    x: -1.5
+    y: 4.8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-4
+    x: -1.6
+    y: 1.2
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-5
+    x: -3.0
+    y: 0.0
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-6
+    x: -3.2
+    y: -2.4
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-7
+    x: -1.5
+    y: -4.8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-8
+    x: 0.6
+    y: -1.9
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: aether-wyvern-gun-9
+    x: 2.4
+    y: -1.8
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 288
+      splashDamage: 100
+      splashDamageRadius: 20
+      speed: 3.55
+      lifetime: 60
+      width: 11
+      height: 13
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor-t5
+  time: 9600
+  requirements: [
+    aoen-nocturne-plate/320
+    aoen-aether-dust/106
+    aoen-void-shard/160
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor-t5
+  requirements: [
+    aoen-aether-dust/80
+  ]
+}

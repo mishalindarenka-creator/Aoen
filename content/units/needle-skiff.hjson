@@ -1,11 +1,14 @@
+# aoen-tier: 4
+# aoen-wep-x8
+# aoen-dmg-t4
 # Mizutsune / Lagiacrus skiff — bubble needles + multi-rack
 type: naval
 outlines: false
 
-health: 7000
+health: 8000
 armor: 19
 speed: 1.22
-hitSize: 26
+hitSize: 41.0
 faceTarget: false
 targetAir: true
 range: 110
@@ -25,7 +28,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: needle-skiff-rack
     x: 0
     y: 5
@@ -63,7 +66,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 42
+      damage: 224
       splashDamage: 16
       splashDamageRadius: 14
       speed: 4.0
@@ -78,7 +81,7 @@ weapons: [
       backColor: 446688
     }
   }
-  {
+{
     name: needle-skiff-rack-l
     x: -9
     y: 0
@@ -114,7 +117,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 34
+      damage: 224
       splashDamage: 14
       splashDamageRadius: 12
       speed: 3.7
@@ -126,7 +129,7 @@ weapons: [
       statusDuration: 55
     }
   }
-  {
+{
     name: needle-skiff-rack-r
     x: 9
     y: 0
@@ -162,7 +165,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 34
+      damage: 224
       splashDamage: 14
       splashDamageRadius: 12
       speed: 3.7
@@ -174,7 +177,7 @@ weapons: [
       statusDuration: 55
     }
   }
-  {
+{
     name: needle-skiff-ciws
     x: 6
     y: -6
@@ -218,7 +221,7 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 14
+      damage: 224
       splashDamage: 16
       splashDamageRadius: 16
       speed: 4.4
@@ -228,7 +231,7 @@ weapons: [
       collidesGround: true
     }
   }
-  {
+{
     name: needle-skiff-beam
     x: 0
     y: -2
@@ -265,13 +268,564 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 24
+      damage: 224
       length: 95
       width: 4
       lifetime: 28
       colors: [ e0f8ff 66aacc 102840 ]
       status: shocked
       statusDuration: 45
+    }
+  }
+{
+    name: needle-skiff-rack
+    x: 3.0
+    y: 5
+    reload: 9
+    rotate: true
+    mirror: false
+    shots: 4
+    shotDelay: 3
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 16
+      splashDamageRadius: 14
+      speed: 4.0
+      lifetime: 58
+      width: 7
+      height: 12
+      homingPower: 0.18
+      trailChance: 0.4
+      status: wet
+      statusDuration: 70
+      frontColor: d0f0ff
+      backColor: 446688
+    }
+  }
+{
+    name: needle-skiff-rack-l
+    x: -5.0
+    y: 0
+    reload: 12
+    rotate: true
+    mirror: false
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.7
+      lifetime: 55
+      width: 7
+      height: 10
+      homingPower: 0.14
+      status: wet
+      statusDuration: 55
+    }
+  }
+{
+    name: needle-skiff-rack-r
+    x: 14.0
+    y: 0
+    reload: 12
+    rotate: true
+    mirror: false
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.7
+      lifetime: 55
+      width: 7
+      height: 10
+      homingPower: 0.14
+      status: wet
+      statusDuration: 55
+    }
+  }
+{
+    name: needle-skiff-ciws
+    x: 12.0
+    y: -6
+    reload: 5
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 224
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 4.4
+      lifetime: 40
+      width: 6
+      height: 6
+      collidesGround: true
+    }
+  }
+{
+    name: needle-skiff-beam
+    x: 7.0
+    y: -2
+    reload: 22
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laser
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 224
+      length: 95
+      width: 4
+      lifetime: 28
+      colors: [ e0f8ff 66aacc 102840 ]
+      status: shocked
+      statusDuration: 45
+    }
+  }
+{
+    name: needle-skiff-rack
+    x: 3.0
+    y: 5
+    reload: 9
+    rotate: true
+    mirror: false
+    shots: 4
+    shotDelay: 3
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 16
+      splashDamageRadius: 14
+      speed: 4.0
+      lifetime: 58
+      width: 7
+      height: 12
+      homingPower: 0.18
+      trailChance: 0.4
+      status: wet
+      statusDuration: 70
+      frontColor: d0f0ff
+      backColor: 446688
+    }
+  }
+{
+    name: needle-skiff-rack-l
+    x: -5.0
+    y: 0
+    reload: 12
+    rotate: true
+    mirror: false
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.7
+      lifetime: 55
+      width: 7
+      height: 10
+      homingPower: 0.14
+      status: wet
+      statusDuration: 55
+    }
+  }
+{
+    name: needle-skiff-rack-r
+    x: 14.0
+    y: 0
+    reload: 12
+    rotate: true
+    mirror: false
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.7
+      lifetime: 55
+      width: 7
+      height: 10
+      homingPower: 0.14
+      status: wet
+      statusDuration: 55
+    }
+  }
+{
+    name: needle-skiff-ciws
+    x: 12.0
+    y: -6
+    reload: 5
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 224
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 4.4
+      lifetime: 40
+      width: 6
+      height: 6
+      collidesGround: true
+    }
+  }
+{
+    name: needle-skiff-beam
+    x: 7.0
+    y: -2
+    reload: 22
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laser
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 224
+      length: 95
+      width: 4
+      lifetime: 28
+      colors: [ e0f8ff 66aacc 102840 ]
+      status: shocked
+      statusDuration: 45
+    }
+  }
+{
+    name: needle-skiff-rack
+    x: 3.0
+    y: 5
+    reload: 9
+    rotate: true
+    mirror: false
+    shots: 4
+    shotDelay: 3
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 224
+      splashDamage: 16
+      splashDamageRadius: 14
+      speed: 4.0
+      lifetime: 58
+      width: 7
+      height: 12
+      homingPower: 0.18
+      trailChance: 0.4
+      status: wet
+      statusDuration: 70
+      frontColor: d0f0ff
+      backColor: 446688
     }
   }
 ]

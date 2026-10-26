@@ -1,7 +1,6 @@
 /**
- * Aoen custom bullet types.
- * CRITICAL: JS-created BulletTypes must set sprite + call load(),
- * otherwise BasicBulletType.draw NPEs on null backRegion.
+ * Aoen custom bullets — NO hit()/super$hit overrides (Rhino StackOverflow).
+ * Status/splash/lightning via fields only; always sprite + load().
  */
 const lib = require("lib");
 
@@ -22,17 +21,19 @@ const fxStorm = fxRing(16, "aaccff", "223366", 14);
 const fxGold = fxRing(18, "ffe080", "664400", 16);
 
 function bleedStatus() {
-  const s = lib.status("aoen-bleeding");
-  return s != null ? s : StatusEffects.sapped;
+  try {
+    const s = lib.status("aoen-bleeding");
+    if (s != null) return s;
+  } catch (e) {}
+  return StatusEffects.sapped;
 }
 
-/** Finish a JS bullet so atlas regions exist before first draw. */
 function ready(b, sprite) {
   try {
     b.sprite = sprite || "bullet";
     b.load();
   } catch (e) {
-    Log.warn("[Aoen] bullet load failed (" + sprite + "): " + e);
+    Log.warn("[Aoen] bullet load: " + e);
   }
   return b;
 }
@@ -48,7 +49,9 @@ const fragCatastrophe = ready(extend(BasicBulletType, {
   frontColor: lib.c("ff6688"),
   backColor: lib.c("440022"),
   status: StatusEffects.sapped,
-  statusDuration: 80
+  statusDuration: 80,
+  hitEffect: fxBleed,
+  despawnEffect: fxBleed
 }), "bullet");
 
 exports.catastrophe = ready(extend(BasicBulletType, {
@@ -72,30 +75,7 @@ exports.catastrophe = ready(extend(BasicBulletType, {
   status: StatusEffects.sapped,
   statusDuration: 180,
   fragBullets: 12,
-  fragBullet: fragCatastrophe,
-  update(b) {
-    this.super$update(b);
-    Units.nearbyEnemies(b.team, b.x, b.y, 64, u => {
-      u.vel.trns(Angles.angle(u.x, u.y, b.x, b.y), 0.35 * Time.delta);
-    });
-  },
-  hit(b, x, y) {
-    this.super$hit(b, x, y);
-    Units.nearbyEnemies(b.team, x, y, 56, u => {
-      u.apply(StatusEffects.unmoving, 50);
-      u.apply(StatusEffects.sapped, 120);
-      if (u.shield > 0) u.shield = Math.max(0, u.shield - 120);
-    });
-  },
-  draw(b) {
-    this.super$draw(b);
-    Draw.z(Layer.bullet + 1);
-    Draw.color(lib.c("ff6688"));
-    Fill.circle(b.x, b.y, 5 + Mathf.absin(b.time, 6, 3));
-    Draw.color(Color.white);
-    Fill.circle(b.x, b.y, 2);
-    Draw.reset();
-  }
+  fragBullet: fragCatastrophe
 }), "shell");
 
 exports.darkBreath = ready(extend(ContinuousLaserBulletType, {
@@ -106,13 +86,7 @@ exports.darkBreath = ready(extend(ContinuousLaserBulletType, {
   shake: 1.5,
   buildingDamageMultiplier: 1.2,
   status: StatusEffects.melting,
-  statusDuration: 100,
-  update(b) {
-    this.super$update(b);
-    if (b.time > 20) {
-      b.damage = this.damage * (1 + Math.min(b.time / 55, 1) * 0.6);
-    }
-  }
+  statusDuration: 100
 }), "laser");
 exports.darkBreath.colors = [lib.c("ff4466"), lib.c("aa1122"), lib.c("1a0810")];
 
@@ -131,16 +105,14 @@ exports.wingMissile = ready(extend(MissileBulletType, {
   statusDuration: 70,
   frontColor: lib.c("cc4488"),
   backColor: lib.c("330022"),
-  hitEffect: Fx.blastExplosion,
-  update(b) {
-    this.super$update(b);
-    if (Mathf.chance(0.2 * Time.delta)) Fx.smoke.at(b.x, b.y);
-  }
+  hitEffect: Fx.blastExplosion
 }), "missile");
 
 exports.venomFang = function (damage, splash) {
   return ready(extend(BasicBulletType, {
     damage: damage,
+    splashDamage: splash,
+    splashDamageRadius: 14,
     speed: 3.5,
     lifetime: 24,
     width: 8,
@@ -151,15 +123,7 @@ exports.venomFang = function (damage, splash) {
     status: StatusEffects.corroded,
     statusDuration: 100,
     hitEffect: fxVenom,
-    despawnEffect: fxVenom,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      Damage.damage(b.team, x, y, 14, splash, false, true);
-      Units.nearbyEnemies(b.team, x, y, 14, u => {
-        u.apply(StatusEffects.corroded, 80);
-        u.apply(StatusEffects.slow, 40);
-      });
-    }
+    despawnEffect: fxVenom
   }), "bullet");
 };
 
@@ -209,14 +173,7 @@ exports.slagShell = function (dmg, splash) {
     frontColor: lib.c("ff8844"),
     backColor: lib.c("882200"),
     hitEffect: fxEmber,
-    despawnEffect: fxEmber,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      try {
-        const t = Vars.world.tileWorld(x, y);
-        if (t != null) Fires.create(t);
-      } catch (e) {}
-    }
+    despawnEffect: fxEmber
   }), "shell");
 };
 
@@ -235,11 +192,7 @@ exports.tidePulse = function (dmg) {
     frontColor: lib.c("70e0c8"),
     backColor: lib.c("206050"),
     hitEffect: fxTide,
-    despawnEffect: fxTide,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      Units.nearbyEnemies(b.team, x, y, 24, u => u.apply(StatusEffects.wet, 70));
-    }
+    despawnEffect: fxTide
   }), "missile");
 };
 
@@ -258,13 +211,7 @@ exports.voidRift = function (dmg) {
     backColor: lib.c("330055"),
     trailChance: 0.4,
     trailColor: lib.c("aa66ff"),
-    hitEffect: fxVoid,
-    update(b) {
-      this.super$update(b);
-      Units.nearbyEnemies(b.team, b.x, b.y, 28, u => {
-        u.vel.trns(Angles.angle(u.x, u.y, b.x, b.y), 0.2 * Time.delta);
-      });
-    }
+    hitEffect: fxVoid
   }), "bullet");
 };
 
@@ -282,15 +229,10 @@ exports.stormEmp = function (dmg) {
     lightning: 3,
     lightningLength: 7,
     lightningDamage: dmg * 0.25,
+    lightningColor: lib.c("88ccff"),
     frontColor: lib.c("aaccff"),
     backColor: lib.c("334466"),
-    hitEffect: fxStorm,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      for (var i = 0; i < 3; i++) {
-        Lightning.create(b.team, lib.c("88ccff"), dmg * 0.2, x, y, b.rotation() + Mathf.range(40), 6);
-      }
-    }
+    hitEffect: fxStorm
   }), "bullet");
 };
 
@@ -309,13 +251,7 @@ exports.goldOrb = function (dmg) {
     backColor: lib.c("886600"),
     hitEffect: fxGold,
     trailChance: 0.35,
-    trailColor: lib.c("ffcc66"),
-    draw(b) {
-      this.super$draw(b);
-      Draw.color(lib.c("ffe080"));
-      Fill.circle(b.x, b.y, 3 + Mathf.absin(b.time, 5, 2));
-      Draw.reset();
-    }
+    trailColor: lib.c("ffcc66")
   }), "missile");
 };
 
@@ -332,13 +268,7 @@ exports.aegisSlug = function (dmg) {
     statusDuration: 50,
     frontColor: lib.c("80e0b0"),
     backColor: lib.c("205040"),
-    hitEffect: Fx.hitBulletColor,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      Units.nearby(b.team, x, y, 20, u => {
-        if (u.damaged()) u.heal(1.5);
-      });
-    }
+    hitEffect: Fx.hitBulletColor
   }), "bullet");
 };
 
@@ -376,15 +306,8 @@ exports.kaijuNova = function () {
     frontColor: lib.c("ffd37f"),
     backColor: lib.c("aa1122"),
     hitEffect: Fx.massiveExplosion,
-    despawnEffect: Fx.massiveExplosion,
-    hit(b, x, y) {
-      this.super$hit(b, x, y);
-      Units.nearbyEnemies(b.team, x, y, 96, u => {
-        u.apply(StatusEffects.unmoving, 40);
-        u.apply(StatusEffects.burning, 80);
-      });
-    }
+    despawnEffect: Fx.massiveExplosion
   }), "shell");
 };
 
-Log.info("[Aoen] custom bullets ready (sprite+load)");
+Log.info("[Aoen] custom bullets ready (no recursive hit)");

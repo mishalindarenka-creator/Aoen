@@ -1,0 +1,627 @@
+# aoen-tier: 7
+# aoen-wep-x2
+type: mech
+outlines: false
+
+health: 176000
+armor: 58
+speed: 0.22
+hitSize: 204.6
+range: 210
+rotateSpeed: 1.1
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 60
+    regen: 2.0
+    max: 2000
+    cooldown: 200
+  }
+  {
+    type: StatusFieldAbility
+    effect: overclock
+    duration: 140
+    range: 72
+    reload: 60
+  }
+]
+
+weapons: [
+{
+    name: apotheosis-omega-nova
+    x: 0
+    y: 6
+    shootY: 14
+    reload: 16
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 180
+      length: 170
+      width: 15
+      lifetime: 50
+      colors: [ ffee88 ffaa44 442200 ]
+      status: melting
+      statusDuration: 90
+      buildingDamageMultiplier: 1.15
+      shake: 1.2
+    }
+  }
+{
+    name: apotheosis-omega-batteries
+    x: 16
+    y: -2
+    reload: 7
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 150
+      splashDamage: 80
+      splashDamageRadius: 24
+      speed: 4.4
+      lifetime: 50
+      width: 13
+      height: 15
+      pierce: true
+      pierceCap: 5
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      lightning: 2
+      lightningLength: 6
+      lightningDamage: 16
+    }
+  }
+{
+    name: apotheosis-omega-rail
+    x: 0
+    y: -10
+    reload: 44
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 680
+      length: 180
+      pierceDamageFactor: 0.32
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 60
+    }
+  }
+{
+    name: apotheosis-omega-missile
+    x: 22
+    y: -12
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 140
+      splashDamage: 90
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 70
+      width: 10
+      height: 14
+      homingPower: 0.16
+      trailChance: 0.45
+      status: burning
+      statusDuration: 80
+    }
+  }
+{
+    name: apotheosis-omega-emp
+    x: 0
+    y: 14
+    reload: 70
+    rotate: false
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 160
+      splashDamage: 240
+      splashDamageRadius: 64
+      speed: 3.2
+      lifetime: 40
+      width: 16
+      height: 16
+      powerDamageScl: 3.0
+      powerSclDecrease: 0.45
+      unitDamageScl: 1.3
+      status: unmoving
+      statusDuration: 55
+      hitPowerEffect: hitEmpSpark
+      frontColor: ffee88
+      backColor: 886622
+    }
+  }
+{
+    name: apotheosis-omega-nova
+    x: 3.0
+    y: 6
+    shootY: 14
+    reload: 16
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 180
+      length: 170
+      width: 15
+      lifetime: 50
+      colors: [ ffee88 ffaa44 442200 ]
+      status: melting
+      statusDuration: 90
+      buildingDamageMultiplier: 1.15
+      shake: 1.2
+    }
+  }
+{
+    name: apotheosis-omega-batteries
+    x: 20.0
+    y: -2
+    reload: 7
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 150
+      splashDamage: 80
+      splashDamageRadius: 24
+      speed: 4.4
+      lifetime: 50
+      width: 13
+      height: 15
+      pierce: true
+      pierceCap: 5
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      lightning: 2
+      lightningLength: 6
+      lightningDamage: 16
+    }
+  }
+{
+    name: apotheosis-omega-rail
+    x: 5.0
+    y: -10
+    reload: 44
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 680
+      length: 180
+      pierceDamageFactor: 0.32
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 60
+    }
+  }
+{
+    name: apotheosis-omega-missile
+    x: 28.0
+    y: -12
+    reload: 12
+    rotate: true
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 140
+      splashDamage: 90
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 70
+      width: 10
+      height: 14
+      homingPower: 0.16
+      trailChance: 0.45
+      status: burning
+      statusDuration: 80
+    }
+  }
+{
+    name: apotheosis-omega-emp
+    x: 7.0
+    y: 14
+    reload: 70
+    rotate: false
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 160
+      splashDamage: 240
+      splashDamageRadius: 64
+      speed: 3.2
+      lifetime: 40
+      width: 16
+      height: 16
+      powerDamageScl: 3.0
+      powerSclDecrease: 0.45
+      unitDamageScl: 1.3
+      status: unmoving
+      statusDuration: 55
+      hitPowerEffect: hitEmpSpark
+      frontColor: ffee88
+      backColor: 886622
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t7
+  previous: aoen-nexus-prime
+}
+research: {
+  parent: aoen-ground-reconstructor-t7
+  requirements: [
+    aoen-abyssal-alloy/180
+    aoen-aether-dust/140
+  ]
+}

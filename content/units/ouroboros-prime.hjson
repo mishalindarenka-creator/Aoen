@@ -1,13 +1,16 @@
+# aoen-tier: 6
+# aoen-wep-x8
+# aoen-dmg-t6
 # Cosmic Devourer — void worm (DoG-inspired)
 type: flying
 outlines: false
 
-health: 90000
+health: 19840
 armor: 52
 speed: 1.1
 accel: 0.04
 drag: 0.025
-hitSize: 36
+hitSize: 80.5
 rotateSpeed: 2.4
 flying: true
 lowAltitude: false
@@ -28,7 +31,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: ouroboros-prime-maw
     x: 0
     y: 8
@@ -64,7 +67,7 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 80
+      damage: 768
       length: 125
       width: 13
       lifetime: 42
@@ -74,7 +77,7 @@ weapons: [
       buildingDamageMultiplier: 1.0
     }
   }
-  {
+{
     name: ouroboros-prime-bolt
     x: 0
     y: 2
@@ -111,14 +114,14 @@ weapons: [
     ]
     bullet: {
       type: LaserBulletType
-      damage: 95
+      damage: 768
       length: 110
       width: 14
       lifetime: 14
       colors: [ eeccff 7744aa 1a1028 ]
     }
   }
-  {
+{
     name: ouroboros-prime-missile
     x: 6
     y: -4
@@ -153,7 +156,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 75
+      damage: 768
       splashDamage: 45
       splashDamageRadius: 24
       speed: 3.6
@@ -165,7 +168,7 @@ weapons: [
       statusDuration: 100
     }
   }
-  {
+{
     name: ouroboros-prime-emp
     x: 0
     y: -8
@@ -200,7 +203,574 @@ weapons: [
     ]
     bullet: {
       type: EmpBulletType
-      damage: 55
+      damage: 768
+      splashDamage: 90
+      splashDamageRadius: 56
+      speed: 2.8
+      lifetime: 45
+      width: 14
+      height: 14
+      powerDamageScl: 2.8
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.35
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+{
+    name: ouroboros-prime-maw
+    x: 7.0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 768
+      length: 125
+      width: 13
+      lifetime: 42
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+{
+    name: ouroboros-prime-bolt
+    x: 3.0
+    y: 2
+    reload: 16
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LaserBulletType
+      damage: 768
+      length: 110
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+{
+    name: ouroboros-prime-missile
+    x: 10.0
+    y: -4
+    reload: 12
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 768
+      splashDamage: 45
+      splashDamageRadius: 24
+      speed: 3.6
+      lifetime: 72
+      width: 10
+      height: 13
+      homingPower: 0.15
+      status: sapped
+      statusDuration: 100
+    }
+  }
+{
+    name: ouroboros-prime-emp
+    x: 5.0
+    y: -8
+    reload: 65
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 768
+      splashDamage: 90
+      splashDamageRadius: 56
+      speed: 2.8
+      lifetime: 45
+      width: 14
+      height: 14
+      powerDamageScl: 2.8
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.35
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+{
+    name: ouroboros-prime-maw
+    x: 6.0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 768
+      length: 125
+      width: 13
+      lifetime: 42
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+{
+    name: ouroboros-prime-bolt
+    x: 7.0
+    y: 2
+    reload: 16
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LaserBulletType
+      damage: 768
+      length: 110
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+{
+    name: ouroboros-prime-missile
+    x: 9.0
+    y: -4
+    reload: 12
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 768
+      splashDamage: 45
+      splashDamageRadius: 24
+      speed: 3.6
+      lifetime: 72
+      width: 10
+      height: 13
+      homingPower: 0.15
+      status: sapped
+      statusDuration: 100
+    }
+  }
+{
+    name: ouroboros-prime-emp
+    x: 4.0
+    y: -8
+    reload: 65
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 768
+      splashDamage: 90
+      splashDamageRadius: 56
+      speed: 2.8
+      lifetime: 45
+      width: 14
+      height: 14
+      powerDamageScl: 2.8
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.35
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+{
+    name: ouroboros-prime-maw
+    x: 5.0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 768
+      length: 125
+      width: 13
+      lifetime: 42
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+{
+    name: ouroboros-prime-bolt
+    x: 6.0
+    y: 2
+    reload: 16
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LaserBulletType
+      damage: 768
+      length: 110
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+{
+    name: ouroboros-prime-missile
+    x: 13.0
+    y: -4
+    reload: 12
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 768
+      splashDamage: 45
+      splashDamageRadius: 24
+      speed: 3.6
+      lifetime: 72
+      width: 10
+      height: 13
+      homingPower: 0.15
+      status: sapped
+      statusDuration: 100
+    }
+  }
+{
+    name: ouroboros-prime-emp
+    x: 3.0
+    y: -8
+    reload: 65
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 768
       splashDamage: 90
       splashDamageRadius: 56
       speed: 2.8

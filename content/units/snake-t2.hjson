@@ -1,18 +1,21 @@
+# aoen-tier: 2
+# aoen-wep-x2
+# aoen-dmg-t2
 # Aquatic Scourge — toxic water serpent
 type: legs
 outlines: false
 
-health: 2100
+health: 1240
 armor: 10
 speed: 1.2
-hitSize: 14
+hitSize: 14.0
 rotateSpeed: 2.9
 targetAir: false
 range: 52
 omniMovement: false
 
 legCount: 4
-legLength: 6
+legLength: 17
 legSpeed: 0.3
 hovering: true
 shadowElevation: 0.1
@@ -30,7 +33,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: snake-t2-fang
     x: 0
     y: 5
@@ -58,7 +61,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 44
+      damage: 48
       speed: 3.6
       lifetime: 30
       width: 8
@@ -70,7 +73,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: snake-t2-spit
     x: 0
     y: 2
@@ -105,7 +108,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 24
+      damage: 48
       splashDamage: 20
       splashDamageRadius: 16
       speed: 2.8
@@ -119,7 +122,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: snake-t2-sap
     x: 0
     y: -2
@@ -146,7 +149,133 @@ weapons: [
     ]
     bullet: {
       type: SapBulletType
-      damage: 22
+      damage: 48
+      length: 55
+      width: 0.65
+      lifetime: 15
+      sapStrength: 0.55
+      color: 44c8b8
+      status: sapped
+      statusDuration: 80
+    }
+  }
+{
+    name: snake-t2-fang
+    x: 6.0
+    y: 5
+    shootY: 7
+    reload: 12
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 48
+      speed: 3.6
+      lifetime: 30
+      width: 8
+      height: 10
+      status: corroded
+      statusDuration: 120
+      frontColor: 80e8e0
+      backColor: 226666
+      collidesAir: false
+    }
+  }
+{
+    name: snake-t2-spit
+    x: 7.0
+    y: 2
+    reload: 22
+    mirror: false
+    shootSound: flame
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 48
+      splashDamage: 20
+      splashDamageRadius: 16
+      speed: 2.8
+      lifetime: 36
+      width: 9
+      height: 9
+      status: wet
+      statusDuration: 80
+      frontColor: 66d0c8
+      backColor: 224848
+      collidesAir: false
+    }
+  }
+{
+    name: snake-t2-sap
+    x: 3.0
+    y: -2
+    reload: 18
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 48
       length: 55
       width: 0.65
       lifetime: 15

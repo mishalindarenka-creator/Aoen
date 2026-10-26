@@ -1,0 +1,33 @@
+# aoen-cost-x2
+type: Reconstructor
+outlineIcon: false
+category: units
+size: 9
+consumes: {
+  power: 40.0
+  items: [
+    aoen-nocturne-plate/1280
+    aoen-aether-dust/640
+    aoen-void-shard/1280
+    aoen-pale-mythril/426
+  ]
+}
+researchCostMultiplier: 0.95
+constructTime: 38880
+requirements: [
+  aoen-nocturne-plate/1280
+  aoen-aether-dust/640
+  aoen-void-shard/1280
+  aoen-pale-mythril/426
+  aoen-abyssal-alloy/640
+]
+research: {
+  parent: aoen-air-reconstructor-t5
+  requirements: [
+    aoen-nocturne-plate/1280
+  ]
+}
+
+upgrades: [
+  [aoen-aether-wyvern, aoen-sky-colossus]
+]

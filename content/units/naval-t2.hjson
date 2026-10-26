@@ -1,12 +1,15 @@
+# aoen-tier: 2
+# aoen-wep-x2
+# aoen-dmg-t2
 # Plesioth-shell hunter — armored mid + pressure guns
 type: naval
 outlines: false
 
-health: 2600
+health: 2000
 armor: 14
 speed: 1.05
 drag: 0.15
-hitSize: 16
+hitSize: 17.1
 accel: 0.34
 rotateSpeed: 2.7
 faceTarget: false
@@ -32,7 +35,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: naval-t2-cannon
     x: 5
     y: 3
@@ -78,7 +81,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 28
+      damage: 56
       splashDamage: 14
       splashDamageRadius: 12
       speed: 3.6
@@ -93,7 +96,7 @@ weapons: [
       pierceCap: 2
     }
   }
-  {
+{
     name: naval-t2-shell
     x: 5
     y: -5
@@ -136,7 +139,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 60
+      damage: 56
       splashDamage: 36
       splashDamageRadius: 28
       speed: 2.2
@@ -151,7 +154,7 @@ weapons: [
       backColor: 284858
     }
   }
-  {
+{
     name: naval-t2-laser
     x: 0
     y: 4
@@ -188,7 +191,172 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 18
+      damage: 56
+      length: 78
+      width: 3.5
+      lifetime: 20
+      colors: [ a8e8f8 4488aa 102030 ]
+      status: wet
+      statusDuration: 40
+    }
+  }
+{
+    name: naval-t2-cannon
+    x: 11.0
+    y: 3
+    shootY: 5
+    reload: 10
+    rotate: true
+    rotateSpeed: 5
+    inaccuracy: 3
+    shootSound: shootDuo
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 56
+      splashDamage: 14
+      splashDamageRadius: 12
+      speed: 3.6
+      lifetime: 48
+      width: 8
+      height: 10
+      status: wet
+      statusDuration: 50
+      frontColor: b0e8f8
+      backColor: 306070
+      pierce: true
+      pierceCap: 2
+    }
+  }
+{
+    name: naval-t2-shell
+    x: 12.0
+    y: -5
+    reload: 26
+    rotate: true
+    inaccuracy: 2
+    shootSound: shootArtillery
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -2
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 56
+      splashDamage: 36
+      splashDamageRadius: 28
+      speed: 2.2
+      lifetime: 68
+      width: 12
+      height: 14
+      status: wet
+      statusDuration: 70
+      buildingDamageMultiplier: 0.8
+      hitEffect: blastExplosion
+      frontColor: 88c8e0
+      backColor: 284858
+    }
+  }
+{
+    name: naval-t2-laser
+    x: 3.0
+    y: 4
+    reload: 18
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laser
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 56
       length: 78
       width: 3.5
       lifetime: 20

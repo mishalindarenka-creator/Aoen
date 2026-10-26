@@ -1,12 +1,14 @@
+# aoen-tier: 1
+# aoen-dmg-t1
 # Reef Pup — MH small aquatic + jababarium twin mount
 type: naval
 outlines: false
 
-health: 1100
+health: 1000
 armor: 8
 speed: 1.25
 drag: 0.13
-hitSize: 13
+hitSize: 11.0
 accel: 0.4
 rotateSpeed: 3.4
 faceTarget: false
@@ -68,7 +70,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 30
+      damage: 28
       speed: 3.0
       lifetime: 52
       width: 7
@@ -116,7 +118,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 44
+      damage: 28
       splashDamage: 16
       splashDamageRadius: 14
       speed: 2.7
@@ -175,7 +177,7 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 11
+      damage: 28
       splashDamage: 16
       splashDamageRadius: 16
       speed: 4.1

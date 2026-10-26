@@ -1,13 +1,16 @@
+# aoen-tier: 5
+# aoen-wep-x8
+# aoen-dmg-t5
 # Storm Weaver — flying lightning serpent
 type: flying
 outlines: false
 
-health: 24000
+health: 9920
 armor: 26
 speed: 1.55
 accel: 0.06
 drag: 0.03
-hitSize: 20
+hitSize: 51.9
 rotateSpeed: 3.2
 flying: true
 lowAltitude: true
@@ -18,7 +21,7 @@ range: 110
 faceTarget: true
 
 weapons: [
-  {
+{
     name: singularity-eel-rift
     x: 0
     y: 6
@@ -54,7 +57,7 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 58
+      damage: 384
       length: 105
       width: 10
       lifetime: 40
@@ -64,7 +67,7 @@ weapons: [
       buildingDamageMultiplier: 0.9
     }
   }
-  {
+{
     name: singularity-eel-bolt
     x: 0
     y: 2
@@ -91,14 +94,14 @@ weapons: [
     ]
     bullet: {
       type: LightningBulletType
-      damage: 48
+      damage: 384
       lightningLength: 14
       lightningColor: aaccff
       status: shocked
       statusDuration: 80
     }
   }
-  {
+{
     name: singularity-eel-spores
     x: 0
     y: -2
@@ -107,7 +110,7 @@ weapons: [
     shootSound: shoot
     bullet: {
       type: BasicBulletType
-      damage: 22
+      damage: 384
       splashDamage: 38
       splashDamageRadius: 28
       speed: 2.6
@@ -123,7 +126,7 @@ weapons: [
       lightningDamage: 14
     }
   }
-  {
+{
     name: singularity-eel-missile
     x: 4
     y: -4
@@ -158,7 +161,463 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 40
+      damage: 384
+      splashDamage: 24
+      splashDamageRadius: 16
+      speed: 3.6
+      lifetime: 60
+      width: 8
+      height: 11
+      homingPower: 0.14
+      status: shocked
+      statusDuration: 50
+    }
+  }
+{
+    name: singularity-eel-rift
+    x: 7.0
+    y: 6
+    reload: 14
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 384
+      length: 105
+      width: 10
+      lifetime: 40
+      colors: [ aaccff 5566cc 101028 ]
+      status: shocked
+      statusDuration: 100
+      buildingDamageMultiplier: 0.9
+    }
+  }
+{
+    name: singularity-eel-bolt
+    x: 3.0
+    y: 2
+    reload: 16
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LightningBulletType
+      damage: 384
+      lightningLength: 14
+      lightningColor: aaccff
+      status: shocked
+      statusDuration: 80
+    }
+  }
+{
+    name: singularity-eel-spores
+    x: 4.0
+    y: -2
+    reload: 32
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 38
+      splashDamageRadius: 28
+      speed: 2.6
+      lifetime: 70
+      width: 12
+      height: 12
+      status: shocked
+      statusDuration: 100
+      frontColor: ccd8ff
+      backColor: 334488
+      lightning: 3
+      lightningLength: 6
+      lightningDamage: 14
+    }
+  }
+{
+    name: singularity-eel-missile
+    x: 9.0
+    y: -4
+    reload: 14
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 384
+      splashDamage: 24
+      splashDamageRadius: 16
+      speed: 3.6
+      lifetime: 60
+      width: 8
+      height: 11
+      homingPower: 0.14
+      status: shocked
+      statusDuration: 50
+    }
+  }
+{
+    name: singularity-eel-rift
+    x: 6.0
+    y: 6
+    reload: 14
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 384
+      length: 105
+      width: 10
+      lifetime: 40
+      colors: [ aaccff 5566cc 101028 ]
+      status: shocked
+      statusDuration: 100
+      buildingDamageMultiplier: 0.9
+    }
+  }
+{
+    name: singularity-eel-bolt
+    x: 7.0
+    y: 2
+    reload: 16
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LightningBulletType
+      damage: 384
+      lightningLength: 14
+      lightningColor: aaccff
+      status: shocked
+      statusDuration: 80
+    }
+  }
+{
+    name: singularity-eel-spores
+    x: 3.0
+    y: -2
+    reload: 32
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 38
+      splashDamageRadius: 28
+      speed: 2.6
+      lifetime: 70
+      width: 12
+      height: 12
+      status: shocked
+      statusDuration: 100
+      frontColor: ccd8ff
+      backColor: 334488
+      lightning: 3
+      lightningLength: 6
+      lightningDamage: 14
+    }
+  }
+{
+    name: singularity-eel-missile
+    x: 8.0
+    y: -4
+    reload: 14
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 384
+      splashDamage: 24
+      splashDamageRadius: 16
+      speed: 3.6
+      lifetime: 60
+      width: 8
+      height: 11
+      homingPower: 0.14
+      status: shocked
+      statusDuration: 50
+    }
+  }
+{
+    name: singularity-eel-rift
+    x: 5.0
+    y: 6
+    reload: 14
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 384
+      length: 105
+      width: 10
+      lifetime: 40
+      colors: [ aaccff 5566cc 101028 ]
+      status: shocked
+      statusDuration: 100
+      buildingDamageMultiplier: 0.9
+    }
+  }
+{
+    name: singularity-eel-bolt
+    x: 6.0
+    y: 2
+    reload: 16
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: LightningBulletType
+      damage: 384
+      lightningLength: 14
+      lightningColor: aaccff
+      status: shocked
+      statusDuration: 80
+    }
+  }
+{
+    name: singularity-eel-spores
+    x: 7.0
+    y: -2
+    reload: 32
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 384
+      splashDamage: 38
+      splashDamageRadius: 28
+      speed: 2.6
+      lifetime: 70
+      width: 12
+      height: 12
+      status: shocked
+      statusDuration: 100
+      frontColor: ccd8ff
+      backColor: 334488
+      lightning: 3
+      lightningLength: 6
+      lightningDamage: 14
+    }
+  }
+{
+    name: singularity-eel-missile
+    x: 7.0
+    y: -4
+    reload: 14
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 384
       splashDamage: 24
       splashDamageRadius: 16
       speed: 3.6

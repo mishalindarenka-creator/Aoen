@@ -1,0 +1,661 @@
+# aoen-tier: 7
+# aoen-wep-x2
+# Amatsu-emperor — storm mantle colossus + full jababarium battery
+type: naval
+outlines: false
+
+health: 196000
+armor: 56
+speed: 0.38
+hitSize: 232.5
+faceTarget: false
+targetAir: true
+range: 250
+rotateSpeed: 0.8
+trailLength: 40
+trailScl: 2.6
+
+abilities: [
+  {
+    type: SuppressionFieldAbility
+    range: 96
+    reload: 12
+  }
+  {
+    type: ForceFieldAbility
+    radius: 56
+    regen: 1.8
+    max: 1600
+    cooldown: 240
+  }
+  {
+    type: StatusFieldAbility
+    effect: wet
+    duration: 90
+    range: 64
+    reload: 45
+  }
+]
+
+weapons: [
+{
+    name: mare-absolution-main
+    x: 0
+    y: 10
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 1000
+      splashDamage: 340
+      splashDamageRadius: 56
+      speed: 1.85
+      lifetime: 145
+      width: 24
+      height: 24
+      buildingDamageMultiplier: 1.4
+      status: wet
+      statusDuration: 120
+      hitEffect: explosion
+      frontColor: c8f0ff
+      backColor: 223355
+      fragBullets: 12
+      fragBullet: {
+        type: BasicBulletType
+        damage: 56
+        splashDamage: 32
+        splashDamageRadius: 14
+        speed: 2.8
+        lifetime: 32
+        width: 8
+        height: 8
+        status: wet
+        statusDuration: 50
+        frontColor: e0f8ff
+        backColor: 335566
+      }
+    }
+  }
+{
+    name: mare-absolution-ciws
+    x: 16
+    y: -4
+    reload: 3.5
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 60
+      splashDamage: 72
+      splashDamageRadius: 26
+      speed: 4.8
+      lifetime: 50
+      width: 9
+      height: 9
+      collidesGround: true
+    }
+  }
+{
+    name: mare-absolution-beam
+    x: 0
+    y: -8
+    reload: 40
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 124
+      length: 185
+      width: 10
+      lifetime: 65
+      colors: [ e0f8ff 66aadd 102030 ]
+      status: shocked
+      statusDuration: 70
+      shake: 1.2
+    }
+  }
+{
+    name: mare-absolution-missile
+    x: 12
+    y: 4
+    reload: 12
+    rotate: true
+    mirror: true
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 150
+      splashDamage: 72
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 75
+      width: 10
+      height: 13
+      homingPower: 0.2
+      trailChance: 0.45
+      status: wet
+      statusDuration: 80
+    }
+  }
+{
+    name: mare-absolution-rail
+    x: 0
+    y: 14
+    reload: 42
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 720
+      length: 200
+      pierceDamageFactor: 0.28
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
+    }
+  }
+{
+    name: mare-absolution-main
+    x: 3.0
+    y: 10
+    reload: 24
+    rotate: true
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 1000
+      splashDamage: 340
+      splashDamageRadius: 56
+      speed: 1.85
+      lifetime: 145
+      width: 24
+      height: 24
+      buildingDamageMultiplier: 1.4
+      status: wet
+      statusDuration: 120
+      hitEffect: explosion
+      frontColor: c8f0ff
+      backColor: 223355
+      fragBullets: 12
+      fragBullet: {
+        type: BasicBulletType
+        damage: 56
+        splashDamage: 32
+        splashDamageRadius: 14
+        speed: 2.8
+        lifetime: 32
+        width: 8
+        height: 8
+        status: wet
+        statusDuration: 50
+        frontColor: e0f8ff
+        backColor: 335566
+      }
+    }
+  }
+{
+    name: mare-absolution-ciws
+    x: 20.0
+    y: -4
+    reload: 3.5
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 60
+      splashDamage: 72
+      splashDamageRadius: 26
+      speed: 4.8
+      lifetime: 50
+      width: 9
+      height: 9
+      collidesGround: true
+    }
+  }
+{
+    name: mare-absolution-beam
+    x: 5.0
+    y: -8
+    reload: 40
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 124
+      length: 185
+      width: 10
+      lifetime: 65
+      colors: [ e0f8ff 66aadd 102030 ]
+      status: shocked
+      statusDuration: 70
+      shake: 1.2
+    }
+  }
+{
+    name: mare-absolution-missile
+    x: 18.0
+    y: 4
+    reload: 12
+    rotate: true
+    mirror: true
+    shoot: {
+      type: ShootAlternate
+      barrels: 3
+      spread: 4
+    }
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 150
+      splashDamage: 72
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 75
+      width: 10
+      height: 13
+      homingPower: 0.2
+      trailChance: 0.45
+      status: wet
+      statusDuration: 80
+    }
+  }
+{
+    name: mare-absolution-rail
+    x: 7.0
+    y: 14
+    reload: 42
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 720
+      length: 200
+      pierceDamageFactor: 0.28
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 70
+    }
+  }
+]
+
+requirements: {
+  block: aoen-naval-reconstructor-t7
+  previous: aoen-leviathan-crown
+}
+research: {
+  parent: aoen-naval-reconstructor-t7
+  requirements: [
+    aoen-abyssal-alloy/200
+    aoen-pale-mythril/240
+  ]
+}

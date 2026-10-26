@@ -1,0 +1,32 @@
+# aoen-cost-x2
+type: Reconstructor
+outlineIcon: false
+category: units
+size: 3
+consumes: {
+  power: 5.0
+  items: [
+    aoen-nocturne-plate/160
+    aoen-aether-dust/80
+    aoen-void-shard/160
+    aoen-pale-mythril/52
+  ]
+}
+researchCostMultiplier: 0.65
+constructTime: 1620
+requirements: [
+  aoen-nocturne-plate/160
+  aoen-aether-dust/80
+  aoen-void-shard/160
+  aoen-pale-mythril/52
+]
+research: {
+  parent: aoen-air-reconstructor
+  requirements: [
+    aoen-nocturne-plate/160
+  ]
+}
+
+upgrades: [
+  [aoen-gale-wisp, aoen-storm-kite]
+]

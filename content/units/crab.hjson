@@ -1,3 +1,5 @@
+# aoen-tier: 1
+# aoen-dmg-t1
 type: legs
 
 outlines: false
@@ -6,20 +8,20 @@ armor: 7
 speed: 0.62
 drag: 0.18
 rotateSpeed: 2.8
-hitSize: 11
+hitSize: 10.0
 targetAir: false
 range: 50
 researchCostMultiplier: 0.5
 
-legCount: 6
-legGroupSize: 3
+legCount: 8
+legGroupSize: 2
 legLength: 14
 legSpeed: 0.32
 legForwardScl: 1.4
 legBaseOffset: 3
 legMoveSpace: 1.15
 legExtension: -7
-legPairOffset: 3
+legPairOffset: 2
 legLengthScl: 1
 legMaxLength: 1.75
 legMinLength: 0.75
@@ -95,7 +97,7 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 48
+      damage: 24
       buildingDamageMultiplier: 0.7
       length: 40
       width: 14
@@ -143,7 +145,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 16
+      damage: 24
       speed: 3.0
       lifetime: 30
       width: 6

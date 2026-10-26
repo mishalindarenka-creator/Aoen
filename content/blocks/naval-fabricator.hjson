@@ -22,3 +22,14 @@ research: {
     aoen-tide-coral/60
   ]
 }
+
+plans: [
+  {
+    unit: aoen-naval
+    time: 1300
+    requirements: [
+      aoen-nocturne-plate/20
+      aoen-void-shard/15
+    ]
+  }
+]

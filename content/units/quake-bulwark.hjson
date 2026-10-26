@@ -1,10 +1,13 @@
+# aoen-tier: 4
+# aoen-wep-x8
+# aoen-dmg-t4
 type: legs
 outlines: false
 
-health: 12000
+health: 5600
 armor: 30
 speed: 0.3
-hitSize: 26
+hitSize: 37.2
 shadowElevation: 0.28
 rippleScale: 0.6
 legMinLength: 0.7
@@ -30,7 +33,7 @@ lockLegBase: true
 groundLayer: 65
 
 weapons: [
-  {
+{
     name: quake-bulwark-mortar
     x: 0
     y: 6
@@ -75,7 +78,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 260
+      damage: 192
       splashDamage: 70
       splashDamageRadius: 34
       speed: 2.1
@@ -89,7 +92,7 @@ weapons: [
       fragBullets: 4
       fragBullet: {
         type: BasicBulletType
-        damage: 18
+        damage: 192
         speed: 2.5
         lifetime: 22
         width: 7
@@ -97,7 +100,7 @@ weapons: [
       }
     }
   }
-  {
+{
     name: quake-bulwark-gun
     x: 10
     y: 2
@@ -142,7 +145,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 34
+      damage: 192
       speed: 4.4
       lifetime: 42
       width: 9
@@ -156,7 +159,7 @@ weapons: [
       lightningDamage: 10
     }
   }
-  {
+{
     name: quake-bulwark-flak
     x: 6
     y: -6
@@ -200,7 +203,7 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 16
+      damage: 192
       splashDamage: 22
       splashDamageRadius: 20
       speed: 4.2
@@ -211,7 +214,7 @@ weapons: [
       explodeRange: 16
     }
   }
-  {
+{
     name: quake-bulwark-missile
     x: 0
     y: -4
@@ -252,7 +255,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 48
+      damage: 192
       splashDamage: 24
       splashDamageRadius: 18
       speed: 3.4
@@ -263,7 +266,7 @@ weapons: [
       trailChance: 0.35
     }
   }
-  {
+{
     name: quake-bulwark-rail
     x: 0
     y: 10
@@ -314,12 +317,663 @@ weapons: [
     ]
     bullet: {
       type: RailBulletType
-      damage: 140
+      damage: 192
       length: 110
       pierceDamageFactor: 0.4
       hitEffect: hitBulletBig
       status: shocked
       statusDuration: 40
+    }
+  }
+{
+    name: quake-bulwark-mortar
+    x: 3.0
+    y: 6
+    shootY: 10
+    reload: 34
+    rotate: true
+    mirror: false
+    recoil: 5
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 192
+      splashDamage: 70
+      splashDamageRadius: 34
+      speed: 2.1
+      lifetime: 90
+      width: 16
+      height: 16
+      buildingDamageMultiplier: 1.25
+      hitEffect: explosion
+      frontColor: c8d2dc
+      backColor: 46505a
+      fragBullets: 4
+      fragBullet: {
+        type: BasicBulletType
+        damage: 192
+        speed: 2.5
+        lifetime: 22
+        width: 7
+        height: 7
+      }
+    }
+  }
+{
+    name: quake-bulwark-gun
+    x: 14.0
+    y: 2
+    shootY: 6
+    reload: 9
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 4.4
+      lifetime: 42
+      width: 9
+      height: 11
+      pierce: true
+      pierceCap: 3
+      frontColor: dde8f0
+      backColor: 556070
+      lightning: 1
+      lightningLength: 4
+      lightningDamage: 10
+    }
+  }
+{
+    name: quake-bulwark-flak
+    x: 11.0
+    y: -6
+    reload: 7
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 192
+      splashDamage: 22
+      splashDamageRadius: 20
+      speed: 4.2
+      lifetime: 38
+      width: 7
+      height: 7
+      collidesGround: true
+      explodeRange: 16
+    }
+  }
+{
+    name: quake-bulwark-missile
+    x: 6.0
+    y: -4
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 3
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 192
+      splashDamage: 24
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 58
+      width: 9
+      height: 11
+      homingPower: 0.14
+      trailChance: 0.35
+    }
+  }
+{
+    name: quake-bulwark-rail
+    x: 7.0
+    y: 10
+    reload: 48
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 192
+      length: 110
+      pierceDamageFactor: 0.4
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 40
+    }
+  }
+{
+    name: quake-bulwark-mortar
+    x: 3.0
+    y: 6
+    shootY: 10
+    reload: 34
+    rotate: true
+    mirror: false
+    recoil: 5
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 192
+      splashDamage: 70
+      splashDamageRadius: 34
+      speed: 2.1
+      lifetime: 90
+      width: 16
+      height: 16
+      buildingDamageMultiplier: 1.25
+      hitEffect: explosion
+      frontColor: c8d2dc
+      backColor: 46505a
+      fragBullets: 4
+      fragBullet: {
+        type: BasicBulletType
+        damage: 192
+        speed: 2.5
+        lifetime: 22
+        width: 7
+        height: 7
+      }
+    }
+  }
+{
+    name: quake-bulwark-gun
+    x: 14.0
+    y: 2
+    shootY: 6
+    reload: 9
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 4.4
+      lifetime: 42
+      width: 9
+      height: 11
+      pierce: true
+      pierceCap: 3
+      frontColor: dde8f0
+      backColor: 556070
+      lightning: 1
+      lightningLength: 4
+      lightningDamage: 10
+    }
+  }
+{
+    name: quake-bulwark-flak
+    x: 11.0
+    y: -6
+    reload: 7
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 192
+      splashDamage: 22
+      splashDamageRadius: 20
+      speed: 4.2
+      lifetime: 38
+      width: 7
+      height: 7
+      collidesGround: true
+      explodeRange: 16
+    }
+  }
+{
+    name: quake-bulwark-missile
+    x: 6.0
+    y: -4
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 3
+    }
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 192
+      splashDamage: 24
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 58
+      width: 9
+      height: 11
+      homingPower: 0.14
+      trailChance: 0.35
+    }
+  }
+{
+    name: quake-bulwark-rail
+    x: 7.0
+    y: 10
+    reload: 48
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -3
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: RailBulletType
+      damage: 192
+      length: 110
+      pierceDamageFactor: 0.4
+      hitEffect: hitBulletBig
+      status: shocked
+      statusDuration: 40
+    }
+  }
+{
+    name: quake-bulwark-mortar
+    x: 3.0
+    y: 6
+    shootY: 10
+    reload: 34
+    rotate: true
+    mirror: false
+    recoil: 5
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+        moves: [
+          {
+            type: PartMove
+            progress: reload
+            y: -4
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 192
+      splashDamage: 70
+      splashDamageRadius: 34
+      speed: 2.1
+      lifetime: 90
+      width: 16
+      height: 16
+      buildingDamageMultiplier: 1.25
+      hitEffect: explosion
+      frontColor: c8d2dc
+      backColor: 46505a
+      fragBullets: 4
+      fragBullet: {
+        type: BasicBulletType
+        damage: 192
+        speed: 2.5
+        lifetime: 22
+        width: 7
+        height: 7
+      }
     }
   }
 ]

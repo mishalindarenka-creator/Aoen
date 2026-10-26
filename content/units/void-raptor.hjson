@@ -1,0 +1,229 @@
+# aoen-tier: 4
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 5200
+armor: 18
+speed: 1.55
+accel: 0.08
+drag: 0.03
+hitSize: 36
+rotateSpeed: 2.7
+range: 95
+faceTarget: true
+engineOffset: 12.6
+engineSize: 4.4
+researchCostMultiplier: 0.77
+
+weapons: [
+  {
+    name: void-raptor-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-1
+    x: 2.1
+    y: 2.1
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-2
+    x: 0.0
+    y: 4.0
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-3
+    x: -3.5
+    y: 3.5
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-4
+    x: -2.0
+    y: 0.0
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-5
+    x: -2.1
+    y: -2.1
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-6
+    x: -0.0
+    y: -4.0
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: void-raptor-gun-7
+    x: 3.5
+    y: -3.5
+    reload: 20
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 144
+      splashDamage: 50
+      splashDamageRadius: 18
+      speed: 3.4
+      lifetime: 56
+      width: 10
+      height: 12
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor-t4
+  time: 4800
+  requirements: [
+    aoen-nocturne-plate/160
+    aoen-aether-dust/53
+    aoen-void-shard/80
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor-t4
+  requirements: [
+    aoen-aether-dust/40
+  ]
+}

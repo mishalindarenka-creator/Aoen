@@ -24,6 +24,14 @@ FACTORY_BLOCKS = [
     "naval-reconstructor-t4",
     "naval-reconstructor-t5",
     "naval-reconstructor-t6",
+    "naval-reconstructor-t7",
+    "air-fabricator",
+    "air-reconstructor",
+    "air-reconstructor-t3",
+    "air-reconstructor-t4",
+    "air-reconstructor-t5",
+    "air-reconstructor-t6",
+    "air-reconstructor-t7",
 ]
 
 WORLD_BASE = [

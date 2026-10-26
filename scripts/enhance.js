@@ -169,6 +169,35 @@ function enhanceBahamut() {
   replaceNamedBullet(u, "claw", bullets.clawShred(155));
 }
 
+function enhanceFly() {
+  const ids = [
+    "aoen-aether-mote",
+    "aoen-gale-wisp",
+    "aoen-storm-kite",
+    "aoen-void-raptor",
+    "aoen-aether-wyvern",
+    "aoen-sky-colossus",
+    "aoen-firmament-throne"
+  ];
+  const dmgs = [18, 36, 72, 144, 288, 576, 1150];
+  ids.forEach((id, i) => {
+    const u = lib.unit(id);
+    if (u == null) return;
+    const dmg = dmgs[i] || 40;
+    lib.eachWeapon(u, w => {
+      if (i >= 5) {
+        w.bullet = bullets.voidRift(dmg);
+      } else if (i >= 3) {
+        w.bullet = bullets.stormEmp(dmg);
+      } else {
+        w.bullet = bullets.tidePulse(dmg);
+      }
+      ensureBulletLoaded(w.bullet);
+    });
+  });
+  Log.info("[Aoen] fly line bullets");
+}
+
 function enhanceNaval() {
   const wakeIds = [
     "aoen-naval",
@@ -369,11 +398,9 @@ function enhanceBossWeapons() {
           lifetime: src.lifetime,
           status: StatusEffects.shocked,
           statusDuration: 50,
-          hit(b, x, y) {
-            this.super$hit(b, x, y);
-            Lightning.create(b.team, StatusEffects.shocked.color, 18, x, y, b.rotation() + Mathf.range(25), 8);
-            Lightning.create(b.team, StatusEffects.shocked.color, 18, x, y, b.rotation() + Mathf.range(25), 8);
-          }
+          lightning: 2,
+          lightningLength: 8,
+          lightningDamage: 18
         });
         if (src.colors != null) {
           w.bullet.colors = src.colors;
@@ -406,11 +433,33 @@ function aoenEnhanceOnce() {
   try {
     enhanceSnakes();
     enhanceNaval();
+    enhanceFly();
     enhanceBahamut();
     enhanceCrabLine();
     enhanceMechLine();
     enhanceCrabzilla();
     enhanceBossWeapons();
+    // T7 extras
+    wireAll("aoen-apotheosis-omega", {
+      nova: bullets.kaijuNova(),
+      batteries: bullets.goldOrb(190),
+      rail: bullets.voidRift(280),
+      missile: bullets.wingMissile,
+      emp: bullets.stormEmp(180)
+    });
+    wireAll("aoen-mare-absolution", {
+      main: bullets.tidePulse(320),
+      ciws: bullets.stormEmp(110),
+      beam: bullets.tidePulse(280),
+      missile: bullets.torpedo(260),
+      rail: bullets.tidePulse(360)
+    });
+    wireAll("aoen-ouroboros-apex", {
+      maw: bullets.voidRift(220),
+      bolt: bullets.voidRift(170),
+      missile: bullets.wingMissile,
+      emp: bullets.stormEmp(190)
+    });
     enhanced = true;
     Log.info("[Aoen] JS enhance complete (all-line custom bullets)");
   } catch (e) {

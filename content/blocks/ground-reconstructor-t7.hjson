@@ -1,29 +1,37 @@
+# aoen-cost-x2
 type: Reconstructor
 outlineIcon: false
 category: units
+constructTime: 70400
 size: 11
 consumes: {
   power: 36
   items: [
-    aoen-nocturne-plate/410
-    aoen-pale-mythril/180
-    aoen-aether-dust/140
-    aoen-abyssal-alloy/190
+    aoen-nocturne-plate/820
+    aoen-pale-mythril/360
+    aoen-aether-dust/280
+    aoen-abyssal-alloy/380
   ]
 }
 researchCostMultiplier: 1.05
 requirements: [
-  aoen-nocturne-ore/1800
-  aoen-void-shard/1400
-  aoen-nocturne-plate/1100
-  aoen-pale-mythril/860
-  aoen-aether-dust/400
-  aoen-abyssal-alloy/520
+  aoen-nocturne-ore/3600
+  aoen-void-shard/2800
+  aoen-nocturne-plate/2200
+  aoen-pale-mythril/1720
+  aoen-aether-dust/800
+  aoen-abyssal-alloy/1040
 ]
 research: {
   parent: aoen-ground-reconstructor-t6
   requirements: [
-    aoen-abyssal-alloy/220
-    aoen-aether-dust/160
+    aoen-abyssal-alloy/440
+    aoen-aether-dust/320
   ]
 }
+
+upgrades: [
+  [aoen-eclipse-tyrant, aoen-crabzilla]
+  [aoen-ouroboros-prime, aoen-ouroboros-apex]
+  [aoen-apotheosis-core, aoen-apotheosis-omega]
+]

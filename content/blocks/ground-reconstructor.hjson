@@ -1,27 +1,35 @@
+# aoen-cost-x2
 type: Reconstructor
 outlineIcon: false
 category: units
+constructTime: 600
 size: 3
 consumes: {
   power: 3
   items: [
-    aoen-nocturne-plate/35
-    aoen-ember-slag/35
+    aoen-nocturne-plate/70
+    aoen-ember-slag/70
   ]
 }
 researchCostMultiplier: 0.6
 
 requirements: [
-  aoen-nocturne-ore/180
-  aoen-void-shard/140
-  aoen-nocturne-plate/100
-  aoen-abyssal-quartz/50
+  aoen-nocturne-ore/360
+  aoen-void-shard/280
+  aoen-nocturne-plate/200
+  aoen-abyssal-quartz/100
 ]
 
 research: {
   parent: aoen-ground-fabricator
   requirements: [
-    aoen-nocturne-ore/150
-    aoen-abyssal-quartz/40
+    aoen-nocturne-ore/300
+    aoen-abyssal-quartz/80
   ]
 }
+
+upgrades: [
+  [aoen-crab, aoen-crab-t2]
+  [aoen-snake, aoen-snake-t2]
+  [aoen-boomeranger, aoen-boomeranger-t2]
+]

@@ -1,11 +1,14 @@
+# aoen-tier: 4
+# aoen-wep-x8
+# aoen-dmg-t4
 # Plague / armored mech-serpent
 type: legs
 outlines: false
 
-health: 6800
+health: 4960
 armor: 18
 speed: 1.15
-hitSize: 17
+hitSize: 33.5
 rotateSpeed: 2.7
 targetAir: false
 range: 60
@@ -13,7 +16,7 @@ omniMovement: false
 itemCapacity: 80
 
 legCount: 4
-legLength: 7
+legLength: 41
 legSpeed: 0.28
 hovering: true
 shadowElevation: 0.12
@@ -31,7 +34,7 @@ abilities: [
 ]
 
 weapons: [
-  {
+{
     name: payload-serpent-hook
     x: 0
     y: 5
@@ -67,7 +70,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 44
+      damage: 192
       speed: 4.0
       lifetime: 30
       width: 9
@@ -78,7 +81,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: payload-serpent-spit-l
     x: -3
     y: 0
@@ -88,7 +91,7 @@ weapons: [
     shootSound: shootSnap
     bullet: {
       type: BasicBulletType
-      damage: 22
+      damage: 192
       speed: 3.5
       lifetime: 32
       width: 7
@@ -98,7 +101,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: payload-serpent-spit-r
     x: 3
     y: 0
@@ -108,7 +111,7 @@ weapons: [
     shootSound: shootSnap
     bullet: {
       type: BasicBulletType
-      damage: 22
+      damage: 192
       speed: 3.5
       lifetime: 32
       width: 7
@@ -118,7 +121,7 @@ weapons: [
       collidesAir: false
     }
   }
-  {
+{
     name: payload-serpent-rear
     x: 0
     y: -6
@@ -145,7 +148,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 48
+      damage: 192
       splashDamage: 28
       splashDamageRadius: 20
       speed: 2.3
@@ -154,7 +157,7 @@ weapons: [
       height: 10
     }
   }
-  {
+{
     name: payload-serpent-sap
     x: 0
     y: 3
@@ -181,7 +184,7 @@ weapons: [
     ]
     bullet: {
       type: SapBulletType
-      damage: 26
+      damage: 192
       length: 64
       width: 0.7
       lifetime: 16
@@ -189,6 +192,373 @@ weapons: [
       color: 50dc9a
       status: sapped
       statusDuration: 90
+    }
+  }
+{
+    name: payload-serpent-hook
+    x: 3.0
+    y: 5
+    shootY: 6
+    reload: 11
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 4.0
+      lifetime: 30
+      width: 9
+      height: 11
+      knockback: 4
+      frontColor: 70e0a8
+      backColor: 286848
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-spit-l
+    x: 1.0
+    y: 0
+    reload: 15
+    mirror: false
+    baseRotation: 35
+    shootSound: shootSnap
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 3.5
+      lifetime: 32
+      width: 7
+      height: 8
+      frontColor: 90c8a0
+      backColor: 305040
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-spit-r
+    x: 8.0
+    y: 0
+    reload: 15
+    mirror: false
+    baseRotation: -35
+    shootSound: shootSnap
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 3.5
+      lifetime: 32
+      width: 7
+      height: 8
+      frontColor: 90c8a0
+      backColor: 305040
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-rear
+    x: 6.0
+    y: -6
+    reload: 24
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 192
+      splashDamage: 28
+      splashDamageRadius: 20
+      speed: 2.3
+      lifetime: 48
+      width: 10
+      height: 10
+    }
+  }
+{
+    name: payload-serpent-sap
+    x: 7.0
+    y: 3
+    reload: 20
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 192
+      length: 64
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.6
+      color: 50dc9a
+      status: sapped
+      statusDuration: 90
+    }
+  }
+{
+    name: payload-serpent-hook
+    x: 3.0
+    y: 5
+    shootY: 6
+    reload: 11
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 4.0
+      lifetime: 30
+      width: 9
+      height: 11
+      knockback: 4
+      frontColor: 70e0a8
+      backColor: 286848
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-spit-l
+    x: 1.0
+    y: 0
+    reload: 15
+    mirror: false
+    baseRotation: 35
+    shootSound: shootSnap
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 3.5
+      lifetime: 32
+      width: 7
+      height: 8
+      frontColor: 90c8a0
+      backColor: 305040
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-spit-r
+    x: 8.0
+    y: 0
+    reload: 15
+    mirror: false
+    baseRotation: -35
+    shootSound: shootSnap
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 3.5
+      lifetime: 32
+      width: 7
+      height: 8
+      frontColor: 90c8a0
+      backColor: 305040
+      collidesAir: false
+    }
+  }
+{
+    name: payload-serpent-rear
+    x: 6.0
+    y: -6
+    reload: 24
+    mirror: false
+    shootSound: bang
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 192
+      splashDamage: 28
+      splashDamageRadius: 20
+      speed: 2.3
+      lifetime: 48
+      width: 10
+      height: 10
+    }
+  }
+{
+    name: payload-serpent-sap
+    x: 7.0
+    y: 3
+    reload: 20
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: SapBulletType
+      damage: 192
+      length: 64
+      width: 0.7
+      lifetime: 16
+      sapStrength: 0.6
+      color: 50dc9a
+      status: sapped
+      statusDuration: 90
+    }
+  }
+{
+    name: payload-serpent-hook
+    x: 3.0
+    y: 5
+    shootY: 6
+    reload: 11
+    mirror: false
+    shootSound: shoot
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 192
+      speed: 4.0
+      lifetime: 30
+      width: 9
+      height: 11
+      knockback: 4
+      frontColor: 70e0a8
+      backColor: 286848
+      collidesAir: false
     }
   }
 ]

@@ -1,0 +1,325 @@
+# aoen-tier: 6
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 28000
+armor: 38
+speed: 0.95
+accel: 0.08
+drag: 0.03
+hitSize: 90
+rotateSpeed: 2.3
+range: 160
+faceTarget: true
+engineOffset: 31.5
+engineSize: 5.6
+researchCostMultiplier: 0.93
+
+weapons: [
+  {
+    name: sky-colossus-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-1
+    x: 2.6
+    y: 1.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-2
+    x: 2.0
+    y: 3.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-3
+    x: 0.0
+    y: 5.0
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-4
+    x: -1.0
+    y: 1.7
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-5
+    x: -2.6
+    y: 1.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-6
+    x: -4.0
+    y: 0.0
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-7
+    x: -4.3
+    y: -2.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-8
+    x: -1.0
+    y: -1.7
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-9
+    x: -0.0
+    y: -3.0
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-10
+    x: 2.0
+    y: -3.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+  {
+    name: sky-colossus-gun-11
+    x: 4.3
+    y: -2.5
+    reload: 16
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 576
+      splashDamage: 201
+      splashDamageRadius: 22
+      speed: 3.6999999999999997
+      lifetime: 64
+      width: 12
+      height: 14
+      status: shocked
+      statusDuration: 60
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-reconstructor-t6
+  time: 19200
+  requirements: [
+    aoen-nocturne-plate/640
+    aoen-aether-dust/213
+    aoen-void-shard/320
+  ]
+}
+
+research: {
+  parent: aoen-air-reconstructor-t6
+  requirements: [
+    aoen-aether-dust/160
+  ]
+}

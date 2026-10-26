@@ -1,11 +1,13 @@
+# aoen-tier: 1
+# aoen-dmg-t1
 # Desert Scourge — sand worm (Calamity-style trail body via JS)
 type: legs
 outlines: false
 
-health: 720
+health: 620
 armor: 5
 speed: 1.35
-hitSize: 12
+hitSize: 9.0
 rotateSpeed: 3.4
 targetAir: false
 range: 40
@@ -13,7 +15,7 @@ omniMovement: false
 researchCostMultiplier: 0.5
 
 legCount: 4
-legLength: 5
+legLength: 11
 legSpeed: 0.35
 hovering: true
 shadowElevation: 0.08
@@ -50,7 +52,7 @@ weapons: [
     ]
     bullet: {
       type: BasicBulletType
-      damage: 30
+      damage: 24
       speed: 3.5
       lifetime: 26
       width: 7
@@ -97,7 +99,7 @@ weapons: [
     ]
     bullet: {
       type: ArtilleryBulletType
-      damage: 16
+      damage: 24
       splashDamage: 18
       splashDamageRadius: 16
       speed: 2.4

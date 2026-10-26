@@ -1,13 +1,16 @@
+# aoen-tier: 3
+# aoen-wep-x4
+# aoen-dmg-t3
 type: mech
 outlines: false
-health: 4000
+health: 2720
 armor: 16
 speed: 0.45
-hitSize: 18
+hitSize: 24.0
 range: 85
 
 weapons: [
-  {
+{
     name: foundry-orbiter-laser
     x: 0
     y: 4
@@ -61,7 +64,7 @@ weapons: [
     ]
     bullet: {
       type: ContinuousLaserBulletType
-      damage: 22
+      damage: 96
       length: 78
       width: 4
       lifetime: 14
@@ -71,7 +74,7 @@ weapons: [
       buildingDamageMultiplier: 1.1
     }
   }
-  {
+{
     name: foundry-orbiter-shotgun
     x: 8
     y: 0
@@ -109,7 +112,7 @@ weapons: [
     ]
     bullet: {
       type: ShrapnelBulletType
-      damage: 18
+      damage: 96
       length: 42
       width: 14
       lifetime: 12
@@ -120,7 +123,7 @@ weapons: [
       despawnEffect: none
     }
   }
-  {
+{
     name: foundry-orbiter-missile
     x: 6
     y: -6
@@ -156,7 +159,7 @@ weapons: [
     ]
     bullet: {
       type: MissileBulletType
-      damage: 32
+      damage: 96
       splashDamage: 18
       splashDamageRadius: 14
       speed: 3.2
@@ -169,7 +172,7 @@ weapons: [
       statusDuration: 50
     }
   }
-  {
+{
     name: foundry-orbiter-flak
     x: 0
     y: -4
@@ -213,7 +216,658 @@ weapons: [
     ]
     bullet: {
       type: FlakBulletType
-      damage: 12
+      damage: 96
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 4.2
+      lifetime: 40
+      width: 7
+      height: 7
+      collidesGround: true
+      explodeRange: 14
+    }
+  }
+{
+    name: foundry-orbiter-laser
+    x: 7.0
+    y: 4
+    shootY: 8
+    reload: 10
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 96
+      length: 78
+      width: 4
+      lifetime: 14
+      colors: [ ffd37f ff8822 883310 ]
+      status: melting
+      statusDuration: 40
+      buildingDamageMultiplier: 1.1
+    }
+  }
+{
+    name: foundry-orbiter-shotgun
+    x: 11.0
+    y: 0
+    reload: 22
+    rotate: true
+    mirror: true
+    shots: 5
+    spread: 5
+    shootSound: shotgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      length: 42
+      width: 14
+      lifetime: 12
+      fromColor: ffd37f
+      toColor: 884422
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: foundry-orbiter-missile
+    x: 10.0
+    y: -6
+    reload: 16
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 96
+      splashDamage: 18
+      splashDamageRadius: 14
+      speed: 3.2
+      lifetime: 55
+      width: 8
+      height: 10
+      homingPower: 0.12
+      trailChance: 0.3
+      status: burning
+      statusDuration: 50
+    }
+  }
+{
+    name: foundry-orbiter-flak
+    x: 5.0
+    y: -4
+    reload: 9
+    rotate: true
+    mirror: false
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 96
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 4.2
+      lifetime: 40
+      width: 7
+      height: 7
+      collidesGround: true
+      explodeRange: 14
+    }
+  }
+{
+    name: foundry-orbiter-laser
+    x: 6.0
+    y: 4
+    shootY: 8
+    reload: 10
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 96
+      length: 78
+      width: 4
+      lifetime: 14
+      colors: [ ffd37f ff8822 883310 ]
+      status: melting
+      statusDuration: 40
+      buildingDamageMultiplier: 1.1
+    }
+  }
+{
+    name: foundry-orbiter-shotgun
+    x: 15.0
+    y: 0
+    reload: 22
+    rotate: true
+    mirror: true
+    shots: 5
+    spread: 5
+    shootSound: shotgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      length: 42
+      width: 14
+      lifetime: 12
+      fromColor: ffd37f
+      toColor: 884422
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: foundry-orbiter-missile
+    x: 9.0
+    y: -6
+    reload: 16
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 96
+      splashDamage: 18
+      splashDamageRadius: 14
+      speed: 3.2
+      lifetime: 55
+      width: 8
+      height: 10
+      homingPower: 0.12
+      trailChance: 0.3
+      status: burning
+      statusDuration: 50
+    }
+  }
+{
+    name: foundry-orbiter-flak
+    x: 4.0
+    y: -4
+    reload: 9
+    rotate: true
+    mirror: false
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 96
+      splashDamage: 16
+      splashDamageRadius: 16
+      speed: 4.2
+      lifetime: 40
+      width: 7
+      height: 7
+      collidesGround: true
+      explodeRange: 14
+    }
+  }
+{
+    name: foundry-orbiter-laser
+    x: 5.0
+    y: 4
+    shootY: 8
+    reload: 10
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -coil
+        x: 0
+        y: 1
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 96
+      length: 78
+      width: 4
+      lifetime: 14
+      colors: [ ffd37f ff8822 883310 ]
+      status: melting
+      statusDuration: 40
+      buildingDamageMultiplier: 1.1
+    }
+  }
+{
+    name: foundry-orbiter-shotgun
+    x: 14.0
+    y: 0
+    reload: 22
+    rotate: true
+    mirror: true
+    shots: 5
+    spread: 5
+    shootSound: shotgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 96
+      length: 42
+      width: 14
+      lifetime: 12
+      fromColor: ffd37f
+      toColor: 884422
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+{
+    name: foundry-orbiter-missile
+    x: 13.0
+    y: -6
+    reload: 16
+    rotate: true
+    mirror: true
+    shootSound: missile
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -mag
+        x: 0
+        y: 1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: MissileBulletType
+      damage: 96
+      splashDamage: 18
+      splashDamageRadius: 14
+      speed: 3.2
+      lifetime: 55
+      width: 8
+      height: 10
+      homingPower: 0.12
+      trailChance: 0.3
+      status: burning
+      statusDuration: 50
+    }
+  }
+{
+    name: foundry-orbiter-flak
+    x: 3.0
+    y: -4
+    reload: 9
+    rotate: true
+    mirror: false
+    shootSound: shootSnap
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: FlakBulletType
+      damage: 96
       splashDamage: 16
       splashDamageRadius: 16
       speed: 4.2

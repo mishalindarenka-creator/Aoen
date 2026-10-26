@@ -1,0 +1,60 @@
+# aoen-tier: 1
+type: flying
+outlines: false
+flying: true
+lowAltitude: true
+health: 520
+armor: 3
+speed: 2.4
+accel: 0.08
+drag: 0.03
+hitSize: 9
+rotateSpeed: 3.3
+range: 42
+faceTarget: true
+engineOffset: 3.1
+engineSize: 2.6
+researchCostMultiplier: 0.53
+
+weapons: [
+  {
+    name: aether-mote-gun-0
+    x: 2.0
+    y: 0.0
+    reload: 26
+    rotate: true
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 18
+      splashDamage: 6
+      splashDamageRadius: 12
+      speed: 2.9499999999999997
+      lifetime: 44
+      width: 7
+      height: 9
+      statusDuration: 1
+      frontColor: aaccff
+      backColor: 334466
+      trailChance: 0.3
+    }
+  }
+]
+
+requirements: {
+  block: aoen-air-fabricator
+  time: 600
+  requirements: [
+    aoen-nocturne-plate/20
+    aoen-aether-dust/6
+    aoen-void-shard/10
+  ]
+}
+
+research: {
+  parent: aoen-air-fabricator
+  requirements: [
+    aoen-aether-dust/10
+  ]
+}
