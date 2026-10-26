@@ -124,7 +124,16 @@ exports.brimstoneTrail = function () {
   return extend(Ability, {
     update(unit) {
       if (Mathf.chance(0.18 * Time.delta)) {
-        Fx.fireSmoke.at(unit.x + Mathf.range(4), unit.y + Mathf.range(4));
+        // Fx.fireSmoke may be missing — prefer burning + smoke
+        try {
+          if (typeof Fx.burning !== "undefined" && Fx.burning != null) {
+            Fx.burning.at(unit.x + Mathf.range(4), unit.y + Mathf.range(4));
+          } else {
+            Fx.smoke.at(unit.x + Mathf.range(4), unit.y + Mathf.range(4));
+          }
+        } catch (e2) {
+          Fx.smoke.at(unit.x + Mathf.range(4), unit.y + Mathf.range(4));
+        }
         try {
           const t = Vars.world.tileWorld(unit.x, unit.y);
           if (t != null) Fires.create(t);

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VER = "2.0.0"
+VER = "2.0.1"
 HJSON = f"""name: aoen
 displayName: Aoen
 author: Paradew

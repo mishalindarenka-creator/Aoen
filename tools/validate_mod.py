@@ -46,9 +46,45 @@ WORLD_BASE = [
     "ceramite-wall-large",
     "dark-generator",
     "dark-battery",
+    # v2 world expansion
+    "nocturne-smelter",
+    "abyssal-foundry",
+    "tide-kiln",
+    "nocturne-bolt",
+    "tide-pulse",
+    "nocturne-wall",
+    "nocturne-wall-large",
+    "abyssal-wall",
+    "abyssal-wall-large",
+    "tide-wall",
+    "tide-wall-large",
+    "mythril-drill",
+    "ember-generator",
 ]
 
-ITEMS = ["void-shard", "ceramite", "aether-dust"]
+ITEMS = [
+    "void-shard",
+    "ceramite",
+    "aether-dust",
+    "nocturne-ore",
+    "abyssal-quartz",
+    "tide-coral",
+    "ember-slag",
+    "pale-mythril",
+    "nocturne-plate",
+    "abyssal-alloy",
+    "tide-composite",
+]
+
+ORES = [
+    "ore-void-shard",
+    "ore-ceramite",
+    "ore-nocturne",
+    "ore-abyssal-quartz",
+    "ore-tide-coral",
+    "ore-ember-slag",
+    "ore-pale-mythril",
+]
 
 
 def main() -> int:
@@ -57,6 +93,14 @@ def main() -> int:
     for folder in (MOD / "sprites" / "units", SPR_B, SPR_I):
         for p in folder.glob("aoen-*.png"):
             missing.append(f"DOUBLE-PREFIX {p.relative_to(MOD)}")
+
+    # meta must not have BOM and must declare name
+    for meta in ("mod.hjson", "mod.json"):
+        data = (MOD / meta).read_bytes()
+        if data.startswith(b"\xef\xbb\xbf"):
+            missing.append(f"{meta}: UTF-8 BOM")
+        if b"name" not in data[:40] and b"name:" not in data[:40]:
+            missing.append(f"{meta}: missing name")
 
     for info in discover():
         for path, _, _ in required(info):
@@ -88,7 +132,7 @@ def main() -> int:
                 if not bp.exists():
                     missing.append(str(bp.relative_to(MOD)))
 
-    for ore in ("ore-void-shard", "ore-ceramite"):
+    for ore in ORES:
         for i in range(1, 4):
             bp = SPR_B / f"{ore}{i}.png"
             if not bp.exists():

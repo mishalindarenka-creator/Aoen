@@ -2,7 +2,7 @@ name: aoen
 displayName: Aoen
 author: Paradew
 description: "[#888888]Aoen[] — ores/materials/turrets/walls, MH naval, serpents, Proto Bahamut."
-version: "2.0.0"
+version: "2.0.1"
 minGameVersion: 160.7
 dependencies: []
 hidden: false
