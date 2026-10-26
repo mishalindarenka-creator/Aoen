@@ -1,0 +1,190 @@
+type: legs
+outlines: false
+
+health: 28000
+armor: 36
+speed: 0.34
+hitSize: 30
+rotateSpeed: 1.1
+range: 145
+legCount: 8
+legLength: 30
+hovering: true
+groundLayer: 63
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 40
+    regen: 0.9
+    max: 600
+    cooldown: 300
+  }
+]
+
+weapons: [
+  {
+    name: storm-sovereign-beam
+    x: 0
+    y: 8
+    shootY: 12
+    reload: 35
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -3
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 3
+        y: 4
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 12
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 95
+      length: 140
+      width: 9
+      lifetime: 50
+      colors: [ b49cff aa88ff 5533aa ]
+      status: shocked
+      statusDuration: 50
+      buildingDamageMultiplier: 0.85
+    }
+  }
+  {
+    name: storm-sovereign-rail
+    x: 12
+    y: 0
+    reload: 42
+    rotate: true
+    mirror: true
+    shootSound: railgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: 0
+        y: 6
+        under: false
+        moves: [
+          { type: PartMove, progress: reload, y: -3 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 14
+        under: false
+      }
+    ]
+    bullet: {
+      type: PointBulletType
+      damage: 200
+      speed: 0.01
+      lifetime: 1
+      trailSpacing: 10
+      trailEffect: railTrail
+      hitEffect: hitBulletBig
+      splashDamage: 35
+      splashDamageRadius: 16
+      status: shocked
+      statusDuration: 60
+    }
+  }
+  {
+    name: storm-sovereign-emp
+    x: 0
+    y: -6
+    reload: 70
+    rotate: true
+    mirror: false
+    shootSound: spark
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
+    ]
+    bullet: {
+      type: EmpBulletType
+      damage: 40
+      splashDamage: 60
+      splashDamageRadius: 48
+      speed: 3.0
+      lifetime: 50
+      width: 14
+      height: 14
+      powerDamageScl: 2.5
+      powerSclDecrease: 0.4
+      unitDamageScl: 1.2
+      status: shocked
+      statusDuration: 90
+      hitPowerEffect: hitEmpSpark
+      frontColor: aaccff
+      backColor: 3344aa
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t5
+  previous: aoen-quake-bulwark
+}
+research: {
+  parent: aoen-ground-reconstructor-t5
+  requirements: [
+    surge-alloy/40
+    phase-fabric/30
+  ]
+}

@@ -1,0 +1,11 @@
+﻿{
+  "name": "aoen",
+  "displayName": "Aoen",
+  "author": "Paradew",
+  "description": "Aoen — T1–T6 units + conveyors, ores, turrets, production.",
+  "version": "1.4.0",
+  "minGameVersion": "160.7",
+  "dependencies": [],
+  "hidden": false
+}
+

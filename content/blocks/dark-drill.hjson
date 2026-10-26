@@ -1,0 +1,22 @@
+type: Drill
+category: production
+size: 2
+consumes: {
+  power: 1.4
+}
+health: 360
+tier: 4
+drillTime: 260
+liquidBoostIntensity: 1.8
+hardnessDrillMultiplier: 40
+requirements: [
+  copper/50
+  graphite/30
+  aoen-void-shard/25
+]
+research: {
+  parent: pneumatic-drill
+  requirements: [
+    graphite/40
+  ]
+}

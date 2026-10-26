@@ -1,0 +1,80 @@
+type: ItemTurret
+category: turret
+size: 3
+health: 2600
+armor: 9
+range: 260
+reload: 6
+inaccuracy: 8
+rotateSpeed: 7
+recoil: 1
+shootSound: shootSnap
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 100
+shoot: {
+  type: ShootSpread
+  shots: 3
+  spread: 4
+}
+requirements: [
+  titanium/120
+  silicon/100
+  aoen-void-shard/80
+  graphite/90
+]
+ammoTypes: {
+  silicon: {
+    type: BasicBulletType
+    damage: 14
+    speed: 5.0
+    lifetime: 45
+    width: 7
+    height: 9
+    homingPower: 0.12
+    frontColor: ddeeff
+    backColor: 556677
+  }
+  graphite: {
+    type: BasicBulletType
+    damage: 18
+    speed: 4.6
+    lifetime: 48
+    width: 8
+    height: 10
+    pierce: true
+    pierceCap: 2
+  }
+  aoen-void-shard: {
+    type: BasicBulletType
+    damage: 22
+    speed: 5.2
+    lifetime: 48
+    width: 8
+    height: 10
+    splashDamage: 10
+    splashDamageRadius: 10
+    status: shocked
+    statusDuration: 30
+    frontColor: ccbbff
+    backColor: 443366
+  }
+  metaglass: {
+    type: BasicBulletType
+    damage: 12
+    splashDamage: 16
+    splashDamageRadius: 14
+    speed: 4.8
+    lifetime: 46
+    width: 7
+    height: 9
+  }
+}
+research: {
+  parent: aoen-void-flak
+  requirements: [
+    silicon/50
+    aoen-void-shard/40
+  ]
+}

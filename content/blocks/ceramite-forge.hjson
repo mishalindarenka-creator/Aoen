@@ -1,0 +1,29 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 4.2
+  items: [
+    aoen-void-shard/2
+    titanium/1
+    graphite/1
+  ]
+}
+health: 720
+craftTime: 70
+hasItems: true
+itemCapacity: 30
+outputItem: aoen-ceramite/1
+craftEffect: smeltsmoke
+requirements: [
+  titanium/120
+  silicon/100
+  aoen-void-shard/60
+]
+research: {
+  parent: aoen-void-smelter
+  requirements: [
+    titanium/80
+    aoen-void-shard/40
+  ]
+}

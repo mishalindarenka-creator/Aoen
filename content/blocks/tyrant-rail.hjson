@@ -1,0 +1,85 @@
+type: ItemTurret
+category: turret
+size: 3
+health: 3800
+armor: 14
+range: 360
+reload: 64
+recoil: 6
+rotateSpeed: 3.2
+shootSound: railgun
+shootCone: 12
+targetAir: true
+targetGround: true
+ammoPerShot: 2
+maxAmmo: 40
+shake: 3
+requirements: [
+  thorium/220
+  plastanium/140
+  surge-alloy/90
+  aoen-ceramite/120
+  aoen-aether-dust/70
+]
+ammoTypes: {
+  aoen-ceramite: {
+    type: PointBulletType
+    damage: 320
+    speed: 0.01
+    lifetime: 1
+    trailSpacing: 12
+    trailEffect: railTrail
+    hitEffect: hitBulletBig
+    shootEffect: shootBig
+    smokeEffect: shootBigSmoke
+    splashDamage: 40
+    splashDamageRadius: 18
+    status: aoen-bleeding
+    statusDuration: 90
+  }
+  thorium: {
+    type: PointBulletType
+    damage: 260
+    speed: 0.01
+    lifetime: 1
+    trailSpacing: 10
+    trailEffect: railTrail
+    hitEffect: hitBulletBig
+    splashDamage: 25
+    splashDamageRadius: 14
+  }
+  surge-alloy: {
+    type: PointBulletType
+    damage: 400
+    speed: 0.01
+    lifetime: 1
+    trailSpacing: 14
+    trailEffect: railTrail
+    hitEffect: hitBulletBig
+    lightning: 4
+    lightningLength: 10
+    lightningDamage: 32
+    splashDamage: 50
+    splashDamageRadius: 20
+  }
+  aoen-aether-dust: {
+    type: PointBulletType
+    damage: 280
+    speed: 0.01
+    lifetime: 1
+    trailSpacing: 12
+    trailEffect: railTrail
+    status: shocked
+    statusDuration: 80
+    lightning: 2
+    lightningLength: 8
+    lightningDamage: 20
+  }
+}
+research: {
+  parent: aoen-eclipse-beam
+  requirements: [
+    surge-alloy/40
+    aoen-ceramite/50
+  ]
+}

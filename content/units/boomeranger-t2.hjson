@@ -1,0 +1,227 @@
+type: mech
+
+outlines: false
+health: 2100
+armor: 12
+speed: 0.52
+hitSize: 13
+rotateSpeed: 2.8
+range: 56
+researchCostMultiplier: 0.65
+stepSoundVolume: 0.42
+
+abilities: [
+  {
+    type: MoveLightningAbility
+    damage: 38
+    chance: 0.14
+    length: 12
+    minSpeed: 0.35
+    maxSpeed: 1.1
+  }
+]
+
+weapons: [
+  {
+    name: boomeranger-t2-orb-a
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 20
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 38
+      buildingDamageMultiplier: 0.85
+      speed: 1.5
+      lifetime: 320
+      width: 8
+      height: 8
+      hitSize: 7
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 11
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: 0.41
+      angleOffset: 0
+      weaveMag: 3.2
+      weaveScale: 5.5
+      trailSinMag: 2.4
+      trailSinScl: 5
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-t2-orb-b
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 20
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 38
+      buildingDamageMultiplier: 0.85
+      speed: 1.55
+      lifetime: 320
+      width: 8
+      height: 8
+      hitSize: 7
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 14
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: -0.55
+      angleOffset: 72
+      weaveMag: 3.8
+      weaveScale: 6.5
+      trailSinMag: 2.8
+      trailSinScl: 5.5
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-t2-orb-c
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 20
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 38
+      buildingDamageMultiplier: 0.85
+      speed: 1.48
+      lifetime: 320
+      width: 8
+      height: 8
+      hitSize: 7
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 12
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: 0.62
+      angleOffset: 144
+      weaveMag: 3.5
+      weaveScale: 5
+      trailSinMag: 2.6
+      trailSinScl: 5
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-t2-orb-d
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 20
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 38
+      buildingDamageMultiplier: 0.85
+      speed: 1.52
+      lifetime: 320
+      width: 8
+      height: 8
+      hitSize: 7
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 15
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: -0.48
+      angleOffset: 216
+      weaveMag: 4
+      weaveScale: 7
+      trailSinMag: 3
+      trailSinScl: 6
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-t2-orb-e
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 20
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 31
+      buildingDamageMultiplier: 0.85
+      speed: 1.46
+      lifetime: 320
+      width: 8
+      height: 8
+      hitSize: 7
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 13
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: 0.53
+      angleOffset: 288
+      weaveMag: 3.6
+      weaveScale: 6
+      trailSinMag: 2.7
+      trailSinScl: 5.8
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor
+  previous: aoen-boomeranger
+}
+
+research: {
+  parent: aoen-ground-reconstructor
+  requirements: [
+    copper/50
+  ]
+}

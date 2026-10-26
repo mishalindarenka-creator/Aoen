@@ -1,0 +1,103 @@
+type: mech
+outlines: false
+
+health: 88000
+armor: 58
+speed: 0.22
+hitSize: 132
+range: 200
+rotateSpeed: 1.1
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 60
+    regen: 2.0
+    max: 2000
+    cooldown: 200
+  }
+  {
+    type: StatusFieldAbility
+    effect: overclock
+    duration: 140
+    range: 72
+    reload: 60
+  }
+]
+
+weapons: [
+  {
+    name: apotheosis-core-nova
+    x: 0
+    y: 6
+    shootY: 14
+    reload: 18
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 85
+      length: 160
+      width: 14
+      lifetime: 48
+      colors: [ ffee88 ffaa44 442200 ]
+      status: melting
+      statusDuration: 80
+      buildingDamageMultiplier: 1.1
+    }
+  }
+  {
+    name: apotheosis-core-batteries
+    x: 14
+    y: -2
+    reload: 8
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    bullet: {
+      type: BasicBulletType
+      damage: 70
+      splashDamage: 35
+      splashDamageRadius: 22
+      speed: 4.2
+      lifetime: 48
+      width: 13
+      height: 15
+      pierce: true
+      pierceCap: 4
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+    }
+  }
+  {
+    name: apotheosis-core-rail
+    x: 0
+    y: -8
+    reload: 48
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    bullet: {
+      type: RailBulletType
+      damage: 320
+      length: 170
+      pierceDamageFactor: 0.35
+      hitEffect: hitBulletBig
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t6
+  previous: aoen-nexus-prime
+}
+research: {
+  parent: aoen-ground-reconstructor-t6
+  requirements: [
+    surge-alloy/90
+    phase-fabric/70
+  ]
+}

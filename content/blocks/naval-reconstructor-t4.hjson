@@ -1,0 +1,26 @@
+type: Reconstructor
+category: units
+size: 5
+consumes: {
+  power: 8
+  items: [
+    silicon/80
+    metaglass/70
+    plastanium/30
+  ]
+}
+floating: true
+researchCostMultiplier: 0.8
+requirements: [
+  copper/450
+  lead/360
+  metaglass/240
+  plastanium/90
+]
+research: {
+  parent: aoen-naval-reconstructor-t3
+  requirements: [
+    plastanium/40
+    titanium/80
+  ]
+}

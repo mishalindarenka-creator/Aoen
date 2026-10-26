@@ -1,0 +1,106 @@
+type: naval
+outlines: false
+
+health: 6200
+armor: 18
+speed: 1.12
+hitSize: 26
+faceTarget: false
+range: 96
+
+weapons: [
+  {
+    name: needle-skiff-rack
+    x: 0
+    y: 4
+    reload: 10
+    rotate: true
+    mirror: false
+    shots: 3
+    shotDelay: 4
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 48
+      splashDamage: 18
+      splashDamageRadius: 16
+      speed: 3.8
+      lifetime: 60
+      width: 9
+      height: 11
+      homingPower: 0.16
+    }
+  }
+  {
+    name: needle-skiff-rack-l
+    x: -8
+    y: 0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 36
+      splashDamage: 12
+      splashDamageRadius: 12
+      speed: 3.5
+      lifetime: 55
+      width: 8
+      height: 10
+      homingPower: 0.12
+    }
+  }
+  {
+    name: needle-skiff-rack-r
+    x: 8
+    y: 0
+    reload: 14
+    rotate: true
+    mirror: false
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 36
+      splashDamage: 12
+      splashDamageRadius: 12
+      speed: 3.5
+      lifetime: 55
+      width: 8
+      height: 10
+      homingPower: 0.12
+    }
+  }
+  {
+    name: needle-skiff-ciws
+    x: 6
+    y: -6
+    reload: 6
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    bullet: {
+      type: FlakBulletType
+      damage: 12
+      splashDamage: 14
+      splashDamageRadius: 16
+      speed: 4.2
+      lifetime: 40
+      width: 6
+      height: 6
+      collidesGround: true
+    }
+  }
+]
+
+requirements: {
+  block: aoen-naval-reconstructor-t4
+  previous: aoen-iron-reef
+}
+research: {
+  parent: aoen-naval-reconstructor-t4
+  requirements: [
+    plastanium/50
+    thorium/40
+  ]
+}

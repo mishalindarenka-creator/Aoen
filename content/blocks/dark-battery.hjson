@@ -1,0 +1,18 @@
+type: Battery
+category: power
+size: 1
+consumes: {
+  powerBuffered: 6000
+}
+health: 200
+requirements: [
+  lead/30
+  silicon/20
+  aoen-aether-dust/10
+]
+research: {
+  parent: battery
+  requirements: [
+    silicon/40
+  ]
+}

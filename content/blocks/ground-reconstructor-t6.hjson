@@ -1,0 +1,28 @@
+type: Reconstructor
+category: units
+size: 9
+consumes: {
+  power: 22
+  items: [
+    silicon/220
+    thorium/120
+    phase-fabric/80
+    surge-alloy/60
+  ]
+}
+researchCostMultiplier: 0.95
+requirements: [
+  copper/1200
+  lead/900
+  silicon/700
+  thorium/400
+  phase-fabric/220
+  surge-alloy/180
+]
+research: {
+  parent: aoen-ground-reconstructor-t5
+  requirements: [
+    surge-alloy/80
+    phase-fabric/90
+  ]
+}

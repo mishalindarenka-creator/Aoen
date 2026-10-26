@@ -1,0 +1,27 @@
+type: Reconstructor
+category: units
+size: 5
+consumes: {
+  power: 7
+  items: [
+    silicon/90
+    thorium/45
+    plastanium/25
+  ]
+}
+researchCostMultiplier: 0.75
+requirements: [
+  copper/400
+  lead/320
+  silicon/260
+  thorium/140
+  plastanium/80
+]
+research: {
+  parent: aoen-ground-reconstructor-t3
+  requirements: [
+    copper/300
+    thorium/80
+    plastanium/40
+  ]
+}

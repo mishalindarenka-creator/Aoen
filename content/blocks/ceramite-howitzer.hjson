@@ -1,0 +1,86 @@
+type: ItemTurret
+category: turret
+size: 3
+health: 3400
+armor: 12
+range: 420
+reload: 55
+inaccuracy: 3
+rotateSpeed: 2.8
+recoil: 5
+shootSound: bang
+targetAir: false
+targetGround: true
+ammoPerShot: 2
+maxAmmo: 35
+shake: 2.5
+requirements: [
+  thorium/160
+  aoen-ceramite/140
+  plastanium/80
+  graphite/100
+]
+ammoTypes: {
+  aoen-ceramite: {
+    type: ArtilleryBulletType
+    damage: 120
+    splashDamage: 90
+    splashDamageRadius: 40
+    speed: 2.2
+    lifetime: 140
+    width: 16
+    height: 16
+    collidesTiles: false
+    hitEffect: explosion
+    status: aoen-bleeding
+    statusDuration: 100
+    frontColor: e8a070
+    backColor: 884422
+  }
+  thorium: {
+    type: ArtilleryBulletType
+    damage: 90
+    splashDamage: 70
+    splashDamageRadius: 36
+    speed: 2.4
+    lifetime: 130
+    width: 14
+    height: 14
+    collidesTiles: false
+    hitEffect: explosion
+  }
+  blast-compound: {
+    type: ArtilleryBulletType
+    damage: 80
+    splashDamage: 120
+    splashDamageRadius: 48
+    speed: 2.0
+    lifetime: 135
+    width: 16
+    height: 16
+    collidesTiles: false
+    hitEffect: explosion
+    status: blasted
+  }
+  pyratite: {
+    type: ArtilleryBulletType
+    damage: 70
+    splashDamage: 60
+    splashDamageRadius: 34
+    speed: 2.1
+    lifetime: 130
+    width: 14
+    height: 14
+    makeFire: true
+    status: burning
+    statusDuration: 180
+    hitEffect: explosion
+  }
+}
+research: {
+  parent: aoen-tyrant-rail
+  requirements: [
+    aoen-ceramite/60
+    thorium/50
+  ]
+}

@@ -1,0 +1,81 @@
+type: ItemTurret
+category: turret
+size: 2
+health: 1500
+armor: 6
+range: 300
+reload: 8
+inaccuracy: 6
+rotateSpeed: 9
+recoil: 1.5
+shootSound: shootSnap
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 80
+shoot: {
+  type: ShootAlternate
+  barrels: 3
+  spread: 4
+}
+requirements: [
+  titanium/100
+  graphite/80
+  aoen-void-shard/70
+  metaglass/40
+]
+ammoTypes: {
+  metaglass: {
+    type: FlakBulletType
+    damage: 16
+    splashDamage: 28
+    splashDamageRadius: 22
+    speed: 4.5
+    lifetime: 55
+    width: 7
+    height: 7
+    collidesGround: true
+  }
+  aoen-void-shard: {
+    type: FlakBulletType
+    damage: 24
+    splashDamage: 36
+    splashDamageRadius: 26
+    speed: 4.6
+    lifetime: 58
+    width: 8
+    height: 8
+    collidesGround: true
+    status: sapped
+    statusDuration: 50
+    frontColor: bb99ff
+    backColor: 442266
+  }
+  plastanium: {
+    type: FlakBulletType
+    damage: 20
+    splashDamage: 40
+    splashDamageRadius: 28
+    speed: 4.2
+    lifetime: 60
+    width: 8
+    height: 8
+    collidesGround: true
+    fragBullets: 4
+    fragBullet: {
+      type: BasicBulletType
+      damage: 8
+      speed: 2.5
+      lifetime: 20
+      width: 5
+      height: 5
+    }
+  }
+}
+research: {
+  parent: aoen-wave-scatter
+  requirements: [
+    titanium/50
+    aoen-void-shard/40
+  ]
+}

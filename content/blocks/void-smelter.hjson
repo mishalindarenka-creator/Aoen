@@ -1,0 +1,28 @@
+type: GenericCrafter
+category: crafting
+size: 2
+consumes: {
+  power: 1.8
+  items: [
+    lead/2
+    coal/1
+  ]
+}
+health: 320
+craftTime: 50
+hasItems: true
+itemCapacity: 20
+outputItem: aoen-void-shard/2
+craftEffect: smeltsmoke
+updateEffect: smeltsmoke
+requirements: [
+  copper/60
+  lead/50
+  graphite/40
+]
+research: {
+  parent: graphite-press
+  requirements: [
+    copper/100
+  ]
+}

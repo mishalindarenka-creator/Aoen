@@ -1,0 +1,29 @@
+type: Reconstructor
+category: units
+size: 3
+consumes: {
+  power: 4.5
+  items: [
+    silicon/55
+    graphite/55
+    thorium/25
+  ]
+}
+researchCostMultiplier: 0.7
+
+requirements: [
+  copper/260
+  lead/200
+  silicon/160
+  thorium/80
+  phase-fabric/40
+]
+
+research: {
+  parent: aoen-ground-reconstructor
+  requirements: [
+    copper/220
+    thorium/60
+    phase-fabric/30
+  ]
+}

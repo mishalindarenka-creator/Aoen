@@ -1,0 +1,88 @@
+type: ItemTurret
+category: turret
+size: 2
+health: 1200
+armor: 5
+range: 280
+reload: 16
+inaccuracy: 10
+rotateSpeed: 8
+recoil: 2
+shootSound: shotgun
+shootCone: 30
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 60
+shoot: {
+  type: ShootSpread
+  shots: 5
+  spread: 7
+}
+requirements: [
+  copper/140
+  graphite/90
+  metaglass/50
+  aoen-void-shard/55
+]
+ammoTypes: {
+  metaglass: {
+    type: FlakBulletType
+    damage: 14
+    splashDamage: 26
+    splashDamageRadius: 24
+    speed: 4.1
+    lifetime: 58
+    width: 8
+    height: 8
+    collidesGround: true
+    explodeRange: 18
+  }
+  silicon: {
+    type: FlakBulletType
+    damage: 12
+    splashDamage: 20
+    splashDamageRadius: 20
+    speed: 4.4
+    lifetime: 55
+    width: 7
+    height: 7
+    collidesGround: true
+    homingPower: 0.08
+  }
+  aoen-aether-dust: {
+    type: FlakBulletType
+    damage: 22
+    splashDamage: 42
+    splashDamageRadius: 30
+    speed: 4.3
+    lifetime: 60
+    width: 9
+    height: 9
+    collidesGround: true
+    status: freezing
+    statusDuration: 50
+    frontColor: 88eef0
+    backColor: 226688
+    hitEffect: freeze
+  }
+  blast-compound: {
+    type: FlakBulletType
+    damage: 18
+    splashDamage: 55
+    splashDamageRadius: 34
+    speed: 3.6
+    lifetime: 50
+    width: 10
+    height: 10
+    collidesGround: true
+    status: blasted
+  }
+}
+research: {
+  parent: aoen-shard-turret
+  requirements: [
+    graphite/60
+    aoen-void-shard/40
+  ]
+}

@@ -1,0 +1,28 @@
+type: Reconstructor
+category: units
+size: 7
+consumes: {
+  power: 14
+  items: [
+    silicon/120
+    metaglass/100
+    thorium/60
+    surge-alloy/30
+  ]
+}
+floating: true
+researchCostMultiplier: 0.9
+requirements: [
+  copper/800
+  lead/600
+  metaglass/400
+  thorium/200
+  surge-alloy/90
+]
+research: {
+  parent: aoen-naval-reconstructor-t4
+  requirements: [
+    surge-alloy/50
+    thorium/80
+  ]
+}

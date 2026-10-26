@@ -1,0 +1,92 @@
+type: crawl
+outlines: false
+
+health: 82000
+armor: 50
+speed: 0.65
+hitSize: 36
+rotateSpeed: 1.6
+targetAir: true
+canAttack: true
+range: 170
+omniMovement: false
+drawBody: false
+drawCell: false
+
+segments: 14
+segmentScl: 4.0
+segmentMag: 0.85
+segmentPhase: 5
+segmentRotSpeed: 1.5
+segmentMaxRot: 26
+crushDamage: 14
+crawlSlowdown: 0.35
+crawlSlowdownFrac: 0.4
+
+abilities: [
+  {
+    type: SuppressionFieldAbility
+    range: 72
+    reload: 18
+  }
+  {
+    type: ForceFieldAbility
+    radius: 44
+    regen: 1.2
+    max: 900
+    cooldown: 280
+  }
+]
+
+weapons: [
+  {
+    name: ouroboros-prime-maw
+    x: 0
+    y: 8
+    reload: 12
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 75
+      length: 120
+      width: 12
+      lifetime: 40
+      colors: [ ffd37f aa44ff 1a1028 ]
+      status: sapped
+      statusDuration: 120
+      buildingDamageMultiplier: 1.0
+    }
+  }
+  {
+    name: ouroboros-prime-bolt
+    x: 0
+    y: 2
+    reload: 18
+    mirror: false
+    shots: 3
+    spread: 8
+    shootSound: spark
+    bullet: {
+      type: LaserBulletType
+      damage: 90
+      length: 100
+      width: 14
+      lifetime: 14
+      colors: [ eeccff 7744aa 1a1028 ]
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t6
+  previous: aoen-singularity-eel
+}
+research: {
+  parent: aoen-ground-reconstructor-t6
+  requirements: [
+    phase-fabric/70
+    thorium/100
+  ]
+}

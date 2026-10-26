@@ -1,0 +1,25 @@
+type: ConsumeGenerator
+category: power
+size: 3
+consumes: {
+  items: [
+    aoen-aether-dust/1
+  ]
+}
+health: 1100
+powerProduction: 18
+itemDuration: 120
+explosionRadius: 8
+explosionDamage: 400
+requirements: [
+  lead/160
+  silicon/140
+  aoen-aether-dust/80
+  thorium/60
+]
+research: {
+  parent: aoen-dark-generator
+  requirements: [
+    aoen-aether-dust/40
+  ]
+}

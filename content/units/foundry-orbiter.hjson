@@ -1,0 +1,40 @@
+type: mech
+outlines: false
+health: 4000
+armor: 16
+speed: 0.45
+hitSize: 18
+range: 72
+weapons: [
+  {
+    name: foundry-orbiter-laser
+    x: 0
+    y: 2
+    shootY: 6
+    reload: 8
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 18
+      length: 65
+      width: 3
+      lifetime: 10
+      colors: [ ffd37f ff8822 883310 ]
+      buildingDamageMultiplier: 1.05
+    }
+  }
+]
+requirements: {
+  block: aoen-ground-reconstructor-t3
+  previous: aoen-boomeranger-t2
+}
+research: {
+  parent: aoen-ground-reconstructor-t3
+  requirements: [
+    silicon/50
+    graphite/40
+  ]
+}

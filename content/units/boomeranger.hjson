@@ -1,0 +1,144 @@
+type: mech
+
+outlines: false
+health: 680
+armor: 5
+speed: 0.58
+hitSize: 10
+rotateSpeed: 3.2
+range: 48
+researchCostMultiplier: 0.5
+stepSoundVolume: 0.35
+
+weapons: [
+  {
+    name: boomeranger-orb-a
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 24
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 32
+      buildingDamageMultiplier: 0.85
+      speed: 1.35
+      lifetime: 300
+      width: 7
+      height: 7
+      hitSize: 6
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 9
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: 0.36
+      angleOffset: 0
+      weaveMag: 2.4
+      weaveScale: 5
+      trailSinMag: 1.8
+      trailSinScl: 4
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-orb-b
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 24
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 32
+      buildingDamageMultiplier: 0.85
+      speed: 1.45
+      lifetime: 300
+      width: 7
+      height: 7
+      hitSize: 6
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 11
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: -0.51
+      angleOffset: 127
+      weaveMag: 3.1
+      weaveScale: 6
+      trailSinMag: 2.2
+      trailSinScl: 5
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: boomeranger-orb-c
+    x: 0
+    y: 0
+    shootY: 0
+    reload: 24
+    alwaysShooting: true
+    rotate: false
+    mirror: false
+    ignoreRotation: true
+    display: false
+    showStatSprite: false
+    top: true
+    bullet: {
+      type: BasicBulletType
+      damage: 32
+      buildingDamageMultiplier: 0.85
+      speed: 1.4
+      lifetime: 300
+      width: 7
+      height: 7
+      hitSize: 6
+      collides: true
+      collidesTiles: false
+      circleShooter: true
+      circleShooterRadius: 10
+      circleShooterRadiusSmooth: 0
+      circleShooterRotateSpeed: 0.44
+      angleOffset: 255
+      weaveMag: 2.8
+      weaveScale: 4.5
+      trailSinMag: 2
+      trailSinScl: 4.5
+      frontColor: ffee88
+      backColor: cc9922
+      hitEffect: hitBulletColor
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-fabricator
+  time: 780
+  requirements: [
+    silicon/16
+    copper/12
+  ]
+}
+
+research: {
+  parent: aoen-ground-fabricator
+  requirements: [
+    copper/40
+  ]
+}

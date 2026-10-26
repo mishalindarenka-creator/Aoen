@@ -1,0 +1,45 @@
+type: naval
+outlines: false
+health: 4200
+armor: 18
+speed: 0.78
+hitSize: 20
+faceTarget: false
+range: 105
+trailLength: 22
+weapons: [
+  {
+    name: iron-reef-battery
+    x: 0
+    y: 2
+    shootY: 6
+    reload: 18
+    rotate: true
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 95
+      splashDamage: 36
+      splashDamageRadius: 26
+      speed: 2
+      lifetime: 95
+      width: 12
+      height: 12
+      buildingDamageMultiplier: 1.2
+      frontColor: a0b4c8
+      backColor: 405060
+    }
+  }
+]
+requirements: {
+  block: aoen-naval-reconstructor-t3
+  previous: aoen-naval-t2
+}
+research: {
+  parent: aoen-naval-reconstructor-t3
+  requirements: [
+    metaglass/50
+    titanium/40
+  ]
+}

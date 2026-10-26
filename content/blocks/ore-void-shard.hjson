@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-void-shard
+oreDefault: true
+oreThreshold: 0.83
+oreScale: 23.5
+variants: 3

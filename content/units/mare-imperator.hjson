@@ -1,0 +1,124 @@
+type: naval
+outlines: false
+
+health: 95000
+armor: 55
+speed: 0.35
+hitSize: 150
+faceTarget: false
+range: 240
+rotateSpeed: 0.75
+
+abilities: [
+  {
+    type: SuppressionFieldAbility
+    range: 90
+    reload: 14
+  }
+  {
+    type: ForceFieldAbility
+    radius: 52
+    regen: 1.6
+    max: 1400
+    cooldown: 260
+  }
+]
+
+weapons: [
+  {
+    name: mare-imperator-main
+    x: 0
+    y: 8
+    reload: 28
+    rotate: true
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 480
+      splashDamage: 150
+      splashDamageRadius: 52
+      speed: 1.8
+      lifetime: 140
+      width: 24
+      height: 24
+      buildingDamageMultiplier: 1.35
+      hitEffect: explosion
+      frontColor: ffd37f
+      backColor: 334466
+    }
+  }
+  {
+    name: mare-imperator-ciws
+    x: 14
+    y: -4
+    reload: 4
+    rotate: true
+    mirror: true
+    shootSound: shootSnap
+    bullet: {
+      type: FlakBulletType
+      damage: 28
+      splashDamage: 32
+      splashDamageRadius: 24
+      speed: 4.6
+      lifetime: 48
+      width: 9
+      height: 9
+      collidesGround: true
+    }
+  }
+  {
+    name: mare-imperator-beam
+    x: 0
+    y: -8
+    reload: 45
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 55
+      length: 170
+      width: 9
+      lifetime: 60
+      colors: [ 88ddff 4488aa 102030 ]
+      status: shocked
+      statusDuration: 60
+    }
+  }
+  {
+    name: mare-imperator-missile
+    x: 10
+    y: 4
+    reload: 16
+    rotate: true
+    mirror: true
+    shots: 2
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 70
+      splashDamage: 30
+      splashDamageRadius: 20
+      speed: 3.6
+      lifetime: 70
+      width: 10
+      height: 12
+      homingPower: 0.18
+    }
+  }
+]
+
+requirements: {
+  block: aoen-naval-reconstructor-t6
+  previous: aoen-leviathan-crown
+}
+research: {
+  parent: aoen-naval-reconstructor-t6
+  requirements: [
+    surge-alloy/100
+    thorium/120
+  ]
+}

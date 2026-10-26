@@ -1,0 +1,83 @@
+type: naval
+
+outlines: false
+health: 1000
+armor: 7
+speed: 1.15
+drag: 0.14
+hitSize: 12
+accel: 0.38
+rotateSpeed: 3.1
+faceTarget: false
+targetAir: false
+researchCostMultiplier: 0.5
+
+trailLength: 18
+waveTrailX: 4
+waveTrailY: 0
+trailScl: 1.35
+moveSound: shipMove
+moveSoundVolume: 0.42
+
+weapons: [
+  {
+    name: naval-cannon
+    x: 4
+    y: 1.5
+    shootY: 4
+    reload: 14
+    rotate: true
+    rotateSpeed: 4
+    ejectEffect: casing1
+    shootSound: shootSmall
+    bullet: {
+      type: BasicBulletType
+      damage: 28
+      speed: 2.6
+      lifetime: 58
+      width: 7
+      height: 9
+      buildingDamageMultiplier: 0.75
+      hitEffect: hitBulletColor
+    }
+  }
+  {
+    name: naval-torpedo
+    x: 0
+    y: -4
+    reload: 28
+    rotate: true
+    mirror: false
+    shootSound: shootMissileShort
+    bullet: {
+      type: MissileBulletType
+      damage: 40
+      speed: 2.5
+      lifetime: 55
+      width: 8
+      height: 8
+      shrinkY: 0
+      keepVelocity: true
+      hitSize: 6
+      buildingDamageMultiplier: 0.8
+      hitEffect: hitBulletColor
+      despawnEffect: hitBulletColor
+    }
+  }
+]
+
+requirements: {
+  block: aoen-naval-fabricator
+  time: 2700
+  requirements: [
+    silicon/22
+    metaglass/30
+  ]
+}
+
+research: {
+  parent: aoen-naval-fabricator
+  requirements: [
+    copper/40
+  ]
+}

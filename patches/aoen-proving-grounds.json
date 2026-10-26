@@ -1,0 +1,40 @@
+{
+  "name": "Aoen Proving Grounds (Patch Editor)",
+  "description": "Импорт в Mindustry: Editor → Map → Import / Content Patcher. Теги включают aoen-proving=1; все юниты Aoen доступны для размещения. Текстуры юнитов берутся из мода (sprites/units/*.png без префикса aoen- в имени файла).",
+  "version": 1,
+  "tags": {
+    "aoen-proving": "1",
+    "name": "Aoen Proving Grounds"
+  },
+  "rules": {
+    "canGameOver": false,
+    "waves": false,
+    "attackMode": false,
+    "editor": false,
+    "infiniteResources": true,
+    "cheat": true
+  },
+  "units": [
+    "aoen-crab",
+    "aoen-crab-t2",
+    "aoen-ceramtyr-daimyo",
+    "aoen-quake-bulwark",
+    "aoen-storm-sovereign",
+    "aoen-snake",
+    "aoen-snake-t2",
+    "aoen-cinder-millipede",
+    "aoen-payload-serpent",
+    "aoen-singularity-eel",
+    "aoen-boomeranger",
+    "aoen-boomeranger-t2",
+    "aoen-foundry-orbiter",
+    "aoen-aegis-walker",
+    "aoen-nexus-prime",
+    "aoen-naval",
+    "aoen-naval-t2",
+    "aoen-iron-reef",
+    "aoen-needle-skiff",
+    "aoen-leviathan-crown"
+  ],
+  "spriteNote": "Файлы: crab.png → atlas aoen-crab. НЕ называй файлы aoen-crab.png (получится aoen-aoen-crab = oh no)."
+}

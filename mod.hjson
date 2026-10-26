@@ -1,0 +1,10 @@
+﻿name: aoen
+displayName: Aoen
+author: Paradew
+description: "[#888888]Aoen[] — T1–T6, Proto Bahamut, serpentine crawl, jababarium weapons."
+version: "1.5.0"
+minGameVersion: 160.7
+dependencies: []
+hidden: false
+
+

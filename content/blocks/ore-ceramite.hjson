@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-ceramite
+oreDefault: true
+oreThreshold: 0.86
+oreScale: 25.2
+variants: 3

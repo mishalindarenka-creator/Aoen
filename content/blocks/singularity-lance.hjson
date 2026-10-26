@@ -1,0 +1,44 @@
+type: ContinuousTurret
+category: turret
+size: 4
+consumes: {
+  power: 14
+}
+health: 5200
+armor: 16
+range: 280
+rotateSpeed: 2.5
+recoil: 1
+shootSound: laserbig
+hasPower: true
+shootType: {
+  type: ContinuousLaserBulletType
+  damage: 58
+  length: 280
+  width: 12
+  lifetime: 22
+  colors: [ 88eef0 aa66ff 441166 102040 ]
+  status: sapped
+  statusDuration: 70
+  hitEffect: hitLancer
+  shootEffect: hitLancer
+  buildingDamageMultiplier: 0.9
+  shake: 0.8
+  incendChance: 0.15
+  incendSpread: 4
+  incendAmount: 1
+}
+requirements: [
+  surge-alloy/160
+  phase-fabric/120
+  aoen-aether-dust/140
+  aoen-ceramite/100
+  silicon/200
+]
+research: {
+  parent: aoen-aether-missile
+  requirements: [
+    phase-fabric/50
+    aoen-aether-dust/60
+  ]
+}

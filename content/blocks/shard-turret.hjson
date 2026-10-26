@@ -1,0 +1,87 @@
+type: ItemTurret
+category: turret
+size: 1
+health: 520
+armor: 3
+range: 200
+reload: 12
+inaccuracy: 1.5
+rotateSpeed: 10
+recoil: 1.2
+shootSound: shoot
+shootCone: 18
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 50
+shoot: {
+  type: ShootAlternate
+  barrels: 2
+  spread: 3.5
+}
+requirements: [
+  copper/50
+  lead/40
+  aoen-void-shard/25
+]
+ammoTypes: {
+  copper: {
+    type: BasicBulletType
+    damage: 22
+    speed: 4.4
+    lifetime: 48
+    width: 8
+    height: 10
+    frontColor: c8b8ff
+    backColor: 554488
+    shootEffect: shootSmall
+    hitEffect: hitBulletColor
+  }
+  lead: {
+    type: BasicBulletType
+    damage: 18
+    speed: 3.8
+    lifetime: 52
+    width: 8
+    height: 10
+    knockback: 0.8
+    frontColor: a8a8c0
+    backColor: 505068
+  }
+  graphite: {
+    type: BasicBulletType
+    damage: 28
+    speed: 4.6
+    lifetime: 50
+    width: 9
+    height: 11
+    pierce: true
+    pierceCap: 2
+    frontColor: 8899aa
+    backColor: 334455
+  }
+  aoen-void-shard: {
+    type: BasicBulletType
+    damage: 38
+    splashDamage: 12
+    splashDamageRadius: 14
+    speed: 4.8
+    lifetime: 52
+    width: 9
+    height: 11
+    pierce: true
+    pierceCap: 2
+    status: shocked
+    statusDuration: 40
+    frontColor: aa88ff
+    backColor: 331166
+    hitEffect: hitLaserBlast
+  }
+}
+research: {
+  parent: duo
+  requirements: [
+    copper/80
+    aoen-void-shard/30
+  ]
+}

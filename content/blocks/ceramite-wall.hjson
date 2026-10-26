@@ -1,0 +1,14 @@
+type: Wall
+category: defense
+size: 1
+health: 1200
+armor: 14
+requirements: [
+  aoen-ceramite/6
+]
+research: {
+  parent: titanium-wall
+  requirements: [
+    aoen-ceramite/20
+  ]
+}

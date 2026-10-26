@@ -1,0 +1,67 @@
+type: crawl
+outlines: false
+
+health: 620
+armor: 4
+speed: 1.15
+hitSize: 11
+rotateSpeed: 2.7
+targetAir: false
+canAttack: true
+range: 28
+omniMovement: false
+drawBody: false
+drawCell: false
+researchCostMultiplier: 0.5
+
+# snake motion — small mag so segments form a line, not a pile
+segments: 6
+segmentScl: 3.2
+segmentMag: 0.55
+segmentPhase: 5
+segmentRotSpeed: 2.2
+segmentMaxRot: 28
+crushDamage: 2.4
+crawlSlowdown: 0.5
+crawlSlowdownFrac: 0.5
+
+weapons: [
+  {
+    name: snake-fang
+    x: 0
+    y: 4
+    shootY: 6
+    reload: 18
+    mirror: false
+    shootSound: shoot
+    shootCone: 40
+    bullet: {
+      type: BasicBulletType
+      damage: 28
+      speed: 3.4
+      lifetime: 22
+      width: 7
+      height: 9
+      status: poisoned
+      statusDuration: 80
+      frontColor: c8b8ff
+      backColor: 554488
+      collidesAir: false
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-fabricator
+  time: 600
+  requirements: [
+    silicon/10
+    coal/12
+  ]
+}
+research: {
+  parent: aoen-ground-fabricator
+  requirements: [
+    copper/40
+  ]
+}

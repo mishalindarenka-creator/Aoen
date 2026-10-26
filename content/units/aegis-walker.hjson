@@ -1,0 +1,165 @@
+type: mech
+outlines: false
+
+health: 8000
+armor: 28
+speed: 0.4
+hitSize: 24
+range: 72
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 32
+    regen: 1.1
+    max: 360
+    cooldown: 240
+  }
+]
+
+weapons: [
+  {
+    name: aegis-walker-gun
+    x: 8
+    y: 2
+    shootY: 6
+    reload: 9
+    rotate: true
+    mirror: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: -1
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -2
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 2
+        y: 3
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 8
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 72
+      speed: 4.4
+      lifetime: 40
+      width: 11
+      height: 13
+      knockback: 3
+      pierce: true
+      pierceCap: 3
+      frontColor: 50dc9a
+      backColor: 286848
+      fragBullets: 2
+      fragBullet: {
+        type: BasicBulletType
+        damage: 12
+        speed: 2.5
+        lifetime: 18
+        width: 5
+        height: 6
+        frontColor: 80eec0
+        backColor: 204830
+      }
+    }
+  }
+  {
+    name: aegis-walker-shotgun
+    x: 0
+    y: 6
+    reload: 28
+    rotate: true
+    mirror: false
+    shots: 5
+    spread: 6
+    shootSound: shotgun
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 7
+        under: false
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 28
+      length: 36
+      width: 12
+      lifetime: 12
+      fromColor: 80eec0
+      toColor: 204830
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+  {
+    name: aegis-walker-missile
+    x: 10
+    y: -4
+    reload: 18
+    rotate: true
+    mirror: true
+    shootSound: missile
+    bullet: {
+      type: MissileBulletType
+      damage: 38
+      splashDamage: 22
+      splashDamageRadius: 16
+      speed: 3.4
+      lifetime: 50
+      width: 8
+      height: 10
+      homingPower: 0.14
+      status: slow
+      statusDuration: 40
+      trailChance: 0.25
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t4
+  previous: aoen-foundry-orbiter
+}
+research: {
+  parent: aoen-ground-reconstructor-t4
+  requirements: [
+    plastanium/40
+    thorium/40
+  ]
+}

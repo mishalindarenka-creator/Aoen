@@ -1,0 +1,125 @@
+type: legs
+
+outlines: false
+health: 2200
+armor: 12
+speed: 0.55
+drag: 0.2
+rotateSpeed: 2.4
+hitSize: 13
+targetAir: false
+range: 58
+researchCostMultiplier: 0.65
+
+legCount: 8
+legGroupSize: 4
+legLength: 14
+legSpeed: 0.24
+legForwardScl: 1.6
+legBaseOffset: 5
+legMoveSpace: 1.2
+legExtension: -4
+legPairOffset: 2
+legLengthScl: 0.95
+rippleScale: 0.45
+legContinuousMove: true
+hovering: true
+shadowElevation: 0.22
+groundLayer: 59
+
+stepSound: walkerStepSmall
+stepSoundVolume: 0.4
+
+abilities: [
+  {
+    type: RegenAbility
+    percentAmount: 0.22
+  }
+]
+
+weapons: [
+  {
+    name: crab-t2-claw
+    x: 7
+    y: 0
+    shootY: 7
+    baseRotation: -42
+    rotationLimit: 105
+    reload: 12
+    rotate: true
+    rotateSpeed: 4.5
+    mirror: true
+    alternate: false
+    recoil: 3
+    recoilTime: 10
+    top: true
+    shootSound: shootSmall
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        outline: false
+        x: 0
+        y: 0
+        moveRot: -20
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.5, y: 0, rot: 32 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        outline: false
+        x: 1
+        y: -1
+        moveRot: -35
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.9, y: -0.4, rot: 42 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        outline: false
+        x: 2
+        y: -2
+        moveRot: -50
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.2, y: -0.6, rot: 58 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 72
+      buildingDamageMultiplier: 0.7
+      length: 58
+      width: 18
+      lifetime: 14
+      fromColor: ffd37f
+      toColor: c9852a
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor
+  previous: aoen-crab
+}
+
+research: {
+  parent: aoen-ground-reconstructor
+  requirements: [
+    copper/50
+    silicon/30
+  ]
+}

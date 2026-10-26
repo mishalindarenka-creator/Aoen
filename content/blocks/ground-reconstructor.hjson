@@ -1,0 +1,26 @@
+type: Reconstructor
+category: units
+size: 3
+consumes: {
+  power: 3
+  items: [
+    silicon/35
+    graphite/35
+  ]
+}
+researchCostMultiplier: 0.6
+
+requirements: [
+  copper/180
+  lead/140
+  silicon/100
+  titanium/50
+]
+
+research: {
+  parent: aoen-ground-fabricator
+  requirements: [
+    copper/150
+    titanium/40
+  ]
+}

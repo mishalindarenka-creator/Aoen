@@ -1,0 +1,43 @@
+type: PowerTurret
+category: turret
+size: 2
+consumes: {
+  power: 7.5
+}
+health: 1600
+armor: 7
+range: 240
+reload: 48
+rotateSpeed: 6.5
+recoil: 2.5
+shootSound: laser
+hasPower: true
+shootType: {
+  type: LaserBulletType
+  damage: 110
+  length: 230
+  width: 18
+  lifetime: 20
+  colors: [ ffd37f aa66ff 221133 ]
+  status: melting
+  statusDuration: 60
+  buildingDamageMultiplier: 0.75
+  hitEffect: hitLancer
+  shootEffect: hitLancer
+  sideAngle: 45
+  sideWidth: 1.2
+  sideLength: 40
+}
+requirements: [
+  silicon/160
+  titanium/120
+  aoen-void-shard/90
+  aoen-aether-dust/50
+]
+research: {
+  parent: aoen-wave-scatter
+  requirements: [
+    silicon/100
+    aoen-aether-dust/30
+  ]
+}

@@ -1,0 +1,96 @@
+type: crawl
+outlines: false
+
+health: 3400
+armor: 12
+speed: 1.0
+hitSize: 15
+rotateSpeed: 2.2
+targetAir: false
+canAttack: true
+range: 44
+omniMovement: false
+drawBody: false
+drawCell: false
+
+segments: 8
+segmentScl: 3.5
+segmentMag: 0.65
+segmentPhase: 5
+segmentRotSpeed: 1.9
+segmentMaxRot: 30
+crushDamage: 4.2
+crawlSlowdown: 0.45
+crawlSlowdownFrac: 0.5
+
+abilities: [
+  {
+    type: StatusFieldAbility
+    effect: burning
+    duration: 50
+    range: 24
+    reload: 18
+  }
+]
+
+weapons: [
+  {
+    name: cinder-millipede-spit
+    x: 0
+    y: 5
+    shootY: 6
+    reload: 14
+    mirror: false
+    shootSound: flame
+    bullet: {
+      type: BasicBulletType
+      damage: 40
+      speed: 3.3
+      lifetime: 30
+      width: 9
+      height: 11
+      status: burning
+      statusDuration: 140
+      makeFire: true
+      frontColor: ff8c28
+      backColor: b44614
+      collidesAir: false
+    }
+  }
+  {
+    name: cinder-millipede-slag
+    x: 0
+    y: 0
+    reload: 36
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 35
+      splashDamage: 40
+      splashDamageRadius: 22
+      speed: 2.0
+      lifetime: 50
+      width: 12
+      height: 12
+      status: melting
+      statusDuration: 60
+      collidesTiles: false
+      hitEffect: explosion
+      frontColor: ff6622
+      backColor: 882200
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t3
+  previous: aoen-snake-t2
+}
+research: {
+  parent: aoen-ground-reconstructor-t3
+  requirements: [
+    graphite/40
+    coal/30
+  ]
+}

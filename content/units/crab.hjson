@@ -1,0 +1,123 @@
+type: legs
+
+outlines: false
+health: 700
+armor: 7
+speed: 0.62
+drag: 0.18
+rotateSpeed: 2.8
+hitSize: 11
+targetAir: false
+range: 50
+researchCostMultiplier: 0.5
+
+legCount: 8
+legGroupSize: 4
+legLength: 11
+legSpeed: 0.28
+legForwardScl: 1.55
+legBaseOffset: 4
+legMoveSpace: 1.15
+legExtension: -3
+legPairOffset: 2
+legLengthScl: 0.94
+legMaxLength: 1.35
+legMinLength: 0.25
+rippleScale: 0.35
+legContinuousMove: true
+hovering: true
+shadowElevation: 0.18
+groundLayer: 59
+
+stepSound: walkerStepTiny
+stepSoundVolume: 0.35
+
+weapons: [
+  {
+    name: crab-claw
+    x: 6
+    y: 0
+    shootY: 6
+    baseRotation: -42
+    rotationLimit: 105
+    reload: 14
+    rotate: true
+    rotateSpeed: 5
+    mirror: true
+    alternate: false
+    recoil: 2.5
+    recoilTime: 11
+    top: true
+    shootSound: shootSmall
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        outline: false
+        x: 0
+        y: 0
+        moveRot: -18
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.4, y: 0, rot: 28 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        outline: false
+        x: 1
+        y: -1
+        moveRot: -32
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.8, y: -0.3, rot: 38 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        outline: false
+        x: 2
+        y: -2
+        moveRot: -48
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.1, y: -0.5, rot: 52 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 48
+      buildingDamageMultiplier: 0.7
+      length: 40
+      width: 14
+      lifetime: 12
+      fromColor: ffd37f
+      toColor: c9852a
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-fabricator
+  time: 720
+  requirements: [
+    silicon/12
+    lead/10
+  ]
+}
+
+research: {
+  parent: aoen-ground-fabricator
+  requirements: [
+    copper/40
+  ]
+}

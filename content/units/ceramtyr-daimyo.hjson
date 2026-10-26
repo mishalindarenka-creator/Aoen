@@ -1,0 +1,133 @@
+type: legs
+
+outlines: false
+health: 4800
+armor: 18
+speed: 0.48
+drag: 0.22
+rotateSpeed: 2
+hitSize: 18
+targetAir: false
+range: 78
+researchCostMultiplier: 0.75
+
+legCount: 8
+legGroupSize: 4
+legLength: 18
+legSpeed: 0.2
+legForwardScl: 1.7
+legBaseOffset: 6
+legMoveSpace: 1.3
+legExtension: -5
+legPairOffset: 2
+legLengthScl: 1
+rippleScale: 0.52
+legContinuousMove: true
+hovering: true
+shadowElevation: 0.28
+groundLayer: 59
+
+stepSound: walkerStepSmall
+stepSoundVolume: 0.48
+
+weapons: [
+  {
+    name: ceramtyr-daimyo-claw
+    x: 11
+    y: 0
+    shootY: 8
+    baseRotation: -35
+    rotationLimit: 120
+    reload: 9
+    rotate: true
+    rotateSpeed: 4
+    mirror: true
+    alternate: false
+    recoil: 2
+    recoilTime: 7
+    top: true
+    shootSound: shootAtrax
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        outline: false
+        x: 0
+        y: 0
+        moveRot: -12
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.9, y: 0, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        outline: false
+        x: 3
+        y: -1
+        moveRot: -26
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.6, y: -0.3, rot: 42 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        outline: false
+        x: 6
+        y: -2
+        moveRot: -40
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 2.3, y: -0.55, rot: 55 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        outline: false
+        x: 9
+        y: -3
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 3.1, y: -0.75, rot: 68 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 110
+      buildingDamageMultiplier: 0.65
+      length: 72
+      width: 22
+      lifetime: 16
+      fromColor: ff5566
+      toColor: 8a1020
+      status: aoen-bleeding
+      statusDuration: 260
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t3
+  previous: aoen-crab-t2
+}
+
+research: {
+  parent: aoen-ground-reconstructor-t3
+  requirements: [
+    copper/120
+    thorium/40
+  ]
+}

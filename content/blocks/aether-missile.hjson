@@ -1,0 +1,95 @@
+type: ItemTurret
+category: turret
+size: 3
+health: 2800
+armor: 10
+range: 380
+reload: 22
+inaccuracy: 2
+rotateSpeed: 4
+recoil: 3
+shootSound: missile
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 50
+shoot: {
+  type: ShootAlternate
+  barrels: 3
+  spread: 6
+}
+requirements: [
+  plastanium/120
+  silicon/140
+  thorium/80
+  aoen-aether-dust/80
+  aoen-ceramite/40
+]
+ammoTypes: {
+  blast-compound: {
+    type: MissileBulletType
+    damage: 55
+    splashDamage: 45
+    splashDamageRadius: 28
+    speed: 3.4
+    lifetime: 90
+    width: 10
+    height: 12
+    homingPower: 0.14
+    homingRange: 80
+    trailChance: 0.4
+  }
+  pyratite: {
+    type: MissileBulletType
+    damage: 40
+    splashDamage: 35
+    splashDamageRadius: 24
+    speed: 3.2
+    lifetime: 85
+    width: 9
+    height: 11
+    status: burning
+    statusDuration: 120
+    makeFire: true
+    homingPower: 0.1
+  }
+  aoen-aether-dust: {
+    type: MissileBulletType
+    damage: 70
+    splashDamage: 55
+    splashDamageRadius: 32
+    speed: 3.8
+    lifetime: 95
+    width: 11
+    height: 13
+    homingPower: 0.18
+    homingRange: 100
+    status: freezing
+    statusDuration: 70
+    frontColor: 88eef0
+    backColor: 226688
+    trailColor: 66ccee
+  }
+  aoen-void-shard: {
+    type: MissileBulletType
+    damage: 60
+    splashDamage: 40
+    splashDamageRadius: 26
+    speed: 3.6
+    lifetime: 90
+    width: 10
+    height: 12
+    homingPower: 0.16
+    status: sapped
+    statusDuration: 80
+    frontColor: aa88ff
+    backColor: 442266
+  }
+}
+research: {
+  parent: aoen-void-flak
+  requirements: [
+    plastanium/40
+    aoen-aether-dust/40
+  ]
+}

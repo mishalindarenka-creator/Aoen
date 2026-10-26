@@ -1,0 +1,121 @@
+type: crawl
+outlines: false
+
+health: 22000
+armor: 26
+speed: 0.9
+hitSize: 20
+rotateSpeed: 2.0
+targetAir: true
+canAttack: true
+range: 100
+omniMovement: false
+drawBody: false
+drawCell: false
+
+segments: 10
+segmentScl: 3.8
+segmentMag: 0.75
+segmentPhase: 5
+segmentRotSpeed: 1.8
+segmentMaxRot: 30
+crushDamage: 6.5
+crawlSlowdown: 0.4
+crawlSlowdownFrac: 0.45
+
+abilities: [
+  {
+    type: SuppressionFieldAbility
+    range: 48
+    reload: 28
+  }
+]
+
+weapons: [
+  {
+    name: singularity-eel-rift
+    x: 0
+    y: 6
+    reload: 16
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 55
+      length: 100
+      width: 10
+      lifetime: 40
+      colors: [ aa88ff 5533aa 1a1028 ]
+      status: sapped
+      statusDuration: 100
+      buildingDamageMultiplier: 0.9
+    }
+  }
+  {
+    name: singularity-eel-bolt
+    x: 0
+    y: 2
+    reload: 20
+    mirror: false
+    shootSound: spark
+    bullet: {
+      type: SapBulletType
+      damage: 45
+      length: 90
+      width: 0.8
+      lifetime: 20
+      sapStrength: 0.7
+      color: aa66ff
+      status: sapped
+      statusDuration: 120
+    }
+  }
+  {
+    name: singularity-eel-spores
+    x: 0
+    y: -2
+    reload: 35
+    mirror: false
+    shootSound: spore
+    bullet: {
+      type: BasicBulletType
+      damage: 20
+      splashDamage: 35
+      splashDamageRadius: 28
+      speed: 2.4
+      lifetime: 70
+      width: 12
+      height: 12
+      status: sapped
+      statusDuration: 140
+      frontColor: cc88ff
+      backColor: 441166
+      fragBullets: 6
+      fragBullet: {
+        type: BasicBulletType
+        damage: 8
+        speed: 2.2
+        lifetime: 25
+        width: 6
+        height: 6
+        status: sapped
+        statusDuration: 60
+        frontColor: dd99ff
+        backColor: 552277
+      }
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t5
+  previous: aoen-payload-serpent
+}
+research: {
+  parent: aoen-ground-reconstructor-t5
+  requirements: [
+    phase-fabric/40
+    thorium/60
+  ]
+}

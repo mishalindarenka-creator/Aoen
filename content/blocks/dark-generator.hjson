@@ -1,0 +1,22 @@
+type: ConsumeGenerator
+category: power
+size: 1
+consumes: {
+  items: [
+    coal/1
+  ]
+}
+health: 220
+powerProduction: 2.4
+itemDuration: 90
+requirements: [
+  copper/30
+  lead/25
+  aoen-void-shard/15
+]
+research: {
+  parent: combustion-generator
+  requirements: [
+    copper/60
+  ]
+}

@@ -1,0 +1,12 @@
+type: Junction
+category: distribution
+speed: 32
+capacity: 8
+health: 80
+requirements: [
+  copper/2
+  aoen-void-shard/1
+]
+research: {
+  parent: aoen-dark-conveyor
+}

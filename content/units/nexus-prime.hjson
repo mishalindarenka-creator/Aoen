@@ -1,0 +1,102 @@
+type: mech
+outlines: false
+
+health: 26000
+armor: 34
+speed: 0.36
+hitSize: 30
+range: 120
+
+abilities: [
+  {
+    type: StatusFieldAbility
+    effect: overclock
+    duration: 110
+    range: 56
+    reload: 70
+  }
+]
+
+weapons: [
+  {
+    name: nexus-prime-core
+    x: 0
+    y: 4
+    shootY: 10
+    reload: 26
+    rotate: true
+    mirror: false
+    shootSound: laserblast
+    bullet: {
+      type: BasicBulletType
+      damage: 240
+      splashDamage: 50
+      splashDamageRadius: 28
+      speed: 3.2
+      lifetime: 60
+      width: 18
+      height: 18
+      frontColor: ffee88
+      backColor: 886622
+      hitEffect: hitLaserBlast
+      fragBullets: 5
+      fragBullet: {
+        type: LightningBulletType
+        damage: 22
+        lightningLength: 8
+        lightningColor: ffee88
+      }
+    }
+  }
+  {
+    name: nexus-prime-laser
+    x: 10
+    y: -2
+    reload: 40
+    rotate: true
+    mirror: true
+    continuous: true
+    shootSound: laser
+    bullet: {
+      type: ContinuousFlameBulletType
+      damage: 32
+      length: 100
+      width: 5
+      lifetime: 36
+      colors: [ ffee88 ff8844 441100 aa2200 ]
+      status: melting
+      statusDuration: 50
+      pierceCap: 4
+    }
+  }
+  {
+    name: nexus-prime-point
+    x: 0
+    y: -6
+    reload: 55
+    rotate: true
+    mirror: false
+    shootSound: railgun
+    bullet: {
+      type: PointLaserBulletType
+      damage: 90
+      damageInterval: 4
+      color: ffd37f
+      sprocket: true
+      oscScl: 2
+      oscMag: 0.4
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t5
+  previous: aoen-aegis-walker
+}
+research: {
+  parent: aoen-ground-reconstructor-t5
+  requirements: [
+    surge-alloy/50
+    phase-fabric/35
+  ]
+}

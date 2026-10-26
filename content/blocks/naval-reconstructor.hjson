@@ -1,0 +1,27 @@
+type: Reconstructor
+category: units
+size: 3
+consumes: {
+  power: 3.2
+  items: [
+    silicon/45
+    graphite/45
+  ]
+}
+floating: true
+researchCostMultiplier: 0.65
+
+requirements: [
+  copper/220
+  lead/160
+  silicon/110
+  titanium/70
+]
+
+research: {
+  parent: aoen-naval-fabricator
+  requirements: [
+    copper/180
+    titanium/55
+  ]
+}

@@ -1,0 +1,93 @@
+type: crawl
+outlines: false
+
+health: 1800
+armor: 9
+speed: 1.2
+hitSize: 13
+rotateSpeed: 2.5
+targetAir: false
+canAttack: true
+range: 40
+omniMovement: false
+drawBody: false
+drawCell: false
+
+segments: 8
+segmentScl: 3.4
+segmentMag: 0.6
+segmentPhase: 5
+segmentRotSpeed: 2.0
+segmentMaxRot: 30
+crushDamage: 3.5
+crawlSlowdown: 0.48
+crawlSlowdownFrac: 0.5
+
+abilities: [
+  {
+    type: StatusFieldAbility
+    effect: slow
+    duration: 40
+    range: 28
+    reload: 50
+  }
+]
+
+weapons: [
+  {
+    name: snake-t2-fang
+    x: 0
+    y: 5
+    shootY: 7
+    reload: 14
+    mirror: false
+    shootSound: shoot
+    bullet: {
+      type: BasicBulletType
+      damage: 42
+      speed: 3.6
+      lifetime: 26
+      width: 8
+      height: 10
+      status: poisoned
+      statusDuration: 110
+      frontColor: d0c0ff
+      backColor: 6644aa
+      collidesAir: false
+    }
+  }
+  {
+    name: snake-t2-spit
+    x: 0
+    y: 2
+    reload: 28
+    mirror: false
+    shootSound: flame
+    bullet: {
+      type: BasicBulletType
+      damage: 22
+      splashDamage: 14
+      splashDamageRadius: 14
+      speed: 2.8
+      lifetime: 32
+      width: 9
+      height: 9
+      status: sapped
+      statusDuration: 70
+      frontColor: aa88ff
+      backColor: 442266
+      collidesAir: false
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor
+  previous: aoen-snake
+}
+research: {
+  parent: aoen-ground-reconstructor
+  requirements: [
+    silicon/40
+  ]
+}

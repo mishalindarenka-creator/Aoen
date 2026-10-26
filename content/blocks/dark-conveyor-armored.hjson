@@ -1,0 +1,17 @@
+type: ArmoredConveyor
+category: distribution
+speed: 0.14
+displayedSpeed: 20
+health: 220
+armor: 4
+requirements: [
+  aoen-ceramite/1
+  thorium/1
+  graphite/1
+]
+research: {
+  parent: aoen-dark-conveyor
+  requirements: [
+    aoen-ceramite/20
+  ]
+}

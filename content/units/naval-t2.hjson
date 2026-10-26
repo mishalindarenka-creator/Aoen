@@ -1,0 +1,90 @@
+type: naval
+
+outlines: false
+health: 2400
+armor: 13
+speed: 0.98
+drag: 0.16
+hitSize: 15
+accel: 0.32
+rotateSpeed: 2.5
+faceTarget: false
+targetAir: false
+researchCostMultiplier: 0.65
+
+trailLength: 22
+waveTrailX: 5.5
+waveTrailY: -3
+trailScl: 1.85
+moveSound: shipMove
+moveSoundVolume: 0.52
+
+abilities: [
+  {
+    type: SuppressionFieldAbility
+    range: 44
+    reload: 8
+  }
+]
+
+weapons: [
+  {
+    name: naval-t2-cannon
+    x: 5
+    y: 3
+    shootY: 4
+    reload: 22
+    rotate: true
+    rotateSpeed: 5
+    inaccuracy: 6
+    ejectEffect: casing1
+    shootSound: shootDuo
+    bullet: {
+      type: FlakBulletType
+      damage: 14
+      speed: 4
+      lifetime: 50
+      width: 6
+      height: 8
+      splashDamage: 32
+      splashDamageRadius: 16
+      buildingDamageMultiplier: 0.78
+      hitEffect: flakExplosion
+      shootEffect: shootSmall
+    }
+  }
+  {
+    name: naval-t2-shell
+    x: 5
+    y: -5
+    reload: 30
+    rotate: true
+    inaccuracy: 2
+    shootSound: shootArtillery
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 55
+      speed: 2.2
+      lifetime: 65
+      width: 12
+      height: 14
+      splashDamage: 28
+      splashDamageRadius: 24
+      collidesTiles: true
+      buildingDamageMultiplier: 0.72
+      hitEffect: blastExplosion
+    }
+  }
+]
+
+requirements: {
+  block: aoen-naval-reconstructor
+  previous: aoen-naval
+}
+
+research: {
+  parent: aoen-naval-reconstructor
+  requirements: [
+    copper/50
+  ]
+}

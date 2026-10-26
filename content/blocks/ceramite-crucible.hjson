@@ -1,0 +1,29 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 6
+  items: [
+    aoen-ceramite/1
+    coal/2
+    titanium/1
+  ]
+}
+health: 900
+craftTime: 45
+hasItems: true
+itemCapacity: 30
+outputItem: aoen-ceramite/3
+craftEffect: smeltsmoke
+requirements: [
+  titanium/140
+  aoen-ceramite/80
+  silicon/100
+  graphite/80
+]
+research: {
+  parent: aoen-ceramite-forge
+  requirements: [
+    aoen-ceramite/50
+  ]
+}

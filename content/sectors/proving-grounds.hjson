@@ -1,0 +1,15 @@
+# Aoen proving sector — showcase all mod unit sprites / combat.
+# Map file must match full content id: maps/aoen-proving-grounds.msav
+
+planet: serpulo
+sector: 199
+difficulty: 4
+captureWave: 0
+alwaysUnlocked: true
+addStartingItems: true
+requireUnlock: false
+showSectorLandInfo: true
+overrideLaunchDefaults: true
+allowLaunchLoadout: true
+allowLaunchSchematics: true
+description: "Полигон Aoen — все модовые юниты со своими текстурами. Открой через кампанию Serpulo или импортируй карту из maps/."

@@ -1,0 +1,30 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 5.5
+  items: [
+    aoen-void-shard/1
+    silicon/2
+    phase-fabric/1
+  ]
+}
+health: 800
+craftTime: 90
+hasItems: true
+itemCapacity: 30
+outputItem: aoen-aether-dust/2
+craftEffect: formsmoke
+requirements: [
+  thorium/140
+  silicon/120
+  aoen-ceramite/80
+  plastanium/60
+]
+research: {
+  parent: aoen-ceramite-forge
+  requirements: [
+    thorium/60
+    aoen-ceramite/40
+  ]
+}

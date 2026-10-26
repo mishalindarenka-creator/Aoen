@@ -1,0 +1,174 @@
+type: legs
+outlines: false
+
+health: 90000
+armor: 60
+speed: 0.18
+drag: 0.24
+rotateSpeed: 0.9
+hitSize: 144
+targetAir: true
+range: 220
+legCount: 12
+legLength: 120
+legSpeed: 0.1
+hovering: true
+shadowElevation: 0.55
+groundLayer: 80
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 56
+    regen: 1.8
+    max: 1800
+    cooldown: 240
+  }
+  {
+    type: StatusFieldAbility
+    effect: overclock
+    duration: 80
+    range: 48
+    reload: 90
+  }
+]
+
+weapons: [
+  {
+    name: eclipse-tyrant-claw
+    x: 18
+    y: 2
+    shootY: 16
+    baseRotation: -38
+    rotationLimit: 120
+    reload: 10
+    rotate: true
+    rotateSpeed: 3.5
+    mirror: true
+    alternate: false
+    recoil: 5
+    top: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -16
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.5, y: 0, rot: 30 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 2
+        y: -1
+        moveRot: -28
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1, y: -0.4, rot: 40 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 3
+        y: -2
+        moveRot: -42
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.2, y: -0.6, rot: 50 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 4
+        y: -3
+        moveRot: -55
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.4, y: -0.8, rot: 58 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 160
+      buildingDamageMultiplier: 0.9
+      length: 90
+      width: 34
+      lifetime: 16
+      fromColor: ffd37f
+      toColor: 882222
+      status: aoen-bleeding
+      statusDuration: 200
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+  {
+    name: eclipse-tyrant-mortar
+    x: 0
+    y: 10
+    shootY: 14
+    reload: 32
+    rotate: true
+    mirror: false
+    shootSound: bang
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 400
+      splashDamage: 140
+      splashDamageRadius: 48
+      speed: 1.9
+      lifetime: 110
+      width: 22
+      height: 22
+      buildingDamageMultiplier: 1.3
+      hitEffect: explosion
+      frontColor: ffee88
+      backColor: 884422
+    }
+  }
+  {
+    name: eclipse-tyrant-beam
+    x: 0
+    y: -6
+    reload: 50
+    rotate: true
+    mirror: false
+    continuous: true
+    shootSound: laserbig
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 70
+      length: 160
+      width: 10
+      lifetime: 55
+      colors: [ ffd37f ff6644 441100 ]
+      status: melting
+      statusDuration: 60
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-reconstructor-t6
+  previous: aoen-storm-sovereign
+}
+research: {
+  parent: aoen-ground-reconstructor-t6
+  requirements: [
+    surge-alloy/80
+    phase-fabric/60
+  ]
+}

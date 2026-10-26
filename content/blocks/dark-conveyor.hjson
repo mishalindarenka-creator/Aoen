@@ -1,0 +1,16 @@
+type: Conveyor
+category: distribution
+speed: 0.12
+displayedSpeed: 18
+health: 90
+requirements: [
+  copper/1
+  lead/1
+  aoen-void-shard/1
+]
+research: {
+  parent: conveyor
+  requirements: [
+    copper/50
+  ]
+}

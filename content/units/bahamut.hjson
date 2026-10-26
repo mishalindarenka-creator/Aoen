@@ -1,0 +1,667 @@
+# Proto Bahamut — Granblue Fantasy
+# Black wings of terror, fiery red horns/claws, silver shackles & chains.
+# Call: Catastrophe — dark nova that shatters the sky when the last chain breaks.
+type: flying
+outlines: false
+
+health: 95000
+armor: 55
+speed: 0.85
+accel: 0.04
+drag: 0.02
+rotateSpeed: 1.4
+hitSize: 56
+flying: true
+lowAltitude: false
+engineOffset: -18
+engineSize: 8
+targetAir: true
+range: 200
+faceTarget: true
+circleTarget: false
+
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 48
+    regen: 1.6
+    max: 1600
+    cooldown: 220
+  }
+  {
+    type: StatusFieldAbility
+    effect: sapped
+    duration: 90
+    range: 56
+    reload: 70
+  }
+  {
+    type: SuppressionFieldAbility
+    range: 64
+    reload: 22
+  }
+]
+
+# Decorative anatomy — every GBF silhouette piece as RegionPart
+parts: [
+  # --- left wing membrane (6 segments, mirrored for right) ---
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-0
+    x: -10
+    y: 6
+    rotation: 55
+    moveRot: -8
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 12 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-1
+    x: -18
+    y: 4
+    rotation: 48
+    moveRot: -10
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 14 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-2
+    x: -26
+    y: 0
+    rotation: 40
+    moveRot: -12
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 16 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-3
+    x: -34
+    y: -4
+    rotation: 32
+    moveRot: -14
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 18 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-4
+    x: -40
+    y: -10
+    rotation: 24
+    moveRot: -16
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 20 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -wing-5
+    x: -44
+    y: -16
+    rotation: 16
+    moveRot: -18
+    under: true
+    mirror: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 22 }
+    ]
+  }
+  # --- red horns ---
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-l
+    x: -5
+    y: 18
+    rotation: -12
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -horn-r
+    x: 5
+    y: 18
+    rotation: 12
+    under: false
+  }
+  # --- silver shackles (binding) ---
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-neck
+    x: 0
+    y: 14
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-chest
+    x: 0
+    y: 2
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-waist
+    x: 0
+    y: -10
+    under: false
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -shackle-wing
+    x: -14
+    y: 2
+    under: true
+    mirror: true
+  }
+  # --- chain links dangling from shackles ---
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-0
+    x: -6
+    y: -4
+    rotation: 10
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-1
+    x: -7
+    y: -10
+    rotation: 14
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-2
+    x: -8
+    y: -16
+    rotation: 18
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-3
+    x: -8
+    y: -22
+    rotation: 22
+    under: true
+    mirror: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-4
+    x: 0
+    y: -14
+    rotation: 0
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-5
+    x: 0
+    y: -20
+    rotation: 0
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-6
+    x: 0
+    y: -26
+    rotation: 0
+    under: true
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -chain-7
+    x: 0
+    y: -32
+    rotation: 0
+    under: true
+  }
+  # --- segmented tail ---
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-0
+    x: 0
+    y: -18
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 6 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-1
+    x: 0
+    y: -26
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: -8 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-2
+    x: 0
+    y: -34
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 10 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-3
+    x: 0
+    y: -42
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: -10 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-4
+    x: 0
+    y: -50
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 8 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-5
+    x: 0
+    y: -56
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: -6 }
+    ]
+  }
+  {
+    type: RegionPart
+    outline: false
+    suffix: -tail-6
+    x: 0
+    y: -62
+    under: true
+    moves: [
+      { type: PartMove, progress: warmup, rot: 4 }
+    ]
+  }
+]
+
+weapons: [
+  # Catastrophe — The Final Catastrophe (call skill)
+  {
+    name: bahamut-catastrophe
+    x: 0
+    y: 4
+    shootY: 10
+    reload: 220
+    rotate: false
+    mirror: false
+    shootSound: laserbig
+    shootStatus: unmoving
+    shootStatusDuration: 40
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: -2
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -4
+        y: 4
+        under: false
+        moves: [
+          { type: PartMove, progress: reload, y: -2 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 0
+        y: 6
+        under: false
+        moves: [
+          { type: PartMove, progress: reload, y: -3 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel2
+        x: 4
+        y: 4
+        under: false
+        moves: [
+          { type: PartMove, progress: reload, y: -2 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 12
+        under: false
+      }
+    ]
+    bullet: {
+      type: BasicBulletType
+      damage: 280
+      splashDamage: 420
+      splashDamageRadius: 72
+      speed: 2.2
+      lifetime: 90
+      width: 28
+      height: 28
+      pierce: true
+      pierceCap: 8
+      status: sapped
+      statusDuration: 180
+      buildingDamageMultiplier: 1.35
+      hitEffect: explosion
+      despawnEffect: massiveExplosion
+      frontColor: ee4488
+      backColor: 220011
+      trailLength: 12
+      trailWidth: 4
+      trailColor: aa2244
+      fragBullets: 12
+      fragBullet: {
+        type: BasicBulletType
+        damage: 45
+        splashDamage: 30
+        splashDamageRadius: 18
+        speed: 3.2
+        lifetime: 35
+        width: 10
+        height: 10
+        status: sapped
+        statusDuration: 80
+        frontColor: ff6688
+        backColor: 440022
+      }
+    }
+  }
+  # Dark breath — continuous catastrophe beam
+  {
+    name: bahamut-breath
+    x: 0
+    y: 16
+    shootY: 14
+    reload: 28
+    rotate: true
+    rotateSpeed: 2.2
+    mirror: false
+    continuous: true
+    shootSound: laserblast
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -breech
+        x: 0
+        y: 0
+        under: true
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel0
+        x: -3
+        y: 6
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -barrel1
+        x: 3
+        y: 6
+        under: false
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -muzzle
+        x: 0
+        y: 14
+        under: false
+      }
+    ]
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 95
+      length: 180
+      width: 16
+      lifetime: 55
+      colors: [ ff4466 aa1122 1a0810 ]
+      status: melting
+      statusDuration: 100
+      buildingDamageMultiplier: 1.2
+      shake: 1.5
+    }
+  }
+  # Red claws — mirrored multi-seg
+  {
+    name: bahamut-claw
+    x: 16
+    y: 4
+    shootY: 12
+    baseRotation: -35
+    rotationLimit: 110
+    reload: 11
+    rotate: true
+    rotateSpeed: 3.8
+    mirror: true
+    alternate: false
+    recoil: 4
+    top: true
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg1
+        x: 0
+        y: 0
+        moveRot: -14
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 0.6, rot: 28 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg2
+        x: 2
+        y: -1
+        moveRot: -26
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1, rot: 38 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg3
+        x: 3
+        y: -2
+        moveRot: -40
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.2, rot: 48 }
+        ]
+      }
+      {
+        type: RegionPart
+        outline: false
+        suffix: -seg4
+        x: 4
+        y: -3
+        moveRot: -52
+        under: true
+        moves: [
+          { type: PartMove, progress: reload, x: 1.4, rot: 56 }
+        ]
+      }
+    ]
+    bullet: {
+      type: ShrapnelBulletType
+      damage: 140
+      buildingDamageMultiplier: 0.95
+      length: 70
+      width: 28
+      lifetime: 14
+      fromColor: ff6644
+      toColor: 661111
+      status: aoen-bleeding
+      statusDuration: 160
+      shootEffect: sparkShoot
+      hitEffect: hitBulletColor
+      despawnEffect: none
+    }
+  }
+  # Wing-tip dark missiles
+  {
+    name: bahamut-wing-missile
+    x: 28
+    y: -4
+    reload: 18
+    rotate: true
+    rotateSpeed: 4
+    mirror: true
+    shootSound: missile
+    shoot: {
+      type: ShootAlternate
+      barrels: 2
+      spread: 4
+    }
+    bullet: {
+      type: MissileBulletType
+      damage: 85
+      splashDamage: 55
+      splashDamageRadius: 22
+      speed: 3.8
+      lifetime: 70
+      width: 10
+      height: 14
+      homingPower: 0.12
+      homingRange: 90
+      trailChance: 0.4
+      status: sapped
+      statusDuration: 70
+      frontColor: cc4488
+      backColor: 330022
+      hitEffect: blastExplosion
+    }
+  }
+  # EMP cry — shackles breaking pulse
+  {
+    name: bahamut-emp
+    x: 0
+    y: -6
+    reload: 90
+    rotate: false
+    mirror: false
+    shootSound: spark
+    bullet: {
+      type: EmpBulletType
+      damage: 60
+      splashDamage: 90
+      splashDamageRadius: 56
+      speed: 0.01
+      lifetime: 1
+      width: 12
+      height: 12
+      powerDamageScl: 2.5
+      powerSclDecrease: 0.5
+      unitDamageScl: 1.4
+      status: unmoving
+      statusDuration: 50
+      hitPowerEffect: hitEmpSpark
+      hitEffect: hitEmpSpark
+      frontColor: cc88ff
+      backColor: 331144
+    }
+  }
+]
+
+requirements: {
+  block: aoen-ground-fabricator
+  time: 4800
+  requirements: [
+    silicon/280
+    thorium/180
+    phase-fabric/100
+    surge-alloy/80
+  ]
+}
+research: {
+  parent: aoen-ground-reconstructor-t6
+  requirements: [
+    surge-alloy/120
+    phase-fabric/100
+    thorium/160
+  ]
+}

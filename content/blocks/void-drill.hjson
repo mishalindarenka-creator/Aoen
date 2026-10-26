@@ -1,0 +1,24 @@
+type: Drill
+category: production
+size: 3
+consumes: {
+  power: 5
+}
+health: 900
+tier: 6
+drillTime: 140
+liquidBoostIntensity: 2.2
+hardnessDrillMultiplier: 55
+requirements: [
+  titanium/120
+  thorium/80
+  aoen-ceramite/60
+  silicon/100
+]
+research: {
+  parent: aoen-dark-drill
+  requirements: [
+    thorium/50
+    aoen-ceramite/30
+  ]
+}

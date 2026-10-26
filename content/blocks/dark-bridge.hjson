@@ -1,0 +1,16 @@
+type: ItemBridge
+category: distribution
+range: 6
+transportTime: 2
+health: 110
+requirements: [
+  lead/8
+  graphite/6
+  aoen-void-shard/4
+]
+research: {
+  parent: aoen-dark-conveyor
+  requirements: [
+    graphite/40
+  ]
+}

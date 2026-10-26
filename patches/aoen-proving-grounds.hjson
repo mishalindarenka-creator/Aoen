@@ -1,0 +1,151 @@
+// Aoen Proving Grounds — Data Patch для Mindustry Patch Editor / Map Info → Data Patches.
+// Как применить: Editor → Map Info → Data Patches → Add → выбери этот файл.
+// Спрайты уже в атласе мода: файл crab.png → регион aoen-crab (БЕЗ двойного aoen-aoen-).
+name: Aoen Proving Grounds Textures
+
+unit: {
+  aoen-crab: {
+    region: aoen-crab
+    cellRegion: aoen-crab-cell
+    legRegion: aoen-crab-leg
+    health: 420
+    armor: 4
+  }
+  aoen-crab-t2: {
+    region: aoen-crab-t2
+    cellRegion: aoen-crab-t2-cell
+    legRegion: aoen-crab-t2-leg
+    health: 1400
+    armor: 9
+  }
+  aoen-ceramtyr-daimyo: {
+    region: aoen-ceramtyr-daimyo
+    cellRegion: aoen-ceramtyr-daimyo-cell
+    legRegion: aoen-ceramtyr-daimyo-leg
+    health: 3200
+    armor: 14
+  }
+  aoen-quake-bulwark: {
+    region: aoen-quake-bulwark
+    cellRegion: aoen-quake-bulwark-cell
+    legRegion: aoen-quake-bulwark-leg
+    health: 7200
+    armor: 22
+  }
+  aoen-storm-sovereign: {
+    region: aoen-storm-sovereign
+    health: 16000
+    armor: 28
+  }
+  aoen-eclipse-tyrant: {
+    region: aoen-eclipse-tyrant
+    health: 42000
+    armor: 42
+  }
+  aoen-snake: {
+    region: aoen-snake
+    health: 380
+    armor: 2
+  }
+  aoen-snake-t2: {
+    region: aoen-snake-t2
+    health: 1100
+    armor: 7
+  }
+  aoen-cinder-millipede: {
+    region: aoen-cinder-millipede
+    health: 2100
+    armor: 9
+  }
+  aoen-payload-serpent: {
+    region: aoen-payload-serpent
+    health: 3800
+    armor: 12
+  }
+  aoen-singularity-eel: {
+    region: aoen-singularity-eel
+    health: 12000
+    armor: 18
+  }
+  aoen-ouroboros-prime: {
+    region: aoen-ouroboros-prime
+    health: 38000
+    armor: 32
+  }
+  aoen-boomeranger: {
+    region: aoen-boomeranger
+    legRegion: aoen-boomeranger-leg
+    health: 400
+    armor: 3
+  }
+  aoen-boomeranger-t2: {
+    region: aoen-boomeranger-t2
+    legRegion: aoen-boomeranger-t2-leg
+    health: 1350
+    armor: 9
+  }
+  aoen-foundry-orbiter: {
+    region: aoen-foundry-orbiter
+    legRegion: aoen-foundry-orbiter-leg
+    health: 2600
+    armor: 12
+  }
+  aoen-aegis-walker: {
+    region: aoen-aegis-walker
+    cellRegion: aoen-aegis-walker-cell
+    legRegion: aoen-aegis-walker-leg
+    health: 4800
+    armor: 20
+  }
+  aoen-nexus-prime: {
+    region: aoen-nexus-prime
+    cellRegion: aoen-nexus-prime-cell
+    legRegion: aoen-nexus-prime-leg
+    health: 14000
+    armor: 26
+  }
+  aoen-apotheosis-core: {
+    region: aoen-apotheosis-core
+    health: 40000
+    armor: 40
+  }
+  aoen-naval: {
+    region: aoen-naval
+    health: 650
+    armor: 5
+  }
+  aoen-naval-t2: {
+    region: aoen-naval-t2
+    health: 1500
+    armor: 10
+  }
+  aoen-iron-reef: {
+    region: aoen-iron-reef
+    health: 2800
+    armor: 14
+  }
+  aoen-needle-skiff: {
+    region: aoen-needle-skiff
+    health: 3600
+    armor: 12
+  }
+  aoen-leviathan-crown: {
+    region: aoen-leviathan-crown
+    health: 15000
+    armor: 24
+  }
+  aoen-mare-imperator: {
+    region: aoen-mare-imperator
+    health: 45000
+    armor: 38
+  }
+}
+
+block: {
+  aoen-ground-fabricator: {
+    region: aoen-ground-fabricator
+  }
+  aoen-naval-fabricator: {
+    region: aoen-naval-fabricator
+  }
+}
