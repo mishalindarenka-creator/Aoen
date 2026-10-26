@@ -1,0 +1,26 @@
+type: ConsumeGenerator
+category: power
+size: 2
+powerProduction: 4.8
+itemDuration: 90
+consumes: {
+  items: [
+    aoen-ember-slag/1
+  ]
+}
+health: 420
+hasItems: true
+itemCapacity: 16
+requirements: [
+  copper/80
+  lead/60
+  graphite/50
+  aoen-ember-slag/25
+]
+research: {
+  parent: aoen-dark-generator
+  requirements: [
+    graphite/40
+    aoen-ember-slag/30
+  ]
+}

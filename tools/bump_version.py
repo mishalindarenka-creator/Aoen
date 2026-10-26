@@ -1,11 +1,11 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VER = "1.9.1"
+VER = "2.0.0"
 HJSON = f"""name: aoen
 displayName: Aoen
 author: Paradew
-description: "[#888888]Aoen[] — MH/jababarium naval, Calamity serpents, JS weapons, Bahamut."
+description: "[#888888]Aoen[] — ores/materials/turrets/walls, MH naval, serpents, Proto Bahamut."
 version: "{VER}"
 minGameVersion: 160.7
 dependencies: []
@@ -15,7 +15,7 @@ JSON = f"""{{
   "name": "aoen",
   "displayName": "Aoen",
   "author": "Paradew",
-  "description": "Aoen — MH/jababarium naval, Calamity serpents, JS weapons, Bahamut.",
+  "description": "Aoen — ores/materials/turrets/walls, MH naval, serpents, Proto Bahamut.",
   "version": "{VER}",
   "minGameVersion": "160.7",
   "dependencies": [],

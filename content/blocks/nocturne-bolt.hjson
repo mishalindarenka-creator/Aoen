@@ -1,0 +1,83 @@
+type: ItemTurret
+category: turret
+size: 2
+health: 980
+armor: 6
+range: 230
+reload: 14
+inaccuracy: 2
+rotateSpeed: 7
+recoil: 2
+shootSound: shoot
+shootCone: 20
+targetAir: true
+targetGround: true
+ammoPerShot: 1
+maxAmmo: 60
+shoot: {
+  type: ShootAlternate
+  barrels: 2
+  spread: 4
+}
+requirements: [
+  copper/90
+  graphite/70
+  aoen-nocturne-plate/40
+]
+ammoTypes: {
+  aoen-nocturne-ore: {
+    type: BasicBulletType
+    damage: 26
+    speed: 4.2
+    lifetime: 55
+    width: 8
+    height: 10
+    frontColor: 9a88c8
+    backColor: 3a2858
+  }
+  aoen-nocturne-plate: {
+    type: BasicBulletType
+    damage: 42
+    splashDamage: 14
+    splashDamageRadius: 14
+    speed: 4.6
+    lifetime: 55
+    width: 9
+    height: 11
+    pierce: true
+    pierceCap: 2
+    status: sapped
+    statusDuration: 45
+    frontColor: b8a0e8
+    backColor: 442266
+    hitEffect: hitLaserBlast
+  }
+  graphite: {
+    type: BasicBulletType
+    damage: 30
+    speed: 4.4
+    lifetime: 52
+    width: 8
+    height: 10
+    pierce: true
+    pierceCap: 2
+  }
+  silicon: {
+    type: MissileBulletType
+    damage: 24
+    splashDamage: 12
+    splashDamageRadius: 12
+    speed: 3.6
+    lifetime: 60
+    width: 7
+    height: 9
+    homingPower: 0.1
+  }
+}
+research: {
+  parent: aoen-shard-turret
+  requirements: [
+    graphite/50
+    aoen-nocturne-plate/30
+  ]
+}

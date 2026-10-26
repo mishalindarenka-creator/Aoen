@@ -107,6 +107,10 @@ def main() -> None:
     save("singularity-lance", 4, GOLD, "laser")
     save("abyss-fortress", 4, CRIM, "fortress")
     save("storm-battery", 3, STEEL, "scatter")
+    NOCT = ((28, 20, 42, 255), (90, 70, 130, 255), (180, 150, 230, 255), (140, 100, 255, 255))
+    TIDE = ((16, 48, 42, 255), (40, 140, 120, 255), (100, 230, 200, 255), (80, 255, 220, 255))
+    save("nocturne-bolt", 2, NOCT, "duo")
+    save("tide-pulse", 3, TIDE, "scatter")
 
 
 if __name__ == "__main__":

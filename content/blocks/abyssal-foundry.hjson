@@ -1,0 +1,30 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 5.0
+  items: [
+    aoen-abyssal-quartz/2
+    aoen-pale-mythril/1
+    silicon/1
+  ]
+}
+health: 780
+craftTime: 75
+hasItems: true
+itemCapacity: 32
+outputItem: aoen-abyssal-alloy/1
+craftEffect: smeltsmoke
+requirements: [
+  titanium/130
+  silicon/110
+  aoen-abyssal-quartz/50
+  aoen-pale-mythril/40
+]
+research: {
+  parent: aoen-nocturne-smelter
+  requirements: [
+    titanium/90
+    aoen-abyssal-quartz/50
+  ]
+}

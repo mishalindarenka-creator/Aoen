@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-nocturne-ore
+oreDefault: true
+oreThreshold: 0.864
+oreScale: 24.2
+variants: 3

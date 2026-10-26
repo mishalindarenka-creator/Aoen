@@ -1,0 +1,11 @@
+type: Wall
+category: defense
+size: 2
+health: 3900
+armor: 12
+requirements: [
+  aoen-nocturne-plate/24
+]
+research: {
+  parent: aoen-nocturne-wall
+}

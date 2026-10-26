@@ -1,0 +1,14 @@
+type: Wall
+category: defense
+size: 1
+health: 1400
+armor: 16
+requirements: [
+  aoen-abyssal-alloy/6
+]
+research: {
+  parent: aoen-nocturne-wall
+  requirements: [
+    aoen-abyssal-alloy/20
+  ]
+}

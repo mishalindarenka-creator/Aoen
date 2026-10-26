@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-tide-coral
+oreDefault: true
+oreThreshold: 0.855
+oreScale: 22.8
+variants: 3

@@ -1,0 +1,14 @@
+type: Wall
+category: defense
+size: 1
+health: 980
+armor: 12
+requirements: [
+  aoen-nocturne-plate/6
+]
+research: {
+  parent: titanium-wall
+  requirements: [
+    aoen-nocturne-plate/20
+  ]
+}

@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-abyssal-quartz
+oreDefault: true
+oreThreshold: 0.878
+oreScale: 25.0
+variants: 3

@@ -1,0 +1,105 @@
+type: ItemTurret
+category: turret
+size: 3
+health: 2100
+armor: 10
+range: 260
+reload: 22
+inaccuracy: 3
+rotateSpeed: 4.5
+recoil: 3
+shootSound: shootBig
+shootCone: 25
+targetAir: true
+targetGround: true
+ammoPerShot: 2
+maxAmmo: 70
+shake: 1
+shoot: {
+  type: ShootSpread
+  shots: 3
+  spread: 6
+}
+requirements: [
+  metaglass/120
+  titanium/90
+  aoen-tide-composite/55
+  aoen-abyssal-alloy/30
+]
+ammoTypes: {
+  aoen-tide-coral: {
+    type: FlakBulletType
+    damage: 18
+    splashDamage: 28
+    splashDamageRadius: 22
+    speed: 4.0
+    lifetime: 58
+    width: 9
+    height: 9
+    collidesGround: true
+    status: wet
+    statusDuration: 60
+    frontColor: 70e0c8
+    backColor: 206050
+  }
+  aoen-tide-composite: {
+    type: BasicBulletType
+    damage: 48
+    splashDamage: 36
+    splashDamageRadius: 26
+    speed: 3.8
+    lifetime: 62
+    width: 12
+    height: 14
+    status: wet
+    statusDuration: 90
+    knockback: 1.2
+    frontColor: 90f0d8
+    backColor: 288868
+    fragBullets: 4
+    fragBullet: {
+      type: BasicBulletType
+      damage: 10
+      speed: 2.4
+      lifetime: 22
+      width: 6
+      height: 6
+      status: wet
+      statusDuration: 30
+      frontColor: c0fff0
+      backColor: 306860
+    }
+  }
+  aoen-abyssal-alloy: {
+    type: LaserBulletType
+    damage: 70
+    length: 200
+    width: 14
+    lifetime: 16
+    colors: [ a0e8ff 4488aa 102030 ]
+    status: shocked
+    statusDuration: 50
+  }
+  aoen-ember-slag: {
+    type: BasicBulletType
+    damage: 32
+    splashDamage: 40
+    splashDamageRadius: 24
+    speed: 3.4
+    lifetime: 55
+    width: 11
+    height: 12
+    makeFire: true
+    status: burning
+    statusDuration: 100
+    frontColor: ff8844
+    backColor: 882200
+  }
+}
+research: {
+  parent: aoen-nocturne-bolt
+  requirements: [
+    titanium/60
+    aoen-tide-composite/40
+  ]
+}

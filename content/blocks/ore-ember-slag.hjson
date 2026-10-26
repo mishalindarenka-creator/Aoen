@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-ember-slag
+oreDefault: true
+oreThreshold: 0.87
+oreScale: 23.6
+variants: 3

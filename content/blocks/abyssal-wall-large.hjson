@@ -1,0 +1,11 @@
+type: Wall
+category: defense
+size: 2
+health: 5600
+armor: 16
+requirements: [
+  aoen-abyssal-alloy/24
+]
+research: {
+  parent: aoen-abyssal-wall
+}

@@ -1,0 +1,6 @@
+type: OreBlock
+itemDrop: aoen-pale-mythril
+oreDefault: true
+oreThreshold: 0.892
+oreScale: 26.4
+variants: 3

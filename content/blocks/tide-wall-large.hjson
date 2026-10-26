@@ -1,0 +1,11 @@
+type: Wall
+category: defense
+size: 2
+health: 4400
+armor: 13
+requirements: [
+  aoen-tide-composite/24
+]
+research: {
+  parent: aoen-tide-wall
+}

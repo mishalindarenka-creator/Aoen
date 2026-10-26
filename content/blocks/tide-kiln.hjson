@@ -1,0 +1,29 @@
+type: GenericCrafter
+category: crafting
+size: 3
+consumes: {
+  power: 3.6
+  items: [
+    aoen-tide-coral/3
+    aoen-ember-slag/1
+    sand/1
+  ]
+}
+health: 640
+craftTime: 65
+hasItems: true
+itemCapacity: 28
+outputItem: aoen-tide-composite/1
+craftEffect: smeltsmoke
+requirements: [
+  metaglass/100
+  silicon/80
+  aoen-tide-coral/45
+]
+research: {
+  parent: aoen-nocturne-smelter
+  requirements: [
+    metaglass/60
+    aoen-tide-coral/40
+  ]
+}

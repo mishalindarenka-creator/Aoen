@@ -1,0 +1,30 @@
+type: GenericCrafter
+category: crafting
+size: 2
+consumes: {
+  power: 2.4
+  items: [
+    aoen-nocturne-ore/2
+    coal/1
+  ]
+}
+health: 380
+craftTime: 55
+hasItems: true
+itemCapacity: 24
+outputItem: aoen-nocturne-plate/1
+craftEffect: smeltsmoke
+updateEffect: smeltsmoke
+requirements: [
+  copper/70
+  lead/55
+  graphite/45
+  aoen-nocturne-ore/30
+]
+research: {
+  parent: aoen-void-smelter
+  requirements: [
+    copper/80
+    aoen-nocturne-ore/40
+  ]
+}

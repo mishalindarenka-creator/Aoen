@@ -1,0 +1,29 @@
+type: Drill
+category: production
+size: 3
+tier: 5
+drillTime: 210
+liquidBoostIntensity: 1.6
+consumes: {
+  power: 3.2
+  liquid: {
+    liquid: water
+    amount: 0.08
+    optional: true
+    booster: true
+  }
+}
+health: 720
+requirements: [
+  titanium/100
+  silicon/80
+  aoen-pale-mythril/40
+  aoen-nocturne-plate/30
+]
+research: {
+  parent: aoen-void-drill
+  requirements: [
+    titanium/70
+    aoen-pale-mythril/35
+  ]
+}
