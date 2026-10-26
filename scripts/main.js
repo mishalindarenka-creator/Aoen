@@ -6,6 +6,7 @@ require("lib");
 require("bullets");
 require("abilities");
 require("serpent");
+require("bahamut");
 require("enhance");
 
 const AOEN_UNITS = [

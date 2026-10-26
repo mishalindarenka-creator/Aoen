@@ -116,28 +116,7 @@ function enhanceSnakes() {
 }
 
 function enhanceBahamut() {
-  const u = lib.unit("aoen-bahamut");
-  if (u == null) {
-    Log.warn("[Aoen] bahamut missing");
-    return;
-  }
-  lib.addAbility(u, abilities.bahamutShackles());
-  replaceNamedBullet(u, "catastrophe", bullets.catastrophe);
-  replaceNamedBullet(u, "breath", bullets.darkBreath);
-  replaceNamedBullet(u, "wing-missile", bullets.wingMissile);
-
-  const bleed = lib.status("aoen-bleeding");
-  lib.eachWeapon(u, w => {
-    const n = w.name != null ? ("" + w.name) : "";
-    if (n.indexOf("claw") >= 0 && w.bullet != null) {
-      w.bullet.damage = Math.max(w.bullet.damage, 140);
-      if (bleed != null) {
-        w.bullet.status = bleed;
-        w.bullet.statusDuration = 160;
-      }
-    }
-  });
-  Log.info("[Aoen] enhanced bahamut");
+  require("bahamut").apply();
 }
 
 function enhanceNaval() {

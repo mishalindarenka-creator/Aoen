@@ -1,4 +1,4 @@
-"""Proto Bahamut (Granblue Fantasy) — black wings, red horns/claws, silver shackles, segmented tail."""
+"""Proto Bahamut (GBF 1:1 silhouette) — black wings, red horns/claws, silver divinity shackles."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -7,15 +7,18 @@ from PIL import Image, ImageDraw
 
 SPR = Path(__file__).resolve().parents[1] / "sprites" / "units"
 
-# GBF Proto Bahamut palette
-BLACK = (18, 16, 22, 255)
-WING = (28, 26, 34, 255)
-WING_HI = (70, 68, 82, 255)
-SILVER = (160, 168, 180, 255)
-SILVER_DK = (70, 76, 88, 255)
-RED = (180, 28, 36, 255)
-RED_HI = (240, 70, 55, 255)
-EYE = (255, 90, 70, 255)
+# Exact GBF Proto Bahamut palette (summon / Relink)
+BLACK = (12, 10, 16, 255)
+OBSIDIAN = (22, 20, 28, 255)
+WING = (32, 30, 40, 255)
+BONE = (190, 195, 205, 255)
+BONE_DK = (90, 95, 105, 255)
+SILVER = (168, 176, 188, 255)
+SHACKLE = (140, 148, 160, 255)
+RED = (200, 24, 36, 255)
+RED_GLOW = (255, 48, 40, 255)
+CRIMSON = (120, 16, 28, 255)
+EYE = (255, 70, 55, 255)
 
 
 def harden(im: Image.Image) -> Image.Image:
@@ -44,24 +47,31 @@ def save(name: str, im: Image.Image) -> None:
 
 
 def body() -> None:
-    """Top-down dark dragon torso — elongated, red chest core, silver collar."""
-    w, h = 72, 96
+    """Top-down Proto Bahamut torso — black wyrm, red maw core, silver collar plate."""
+    w, h = 80, 108
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    # torso oval
-    d.ellipse([16, 18, 55, 88], fill=BLACK, outline=WING_HI)
-    d.ellipse([20, 24, 51, 80], outline=WING)
-    # chest plate
-    d.polygon([(28, 40), (44, 40), (48, 58), (36, 70), (24, 58)], fill=WING, outline=SILVER)
-    d.ellipse([32, 48, 40, 58], fill=RED, outline=RED_HI)
+    cx = w // 2
+    # abdomen / torso
+    d.ellipse([18, 22, 61, 98], fill=BLACK, outline=BONE_DK)
+    d.ellipse([22, 28, 57, 90], fill=OBSIDIAN, outline=WING)
+    # armored chest (silver divinity plate)
+    d.polygon([(28, 38), (52, 38), (56, 58), (40, 72), (24, 58)], fill=OBSIDIAN, outline=SILVER)
+    d.ellipse([35, 48, 45, 60], fill=RED, outline=RED_GLOW)
+    d.ellipse([37, 50, 43, 56], fill=RED_GLOW)
     # neck
-    d.rectangle([30, 8, 42, 28], fill=BLACK, outline=WING_HI)
-    # head diamond
-    d.polygon([(36, 2), (48, 14), (36, 26), (24, 14)], fill=BLACK, outline=RED)
-    d.point((32, 12), fill=EYE)
-    d.point((40, 12), fill=EYE)
-    # jaw
-    d.polygon([(28, 20), (36, 28), (44, 20)], fill=WING, outline=RED_HI)
+    d.rectangle([34, 12, 46, 32], fill=BLACK, outline=BONE)
+    # head — angular GBF snout
+    d.polygon([(cx, 2), (58, 18), (50, 32), (30, 32), (22, 18)], fill=BLACK, outline=RED)
+    d.polygon([(cx, 8), (50, 20), (cx, 28), (30, 20)], fill=OBSIDIAN, outline=CRIMSON)
+    # eyes
+    d.rectangle([30, 14, 34, 18], fill=EYE)
+    d.rectangle([46, 14, 50, 18], fill=EYE)
+    # open maw
+    d.polygon([(32, 24), (cx, 36), (48, 24)], fill=CRIMSON, outline=RED_GLOW)
+    # spine ridges
+    for y in range(40, 92, 10):
+        d.rectangle([cx - 2, y, cx + 2, y + 4], fill=BONE_DK, outline=BONE)
     save("bahamut", im)
     prev = harden(trim(im, 2))
     prev.thumbnail((64, 64), Image.Resampling.NEAREST)
@@ -70,146 +80,183 @@ def body() -> None:
     canvas.save(SPR / "bahamut-preview.png")
 
 
-def wing_seg(i: int, total: int = 6) -> None:
-    """Membrane panel: longer outward, black with silver bone edge. Drawn for LEFT; mirror in JSON."""
-    t = i / max(total - 1, 1)
-    w = 18 + int(t * 28)
-    h = 28 + int((1 - abs(t - 0.4)) * 22)
+def wing(i: int, n: int = 8) -> None:
+    """Black Wings of Terror — membrane + bone spar; outer tip crimson claw."""
+    t = i / max(n - 1, 1)
+    w = 16 + int(t * 36)
+    h = 22 + int((1 - abs(t - 0.35)) * 28)
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    # membrane triangle-ish
-    d.polygon([(2, h // 2), (w - 2, 4), (w - 2, h - 4)], fill=WING, outline=WING_HI)
-    d.line([(2, h // 2), (w - 3, 6)], fill=SILVER, width=1)
-    d.line([(2, h // 2), (w - 3, h - 6)], fill=SILVER_DK, width=1)
-    # red claw tip on outer segments
-    if i >= total - 2:
-        d.polygon([(w - 8, h // 2 - 4), (w - 1, h // 2), (w - 8, h // 2 + 4)], fill=RED_HI)
+    # membrane (black)
+    d.polygon([(1, h // 2), (w - 2, 2), (w - 4, h // 2), (w - 2, h - 3)], fill=WING, outline=OBSIDIAN)
+    d.polygon([(2, h // 2), (w - 6, 6), (w - 6, h - 7)], fill=BLACK)
+    # bone spars (silver-white — GBF wing structure)
+    d.line([(2, h // 2), (w - 3, 4)], fill=BONE, width=2)
+    d.line([(2, h // 2), (w - 3, h // 2)], fill=BONE_DK, width=1)
+    d.line([(2, h // 2), (w - 3, h - 5)], fill=BONE, width=1)
+    # finger joints
+    for fx in (w // 3, 2 * w // 3, w - 5):
+        d.ellipse([fx - 2, h // 2 - 2, fx + 1, h // 2 + 1], fill=SILVER)
+    if i >= n - 2:
+        d.polygon([(w - 10, h // 2 - 5), (w - 1, h // 2), (w - 10, h // 2 + 5)], fill=RED_GLOW, outline=RED)
     save(f"bahamut-wing-{i}", im)
 
 
-def horn(side: str) -> None:
-    w, h = 14, 28
+def horn(name: str, big: bool) -> None:
+    w, h = (16, 34) if big else (12, 22)
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    if side == "l":
-        d.polygon([(12, 26), (2, 4), (10, 2), (13, 24)], fill=RED, outline=RED_HI)
+    # curved crimson horn (GBF signature)
+    if "l" in name:
+        d.polygon([(w - 2, h - 2), (2, 4), (6, 1), (w - 1, h - 6)], fill=RED, outline=RED_GLOW)
+        d.line([(w - 3, h - 4), (5, 6)], fill=CRIMSON)
     else:
-        d.polygon([(2, 26), (12, 4), (4, 2), (1, 24)], fill=RED, outline=RED_HI)
-    save(f"bahamut-horn-{side}", im)
+        d.polygon([(1, h - 2), (w - 3, 4), (w - 7, 1), (2, h - 6)], fill=RED, outline=RED_GLOW)
+        d.line([(2, h - 4), (w - 6, 6)], fill=CRIMSON)
+    save(f"bahamut-horn-{name}", im)
 
 
 def shackle(kind: str) -> None:
-    sizes = {"neck": (28, 12), "chest": (36, 14), "waist": (32, 12), "wing": (20, 10)}
+    sizes = {
+        "neck": (32, 14),
+        "chest": (40, 16),
+        "waist": (36, 14),
+        "wrist": (18, 12),
+        "wing": (22, 12),
+        "divinity": (28, 18),  # Relink Divinity Shackle
+    }
     w, h = sizes[kind]
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([1, 1, w - 2, h - 2], radius=3, fill=SILVER_DK, outline=SILVER)
-    d.rectangle([w // 2 - 2, 2, w // 2 + 2, h - 3], fill=SILVER)
-    # lock nub
-    d.ellipse([w // 2 - 3, h // 2 - 3, w // 2 + 3, h // 2 + 3], fill=BLACK, outline=SILVER)
+    d.rounded_rectangle([1, 1, w - 2, h - 2], radius=3, fill=SHACKLE, outline=SILVER)
+    d.rectangle([3, 3, w - 4, h - 4], outline=BONE_DK)
+    # lock
+    d.ellipse([w // 2 - 4, h // 2 - 4, w // 2 + 4, h // 2 + 4], fill=BLACK, outline=BONE)
+    d.rectangle([w // 2 - 1, h // 2 - 1, w // 2 + 1, h // 2 + 3], fill=SILVER)
+    if kind == "divinity":
+        d.polygon([(w // 2, 2), (w - 4, h // 2), (w // 2, h - 3), (4, h // 2)], outline=RED_GLOW)
     save(f"bahamut-shackle-{kind}", im)
 
 
-def chain_link(i: int) -> None:
-    w, h = 10, 16
+def chain(i: int) -> None:
+    w, h = 11, 18
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.ellipse([1, 1, w - 2, h // 2 + 1], outline=SILVER)
-    d.ellipse([1, h // 2 - 2, w - 2, h - 2], outline=SILVER)
-    d.rectangle([3, h // 2 - 1, w - 4, h // 2 + 1], fill=SILVER_DK)
+    d.ellipse([1, 1, w - 2, h // 2 + 2], outline=SILVER)
+    d.ellipse([1, h // 2 - 3, w - 2, h - 2], outline=SILVER)
+    d.rectangle([3, h // 2 - 1, w - 4, h // 2 + 1], fill=SHACKLE)
     save(f"bahamut-chain-{i}", im)
 
 
-def tail_seg(i: int, total: int = 7) -> None:
-    t = i / max(total - 1, 1)
-    w = max(10, int(22 - t * 12))
-    h = max(14, int(26 - t * 10))
+def spine(i: int) -> None:
+    w, h = 10, 12 + i
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.ellipse([1, 1, w - 2, h - 2], fill=BLACK, outline=WING_HI)
-    d.line([(w // 2, 2), (w // 2, h - 3)], fill=RED if i % 2 == 0 else SILVER_DK)
-    if i == total - 1:
-        d.polygon([(w // 2, h - 2), (2, h // 2), (w - 3, h // 2)], fill=RED_HI)
+    d.polygon([(w // 2, 0), (w - 1, h - 1), (0, h - 1)], fill=OBSIDIAN, outline=BONE)
+    save(f"bahamut-spine-{i}", im)
+
+
+def tail(i: int, n: int = 8) -> None:
+    t = i / max(n - 1, 1)
+    w = max(10, int(24 - t * 14))
+    h = max(14, int(28 - t * 12))
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.ellipse([1, 1, w - 2, h - 2], fill=BLACK, outline=BONE_DK)
+    d.line([(w // 2, 2), (w // 2, h - 3)], fill=RED if i % 2 == 0 else BONE_DK)
+    if i == n - 1:
+        d.polygon([(w // 2, h - 1), (2, h // 2), (w - 3, h // 2)], fill=RED_GLOW)
     save(f"bahamut-tail-{i}", im)
 
 
-def weapon_mount(name: str, style: str, w: int = 28, h: int = 20) -> None:
+def claw_mount() -> None:
+    im = Image.new("RGBA", (28, 22), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.ellipse([4, 4, 22, 18], fill=BLACK, outline=RED)
+    d.polygon([(6, 16), (14, 2), (22, 16)], fill=RED, outline=RED_GLOW)
+    save("bahamut-claw", im)
+    for i in range(1, 5):
+        w, h = 10 + i * 2, 16 - i
+        seg = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(seg)
+        col = RED_GLOW if i == 4 else RED if i > 1 else CRIMSON
+        sd.rectangle([0, 1, w - 1, h - 2], fill=col, outline=BLACK)
+        if i == 4:
+            sd.polygon([(w - 4, 1), (w - 1, h // 2), (w - 4, h - 2)], fill=RED_GLOW)
+        save(f"bahamut-claw-seg{i}", seg)
+
+
+def weapon(name: str, style: str, w: int = 30, h: int = 22) -> None:
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     d.rectangle([2, 4, w - 3, h - 3], fill=BLACK, outline=SILVER)
-    if style == "breath":
-        d.polygon([(w // 2, 0), (w // 2 + 6, 10), (w // 2 - 6, 10)], fill=RED_HI)
-        d.rectangle([w // 2 - 2, 8, w // 2 + 2, h - 4], fill=RED)
-    elif style == "nova":
-        d.ellipse([6, 4, w - 7, h - 3], outline=SILVER)
-        d.ellipse([w // 2 - 4, h // 2 - 4, w // 2 + 4, h // 2 + 4], fill=RED_HI)
-    elif style == "missile":
-        d.rectangle([w // 2 - 3, 1, w // 2 + 3, h - 4], fill=WING_HI, outline=SILVER)
-        d.ellipse([w // 2 - 4, 0, w // 2 + 4, 8], fill=RED)
-    elif style == "claw":
-        d.polygon([(4, h - 2), (w // 2, 2), (w - 5, h - 2)], fill=RED, outline=RED_HI)
+    if style == "catastrophe":
+        # dark nova core — Catastrophe call
+        d.ellipse([6, 3, w - 7, h - 3], outline=RED_GLOW)
+        d.ellipse([w // 2 - 5, h // 2 - 5, w // 2 + 5, h // 2 + 5], fill=RED, outline=BONE)
+        d.ellipse([w // 2 - 2, h // 2 - 2, w // 2 + 2, h // 2 + 2], fill=RED_GLOW)
+    elif style == "skyfall":
+        d.polygon([(w // 2, 0), (w - 4, 10), (w // 2, 8), (4, 10)], fill=BONE, outline=SILVER)
+        d.ellipse([w // 2 - 3, 10, w // 2 + 3, 16], fill=RED_GLOW)
+    elif style == "breath":
+        d.polygon([(w // 2, 0), (w // 2 + 7, 12), (w // 2 - 7, 12)], fill=RED_GLOW)
+        d.rectangle([w // 2 - 2, 10, w // 2 + 2, h - 3], fill=RED)
+    elif style == "orb":
+        for ox in (-6, 0, 6):
+            d.ellipse([w // 2 + ox - 3, 2, w // 2 + ox + 3, 8], fill=BONE, outline=RED_GLOW)
+        d.rectangle([w // 2 - 4, 8, w // 2 + 4, h - 3], fill=OBSIDIAN, outline=SILVER)
+    elif style == "emp":
+        d.ellipse([5, 3, w - 6, h - 3], outline=SILVER)
+        d.ellipse([w // 2 - 4, h // 2 - 4, w // 2 + 4, h // 2 + 4], fill=RED_GLOW)
     else:
         d.rectangle([w // 2 - 2, 1, w // 2 + 2, h // 2], fill=SILVER)
     save(name, im)
-
-
-def claw_parts(prefix: str, n: int = 4) -> None:
-    for i in range(1, n + 1):
-        w, h = 10 + i * 2, 16 - i
-        im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-        d = ImageDraw.Draw(im)
-        col = RED_HI if i == n else RED if i > 1 else (120, 20, 28, 255)
-        d.rectangle([0, 1, w - 1, h - 2], fill=col, outline=BLACK)
-        if i == n:
-            d.polygon([(w - 4, 1), (w - 1, h // 2), (w - 4, h - 2)], fill=RED_HI)
-        save(f"{prefix}-seg{i}", im)
-    # mount already from weapon_mount
-
-
-def gun_parts(prefix: str, barrels: int = 3) -> None:
-    """Jababarium-style multi-barrel / breech / muzzle stack."""
-    # breech
-    im = Image.new("RGBA", (18, 14), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    d.rectangle([1, 2, 16, 12], fill=BLACK, outline=SILVER)
-    d.rectangle([4, 4, 13, 10], outline=WING_HI)
-    save(f"{prefix}-breech", im)
-    for i in range(barrels):
-        bw, bh = 8, 18 + i * 2
-        bim = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
-        bd = ImageDraw.Draw(bim)
-        bd.rectangle([1, 0, bw - 2, bh - 1], fill=WING, outline=SILVER)
-        bd.rectangle([bw // 2 - 1, 0, bw // 2 + 1, 4], fill=RED_HI)
-        save(f"{prefix}-barrel{i}", bim)
-    # muzzle flash plate
-    mim = Image.new("RGBA", (14, 8), (0, 0, 0, 0))
-    md = ImageDraw.Draw(mim)
-    md.polygon([(0, 4), (7, 0), (13, 4), (7, 7)], fill=SILVER_DK, outline=SILVER)
-    save(f"{prefix}-muzzle", mim)
+    # parts
+    breech = Image.new("RGBA", (16, 12), (0, 0, 0, 0))
+    bd = ImageDraw.Draw(breech)
+    bd.rectangle([0, 1, 15, 10], fill=BLACK, outline=SILVER)
+    save(f"{name}-breech", breech)
+    for bi in range(2):
+        b = Image.new("RGBA", (8, 18 + bi), (0, 0, 0, 0))
+        bld = ImageDraw.Draw(b)
+        bld.rectangle([1, 0, 6, 17 + bi], fill=WING, outline=SILVER)
+        bld.rectangle([3, 0, 5, 3], fill=RED_GLOW)
+        save(f"{name}-barrel{bi}", b)
+    m = Image.new("RGBA", (14, 8), (0, 0, 0, 0))
+    md = ImageDraw.Draw(m)
+    md.polygon([(0, 4), (7, 0), (13, 4), (7, 7)], fill=SILVER)
+    save(f"{name}-muzzle", m)
+    if style in ("catastrophe", "breath", "emp"):
+        coil = Image.new("RGBA", (12, 12), (0, 0, 0, 0))
+        cd = ImageDraw.Draw(coil)
+        cd.ellipse([1, 1, 10, 10], outline=RED_GLOW)
+        cd.ellipse([3, 3, 8, 8], fill=BLACK, outline=SILVER)
+        save(f"{name}-coil", coil)
 
 
 def main() -> None:
     SPR.mkdir(parents=True, exist_ok=True)
     body()
-    for i in range(6):
-        wing_seg(i, 6)
-    horn("l")
-    horn("r")
-    for k in ("neck", "chest", "waist", "wing"):
-        shackle(k)
     for i in range(8):
-        chain_link(i)
-    for i in range(7):
-        tail_seg(i, 7)
-    weapon_mount("bahamut-breath", "breath", 32, 24)
-    weapon_mount("bahamut-catastrophe", "nova", 36, 28)
-    weapon_mount("bahamut-wing-missile", "missile", 22, 18)
-    weapon_mount("bahamut-claw", "claw", 24, 20)
-    weapon_mount("bahamut-emp", "nova", 26, 20)
-    claw_parts("bahamut-claw", 4)
-    gun_parts("bahamut-breath", 2)
-    gun_parts("bahamut-catastrophe", 3)
-    print("bahamut sprites ok")
+        wing(i, 8)
+    for name, big in (("l", True), ("r", True), ("l2", False), ("r2", False)):
+        horn(name, big)
+    for k in ("neck", "chest", "waist", "wrist", "wing", "divinity"):
+        shackle(k)
+    for i in range(10):
+        chain(i)
+    for i in range(5):
+        spine(i)
+    for i in range(8):
+        tail(i, 8)
+    claw_mount()
+    weapon("bahamut-catastrophe", "catastrophe", 36, 28)
+    weapon("bahamut-skyfall", "skyfall", 30, 24)
+    weapon("bahamut-breath", "breath", 32, 24)
+    weapon("bahamut-orb", "orb", 28, 20)
+    weapon("bahamut-emp", "emp", 26, 20)
+    weapon("bahamut-wing-missile", "orb", 22, 18)
+    print("Proto Bahamut GBF sprites OK")
 
 
 if __name__ == "__main__":

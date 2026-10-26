@@ -2,7 +2,7 @@ name: aoen
 displayName: Aoen
 author: Paradew
 description: "[#888888]Aoen[] — MH/jababarium naval, Calamity serpents, JS weapons, Bahamut."
-version: "1.9.0"
+version: "1.9.1"
 minGameVersion: 160.7
 dependencies: []
 hidden: false
