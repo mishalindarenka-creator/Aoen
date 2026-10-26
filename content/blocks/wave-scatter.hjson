@@ -64,7 +64,7 @@ ammoTypes: {
     statusDuration: 50
     frontColor: 88eef0
     backColor: 226688
-    hitEffect: freeze
+    hitEffect: freezing
   }
   blast-compound: {
     type: FlakBulletType

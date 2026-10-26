@@ -116,7 +116,7 @@ exports.venomFang = function (damage, splash) {
     collidesAir: false,
     frontColor: lib.c("d0c0ff"),
     backColor: lib.c("554488"),
-    status: StatusEffects.poisoned,
+    status: StatusEffects.corroded,
     statusDuration: 100,
     hitEffect: venomBurst,
     despawnEffect: venomBurst,
@@ -124,7 +124,7 @@ exports.venomFang = function (damage, splash) {
       this.super$hit(b, x, y);
       Damage.damage(b.team, x, y, 14, splash, false, true);
       Units.nearbyEnemies(b.team, x, y, 14, u => {
-        u.apply(StatusEffects.poisoned, 80);
+        u.apply(StatusEffects.corroded, 80);
         u.apply(StatusEffects.slow, 40);
       });
     }

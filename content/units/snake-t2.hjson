@@ -49,7 +49,7 @@ weapons: [
       lifetime: 26
       width: 8
       height: 10
-      status: poisoned
+      status: corroded
       statusDuration: 110
       frontColor: d0c0ff
       backColor: 6644aa
