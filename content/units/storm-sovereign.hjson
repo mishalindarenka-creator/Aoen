@@ -5,12 +5,28 @@ health: 28000
 armor: 36
 speed: 0.34
 hitSize: 30
+shadowElevation: 0.35
+rippleScale: 0.7
+legMinLength: 0.65
+legMaxLength: 1.9
+legLengthScl: 1
+legPairOffset: 5
+legExtension: -12
+legMoveSpace: 1.35
+legBaseOffset: 10
+legForwardScl: 1.5
+legSpeed: 0.18
+legGroupSize: 4
 rotateSpeed: 1.1
 range: 145
 legCount: 8
-legLength: 30
+legLength: 40
 hovering: true
-groundLayer: 63
+flipBackLeg: true
+legContinuousMove: true
+allowLegStep: true
+lockLegBase: true
+groundLayer: 70
 
 abilities: [
   {

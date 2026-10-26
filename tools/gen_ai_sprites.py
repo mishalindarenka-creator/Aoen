@@ -181,14 +181,13 @@ def save_item(stem: str, im: Image.Image) -> None:
 # --- prompt builders ---
 # CRITICAL rules for the image model (also used when finishing parts of a unit):
 STYLE_GUIDE = (
-    "STRICT Mindustry vanilla sprite rules: flat orthographic TOP-DOWN unit icon like "
-    "Anuken dagger/atrax/toxopid/omura — NOT a photo, NOT isometric 3/4, NOT painted concept art. "
-    "Hard 2–3 color bands + black outline silhouette, low-res crisp pixels, transparent or pure black void bg. "
-    "Study Mindustry + popular mods (Exo, Progressive, NH) silhouette language: readable limbs, centered torso, "
-    "no perspective foreshortening. When generating a PART (leg, claw seg, barrel, breech, muzzle, wing, segment), "
-    "MATCH the already-finished body of THIS unit: same palette, same outline thickness, same pixel scale, "
-    "same lighting direction; do not invent a new style. Barrel/muzzle always point toward +Y (up) on the sheet. "
-    "Weapons are separate mount sprites, never a random crop of the body."
+    "STRICT Mindustry + Jababarium mod sprite language: flat orthographic TOP-DOWN like "
+    "Jababarium widow/theridion/empress/oraxia/broodmother and vanilla atrax/toxopid — "
+    "NOT a photo, NOT isometric 3/4, NOT painted concept art. "
+    "Hard 2–3 color bands, readable silhouette, crisp pixels, transparent/black bg. "
+    "Legs units need matching -leg, -leg-base, -foot, -joint parts. "
+    "When generating a PART, MATCH the already-finished body of THIS unit (palette, outline, scale). "
+    "Barrel/muzzle point +Y. Weapons are separate mounts, never a body crop."
 )
 
 

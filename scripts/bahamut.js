@@ -51,20 +51,26 @@ exports.apply = function () {
   lib.addAbility(u, abilities.bahamutShackles());
   lib.addAbility(u, exports.protoAura());
 
+  function loadBullet(b) {
+    if (b == null) return;
+    try {
+      if (b.sprite == null || ("" + b.sprite).length === 0) b.sprite = "bullet";
+      b.load();
+    } catch (e) {}
+  }
+
   lib.eachWeapon(u, w => {
     const n = w.name != null ? ("" + w.name) : "";
     if (n.indexOf("catastrophe") >= 0) {
       w.bullet = bullets.catastrophe;
-      // reinforce GBF Catastrophe numbers
       w.bullet.damage = 320;
       w.bullet.splashDamage = 520;
       w.bullet.splashDamageRadius = 88;
+      loadBullet(w.bullet);
     }
     if (n.indexOf("breath") >= 0) {
       w.bullet = bullets.darkBreath;
-    }
-    if (n.indexOf("wing-missile") >= 0 || n.indexOf("orb") >= 0) {
-      // keep HJSON; orb already weave
+      loadBullet(w.bullet);
     }
     if (n.indexOf("claw") >= 0 && w.bullet != null) {
       const bleed = lib.status("aoen-bleeding");
@@ -73,6 +79,7 @@ exports.apply = function () {
         w.bullet.statusDuration = 180;
       }
       w.bullet.damage = Math.max(w.bullet.damage, 155);
+      loadBullet(w.bullet);
     }
   });
 

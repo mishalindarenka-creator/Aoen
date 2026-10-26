@@ -6,12 +6,24 @@ const serpent = require("serpent");
 
 var enhanced = false;
 
+function ensureBulletLoaded(bullet) {
+  if (bullet == null) return;
+  try {
+    if (bullet.sprite == null || ("" + bullet.sprite).length === 0) {
+      bullet.sprite = "bullet";
+    }
+    bullet.load();
+  } catch (e) {}
+}
+
 function replaceNamedBullet(unitType, weaponNameEnds, bullet) {
   if (unitType == null || bullet == null) return;
+  ensureBulletLoaded(bullet);
   lib.eachWeapon(unitType, w => {
     const n = w.name != null ? ("" + w.name) : "";
     if (n.indexOf(weaponNameEnds) >= 0) {
       w.bullet = bullet;
+      ensureBulletLoaded(w.bullet);
     }
   });
 }
@@ -366,6 +378,7 @@ function enhanceBossWeapons() {
         if (src.colors != null) {
           w.bullet.colors = src.colors;
         }
+        ensureBulletLoaded(w.bullet);
       }
     });
   }

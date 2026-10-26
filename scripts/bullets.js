@@ -1,6 +1,7 @@
 /**
- * Aoen custom bullet types — unique behaviour beyond HJSON.
- * Each line gets signature projectiles; enhance.js wires them onto weapons.
+ * Aoen custom bullet types.
+ * CRITICAL: JS-created BulletTypes must set sprite + call load(),
+ * otherwise BasicBulletType.draw NPEs on null backRegion.
  */
 const lib = require("lib");
 
@@ -20,7 +21,23 @@ const fxVoid = fxRing(24, "cc88ff", "220044", 28);
 const fxStorm = fxRing(16, "aaccff", "223366", 14);
 const fxGold = fxRing(18, "ffe080", "664400", 16);
 
-const fragCatastrophe = extend(BasicBulletType, {
+function bleedStatus() {
+  const s = lib.status("aoen-bleeding");
+  return s != null ? s : StatusEffects.sapped;
+}
+
+/** Finish a JS bullet so atlas regions exist before first draw. */
+function ready(b, sprite) {
+  try {
+    b.sprite = sprite || "bullet";
+    b.load();
+  } catch (e) {
+    Log.warn("[Aoen] bullet load failed (" + sprite + "): " + e);
+  }
+  return b;
+}
+
+const fragCatastrophe = ready(extend(BasicBulletType, {
   damage: 45,
   splashDamage: 30,
   splashDamageRadius: 18,
@@ -32,10 +49,9 @@ const fragCatastrophe = extend(BasicBulletType, {
   backColor: lib.c("440022"),
   status: StatusEffects.sapped,
   statusDuration: 80
-});
+}), "bullet");
 
-/** Proto Bahamut — Catastrophe */
-exports.catastrophe = extend(BasicBulletType, {
+exports.catastrophe = ready(extend(BasicBulletType, {
   damage: 280,
   splashDamage: 420,
   splashDamageRadius: 72,
@@ -80,9 +96,9 @@ exports.catastrophe = extend(BasicBulletType, {
     Fill.circle(b.x, b.y, 2);
     Draw.reset();
   }
-});
+}), "shell");
 
-exports.darkBreath = extend(ContinuousLaserBulletType, {
+exports.darkBreath = ready(extend(ContinuousLaserBulletType, {
   damage: 95,
   length: 180,
   width: 16,
@@ -97,10 +113,10 @@ exports.darkBreath = extend(ContinuousLaserBulletType, {
       b.damage = this.damage * (1 + Math.min(b.time / 55, 1) * 0.6);
     }
   }
-});
+}), "laser");
 exports.darkBreath.colors = [lib.c("ff4466"), lib.c("aa1122"), lib.c("1a0810")];
 
-exports.wingMissile = extend(MissileBulletType, {
+exports.wingMissile = ready(extend(MissileBulletType, {
   damage: 85,
   splashDamage: 55,
   splashDamageRadius: 22,
@@ -120,10 +136,10 @@ exports.wingMissile = extend(MissileBulletType, {
     this.super$update(b);
     if (Mathf.chance(0.2 * Time.delta)) Fx.smoke.at(b.x, b.y);
   }
-});
+}), "missile");
 
 exports.venomFang = function (damage, splash) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: damage,
     speed: 3.5,
     lifetime: 24,
@@ -144,28 +160,26 @@ exports.venomFang = function (damage, splash) {
         u.apply(StatusEffects.slow, 40);
       });
     }
-  });
+  }), "bullet");
 };
 
-/** Crab claw shredder — short pierce shrapnel-feel */
 exports.clawShred = function (dmg) {
-  return extend(ShrapnelBulletType, {
+  return ready(extend(ShrapnelBulletType, {
     damage: dmg,
     length: 42,
     width: 16,
     lifetime: 14,
     fromColor: lib.c("e8d8b0"),
     toColor: lib.c("665544"),
-    status: lib.status("aoen-bleeding") || StatusEffects.sapped,
+    status: bleedStatus(),
     statusDuration: 90,
     hitEffect: fxBleed,
     shootEffect: Fx.sparkShoot
-  });
+  }), "bullet");
 };
 
-/** Crabzilla / tyrant mega shred */
 exports.kaijuShred = function (dmg, len) {
-  return extend(ShrapnelBulletType, {
+  return ready(extend(ShrapnelBulletType, {
     damage: dmg,
     length: len || 110,
     width: 40,
@@ -173,16 +187,15 @@ exports.kaijuShred = function (dmg, len) {
     fromColor: lib.c("ff8866"),
     toColor: lib.c("881122"),
     buildingDamageMultiplier: 1.15,
-    status: lib.status("aoen-bleeding") || StatusEffects.sapped,
+    status: bleedStatus(),
     statusDuration: 220,
     hitEffect: fxBleed,
     shootEffect: Fx.sparkShoot
-  });
+  }), "bullet");
 };
 
-/** Ember slag mortar */
 exports.slagShell = function (dmg, splash) {
-  return extend(ArtilleryBulletType, {
+  return ready(extend(ArtilleryBulletType, {
     damage: dmg,
     splashDamage: splash,
     splashDamageRadius: 36,
@@ -204,12 +217,11 @@ exports.slagShell = function (dmg, splash) {
         if (t != null) Fires.create(t);
       } catch (e) {}
     }
-  });
+  }), "shell");
 };
 
-/** Tide wet pulse */
 exports.tidePulse = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     splashDamage: dmg * 0.55,
     splashDamageRadius: 22,
@@ -228,12 +240,11 @@ exports.tidePulse = function (dmg) {
       this.super$hit(b, x, y);
       Units.nearbyEnemies(b.team, x, y, 24, u => u.apply(StatusEffects.wet, 70));
     }
-  });
+  }), "missile");
 };
 
-/** Void rift bolt — pulls + saps */
 exports.voidRift = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     speed: 4.0,
     lifetime: 48,
@@ -254,12 +265,11 @@ exports.voidRift = function (dmg) {
         u.vel.trns(Angles.angle(u.x, u.y, b.x, b.y), 0.2 * Time.delta);
       });
     }
-  });
+  }), "bullet");
 };
 
-/** Storm EMP spark */
 exports.stormEmp = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     splashDamage: dmg * 0.4,
     splashDamageRadius: 28,
@@ -281,12 +291,11 @@ exports.stormEmp = function (dmg) {
         Lightning.create(b.team, lib.c("88ccff"), dmg * 0.2, x, y, b.rotation() + Mathf.range(40), 6);
       }
     }
-  });
+  }), "bullet");
 };
 
-/** Gold orb bounce-ish (boomeranger) */
 exports.goldOrb = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     speed: 2.8,
     lifetime: 70,
@@ -307,12 +316,11 @@ exports.goldOrb = function (dmg) {
       Fill.circle(b.x, b.y, 3 + Mathf.absin(b.time, 5, 2));
       Draw.reset();
     }
-  });
+  }), "circle-bullet");
 };
 
-/** Aegis green slug */
 exports.aegisSlug = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     speed: 4.2,
     lifetime: 42,
@@ -327,17 +335,15 @@ exports.aegisSlug = function (dmg) {
     hitEffect: Fx.hitBulletColor,
     hit(b, x, y) {
       this.super$hit(b, x, y);
-      // small heal pulse to allies
       Units.nearby(b.team, x, y, 20, u => {
         if (u.damaged()) u.heal(1.5);
       });
     }
-  });
+  }), "bullet");
 };
 
-/** Naval torpedo — wet + splash */
 exports.torpedo = function (dmg) {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: dmg,
     splashDamage: dmg * 0.7,
     splashDamageRadius: 26,
@@ -353,12 +359,11 @@ exports.torpedo = function (dmg) {
     backColor: lib.c("204860"),
     hitEffect: fxTide,
     collidesAir: false
-  });
+  }), "missile");
 };
 
-/** Crabzilla nova shell */
 exports.kaijuNova = function () {
-  return extend(BasicBulletType, {
+  return ready(extend(BasicBulletType, {
     damage: 320,
     splashDamage: 1100,
     splashDamageRadius: 110,
@@ -379,7 +384,7 @@ exports.kaijuNova = function () {
         u.apply(StatusEffects.burning, 80);
       });
     }
-  });
+  }), "shell");
 };
 
-Log.info("[Aoen] custom bullets ready (claw/venom/slag/tide/void/storm/orb/aegis/torpedo/kaiju)");
+Log.info("[Aoen] custom bullets ready (sprite+load)");
