@@ -316,7 +316,7 @@ exports.goldOrb = function (dmg) {
       Fill.circle(b.x, b.y, 3 + Mathf.absin(b.time, 5, 2));
       Draw.reset();
     }
-  }), "circle-bullet");
+  }), "missile");
 };
 
 exports.aegisSlug = function (dmg) {
