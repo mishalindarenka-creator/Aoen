@@ -82,7 +82,7 @@ weapons: [
         outline: false
         suffix: -barrel0
         x: 0
-        y: 4
+        y: 3
         under: false
       }
       {
@@ -90,7 +90,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 10
+        y: 7
         under: false
       }
     ]
@@ -132,7 +132,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 6
+        y: 7
         under: false
       }
     ]

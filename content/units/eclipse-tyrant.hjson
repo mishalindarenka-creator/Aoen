@@ -59,43 +59,43 @@ weapons: [
         moveRot: -16
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 0.5, y: 0, rot: 30 }
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 30 }
         ]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg2
-        x: 2
-        y: -1
+        x: 0
+        y: 3
         moveRot: -28
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 1, y: -0.4, rot: 40 }
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 40 }
         ]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg3
-        x: 3
-        y: -2
+        x: 0
+        y: 6
         moveRot: -42
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 1.2, y: -0.6, rot: 50 }
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 50 }
         ]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg4
-        x: 4
-        y: -3
+        x: 0
+        y: 9
         moveRot: -55
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 1.4, y: -0.8, rot: 58 }
+          { type: PartMove, progress: reload, x: 0, y: 1.00, rot: 58 }
         ]
       }
     ]
@@ -186,7 +186,7 @@ weapons: [
         outline: false
         suffix: -mag
         x: 0
-        y: -2
+        y: 1
         under: true
       }
       {
@@ -194,7 +194,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 9
+        y: 7
         under: false
       }
     ]
@@ -235,7 +235,7 @@ weapons: [
         outline: false
         suffix: -coil
         x: 0
-        y: 4
+        y: 1
         under: false
       }
       {
@@ -243,7 +243,7 @@ weapons: [
         outline: false
         suffix: -barrel0
         x: 0
-        y: 10
+        y: 3
         under: false
         moves: [
           {
@@ -258,7 +258,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 18
+        y: 7
         under: false
       }
     ]

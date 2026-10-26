@@ -70,47 +70,47 @@ weapons: [
         y: 0
         moveRot: -14
         under: true
-        moves: [{ type: PartMove, progress: reload, x: 0.6, y: 0, rot: 26 }]
+        moves: [{ type: PartMove, progress: reload, x: 0, y: 0.55, rot: 26 }]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg2
-        x: 2
-        y: -1
+        x: 0
+        y: 3
         moveRot: -24
         under: true
-        moves: [{ type: PartMove, progress: reload, x: 1, y: -0.4, rot: 36 }]
+        moves: [{ type: PartMove, progress: reload, x: 0, y: 0.70, rot: 36 }]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg3
-        x: 4
-        y: -2
+        x: 0
+        y: 6
         moveRot: -36
         under: true
-        moves: [{ type: PartMove, progress: reload, x: 1.3, y: -0.6, rot: 46 }]
+        moves: [{ type: PartMove, progress: reload, x: 0, y: 0.85, rot: 46 }]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg4
-        x: 5
-        y: -3
+        x: 0
+        y: 9
         moveRot: -48
         under: true
-        moves: [{ type: PartMove, progress: reload, x: 1.5, y: -0.8, rot: 54 }]
+        moves: [{ type: PartMove, progress: reload, x: 0, y: 1.00, rot: 54 }]
       }
       {
         type: RegionPart
         outline: false
         suffix: -seg5
-        x: 6
-        y: -4
+        x: 0
+        y: 12
         moveRot: -58
         under: true
-        moves: [{ type: PartMove, progress: reload, x: 1.6, y: -1, rot: 62 }]
+        moves: [{ type: PartMove, progress: reload, x: 0, y: 1.15, rot: 62 }]
       }
     ]
     bullet: {
@@ -157,7 +157,7 @@ weapons: [
         outline: false
         suffix: -barrel0
         x: 0
-        y: 8
+        y: 3
         under: false
       }
       {
@@ -165,7 +165,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 16
+        y: 7
         under: false
       }
     ]
@@ -209,7 +209,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 12
+        y: 7
         under: false
       }
     ]
@@ -246,7 +246,7 @@ weapons: [
         outline: false
         suffix: -coil
         x: 0
-        y: 5
+        y: 1
         under: false
       }
       {
@@ -254,7 +254,7 @@ weapons: [
         outline: false
         suffix: -barrel0
         x: 0
-        y: 12
+        y: 3
         under: false
         moves: [
           {
@@ -269,7 +269,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 22
+        y: 7
         under: false
       }
     ]
@@ -310,7 +310,7 @@ weapons: [
         outline: false
         suffix: -mag
         x: 0
-        y: -2
+        y: 1
         under: true
       }
       {
@@ -318,7 +318,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 10
+        y: 7
         under: false
       }
     ]
@@ -359,7 +359,7 @@ weapons: [
         outline: false
         suffix: -barrel0
         x: 0
-        y: 6
+        y: 3
         under: false
       }
       {
@@ -367,7 +367,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 12
+        y: 7
         under: false
       }
     ]
@@ -407,7 +407,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 10
+        y: 7
         under: false
       }
     ]

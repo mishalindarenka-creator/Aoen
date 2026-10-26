@@ -40,7 +40,7 @@ weapons: [
         outline: false
         suffix: -coil
         x: 0
-        y: 2
+        y: 1
         under: false
       }
       {
@@ -48,7 +48,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 10
+        y: 7
         under: false
       }
     ]
@@ -85,7 +85,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 6
+        y: 7
         under: false
       }
     ]
@@ -144,7 +144,7 @@ weapons: [
         outline: false
         suffix: -mag
         x: 0
-        y: -2
+        y: 1
         under: true
       }
       {

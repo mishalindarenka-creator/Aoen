@@ -60,7 +60,7 @@ weapons: [
         moveRot: -18
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 0.4, y: 0, rot: 28 }
+          { type: PartMove, progress: reload, x: 0, y: 0.55, rot: 28 }
         ]
       }
       {
@@ -68,12 +68,12 @@ weapons: [
         outline: false
         suffix: -seg2
         outline: false
-        x: 1
-        y: -1
+        x: 0
+        y: 3
         moveRot: -32
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 0.8, y: -0.3, rot: 38 }
+          { type: PartMove, progress: reload, x: 0, y: 0.70, rot: 38 }
         ]
       }
       {
@@ -81,12 +81,12 @@ weapons: [
         outline: false
         suffix: -seg3
         outline: false
-        x: 2
-        y: -2
+        x: 0
+        y: 6
         moveRot: -48
         under: true
         moves: [
-          { type: PartMove, progress: reload, x: 1.1, y: -0.5, rot: 52 }
+          { type: PartMove, progress: reload, x: 0, y: 0.85, rot: 52 }
         ]
       }
     ]

@@ -178,35 +178,51 @@ def save_item(stem: str, im: Image.Image) -> None:
     fit_square(im, 32).save(SPR_I / f"{stem}.png")
 
 
-# --- prompt builders (unique per stem) ---
+# --- prompt builders ---
+# CRITICAL rules for the image model (also used when finishing parts of a unit):
+STYLE_GUIDE = (
+    "STRICT Mindustry vanilla sprite rules: flat orthographic TOP-DOWN unit icon like "
+    "Anuken dagger/atrax/toxopid/omura — NOT a photo, NOT isometric 3/4, NOT painted concept art. "
+    "Hard 2–3 color bands + black outline silhouette, low-res crisp pixels, transparent or pure black void bg. "
+    "Study Mindustry + popular mods (Exo, Progressive, NH) silhouette language: readable limbs, centered torso, "
+    "no perspective foreshortening. When generating a PART (leg, claw seg, barrel, breech, muzzle, wing, segment), "
+    "MATCH the already-finished body of THIS unit: same palette, same outline thickness, same pixel scale, "
+    "same lighting direction; do not invent a new style. Barrel/muzzle always point toward +Y (up) on the sheet. "
+    "Weapons are separate mount sprites, never a random crop of the body."
+)
+
+
+def unit_prompt(flavor: str) -> str:
+    return f"{STYLE_GUIDE} Subject: {flavor}."
+
 
 UNIT_PROMPTS: dict[str, tuple[str, int]] = {
-    "crab": ("top-down pixel art mechanical crab walker, beige armor plates, twin claws, Mindustry unit sprite, black background, crisp pixels", 64),
-    "crab-t2": ("top-down pixel art armored sand crab mech, gold trim, heavier claws, Mindustry sprite, black background", 80),
-    "ceramtyr-daimyo": ("top-down pixel art crimson warlord crab, red lacquer armor, ornate claws, Mindustry bossette sprite, black background", 112),
-    "quake-bulwark": ("top-down pixel art steel siege crab fortress, gray plating, mortar hump, Mindustry unit, black background", 128),
-    "storm-sovereign": ("top-down pixel art violet storm arachnid titan, glowing purple arcs, Mindustry unit sprite, black background", 144),
-    "eclipse-tyrant": ("top-down pixel art colossal eclipse crab tyrant, dark gold core, huge claws, Mindustry T6, black background", 192),
-    "crabzilla": ("top-down pixel art kaiju crabzilla, volcanic red glow, massive carapace and horns, Mindustry T7 boss, black background", 224),
-    "snake": ("top-down pixel art desert sand serpent mech segment head, dusty ochre, Mindustry crawler, black background", 64),
-    "snake-t2": ("top-down pixel art aquatic toxic serpent, teal bioluminescence, Mindustry unit, black background", 80),
-    "cinder-millipede": ("top-down pixel art brimstone millipede, lava cracks, ember glow, Mindustry unit, black background", 96),
-    "payload-serpent": ("top-down pixel art green cargo serpent mech, modular plates, Mindustry unit, black background", 112),
-    "singularity-eel": ("top-down pixel art void eel, dark purple rift energy, Mindustry flying serpent, black background", 128),
-    "ouroboros-prime": ("top-down pixel art cosmic ouroboros dragon loop, abyssal violet, Mindustry T6, black background", 160),
-    "boomeranger": ("top-down pixel art golden mech with orbiting orbs, Mindustry dagger-like, black background", 64),
-    "boomeranger-t2": ("top-down pixel art ornate gold mech lancer, more orbs, Mindustry unit, black background", 80),
-    "foundry-orbiter": ("top-down pixel art foundry mech, molten vents, steel and slag, Mindustry fortress style, black background", 96),
-    "aegis-walker": ("top-down pixel art emerald aegis guardian mech, shield plates, Mindustry scepter-like, black background", 112),
-    "nexus-prime": ("top-down pixel art nexus command mech, golden core matrix, Mindustry reign-like, black background", 128),
-    "apotheosis-core": ("top-down pixel art apotheosis colossus mech, radiant gold nova core, Mindustry T6, black background", 192),
-    "naval": ("top-down pixel art small dark teal patrol skiff, Mindustry naval unit, black background", 64),
-    "naval-t2": ("top-down pixel art armored teal gunboat, Mindustry naval, black background", 80),
-    "iron-reef": ("top-down pixel art ironclad reef battleship, rust steel, Mindustry naval, black background", 96),
-    "needle-skiff": ("top-down pixel art needle missile skiff, sleek cyan hull, Mindustry naval, black background", 112),
-    "leviathan-crown": ("top-down pixel art crowned leviathan battleship, crimson and teal, Mindustry naval T5, black background", 128),
-    "mare-imperator": ("top-down pixel art imperial sea titan warship, dark gold decks, Mindustry T6 naval, black background", 192),
-    "bahamut": ("top-down pixel art Proto Bahamut dragon, silver armor red wings chains, GBF style Mindustry boss, black background", 200),
+    "crab": (unit_prompt("small atrax-like crab walker, beige shell, twin side claws"), 64),
+    "crab-t2": (unit_prompt("spiroct-like sand crab, gold trim, heavier claws"), 80),
+    "ceramtyr-daimyo": (unit_prompt("arkyid-like crimson warlord crab, red lacquer, ornate claws"), 112),
+    "quake-bulwark": (unit_prompt("steel siege crab fortress, gray plating, mortar hump"), 128),
+    "storm-sovereign": (unit_prompt("toxopid-like violet storm arachnid, purple arcs"), 144),
+    "eclipse-tyrant": (unit_prompt("colossal toxopid eclipse crab, dark gold core, huge claws"), 192),
+    "crabzilla": (unit_prompt("kaiju toxopid crabzilla, volcanic red glow, massive carapace"), 224),
+    "snake": (unit_prompt("desert serpent HEAD only + matching body-segment style, ochre"), 64),
+    "snake-t2": (unit_prompt("aquatic toxic serpent head, teal bioluminescence"), 80),
+    "cinder-millipede": (unit_prompt("brimstone millipede head, lava cracks, ember glow"), 96),
+    "payload-serpent": (unit_prompt("green cargo serpent head, modular plates"), 112),
+    "singularity-eel": (unit_prompt("void eel head, dark purple rift energy"), 128),
+    "ouroboros-prime": (unit_prompt("cosmic ouroboros head, abyssal violet"), 160),
+    "boomeranger": (unit_prompt("golden dagger-like mech, orbiting orb mounts"), 64),
+    "boomeranger-t2": (unit_prompt("ornate gold mace-like mech lancer"), 80),
+    "foundry-orbiter": (unit_prompt("foundry fortress-like mech, molten vents, steel/slag"), 96),
+    "aegis-walker": (unit_prompt("emerald scepter-like aegis guardian, shield plates"), 112),
+    "nexus-prime": (unit_prompt("nexus reign-like command mech, golden core"), 128),
+    "apotheosis-core": (unit_prompt("apotheosis colossus reign-like, radiant gold nova"), 192),
+    "naval": (unit_prompt("small risso-like teal patrol skiff"), 64),
+    "naval-t2": (unit_prompt("minke-like armored teal gunboat"), 80),
+    "iron-reef": (unit_prompt("bryde-like ironclad reef battleship, rust steel"), 96),
+    "needle-skiff": (unit_prompt("sei-like needle missile skiff, cyan hull"), 112),
+    "leviathan-crown": (unit_prompt("omura-like crowned leviathan, crimson+teal"), 128),
+    "mare-imperator": (unit_prompt("omura-scale imperial sea titan, dark gold decks"), 192),
+    "bahamut": (unit_prompt("Proto Bahamut dragon boss, silver armor, red wings, chains — Mindustry boss silhouette"), 200),
 }
 
 ITEM_PROMPTS = {
@@ -296,33 +312,66 @@ BLOCK_META: dict[str, tuple[str, int]] = {
 
 
 def block_prompt(stem: str, desc: str) -> str:
-    # unique flavor from stem hash
     accents = ["violet", "teal", "crimson", "amber", "cyan", "obsidian", "pearl", "rust"]
     accent = accents[int(hashlib.md5(stem.encode()).hexdigest(), 16) % len(accents)]
     return (
-        f"top-down pixel art Mindustry block sprite, {desc}, {accent} accent lighting, "
-        f"detailed panels rivets glow core, square footprint, black background, unique design for {stem}"
+        f"{STYLE_GUIDE} Mindustry BLOCK (like duo/hail/ripple/pneumatic-drill): "
+        f"{desc}, {accent} accents, square footprint, riveted panels, unique for {stem}."
+    )
+
+
+def weapon_prompt(unit_stem: str, weapon: str, style: str, body_hint: str) -> str:
+    """Tell the model: look at finished unit parts + Mindustry mounts; barrel +Y."""
+    return (
+        f"{STYLE_GUIDE} WEAPON MOUNT sprite for unit '{unit_stem}', name '{weapon}', style '{style}'. "
+        f"Reuse palette/outline from finished body: {body_hint}. "
+        f"Breech at BOTTOM of sheet, barrel/muzzle toward TOP (+Y). "
+        f"Separate small mount — not a body crop. Match Mindustry weapon sheet conventions "
+        f"(duo barrel, hail breech, toxopid claw segments stacked toward tip)."
     )
 
 
 def gen_weapon_from_body(stem: str, weapon: str, style: str = "gun") -> None:
-    """Derive a small unique weapon mount by cropping/recoloring body accents."""
+    """Build a proper +Y mount tinted from the finished body (never a random body crop as the gun)."""
     body_p = SPR_U / f"{stem}.png"
     if not body_p.exists():
         return
     body = Image.open(body_p).convert("RGBA")
-    w = max(20, body.width // 3)
-    h = max(14, body.height // 4)
-    # take a distinctive crop
-    cx, cy = body.width // 2, body.height // 3
-    crop = body.crop((max(0, cx - w // 2), max(0, cy - h // 2), min(body.width, cx + w // 2), min(body.height, cy + h // 2)))
-    crop = fit_square(crop, max(w, h))
-    crop.save(SPR_U / f"{weapon}.png")
-    # parts
-    for suf in ("-breech", "-barrel0", "-barrel1", "-muzzle", "-mag", "-coil"):
-        part = crop.copy()
-        part.thumbnail((max(10, w // 2), max(10, h)), Image.Resampling.NEAREST)
+    # sample palette from finished body
+    px = body.load()
+    samples = []
+    for y in range(0, body.height, max(1, body.height // 8)):
+        for x in range(0, body.width, max(1, body.width // 8)):
+            r, g, b, a = px[x, y]
+            if a > 200:
+                samples.append((r, g, b))
+    samples.sort(key=lambda c: c[0] + c[1] + c[2])
+    dark = samples[len(samples) // 6] if samples else (40, 40, 40)
+    mid = samples[len(samples) // 2] if samples else (100, 100, 100)
+    hi = samples[-len(samples) // 6] if samples else (200, 200, 200)
+    # procedural Mindustry-like gun (palette locked to body)
+    w, h = 18, 24
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rectangle([2, h // 2, w - 3, h - 2], fill=dark + (255,), outline=hi + (255,))
+    bw = max(4, w // 3)
+    d.rectangle([w // 2 - bw // 2, 1, w // 2 + bw // 2, h // 2 + 2], fill=mid + (255,), outline=hi + (255,))
+    d.rectangle([w // 2 - 1, 0, w // 2 + 1, 4], fill=hi + (255,))
+    harden(trim(im, 2)).save(SPR_U / f"{weapon}.png")
+    for suf, yw, yh, yfill in (
+        ("-breech", w - 2, h // 2, dark),
+        ("-barrel0", max(5, w // 4), h - 4, mid),
+        ("-barrel1", max(5, w // 4), h - 4, mid),
+        ("-muzzle", max(8, w // 2), 8, hi),
+        ("-mag", max(10, w // 2), max(8, h // 2), mid),
+        ("-coil", max(10, w // 2), max(8, h // 2), mid),
+    ):
+        part = Image.new("RGBA", (yw, yh), (0, 0, 0, 0))
+        pd = ImageDraw.Draw(part)
+        pd.rectangle([0, 0, yw - 1, yh - 1], fill=yfill + (255,), outline=hi + (255,))
         harden(trim(part, 1)).save(SPR_U / f"{weapon}{suf}.png")
+    # keep prompt string available for external AI pipelines
+    _ = weapon_prompt(stem, weapon, style, f"colors dark={dark} mid={mid} hi={hi}")
 
 
 def main(limit: int | None = None) -> None:

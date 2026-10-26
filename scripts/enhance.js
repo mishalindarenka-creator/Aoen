@@ -16,8 +16,16 @@ function replaceNamedBullet(unitType, weaponNameEnds, bullet) {
   });
 }
 
+function wireAll(unitId, map) {
+  const u = lib.unit(unitId);
+  if (u == null) return;
+  for (var key in map) {
+    if (!map.hasOwnProperty(key)) continue;
+    replaceNamedBullet(u, key, map[key]);
+  }
+}
+
 function enhanceSnakes() {
-  // Calamity-style trail worms (NOT crawl)
   const specs = [
     {
       id: "aoen-snake",
@@ -113,14 +121,43 @@ function enhanceSnakes() {
     }
     Log.info("[Aoen] Calamity worm: " + s.id + " (" + s.segs + " segs)");
   });
+
+  wireAll("aoen-cinder-millipede", {
+    slag: bullets.slagShell(55, 70),
+    fang: bullets.venomFang(36, 18),
+    spit: bullets.slagShell(28, 36)
+  });
+  wireAll("aoen-payload-serpent", {
+    spit: bullets.aegisSlug(42),
+    rear: bullets.slagShell(48, 55),
+    sap: bullets.voidRift(38),
+    hook: bullets.aegisSlug(50)
+  });
+  wireAll("aoen-singularity-eel", {
+    rift: bullets.voidRift(70),
+    bolt: bullets.voidRift(48),
+    spores: bullets.venomFang(32, 16),
+    missile: bullets.wingMissile
+  });
+  wireAll("aoen-ouroboros-prime", {
+    maw: bullets.voidRift(110),
+    bolt: bullets.voidRift(85),
+    missile: bullets.wingMissile,
+    emp: bullets.stormEmp(95)
+  });
 }
 
 function enhanceBahamut() {
   require("bahamut").apply();
+  const u = lib.unit("aoen-bahamut");
+  if (u == null) return;
+  replaceNamedBullet(u, "wing-missile", bullets.wingMissile);
+  replaceNamedBullet(u, "orb", bullets.goldOrb(70));
+  replaceNamedBullet(u, "emp", bullets.stormEmp(90));
+  replaceNamedBullet(u, "claw", bullets.clawShred(155));
 }
 
 function enhanceNaval() {
-  // MH-flavoured water wake / bubble pressure
   const wakeIds = [
     "aoen-naval",
     "aoen-naval-t2",
@@ -135,7 +172,6 @@ function enhanceNaval() {
     lib.addAbility(u, extend(Ability, {
       update(unit) {
         if (unit.vel.len() > 0.6 && Mathf.chance(0.12 * Time.delta)) {
-          // Fx.bubble is not guaranteed across builds — use smoke wake
           Fx.smoke.at(unit.x + Mathf.range(8), unit.y + Mathf.range(8));
         }
         Units.nearbyEnemies(unit.team, unit.x, unit.y, unit.hitSize * 1.1, e => {
@@ -152,7 +188,115 @@ function enhanceNaval() {
       }
     }));
   });
-  Log.info("[Aoen] naval MH wake abilities");
+
+  wireAll("aoen-naval", {
+    torpedo: bullets.torpedo(38),
+    cannon: bullets.tidePulse(32),
+    flak: bullets.stormEmp(18)
+  });
+  wireAll("aoen-naval-t2", {
+    cannon: bullets.tidePulse(48),
+    shell: bullets.tidePulse(55),
+    laser: bullets.tidePulse(40)
+  });
+  wireAll("aoen-iron-reef", {
+    battery: bullets.tidePulse(62),
+    flak: bullets.stormEmp(28),
+    missile: bullets.torpedo(55)
+  });
+  wireAll("aoen-needle-skiff", {
+    rack: bullets.torpedo(48),
+    ciws: bullets.stormEmp(22),
+    beam: bullets.tidePulse(50)
+  });
+  wireAll("aoen-leviathan-crown", {
+    main: bullets.tidePulse(95),
+    flak: bullets.stormEmp(36),
+    beam: bullets.tidePulse(80),
+    torpedo: bullets.torpedo(90),
+    rail: bullets.tidePulse(110)
+  });
+  wireAll("aoen-mare-imperator", {
+    main: bullets.tidePulse(160),
+    ciws: bullets.stormEmp(55),
+    beam: bullets.tidePulse(140),
+    missile: bullets.torpedo(130),
+    rail: bullets.tidePulse(180)
+  });
+  Log.info("[Aoen] naval MH wake + tide bullets");
+}
+
+function enhanceCrabLine() {
+  wireAll("aoen-crab", {
+    claw: bullets.clawShred(48),
+    spit: bullets.venomFang(22, 12)
+  });
+  wireAll("aoen-crab-t2", {
+    claw: bullets.clawShred(70),
+    spit: bullets.venomFang(34, 16),
+    flak: bullets.stormEmp(24)
+  });
+  wireAll("aoen-ceramtyr-daimyo", {
+    claw: bullets.clawShred(95),
+    gun: bullets.venomFang(48, 20),
+    mortar: bullets.slagShell(70, 85),
+    fang: bullets.venomFang(55, 22)
+  });
+  wireAll("aoen-quake-bulwark", {
+    mortar: bullets.slagShell(90, 110),
+    gun: bullets.clawShred(60),
+    flak: bullets.stormEmp(36),
+    missile: bullets.wingMissile,
+    rail: bullets.voidRift(75)
+  });
+  wireAll("aoen-storm-sovereign", {
+    beam: bullets.stormEmp(85),
+    rail: bullets.stormEmp(100),
+    emp: bullets.stormEmp(70),
+    missile: bullets.wingMissile
+  });
+  wireAll("aoen-eclipse-tyrant", {
+    claw: bullets.kaijuShred(180, 90),
+    mortar: bullets.slagShell(140, 180),
+    beam: bullets.voidRift(120),
+    missile: bullets.wingMissile,
+    rail: bullets.voidRift(150)
+  });
+}
+
+function enhanceMechLine() {
+  wireAll("aoen-boomeranger", {
+    orb: bullets.goldOrb(28)
+  });
+  wireAll("aoen-boomeranger-t2", {
+    orb: bullets.goldOrb(42)
+  });
+  wireAll("aoen-foundry-orbiter", {
+    laser: bullets.slagShell(55, 40),
+    shotgun: bullets.clawShred(48),
+    missile: bullets.wingMissile,
+    flak: bullets.stormEmp(30)
+  });
+  wireAll("aoen-aegis-walker", {
+    gun: bullets.aegisSlug(55),
+    shotgun: bullets.aegisSlug(48),
+    missile: bullets.wingMissile,
+    emp: bullets.stormEmp(45)
+  });
+  wireAll("aoen-nexus-prime", {
+    core: bullets.goldOrb(80),
+    laser: bullets.voidRift(70),
+    point: bullets.goldOrb(55),
+    missile: bullets.wingMissile,
+    flak: bullets.stormEmp(40)
+  });
+  wireAll("aoen-apotheosis-core", {
+    nova: bullets.kaijuNova(),
+    batteries: bullets.goldOrb(95),
+    rail: bullets.voidRift(140),
+    missile: bullets.wingMissile,
+    emp: bullets.stormEmp(90)
+  });
 }
 
 function enhanceCrabzilla() {
@@ -163,7 +307,6 @@ function enhanceCrabzilla() {
   } catch (e) {}
   lib.addAbility(z, extend(Ability, {
     update(unit) {
-      // crushing aura
       Units.nearbyEnemies(unit.team, unit.x, unit.y, unit.hitSize * 0.55, e => {
         e.damagePierce(0.35 * Time.delta);
         if (Mathf.chance(0.04 * Time.delta)) {
@@ -189,7 +332,16 @@ function enhanceCrabzilla() {
       return this;
     }
   }));
-  Log.info("[Aoen] Crabzilla kaiju aura");
+  wireAll("aoen-crabzilla", {
+    claw: bullets.kaijuShred(260, 120),
+    mortar: bullets.slagShell(220, 280),
+    beam: bullets.voidRift(200),
+    rail: bullets.voidRift(240),
+    missile: bullets.wingMissile,
+    flak: bullets.stormEmp(80),
+    nova: bullets.kaijuNova()
+  });
+  Log.info("[Aoen] Crabzilla kaiju aura + bullets");
 }
 
 function enhanceBossWeapons() {
@@ -242,10 +394,12 @@ function aoenEnhanceOnce() {
     enhanceSnakes();
     enhanceNaval();
     enhanceBahamut();
+    enhanceCrabLine();
+    enhanceMechLine();
     enhanceCrabzilla();
     enhanceBossWeapons();
     enhanced = true;
-    Log.info("[Aoen] JS enhance complete");
+    Log.info("[Aoen] JS enhance complete (all-line custom bullets)");
   } catch (e) {
     Log.err("[Aoen] enhance failed: " + e);
   }

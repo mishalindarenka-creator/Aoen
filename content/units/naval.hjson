@@ -38,14 +38,14 @@ weapons: [
         outline: false
         suffix: -breech
         x: 0
-        y: -1
+        y: 0
         under: true
       }
       {
         type: RegionPart
         outline: false
         suffix: -barrel0
-        x: -2
+        x: 0
         y: 3
         under: false
       }
@@ -53,8 +53,8 @@ weapons: [
         type: RegionPart
         outline: false
         suffix: -barrel1
-        x: 2
-        y: 3
+        x: 0
+        y: 4
         under: false
       }
       {
@@ -62,7 +62,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 8
+        y: 7
         under: false
       }
     ]
@@ -102,7 +102,7 @@ weapons: [
         outline: false
         suffix: -mag
         x: 0
-        y: -2
+        y: 1
         under: true
       }
       {
@@ -110,7 +110,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 6
+        y: 7
         under: false
       }
     ]
@@ -152,16 +152,16 @@ weapons: [
         type: RegionPart
         outline: false
         suffix: -barrel0
-        x: -2
-        y: 2
+        x: 0
+        y: 3
         under: false
       }
       {
         type: RegionPart
         outline: false
         suffix: -barrel1
-        x: 2
-        y: 2
+        x: 0
+        y: 4
         under: false
       }
       {
@@ -169,7 +169,7 @@ weapons: [
         outline: false
         suffix: -muzzle
         x: 0
-        y: 6
+        y: 7
         under: false
       }
     ]
